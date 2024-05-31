@@ -1,0 +1,62 @@
+target_path: rom/CHAOSTGRACE.BIN
+elf_path: build/CHAOSTGRACE.elf
+map_path: build/CHAOSTGRACE.map
+build_path: build
+key: 0x0C9C0000
+symbol_addrs_path: symbols.stgrace.txt
+generated_c_preamble: "#include <task.h>"
+src_path: src
+asm_path: asm
+nonmatchings_path: asm/nonmatching
+linker_path: chaostgrace_lnk.sub
+entry: race_stage_header
+
+section_order: P,D,C
+
+overwrite_c_always: true
+
+segments:
+  - name: race_stage_header
+    type: asm
+    start: 0x0
+    dir: Chao/stg_race
+
+  - name: main
+    type: code
+    start: 0x20
+    dir: Chao/stg_race
+    subsegments:
+      - [0x20, asm, al_race]
+      - [0x1D40, asm]
+      - [0x2060, asm]
+      - [0x2540, asm, alo_race_fruit]
+      - [0x2AC0, asm, alo_race_pitfall]
+      - [0x2EE0, asm]
+      - [0x2FC0, asm, alo_race_tree]
+      - [0x37C0, asm]
+      - [0x3B00, asm]
+      - [0x40C0, asm, alo_race_kari]
+      - [0x4A60, asm, alo_race_toy]
+      - [0x4F20, asm, alr_adv_stage]
+      - [0x5220, asm, alr_adv_goal]
+      - [0x53E0, asm, alr_adv_contra]
+      - [0x55E0, asm, alr_adv_tryagain]
+      - [0x57E0, asm, alr_adv_time]
+      - [0x5E80, asm, alr_adv_rank]
+      - [0x61A0, asm, alr_adv_stamina]
+      - [0x6D80, asm, alr_adv_map]
+      - [0x7360, asm, alo_race_toypresenter]
+      - [0x7680, asm, alr_camera_data]
+      - [0x7C00, asm]  
+      - [0x91C0, asm]
+      - [0x9380, asm]
+      - [0xA1A0, asm]
+      - [0xA3A0, asm]
+      - [0xAA00, asm]
+      - [0xB540, asm]
+      - [0xB700, asm]
+      - [0xC660, asm, alr_chao_related]
+      - [0xD120, asm, alr_water]
+      - [0xD160, asm, common_object_lib]
+      - [0xEE40, data, data_section]
+      - [0x16058, rodata, rodata_section]

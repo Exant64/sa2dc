@@ -1,0 +1,12 @@
+.vscode
+Include
+rom
+shc
+asm
+build
+*.sub
+*.bin
+*.elf
+*.map
+*.nja
+tools/elf2bin

@@ -1,0 +1,148 @@
+target_path: rom/CHAO.BIN
+elf_path: build/CHAO.elf
+map_path: build/CHAO.map
+build_path: build
+key: 0x0C500000
+symbol_addrs_path: symbols.chao.txt
+generated_c_preamble: "#include <task.h>"
+src_path: src
+asm_path: asm
+nonmatchings_path: asm/nonmatching
+linker_path: chao_lnk.sub
+entry: chao_stage_header
+
+section_order: P,C,D,PSG,CSG,DSG,B
+
+additional_linker: ["input .\\build\\asm\\1st_read.obj"]
+
+segments:
+  - name: chao_stage_header
+    type: asm
+    start: 0x0
+    dir: Chao
+
+  - name: main
+    type: code
+    start: 0x20
+    dir: Chao
+    subsegments: 
+      - [0x20, asm, al_stage]
+      - [0xBE0, asm, code_0C500BE0]
+      - [0xC60, asm, al_behavior]
+      - [0x1440, asm, code_0C501440]
+      - [0x1460, asm, al_buyobuyo]
+      - [0x23C0, asm, al_chao_info]
+      - [0x2C40, asm, al_control]
+      - [0x2D40, asm, al_collision]
+      - [0x34C0, asm, al_draw]
+      - [0x4040, asm, al_edit_func]
+      - [0x7740, asm, al_egg]
+      - [0x8BC0, asm, al_emotion]
+      - [0x8D40, asm, al_deform]
+      - [0xA6C0, asm, al_face]
+      - [0xAD00, asm, al_field]
+      - [0xB3A0, asm, al_garden_info]
+      - [0xBB20, asm, al_gene]
+      - [0xCBC0, asm, al_hold]
+      - [0xCF60, asm, al_icon]
+      - [0xE6E0, asm, al_intention]
+      - [0xEF80, asm, code_0C50EF80]
+      - [0xF540, asm, al_knowledge]
+      - [0xFDA0, asm, al_landmark]
+      - [0x10040, asm, al_material]
+      - [0x10CE0, asm, al_message]
+      - [0x10E00, asm, al_minimal]
+      - [0x11700, asm, al_misc]
+      - [0x12260, asm, al_motion]
+      - [0x12420, asm, al_msg_font]
+      - [0x12D80, asm, al_parameter]
+      - [0x13BE0, asm, al_parameter_debug]
+      - [0x14A60, asm, al_parts]
+      - [0x14F40, asm, al_path]
+      - [0x15900, asm, al_perception]
+      - [0x16160, asm, code_0C516160]
+      - [0x16740, asm, code_0C516740]
+      - [0x17960, asm, al_shape]
+      - [0x18860, asm, al_sound]
+      - [0x18A00, asm, al_edit_sa1]
+      - [0x19500, asm, al_osanbo]
+      - [0x1DC40, asm, al_water]
+      - [0x1DE00, asm, al_world]
+      - [0x1E9E0, asm, al_osamenu]
+      - [0x22B80, asm, al_palette]
+      - [0x237E0, asm, al_chaosdrive]
+      - [0x24360, asm, alo_flower]
+      - [0x246A0, asm, alo_fruit]
+      - [0x25100, asm, alo_growtree]
+      - [0x26FC0, asm, alo_obake_head]
+      - [0x27660, asm, alo_osanpo]
+      - [0x287A0, asm, alo_seed]
+      - [0x28D60, asm, al_icon_thing]
+      - [0x28EC0, asm, alef_ripple]
+      - [0x28F60, asm, al_behavior/albhv_art]
+      - [0x298E0, asm, al_behavior/albhv_anger]
+      - [0x2A180, asm, al_behavior/albhv_capture]
+      - [0x2AE40, asm, al_behavior/albhv_common]
+      - [0x2B4C0, asm, al_behavior/albhv_dakko]
+      - [0x2BDC0, asm, al_behavior/albhv_damage]
+      - [0x2C6A0, asm, al_behavior/albhv_dance]
+      - [0x2D120, asm, al_behavior/albhv_eat]
+      - [0x2DD80, asm, al_behavior/albhv_fear]
+      - [0x2E300, asm, al_behavior/albhv_hima]
+      - [0x2E520, asm, al_behavior/albhv_hungry]
+      - [0x2ED40, asm, al_behavior/albhv_illness]
+      - [0x2F780, asm, al_behavior/albhv_life]
+      - [0x30160, asm, al_behavior/albhv_minimal]
+      - [0x30F20, asm, al_behavior/albhv_move]
+      - [0x31BC0, asm, al_behavior/albhv_music]
+      - [0x32D40, asm, al_behavior/albhv_nade]
+      - [0x330C0, asm, al_behavior/albhv_nest]
+      - [0x33840, asm, al_behavior/albhv_obake_head]
+      - [0x33C40, asm, al_behavior/albhv_pain]
+      - [0x33F00, asm, al_behavior/albhv_pleasure]
+      - [0x34280, asm, al_behavior/albhv_player]
+      - [0x34880, asm, al_behavior/albhv_posture]
+      - [0x34A20, asm, al_behavior/albhv_rest]
+      - [0x34CA0, asm, al_behavior/albhv_seed]
+      - [0x358E0, asm, al_behavior/albhv_sing]
+      - [0x36AC0, asm, al_behavior/albhv_sleep]
+      - [0x37AC0, asm, al_behavior/albhv_sorrow]
+      - [0x381A0, asm, al_behavior/albhv_stand]
+      - [0x38500, asm, al_behavior/albhv_swim]
+      - [0x391A0, asm, al_behavior/albhv_toy]
+      - [0x39EE0, asm, al_behavior/albhv_toy_l]
+      - [0x3AC80, asm, al_behavior/albhv_thirsty]
+      - [0x3ADE0, asm, al_behavior/albhv_walk]
+      - [0x3B4A0, asm, al_behavior/albhv_betafuncs]
+      - [0x3BC20, asm, al_camera]
+      - [0x3C3E0, asm, al_editor]
+      - [0x3C880, asm, alm_func_walk]
+      - [0x3D1A0, asm, al_toy/alo_ball]
+      - [0x3DC20, asm, al_toy/alo_box]
+      - [0x3E1C0, asm, al_toy/alo_horse]
+      - [0x3E4E0, asm, al_toy/alo_radicase]
+      - [0x3E9C0, asm, al_toy/alo_tv]
+      - [0x3F040, asm, Chao]
+      - [0x3F660, asm, OBJECT]
+      - [0x5D040, rodata, al_stage]
+      - [0x5DA20, rodata, al_face]
+      - [0x5DA84, rodata, al_field]
+      - [0x5DAC5, rodata, al_field] # unused strings
+      - [0x5DBFC, rodata, al_knowledge]
+      - [0x5DC14, rodata, al_material] # rodata_1
+      - [0x6709C, rodata, alo_obake_head]
+      - [0x6713C, rodata, alo_osanpo]
+      - [0x67150, rodata, alo_seed]
+      - [0x671EC, rodata, alef_ripple]
+      - [0x671F8, rodata, al_camera] # rodata_2
+      - [0x674F0, rodata, al_toy/alo_horse]
+      - [0x6752C, rodata, al_toy/alo_radicase]
+      - [0x675D4, rodata, al_toy/alo_tv]
+      - [0x67658, rodata, Chao]
+      - [0x67660, rodata, OBJECT]
+      - [0x68F58, data, al_stage] # data_1
+      - [0x6B408, data, al_garden_info]
+      - [0x6B580, data, al_gene] # data_2
+      - [0x13B5D4, data, al_toy/alo_tv]
+      - [0x13B604, data, Chao]
+      - [0x13B6F4, data, OBJECT]

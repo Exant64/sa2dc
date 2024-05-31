@@ -1,0 +1,10 @@
+AL_RaceExecutor = 0x0C9C0540;
+AL_RaceDestructor = 0x0C9C157A;
+SpawnRaceChao = 0x0C9C16A0;
+AL_RaceMaster = 0x0C9C1870;
+ALO_CreateRacePitfall = 0x0C9C2C76;
+InitRaceTrees = 0x0C9C2FC0;
+CreateWater = 0x0C9CD120;
+ALO_CreateRaceKarimonoQuestionPanel = 0x0C9C47CA;
+ALR_CreateCameraManager = 0x0C9C79A0;
+alr_adv_map_Init = 0x0C9C7220;

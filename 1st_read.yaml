@@ -1,0 +1,120 @@
+target_path: rom/1ST_READ.BIN
+elf_path: build/1ST_READ.elf
+map_path: build/1ST_READ.map
+build_path: build
+key: 0x8C010000
+symbol_addrs_path: symbols.1st_read.txt
+generated_c_preamble: "#include <task.h>"
+src_path: src
+asm_path: asm
+nonmatchings_path: asm/nonmatching
+linker_path: 1st_read_lnk.sub
+entry: _START_SYS
+
+section_order: P,C,D,PSG,CSG,DSG,B
+additional_linker: ["fsymbol P,C,D,PSG,CSG,CSG32,DSG,DSG32,B,BSG,BSG32"]
+
+blacklist_code: [0x8C018788]
+overwrite_c_always: true
+
+segments:
+  - name: main
+    type: code
+    start: 0x0
+    dir: .
+    subsegments: 
+      - [0x0, asm, start]
+      - [0x220, asm, a_window]
+      - [0x1100, asm, adx]
+      - [0x2140, asm]
+      - [0x29C0, asm, colli]
+      - [0x87A0, asm, moreasm]
+      - [0x88A0, asm, c_colli]
+      - [0x108C0, asm, DrawLine3D]
+      - [0x110E0, asm, enemy]
+      - [0x13E20, asm, prs]
+      - [0x13EC0, asm, game]
+      - [0x19060, asm, input]
+      - [0x1A400, asm, land]
+      - [0x1BFE0, asm, light]
+      - [0x1C2A0, asm, main]
+      - [0x1D240, asm, matrix]
+      - [0x1D340, asm]
+      - [0x22D80, asm, some_colli_check]
+      - [0x23000, asm]
+      - [0x23100, asm, motiontable]
+      - [0x23AC0, asm, move]
+      - [0x254A0, asm]
+      - [0x25760, asm]
+      - [0x26180, asm, vibtask]
+      - [0x26560, asm, particle]
+      - [0x276E0, asm]
+      - [0x28A80, asm, player]
+      - [0x3C980, asm, playersub]
+      - [0x41640, asm, pathctrl]
+      - [0x42120, asm, score]
+      - [0x46BC0, asm]
+      - [0x46F60, asm, set]
+      - [0x47FE0, asm]
+      - [0x48360, asm]
+      - [0x49600, asm, sound]
+      - [0x4DAA0, asm]
+      - [0x4FC20, asm, task]
+      - [0x50460, asm, text]
+      - [0x50540, asm, texture]
+      - [0x50BE0, asm]
+      - [0x513E0, asm, vmsave]
+      - [0x52360, asm, vmalarm]
+      - [0x525A0, asm, vmlcd]
+      - [0x528A0, asm, stage]
+      - [0x52FE0, asm, mission]
+      - [0x53D60, asm, stagename]
+      - [0x55140, asm, sonic]
+      - [0x68580, asm, knuckles]
+      - [0x778A0, asm, tails]
+      - [0x7DC80, asm, ewalker]
+      - [0x8B4A0, asm, eggman]
+      - [0x910C0, asm, son_eff]
+      - [0x91520, asm, ewa_eff]
+      - [0x92F20, asm, knu_eff]
+      - [0x93540, asm]
+      - [0x938A0, asm]
+      - [0x93D20, asm, ef_chaosspear]
+      - [0x94120, asm, ef_line]
+      - [0x943A0, asm]
+      - [0x947E0, asm, font]
+      - [0x96FA0, asm]
+      - [0x97AA0, asm, minimal]
+      - [0x991E0, asm, chaosdrive]
+      - [0x99BA0, asm]
+      - [0x99EE0, asm]
+      - [0x9AAC0, asm, camera]
+      - [0x9B340, asm, camera_0]
+      - [0x9B3C0, asm, camera_1]
+      - [0x9BBC0, asm, camera_2]
+      - [0x9C1A0, asm]
+      - [0x9C760, asm]
+      - [0x9C9C0, asm]
+      - [0x9D240, asm, cameraEdit]
+      - [0x9DD00, asm]
+      - [0x9E0A0, asm]
+      - [0x9EC00, asm]
+      - [0xA0820, asm]
+      - [0xA2CE0, asm]
+      - [0xA3D80, asm]
+      - [0xA3E00, asm]
+      - [0xA3E20, asm, cameraFuncs]
+      - [0xA8B40, asm]
+      - [0xA8C00, asm]
+      - [0xA9120, asm]
+      - [0xA9340, asm, event]
+      - [0xAA8C0, asm]
+      - [0xAA920, asm]
+      - [0xACE60, asm]
+      - [0xAD2E0, asm]
+      - [0xBD860, rodata]
+      - [0xC17C0, data]
+      - [0xF04E0, libasm, library]
+      - [0x169E8C, librodata, library]
+      - [0x16EAC0, libdata, library]
+      - [0x181484, bss, bss, 0x26B940]
