@@ -2,6 +2,10 @@
 
 INLINE_ASM(_func_8C0BA920, "asm/nonmatching/./code_aa920/_func_8C0BA920.src");
 
+INLINE_ASM(_func_8C0BAB70, "asm/nonmatching/./code_aa920/_func_8C0BAB70.src");
+
+INLINE_ASM(_func_8C0BAD3E, "asm/nonmatching/./code_aa920/_func_8C0BAD3E.src");
+
 INLINE_ASM(_func_8C0BAD50, "asm/nonmatching/./code_aa920/_func_8C0BAD50.src");
 
 INLINE_ASM(_func_8C0BAD54, "asm/nonmatching/./code_aa920/_func_8C0BAD54.src");
@@ -41,6 +45,18 @@ INLINE_ASM(_func_8C0BB59A, "asm/nonmatching/./code_aa920/_func_8C0BB59A.src");
 INLINE_ASM(_func_8C0BB680, "asm/nonmatching/./code_aa920/_func_8C0BB680.src");
 
 INLINE_ASM(_func_8C0BB7E2, "asm/nonmatching/./code_aa920/_func_8C0BB7E2.src");
+
+INLINE_ASM(_func_8C0BBD56, "asm/nonmatching/./code_aa920/_func_8C0BBD56.src");
+
+INLINE_ASM(_func_8C0BBE52, "asm/nonmatching/./code_aa920/_func_8C0BBE52.src");
+
+INLINE_ASM(_func_8C0BBEAC, "asm/nonmatching/./code_aa920/_func_8C0BBEAC.src");
+
+INLINE_ASM(_func_8C0BBEF8, "asm/nonmatching/./code_aa920/_func_8C0BBEF8.src");
+
+INLINE_ASM(_func_8C0BBF28, "asm/nonmatching/./code_aa920/_func_8C0BBF28.src");
+
+INLINE_ASM(_func_8C0BBFA0, "asm/nonmatching/./code_aa920/_func_8C0BBFA0.src");
 
 INLINE_ASM(_func_8C0BC8B8, "asm/nonmatching/./code_aa920/_func_8C0BC8B8.src");
 

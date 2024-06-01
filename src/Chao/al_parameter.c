@@ -10,6 +10,20 @@ INLINE_ASM(_AL_IsDark2, "asm/nonmatching/Chao/al_parameter/_AL_IsDark2.src");
 
 INLINE_ASM(_func_0C512E60, "asm/nonmatching/Chao/al_parameter/_func_0C512E60.src");
 
+INLINE_ASM(_AL_ParameterGetSkill, "asm/nonmatching/Chao/al_parameter/_AL_ParameterGetSkill.src");
+
+INLINE_ASM(_func_0C513680, "asm/nonmatching/Chao/al_parameter/_func_0C513680.src");
+
+INLINE_ASM(_func_0C5136EC, "asm/nonmatching/Chao/al_parameter/_func_0C5136EC.src");
+
+INLINE_ASM(_func_0C513702, "asm/nonmatching/Chao/al_parameter/_func_0C513702.src");
+
+INLINE_ASM(_func_0C513778, "asm/nonmatching/Chao/al_parameter/_func_0C513778.src");
+
+INLINE_ASM(_func_0C5137BC, "asm/nonmatching/Chao/al_parameter/_func_0C5137BC.src");
+
+INLINE_ASM(_func_0C513800, "asm/nonmatching/Chao/al_parameter/_func_0C513800.src");
+
 INLINE_ASM(_func_0C51383A, "asm/nonmatching/Chao/al_parameter/_func_0C51383A.src");
 
 INLINE_ASM(_func_0C51385E, "asm/nonmatching/Chao/al_parameter/_func_0C51385E.src");

@@ -12,7 +12,7 @@ INLINE_ASM(_func_0C9C26DC, "asm/nonmatching/Chao/stg_race/alo_race_fruit/_func_0
 
 INLINE_ASM(_func_0C9C277C, "asm/nonmatching/Chao/stg_race/alo_race_fruit/_func_0C9C277C.src");
 
-INLINE_ASM(_func_0C9C2800, "asm/nonmatching/Chao/stg_race/alo_race_fruit/_func_0C9C2800.src");
+INLINE_ASM(_func_0C9C27C0, "asm/nonmatching/Chao/stg_race/alo_race_fruit/_func_0C9C27C0.src");
 
 INLINE_ASM(_func_0C9C28FE, "asm/nonmatching/Chao/stg_race/alo_race_fruit/_func_0C9C28FE.src");
 

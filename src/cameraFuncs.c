@@ -42,11 +42,17 @@ INLINE_ASM(_func_8C0B6500, "asm/nonmatching/./cameraFuncs/_func_8C0B6500.src");
 
 INLINE_ASM(_func_8C0B65CC, "asm/nonmatching/./cameraFuncs/_func_8C0B65CC.src");
 
+INLINE_ASM(_func_8C0B67A4, "asm/nonmatching/./cameraFuncs/_func_8C0B67A4.src");
+
 INLINE_ASM(_func_8C0B6880, "asm/nonmatching/./cameraFuncs/_func_8C0B6880.src");
 
 INLINE_ASM(_func_8C0B6902, "asm/nonmatching/./cameraFuncs/_func_8C0B6902.src");
 
+INLINE_ASM(_func_8C0B6AEC, "asm/nonmatching/./cameraFuncs/_func_8C0B6AEC.src");
+
 INLINE_ASM(_func_8C0B6B44, "asm/nonmatching/./cameraFuncs/_func_8C0B6B44.src");
+
+INLINE_ASM(_func_8C0B6C2E, "asm/nonmatching/./cameraFuncs/_func_8C0B6C2E.src");
 
 INLINE_ASM(_func_8C0B6C4A, "asm/nonmatching/./cameraFuncs/_func_8C0B6C4A.src");
 
@@ -65,6 +71,8 @@ INLINE_ASM(_func_8C0B794C, "asm/nonmatching/./cameraFuncs/_func_8C0B794C.src");
 INLINE_ASM(_func_8C0B79E8, "asm/nonmatching/./cameraFuncs/_func_8C0B79E8.src");
 
 INLINE_ASM(_func_8C0B7BAC, "asm/nonmatching/./cameraFuncs/_func_8C0B7BAC.src");
+
+INLINE_ASM(_func_8C0B7CB6, "asm/nonmatching/./cameraFuncs/_func_8C0B7CB6.src");
 
 INLINE_ASM(_func_8C0B7F22, "asm/nonmatching/./cameraFuncs/_func_8C0B7F22.src");
 

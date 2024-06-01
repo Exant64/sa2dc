@@ -72,6 +72,22 @@ INLINE_ASM(_func_0C5206D8, "asm/nonmatching/Chao/al_osamenu/_func_0C5206D8.src")
 
 INLINE_ASM(_func_0C5206DC, "asm/nonmatching/Chao/al_osamenu/_func_0C5206DC.src");
 
+INLINE_ASM(_func_0C520804, "asm/nonmatching/Chao/al_osamenu/_func_0C520804.src");
+
+INLINE_ASM(_func_0C520860, "asm/nonmatching/Chao/al_osamenu/_func_0C520860.src");
+
+INLINE_ASM(_func_0C520B2E, "asm/nonmatching/Chao/al_osamenu/_func_0C520B2E.src");
+
+INLINE_ASM(_func_0C520B4C, "asm/nonmatching/Chao/al_osamenu/_func_0C520B4C.src");
+
+INLINE_ASM(_func_0C520B7E, "asm/nonmatching/Chao/al_osamenu/_func_0C520B7E.src");
+
+INLINE_ASM(_func_0C520C20, "asm/nonmatching/Chao/al_osamenu/_func_0C520C20.src");
+
+INLINE_ASM(_func_0C520C3C, "asm/nonmatching/Chao/al_osamenu/_func_0C520C3C.src");
+
+INLINE_ASM(_func_0C520F1C, "asm/nonmatching/Chao/al_osamenu/_func_0C520F1C.src");
+
 INLINE_ASM(_func_0C5210A0, "asm/nonmatching/Chao/al_osamenu/_func_0C5210A0.src");
 
 INLINE_ASM(_func_0C521188, "asm/nonmatching/Chao/al_osamenu/_func_0C521188.src");

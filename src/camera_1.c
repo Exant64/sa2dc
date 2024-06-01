@@ -16,6 +16,20 @@ INLINE_ASM(_func_8C0AB46E, "asm/nonmatching/./camera_1/_func_8C0AB46E.src");
 
 INLINE_ASM(_func_8C0AB488, "asm/nonmatching/./camera_1/_func_8C0AB488.src");
 
+INLINE_ASM(_func_8C0AB5AC, "asm/nonmatching/./camera_1/_func_8C0AB5AC.src");
+
+INLINE_ASM(_func_8C0AB5CC, "asm/nonmatching/./camera_1/_func_8C0AB5CC.src");
+
+INLINE_ASM(_func_8C0AB614, "asm/nonmatching/./camera_1/_func_8C0AB614.src");
+
+INLINE_ASM(_func_8C0AB69C, "asm/nonmatching/./camera_1/_func_8C0AB69C.src");
+
+INLINE_ASM(_func_8C0AB6CC, "asm/nonmatching/./camera_1/_func_8C0AB6CC.src");
+
+INLINE_ASM(_func_8C0AB778, "asm/nonmatching/./camera_1/_func_8C0AB778.src");
+
+INLINE_ASM(_func_8C0AB7E2, "asm/nonmatching/./camera_1/_func_8C0AB7E2.src");
+
 INLINE_ASM(_func_8C0AB880, "asm/nonmatching/./camera_1/_func_8C0AB880.src");
 
 INLINE_ASM(_func_8C0AB916, "asm/nonmatching/./camera_1/_func_8C0AB916.src");

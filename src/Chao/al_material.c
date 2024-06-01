@@ -16,6 +16,20 @@ INLINE_ASM(_func_0C510538, "asm/nonmatching/Chao/al_material/_func_0C510538.src"
 
 INLINE_ASM(_func_0C51060A, "asm/nonmatching/Chao/al_material/_func_0C51060A.src");
 
+INLINE_ASM(_func_0C51067C, "asm/nonmatching/Chao/al_material/_func_0C51067C.src");
+
+INLINE_ASM(_func_0C510700, "asm/nonmatching/Chao/al_material/_func_0C510700.src");
+
+INLINE_ASM(_func_0C510716, "asm/nonmatching/Chao/al_material/_func_0C510716.src");
+
+INLINE_ASM(_func_0C51072E, "asm/nonmatching/Chao/al_material/_func_0C51072E.src");
+
+INLINE_ASM(_func_0C510740, "asm/nonmatching/Chao/al_material/_func_0C510740.src");
+
+INLINE_ASM(_func_0C510758, "asm/nonmatching/Chao/al_material/_func_0C510758.src");
+
+INLINE_ASM(_func_0C5107C0, "asm/nonmatching/Chao/al_material/_func_0C5107C0.src");
+
 INLINE_ASM(_func_0C510840, "asm/nonmatching/Chao/al_material/_func_0C510840.src");
 
 INLINE_ASM(_func_0C5109CE, "asm/nonmatching/Chao/al_material/_func_0C5109CE.src");
@@ -31,3 +45,4 @@ INLINE_ASM(_func_0C510C3E, "asm/nonmatching/Chao/al_material/_func_0C510C3E.src"
 INLINE_ASM(_func_0C510CC8, "asm/nonmatching/Chao/al_material/_func_0C510CC8.src");
 
 INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_material/rodata.src");
+

@@ -10,6 +10,8 @@ INLINE_ASM(_func_0C50BD5A, "asm/nonmatching/Chao/al_gene/_func_0C50BD5A.src");
 
 INLINE_ASM(_func_0C50BE14, "asm/nonmatching/Chao/al_gene/_func_0C50BE14.src");
 
+INLINE_ASM(_func_0C50BE80, "asm/nonmatching/Chao/al_gene/_func_0C50BE80.src");
+
 INLINE_ASM(_func_0C50C1A0, "asm/nonmatching/Chao/al_gene/_func_0C50C1A0.src");
 
 INLINE_ASM(_AL_GeneAnalyzeCommon, "asm/nonmatching/Chao/al_gene/_AL_GeneAnalyzeCommon.src");

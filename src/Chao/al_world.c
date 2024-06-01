@@ -666,8 +666,8 @@ Bool ALW_Create(void) {
 int sub_0C51E994(void) {   
     return 0;
 }
+
 #else
-// clang-format off
 
 #include <task.h>
 
@@ -700,6 +700,8 @@ INLINE_ASM(_ALW_LockOn, "asm/nonmatching/Chao/al_world/_ALW_LockOn.src");
 INLINE_ASM(_sub_C51E0DA, "asm/nonmatching/Chao/al_world/_sub_C51E0DA.src");
 
 INLINE_ASM(_ALW_TurnToLockOn, "asm/nonmatching/Chao/al_world/_ALW_TurnToLockOn.src");
+
+INLINE_ASM(_ALW_GetLockOnTask, "asm/nonmatching/Chao/al_world/_ALW_GetLockOnTask.src");
 
 INLINE_ASM(_ALW_CalcDistFromLockOn, "asm/nonmatching/Chao/al_world/_ALW_CalcDistFromLockOn.src");
 
@@ -758,7 +760,6 @@ INLINE_ASM(_ALW_Create, "asm/nonmatching/Chao/al_world/_ALW_Create.src");
 INLINE_ASM(_sub_0C51E994, "asm/nonmatching/Chao/al_world/_sub_0C51E994.src");
 
 INLINE_ASM(_func_0C51E998, "asm/nonmatching/Chao/al_world/_func_0C51E998.src");
-
 
 // clang-format on
 #endif

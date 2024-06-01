@@ -12,7 +12,15 @@ INLINE_ASM(_func_8C0663AC, "asm/nonmatching/./sonic/_func_8C0663AC.src");
 
 INLINE_ASM(_func_8C067F4A, "asm/nonmatching/./sonic/_func_8C067F4A.src");
 
-INLINE_ASM(_func_8C0687D8, "asm/nonmatching/./sonic/_func_8C0687D8.src");
+INLINE_ASM(_func_8C06838C, "asm/nonmatching/./sonic/_func_8C06838C.src");
+
+INLINE_ASM(_func_8C068554, "asm/nonmatching/./sonic/_func_8C068554.src");
+
+INLINE_ASM(_func_8C068680, "asm/nonmatching/./sonic/_func_8C068680.src");
+
+INLINE_ASM(_func_8C0686FC, "asm/nonmatching/./sonic/_func_8C0686FC.src");
+
+INLINE_ASM(_func_8C068784, "asm/nonmatching/./sonic/_func_8C068784.src");
 
 INLINE_ASM(_func_8C0687DE, "asm/nonmatching/./sonic/_func_8C0687DE.src");
 
@@ -144,9 +152,15 @@ INLINE_ASM(_func_8C06DEA0, "asm/nonmatching/./sonic/_func_8C06DEA0.src");
 
 INLINE_ASM(_func_8C06E4BE, "asm/nonmatching/./sonic/_func_8C06E4BE.src");
 
+INLINE_ASM(_func_8C06EE36, "asm/nonmatching/./sonic/_func_8C06EE36.src");
+
+INLINE_ASM(_func_8C06F040, "asm/nonmatching/./sonic/_func_8C06F040.src");
+
 INLINE_ASM(_func_8C06F1B4, "asm/nonmatching/./sonic/_func_8C06F1B4.src");
 
 INLINE_ASM(_func_8C06F34A, "asm/nonmatching/./sonic/_func_8C06F34A.src");
+
+INLINE_ASM(_func_8C06F400, "asm/nonmatching/./sonic/_func_8C06F400.src");
 
 INLINE_ASM(_func_8C06F880, "asm/nonmatching/./sonic/_func_8C06F880.src");
 

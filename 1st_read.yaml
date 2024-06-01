@@ -15,7 +15,6 @@ section_order: P,C,D,PSG,CSG,DSG,B
 additional_linker: ["fsymbol P,C,D,PSG,CSG,CSG32,DSG,DSG32,B,BSG,BSG32"]
 
 blacklist_code: [0x8C018788]
-overwrite_c_always: true
 
 segments:
   - name: main

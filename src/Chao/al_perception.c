@@ -2,6 +2,12 @@
 
 INLINE_ASM(_AL_PerceptionInit, "asm/nonmatching/Chao/al_perception/_AL_PerceptionInit.src");
 
+INLINE_ASM(_func_0C515936, "asm/nonmatching/Chao/al_perception/_func_0C515936.src");
+
+INLINE_ASM(_func_0C515956, "asm/nonmatching/Chao/al_perception/_func_0C515956.src");
+
+INLINE_ASM(_func_0C515994, "asm/nonmatching/Chao/al_perception/_func_0C515994.src");
+
 INLINE_ASM(_func_0C5159CA, "asm/nonmatching/Chao/al_perception/_func_0C5159CA.src");
 
 INLINE_ASM(_func_0C515AC0, "asm/nonmatching/Chao/al_perception/_func_0C515AC0.src");

@@ -10,6 +10,10 @@ INLINE_ASM(_func_8C0AE11A, "asm/nonmatching/./code_9e0a0/_func_8C0AE11A.src");
 
 INLINE_ASM(_func_8C0AE124, "asm/nonmatching/./code_9e0a0/_func_8C0AE124.src");
 
+INLINE_ASM(_func_8C0AE148, "asm/nonmatching/./code_9e0a0/_func_8C0AE148.src");
+
+INLINE_ASM(_func_8C0AE210, "asm/nonmatching/./code_9e0a0/_func_8C0AE210.src");
+
 INLINE_ASM(_func_8C0AE668, "asm/nonmatching/./code_9e0a0/_func_8C0AE668.src");
 
 INLINE_ASM(_func_8C0AEBA0, "asm/nonmatching/./code_9e0a0/_func_8C0AEBA0.src");

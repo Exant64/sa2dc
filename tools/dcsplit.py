@@ -208,14 +208,32 @@ def insn_to_text(insn, raw, pc):
     return disasm(insn, pc)            
 
 asm_file = None
+asm_lines = []
+import_lines = []
+export_lines = []
 def open_asm_file_output(filename):
     global asm_file
+    global asm_lines
+    global export_lines
+    global import_lines
     asm_file = open(filename, "w")
+    asm_lines = []
+    export_lines = []
+    import_lines = []
 
 def write_asm_file_output(str):
-    asm_file.write(str + os.linesep)
+    asm_lines.append(str + os.linesep)
+
+def write_asm_file_import(str):
+    import_lines.append(str + os.linesep)
+
+def write_asm_file_export(str):
+    export_lines.append(str + os.linesep)
 
 def close_asm_file_output():
+    global asm_lines
+    asm_lines = import_lines + export_lines + ["\n"] + asm_lines
+    asm_file.writelines(asm_lines)
     asm_file.close()
 
 def bytes_iter(offset, address, size):
@@ -270,17 +288,17 @@ def disassemble_callback(seg_start, seg_end, address, offset, insn, bytes):
     # Output label (if any)
     if address in labelled_addresses:
         if address in label_names:
-            write_asm_file_output("\n\t.EXPORT %s" % label_names[address])
+            write_asm_file_export("\t.EXPORT %s" % label_names[address])
             write_asm_file_output("%s:" % label_names[address])
         else:
-            write_asm_file_output("\n\t.EXPORT %s" % ("_lbl_%08X" % address))
+            write_asm_file_export("\t.EXPORT %s" % ("_lbl_%08X" % address))
             write_asm_file_output("_lbl_%08X:" % address)
         if address in data_short_addresses:
             write_asm_file_output("\t.data.w h'%04x" % (raw))
             return
         elif address in data_long_addresses:
             if ((integer >= key and integer < key + len(filecontent)) or integer in label_names) and (integer < seg_start or integer >= seg_end):
-                write_asm_file_output("\t.IMPORT %s" % (addr_to_label_noh(integer)))    
+                write_asm_file_import("\t.IMPORT %s" % (addr_to_label_noh(integer)))    
 
             write_asm_file_output("\t.data.l %s" % (addr_to_label_noh(integer)))
             return
@@ -348,7 +366,7 @@ def find_func_end(address, seg_end):
                     max_data_end = insn.operands[0][1] - key
                     is_short_data = insn.length_suffix != sh4.SUFFIX.L and insn.op != sh4.OP.MOVA
 
-        if result in {"bf", "bra", "bsr", "bsrf", "bt"}:
+        if result in {"bf", "bra", "bsrf", "bt"}:
             if insn.operands[0][0] == sh4.OPER_TYPE.ADDRESS:
                 import_data.add(insn.operands[0][1] - key)
                 for op in insn.operands:
@@ -396,7 +414,7 @@ def func_search(addr, seg_end):
     #    this is caught by keeping track of the furthest data address
     # 3. data in a later function, this can be caught by checking if the address
     #    right after the end of the function is a data label or not
-    
+
     # if there's no data used by the function or there was only data inbetween the function, but not after it
     if max_data_end == 0 or max_data_end < max_end:
         return max_end + 2 # then we just return the end of the code
@@ -630,9 +648,22 @@ for i in range(len(segs)):
             # build c file
             use_c_files.add(dir + subseg_name)
 
-            # don't create the c files if they already exist, the repo should have them one and done under usual circumstances
-            
-            if not os.path.exists(c_file_path) or 'overwrite_c_always' in dcsplit_config:
+            c_file_exists = os.path.exists(c_file_path)
+            if c_file_exists:
+                c_file_exists = False
+
+                # we only regenerate the c files if they originally didn't have any hand-written code either
+                with open(c_file_path, "r") as check:
+                    lines = check.readlines()
+                    for line in lines:
+                        if "#include" in line: continue
+                        if "INLINE_ASM" in line: continue
+                        if line.strip() == "": continue
+
+                        c_file_exists = True
+                        break
+
+            if not c_file_exists or 'overwrite_c_always' in dcsplit_config:
                 os.makedirs(os.path.dirname(c_file_path), exist_ok=True) 
                 c_file = open(c_file_path, "w")
             else:

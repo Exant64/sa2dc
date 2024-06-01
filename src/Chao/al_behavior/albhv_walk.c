@@ -16,3 +16,11 @@ INLINE_ASM(_func_0C53B444, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C
 
 INLINE_ASM(_func_0C53B450, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B450.src");
 
+INLINE_ASM(_func_0C53B46C, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B46C.src");
+
+INLINE_ASM(_func_0C53B470, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B470.src");
+
+INLINE_ASM(_func_0C53B474, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B474.src");
+
+INLINE_ASM(_func_0C53B490, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B490.src");
+

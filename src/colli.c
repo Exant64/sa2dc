@@ -46,6 +46,20 @@ INLINE_ASM(_func_8C015B9C, "asm/nonmatching/./colli/_func_8C015B9C.src");
 
 INLINE_ASM(_func_8C016188, "asm/nonmatching/./colli/_func_8C016188.src");
 
+INLINE_ASM(_func_8C0162D8, "asm/nonmatching/./colli/_func_8C0162D8.src");
+
+INLINE_ASM(_func_8C01631A, "asm/nonmatching/./colli/_func_8C01631A.src");
+
+INLINE_ASM(_func_8C0164D4, "asm/nonmatching/./colli/_func_8C0164D4.src");
+
+INLINE_ASM(_func_8C0164EE, "asm/nonmatching/./colli/_func_8C0164EE.src");
+
+INLINE_ASM(_func_8C016514, "asm/nonmatching/./colli/_func_8C016514.src");
+
+INLINE_ASM(_func_8C016600, "asm/nonmatching/./colli/_func_8C016600.src");
+
+INLINE_ASM(_func_8C016B70, "asm/nonmatching/./colli/_func_8C016B70.src");
+
 INLINE_ASM(_func_8C017020, "asm/nonmatching/./colli/_func_8C017020.src");
 
 INLINE_ASM(_func_8C017820, "asm/nonmatching/./colli/_func_8C017820.src");
@@ -78,7 +92,17 @@ INLINE_ASM(_func_8C017E0E, "asm/nonmatching/./colli/_func_8C017E0E.src");
 
 INLINE_ASM(_func_8C017E50, "asm/nonmatching/./colli/_func_8C017E50.src");
 
+INLINE_ASM(_func_8C017F70, "asm/nonmatching/./colli/_func_8C017F70.src");
+
+INLINE_ASM(_func_8C01806A, "asm/nonmatching/./colli/_func_8C01806A.src");
+
+INLINE_ASM(_func_8C01808E, "asm/nonmatching/./colli/_func_8C01808E.src");
+
+INLINE_ASM(_func_8C0180BA, "asm/nonmatching/./colli/_func_8C0180BA.src");
+
 INLINE_ASM(_func_8C0180DA, "asm/nonmatching/./colli/_func_8C0180DA.src");
+
+INLINE_ASM(_func_8C018206, "asm/nonmatching/./colli/_func_8C018206.src");
 
 INLINE_ASM(_func_8C018330, "asm/nonmatching/./colli/_func_8C018330.src");
 

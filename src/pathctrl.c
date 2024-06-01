@@ -2,6 +2,12 @@
 
 INLINE_ASM(_func_8C051640, "asm/nonmatching/./pathctrl/_func_8C051640.src");
 
+INLINE_ASM(_func_8C051676, "asm/nonmatching/./pathctrl/_func_8C051676.src");
+
+INLINE_ASM(_func_8C05167A, "asm/nonmatching/./pathctrl/_func_8C05167A.src");
+
+INLINE_ASM(_func_8C051682, "asm/nonmatching/./pathctrl/_func_8C051682.src");
+
 INLINE_ASM(_func_8C0516B8, "asm/nonmatching/./pathctrl/_func_8C0516B8.src");
 
 INLINE_ASM(_func_8C05171C, "asm/nonmatching/./pathctrl/_func_8C05171C.src");

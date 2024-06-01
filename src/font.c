@@ -40,6 +40,12 @@ INLINE_ASM(_func_8C0A5410, "asm/nonmatching/./font/_func_8C0A5410.src");
 
 INLINE_ASM(_func_8C0A569E, "asm/nonmatching/./font/_func_8C0A569E.src");
 
+INLINE_ASM(_func_8C0A572C, "asm/nonmatching/./font/_func_8C0A572C.src");
+
+INLINE_ASM(_func_8C0A57A2, "asm/nonmatching/./font/_func_8C0A57A2.src");
+
+INLINE_ASM(_func_8C0A5864, "asm/nonmatching/./font/_func_8C0A5864.src");
+
 INLINE_ASM(_func_8C0A5948, "asm/nonmatching/./font/_func_8C0A5948.src");
 
 INLINE_ASM(_sub_8C0A599C, "asm/nonmatching/./font/_sub_8C0A599C.src");
@@ -58,7 +64,19 @@ INLINE_ASM(_func_8C0A5C54, "asm/nonmatching/./font/_func_8C0A5C54.src");
 
 INLINE_ASM(_func_8C0A5C64, "asm/nonmatching/./font/_func_8C0A5C64.src");
 
+INLINE_ASM(_func_8C0A5C7A, "asm/nonmatching/./font/_func_8C0A5C7A.src");
+
+INLINE_ASM(_func_8C0A5CBC, "asm/nonmatching/./font/_func_8C0A5CBC.src");
+
+INLINE_ASM(_func_8C0A5CDC, "asm/nonmatching/./font/_func_8C0A5CDC.src");
+
+INLINE_ASM(_func_8C0A5D54, "asm/nonmatching/./font/_func_8C0A5D54.src");
+
+INLINE_ASM(_func_8C0A5E20, "asm/nonmatching/./font/_func_8C0A5E20.src");
+
 INLINE_ASM(_func_8C0A6126, "asm/nonmatching/./font/_func_8C0A6126.src");
+
+INLINE_ASM(_func_8C0A614A, "asm/nonmatching/./font/_func_8C0A614A.src");
 
 INLINE_ASM(_func_8C0A6494, "asm/nonmatching/./font/_func_8C0A6494.src");
 

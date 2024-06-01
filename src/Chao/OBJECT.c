@@ -212,15 +212,41 @@ INLINE_ASM(_func_0C547A8C, "asm/nonmatching/Chao/OBJECT/_func_0C547A8C.src");
 
 INLINE_ASM(_func_0C547ABE, "asm/nonmatching/Chao/OBJECT/_func_0C547ABE.src");
 
-INLINE_ASM(_func_0C548992, "asm/nonmatching/Chao/OBJECT/_func_0C548992.src");
+INLINE_ASM(_func_0C547AF0, "asm/nonmatching/Chao/OBJECT/_func_0C547AF0.src");
 
-INLINE_ASM(_func_0C548A0A, "asm/nonmatching/Chao/OBJECT/_func_0C548A0A.src");
+INLINE_ASM(_func_0C547B1A, "asm/nonmatching/Chao/OBJECT/_func_0C547B1A.src");
 
-INLINE_ASM(_func_0C548A78, "asm/nonmatching/Chao/OBJECT/_func_0C548A78.src");
+INLINE_ASM(_func_0C547B60, "asm/nonmatching/Chao/OBJECT/_func_0C547B60.src");
 
-INLINE_ASM(_func_0C548B5A, "asm/nonmatching/Chao/OBJECT/_func_0C548B5A.src");
+INLINE_ASM(_func_0C547C10, "asm/nonmatching/Chao/OBJECT/_func_0C547C10.src");
 
-INLINE_ASM(_func_0C548B8C, "asm/nonmatching/Chao/OBJECT/_func_0C548B8C.src");
+INLINE_ASM(_func_0C547C6C, "asm/nonmatching/Chao/OBJECT/_func_0C547C6C.src");
+
+INLINE_ASM(_func_0C547D04, "asm/nonmatching/Chao/OBJECT/_func_0C547D04.src");
+
+INLINE_ASM(_func_0C547D8A, "asm/nonmatching/Chao/OBJECT/_func_0C547D8A.src");
+
+INLINE_ASM(_func_0C547DBA, "asm/nonmatching/Chao/OBJECT/_func_0C547DBA.src");
+
+INLINE_ASM(_func_0C547E40, "asm/nonmatching/Chao/OBJECT/_func_0C547E40.src");
+
+INLINE_ASM(_func_0C547EA8, "asm/nonmatching/Chao/OBJECT/_func_0C547EA8.src");
+
+INLINE_ASM(_func_0C547EE8, "asm/nonmatching/Chao/OBJECT/_func_0C547EE8.src");
+
+INLINE_ASM(_func_0C547EEE, "asm/nonmatching/Chao/OBJECT/_func_0C547EEE.src");
+
+INLINE_ASM(_func_0C54801E, "asm/nonmatching/Chao/OBJECT/_func_0C54801E.src");
+
+INLINE_ASM(_func_0C5480D8, "asm/nonmatching/Chao/OBJECT/_func_0C5480D8.src");
+
+INLINE_ASM(_func_0C548116, "asm/nonmatching/Chao/OBJECT/_func_0C548116.src");
+
+INLINE_ASM(_func_0C54811C, "asm/nonmatching/Chao/OBJECT/_func_0C54811C.src");
+
+INLINE_ASM(_func_0C548132, "asm/nonmatching/Chao/OBJECT/_func_0C548132.src");
+
+INLINE_ASM(_func_0C548136, "asm/nonmatching/Chao/OBJECT/_func_0C548136.src");
 
 INLINE_ASM(_func_0C548BC8, "asm/nonmatching/Chao/OBJECT/_func_0C548BC8.src");
 
@@ -246,11 +272,27 @@ INLINE_ASM(_func_0C5490F8, "asm/nonmatching/Chao/OBJECT/_func_0C5490F8.src");
 
 INLINE_ASM(_func_0C5491A0, "asm/nonmatching/Chao/OBJECT/_func_0C5491A0.src");
 
-INLINE_ASM(_func_0C5492FC, "asm/nonmatching/Chao/OBJECT/_func_0C5492FC.src");
+INLINE_ASM(_func_0C5492E4, "asm/nonmatching/Chao/OBJECT/_func_0C5492E4.src");
 
 INLINE_ASM(_func_0C549340, "asm/nonmatching/Chao/OBJECT/_func_0C549340.src");
 
 INLINE_ASM(_func_0C549362, "asm/nonmatching/Chao/OBJECT/_func_0C549362.src");
+
+INLINE_ASM(_func_0C54947A, "asm/nonmatching/Chao/OBJECT/_func_0C54947A.src");
+
+INLINE_ASM(_func_0C54949A, "asm/nonmatching/Chao/OBJECT/_func_0C54949A.src");
+
+INLINE_ASM(_func_0C549550, "asm/nonmatching/Chao/OBJECT/_func_0C549550.src");
+
+INLINE_ASM(_func_0C5496E0, "asm/nonmatching/Chao/OBJECT/_func_0C5496E0.src");
+
+INLINE_ASM(_func_0C549C40, "asm/nonmatching/Chao/OBJECT/_func_0C549C40.src");
+
+INLINE_ASM(_func_0C54A37C, "asm/nonmatching/Chao/OBJECT/_func_0C54A37C.src");
+
+INLINE_ASM(_func_0C54A438, "asm/nonmatching/Chao/OBJECT/_func_0C54A438.src");
+
+INLINE_ASM(_func_0C54A44C, "asm/nonmatching/Chao/OBJECT/_func_0C54A44C.src");
 
 INLINE_ASM(_func_0C54A460, "asm/nonmatching/Chao/OBJECT/_func_0C54A460.src");
 
@@ -283,6 +325,12 @@ INLINE_ASM(_func_0C54A948, "asm/nonmatching/Chao/OBJECT/_func_0C54A948.src");
 INLINE_ASM(_func_0C54A9B6, "asm/nonmatching/Chao/OBJECT/_func_0C54A9B6.src");
 
 INLINE_ASM(_func_0C54AA5C, "asm/nonmatching/Chao/OBJECT/_func_0C54AA5C.src");
+
+INLINE_ASM(_func_0C54AB20, "asm/nonmatching/Chao/OBJECT/_func_0C54AB20.src");
+
+INLINE_ASM(_func_0C54ABE0, "asm/nonmatching/Chao/OBJECT/_func_0C54ABE0.src");
+
+INLINE_ASM(_func_0C54AC52, "asm/nonmatching/Chao/OBJECT/_func_0C54AC52.src");
 
 INLINE_ASM(_func_0C54AC98, "asm/nonmatching/Chao/OBJECT/_func_0C54AC98.src");
 
@@ -319,6 +367,18 @@ INLINE_ASM(_func_0C54B240, "asm/nonmatching/Chao/OBJECT/_func_0C54B240.src");
 INLINE_ASM(_func_0C54B3E8, "asm/nonmatching/Chao/OBJECT/_func_0C54B3E8.src");
 
 INLINE_ASM(_func_0C54B440, "asm/nonmatching/Chao/OBJECT/_func_0C54B440.src");
+
+INLINE_ASM(_func_0C54B552, "asm/nonmatching/Chao/OBJECT/_func_0C54B552.src");
+
+INLINE_ASM(_func_0C54B642, "asm/nonmatching/Chao/OBJECT/_func_0C54B642.src");
+
+INLINE_ASM(_func_0C54B772, "asm/nonmatching/Chao/OBJECT/_func_0C54B772.src");
+
+INLINE_ASM(_func_0C54B8D2, "asm/nonmatching/Chao/OBJECT/_func_0C54B8D2.src");
+
+INLINE_ASM(_func_0C54B960, "asm/nonmatching/Chao/OBJECT/_func_0C54B960.src");
+
+INLINE_ASM(_func_0C54BA98, "asm/nonmatching/Chao/OBJECT/_func_0C54BA98.src");
 
 INLINE_ASM(_func_0C54BB40, "asm/nonmatching/Chao/OBJECT/_func_0C54BB40.src");
 
@@ -385,6 +445,26 @@ INLINE_ASM(_func_0C54D11C, "asm/nonmatching/Chao/OBJECT/_func_0C54D11C.src");
 INLINE_ASM(_func_0C54D29C, "asm/nonmatching/Chao/OBJECT/_func_0C54D29C.src");
 
 INLINE_ASM(_func_0C54D2E0, "asm/nonmatching/Chao/OBJECT/_func_0C54D2E0.src");
+
+INLINE_ASM(_func_0C54DCF8, "asm/nonmatching/Chao/OBJECT/_func_0C54DCF8.src");
+
+INLINE_ASM(_func_0C54DD80, "asm/nonmatching/Chao/OBJECT/_func_0C54DD80.src");
+
+INLINE_ASM(_func_0C54DF20, "asm/nonmatching/Chao/OBJECT/_func_0C54DF20.src");
+
+INLINE_ASM(_func_0C54DFBE, "asm/nonmatching/Chao/OBJECT/_func_0C54DFBE.src");
+
+INLINE_ASM(_func_0C54E0C4, "asm/nonmatching/Chao/OBJECT/_func_0C54E0C4.src");
+
+INLINE_ASM(_func_0C54E1DC, "asm/nonmatching/Chao/OBJECT/_func_0C54E1DC.src");
+
+INLINE_ASM(_func_0C54E1F4, "asm/nonmatching/Chao/OBJECT/_func_0C54E1F4.src");
+
+INLINE_ASM(_func_0C54E238, "asm/nonmatching/Chao/OBJECT/_func_0C54E238.src");
+
+INLINE_ASM(_func_0C54E2E0, "asm/nonmatching/Chao/OBJECT/_func_0C54E2E0.src");
+
+INLINE_ASM(_func_0C54E6CA, "asm/nonmatching/Chao/OBJECT/_func_0C54E6CA.src");
 
 INLINE_ASM(_func_0C54E760, "asm/nonmatching/Chao/OBJECT/_func_0C54E760.src");
 
@@ -576,13 +656,29 @@ INLINE_ASM(_func_0C556668, "asm/nonmatching/Chao/OBJECT/_func_0C556668.src");
 
 INLINE_ASM(_func_0C5566A4, "asm/nonmatching/Chao/OBJECT/_func_0C5566A4.src");
 
+INLINE_ASM(_func_0C5566C2, "asm/nonmatching/Chao/OBJECT/_func_0C5566C2.src");
+
+INLINE_ASM(_func_0C5566FE, "asm/nonmatching/Chao/OBJECT/_func_0C5566FE.src");
+
+INLINE_ASM(_func_0C556760, "asm/nonmatching/Chao/OBJECT/_func_0C556760.src");
+
+INLINE_ASM(_func_0C556796, "asm/nonmatching/Chao/OBJECT/_func_0C556796.src");
+
+INLINE_ASM(_func_0C5567B6, "asm/nonmatching/Chao/OBJECT/_func_0C5567B6.src");
+
+INLINE_ASM(_func_0C5567D4, "asm/nonmatching/Chao/OBJECT/_func_0C5567D4.src");
+
 INLINE_ASM(_func_0C556C3E, "asm/nonmatching/Chao/OBJECT/_func_0C556C3E.src");
 
-INLINE_ASM(_func_0C5570E0, "asm/nonmatching/Chao/OBJECT/_func_0C5570E0.src");
+INLINE_ASM(_func_0C556C54, "asm/nonmatching/Chao/OBJECT/_func_0C556C54.src");
 
 INLINE_ASM(_func_0C557540, "asm/nonmatching/Chao/OBJECT/_func_0C557540.src");
 
 INLINE_ASM(_func_0C557A3C, "asm/nonmatching/Chao/OBJECT/_func_0C557A3C.src");
+
+INLINE_ASM(_func_0C557A5E, "asm/nonmatching/Chao/OBJECT/_func_0C557A5E.src");
+
+INLINE_ASM(_func_0C557A80, "asm/nonmatching/Chao/OBJECT/_func_0C557A80.src");
 
 INLINE_ASM(_func_0C557CDA, "asm/nonmatching/Chao/OBJECT/_func_0C557CDA.src");
 

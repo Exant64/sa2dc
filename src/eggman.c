@@ -4,6 +4,8 @@ INLINE_ASM(_func_8C09B4A0, "asm/nonmatching/./eggman/_func_8C09B4A0.src");
 
 INLINE_ASM(_func_8C09B592, "asm/nonmatching/./eggman/_func_8C09B592.src");
 
+INLINE_ASM(_func_8C09C0A8, "asm/nonmatching/./eggman/_func_8C09C0A8.src");
+
 INLINE_ASM(_func_8C09C38A, "asm/nonmatching/./eggman/_func_8C09C38A.src");
 
 INLINE_ASM(_func_8C09C4E2, "asm/nonmatching/./eggman/_func_8C09C4E2.src");
@@ -30,6 +32,8 @@ INLINE_ASM(_func_8C09E2E8, "asm/nonmatching/./eggman/_func_8C09E2E8.src");
 
 INLINE_ASM(_func_8C09E660, "asm/nonmatching/./eggman/_func_8C09E660.src");
 
+INLINE_ASM(_func_8C09E880, "asm/nonmatching/./eggman/_func_8C09E880.src");
+
 INLINE_ASM(_func_8C09E9E6, "asm/nonmatching/./eggman/_func_8C09E9E6.src");
 
 INLINE_ASM(_func_8C09EB8A, "asm/nonmatching/./eggman/_func_8C09EB8A.src");
@@ -39,6 +43,10 @@ INLINE_ASM(_func_8C09ECC0, "asm/nonmatching/./eggman/_func_8C09ECC0.src");
 INLINE_ASM(_func_8C09EF86, "asm/nonmatching/./eggman/_func_8C09EF86.src");
 
 INLINE_ASM(_func_8C09F29A, "asm/nonmatching/./eggman/_func_8C09F29A.src");
+
+INLINE_ASM(_func_8C09F418, "asm/nonmatching/./eggman/_func_8C09F418.src");
+
+INLINE_ASM(_func_8C09F454, "asm/nonmatching/./eggman/_func_8C09F454.src");
 
 INLINE_ASM(_func_8C09F4EA, "asm/nonmatching/./eggman/_func_8C09F4EA.src");
 

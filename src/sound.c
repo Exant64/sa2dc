@@ -2,6 +2,32 @@
 
 INLINE_ASM(_func_8C059600, "asm/nonmatching/./sound/_func_8C059600.src");
 
+INLINE_ASM(_func_8C059FAE, "asm/nonmatching/./sound/_func_8C059FAE.src");
+
+INLINE_ASM(_func_8C059FB2, "asm/nonmatching/./sound/_func_8C059FB2.src");
+
+INLINE_ASM(_func_8C059FB6, "asm/nonmatching/./sound/_func_8C059FB6.src");
+
+INLINE_ASM(_func_8C059FBA, "asm/nonmatching/./sound/_func_8C059FBA.src");
+
+INLINE_ASM(_func_8C059FBE, "asm/nonmatching/./sound/_func_8C059FBE.src");
+
+INLINE_ASM(_func_8C059FE2, "asm/nonmatching/./sound/_func_8C059FE2.src");
+
+INLINE_ASM(_func_8C05A096, "asm/nonmatching/./sound/_func_8C05A096.src");
+
+INLINE_ASM(_func_8C05A17C, "asm/nonmatching/./sound/_func_8C05A17C.src");
+
+INLINE_ASM(_func_8C05A1C4, "asm/nonmatching/./sound/_func_8C05A1C4.src");
+
+INLINE_ASM(_func_8C05A23C, "asm/nonmatching/./sound/_func_8C05A23C.src");
+
+INLINE_ASM(_func_8C05A266, "asm/nonmatching/./sound/_func_8C05A266.src");
+
+INLINE_ASM(_func_8C05A2E0, "asm/nonmatching/./sound/_func_8C05A2E0.src");
+
+INLINE_ASM(_func_8C05A41C, "asm/nonmatching/./sound/_func_8C05A41C.src");
+
 INLINE_ASM(_func_8C05A422, "asm/nonmatching/./sound/_func_8C05A422.src");
 
 INLINE_ASM(_func_8C05A480, "asm/nonmatching/./sound/_func_8C05A480.src");
@@ -19,6 +45,20 @@ INLINE_ASM(_func_8C05A70A, "asm/nonmatching/./sound/_func_8C05A70A.src");
 INLINE_ASM(_func_8C05A788, "asm/nonmatching/./sound/_func_8C05A788.src");
 
 INLINE_ASM(_func_8C05A7EE, "asm/nonmatching/./sound/_func_8C05A7EE.src");
+
+INLINE_ASM(_func_8C05AA20, "asm/nonmatching/./sound/_func_8C05AA20.src");
+
+INLINE_ASM(_func_8C05AA74, "asm/nonmatching/./sound/_func_8C05AA74.src");
+
+INLINE_ASM(_func_8C05AAC8, "asm/nonmatching/./sound/_func_8C05AAC8.src");
+
+INLINE_ASM(_func_8C05AB30, "asm/nonmatching/./sound/_func_8C05AB30.src");
+
+INLINE_ASM(_func_8C05AB9E, "asm/nonmatching/./sound/_func_8C05AB9E.src");
+
+INLINE_ASM(_func_8C05AC18, "asm/nonmatching/./sound/_func_8C05AC18.src");
+
+INLINE_ASM(_func_8C05AC44, "asm/nonmatching/./sound/_func_8C05AC44.src");
 
 INLINE_ASM(_func_8C05AC60, "asm/nonmatching/./sound/_func_8C05AC60.src");
 
@@ -88,19 +128,11 @@ INLINE_ASM(_func_8C05C480, "asm/nonmatching/./sound/_func_8C05C480.src");
 
 INLINE_ASM(_func_8C05C4D0, "asm/nonmatching/./sound/_func_8C05C4D0.src");
 
-INLINE_ASM(_func_8C05C9C6, "asm/nonmatching/./sound/_func_8C05C9C6.src");
+INLINE_ASM(_func_8C05C680, "asm/nonmatching/./sound/_func_8C05C680.src");
 
-INLINE_ASM(_func_8C05CAF4, "asm/nonmatching/./sound/_func_8C05CAF4.src");
+INLINE_ASM(_func_8C05C6FE, "asm/nonmatching/./sound/_func_8C05C6FE.src");
 
-INLINE_ASM(_func_8C05CC00, "asm/nonmatching/./sound/_func_8C05CC00.src");
-
-INLINE_ASM(_func_8C05CC62, "asm/nonmatching/./sound/_func_8C05CC62.src");
-
-INLINE_ASM(_func_8C05CFFC, "asm/nonmatching/./sound/_func_8C05CFFC.src");
-
-INLINE_ASM(_func_8C05D04A, "asm/nonmatching/./sound/_func_8C05D04A.src");
-
-INLINE_ASM(_func_8C05D070, "asm/nonmatching/./sound/_func_8C05D070.src");
+INLINE_ASM(_func_8C05C772, "asm/nonmatching/./sound/_func_8C05C772.src");
 
 INLINE_ASM(_func_8C05D5C0, "asm/nonmatching/./sound/_func_8C05D5C0.src");
 

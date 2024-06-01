@@ -30,5 +30,7 @@ INLINE_ASM(_func_0C9C47C6, "asm/nonmatching/Chao/stg_race/alo_race_kari/_func_0C
 
 INLINE_ASM(_ALO_CreateRaceKarimonoQuestionPanel, "asm/nonmatching/Chao/stg_race/alo_race_kari/_ALO_CreateRaceKarimonoQuestionPanel.src");
 
+INLINE_ASM(_func_0C9C4994, "asm/nonmatching/Chao/stg_race/alo_race_kari/_func_0C9C4994.src");
+
 INLINE_ASM(_func_0C9C4A50, "asm/nonmatching/Chao/stg_race/alo_race_kari/_func_0C9C4A50.src");
 

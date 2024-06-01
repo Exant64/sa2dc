@@ -14,7 +14,11 @@ INLINE_ASM(_func_8C0793F8, "asm/nonmatching/./knuckles/_func_8C0793F8.src");
 
 INLINE_ASM(_func_8C07ADDA, "asm/nonmatching/./knuckles/_func_8C07ADDA.src");
 
-INLINE_ASM(_func_8C07B470, "asm/nonmatching/./knuckles/_func_8C07B470.src");
+INLINE_ASM(_func_8C07B164, "asm/nonmatching/./knuckles/_func_8C07B164.src");
+
+INLINE_ASM(_func_8C07B2CE, "asm/nonmatching/./knuckles/_func_8C07B2CE.src");
+
+INLINE_ASM(_func_8C07B400, "asm/nonmatching/./knuckles/_func_8C07B400.src");
 
 INLINE_ASM(_func_8C07B4C4, "asm/nonmatching/./knuckles/_func_8C07B4C4.src");
 
@@ -102,9 +106,13 @@ INLINE_ASM(_func_8C07EC7C, "asm/nonmatching/./knuckles/_func_8C07EC7C.src");
 
 INLINE_ASM(_func_8C07F006, "asm/nonmatching/./knuckles/_func_8C07F006.src");
 
+INLINE_ASM(_func_8C07F660, "asm/nonmatching/./knuckles/_func_8C07F660.src");
+
 INLINE_ASM(_func_8C07F7A4, "asm/nonmatching/./knuckles/_func_8C07F7A4.src");
 
 INLINE_ASM(_func_8C07FBAE, "asm/nonmatching/./knuckles/_func_8C07FBAE.src");
+
+INLINE_ASM(_func_8C080320, "asm/nonmatching/./knuckles/_func_8C080320.src");
 
 INLINE_ASM(_func_8C080482, "asm/nonmatching/./knuckles/_func_8C080482.src");
 
@@ -142,6 +150,14 @@ INLINE_ASM(_func_8C0824B2, "asm/nonmatching/./knuckles/_func_8C0824B2.src");
 
 INLINE_ASM(_func_8C0826C0, "asm/nonmatching/./knuckles/_func_8C0826C0.src");
 
+INLINE_ASM(_func_8C082A8A, "asm/nonmatching/./knuckles/_func_8C082A8A.src");
+
+INLINE_ASM(_func_8C082B20, "asm/nonmatching/./knuckles/_func_8C082B20.src");
+
+INLINE_ASM(_func_8C082B82, "asm/nonmatching/./knuckles/_func_8C082B82.src");
+
+INLINE_ASM(_func_8C082C0E, "asm/nonmatching/./knuckles/_func_8C082C0E.src");
+
 INLINE_ASM(_func_8C082C80, "asm/nonmatching/./knuckles/_func_8C082C80.src");
 
 INLINE_ASM(_func_8C082D58, "asm/nonmatching/./knuckles/_func_8C082D58.src");
@@ -165,6 +181,22 @@ INLINE_ASM(_func_8C0839DA, "asm/nonmatching/./knuckles/_func_8C0839DA.src");
 INLINE_ASM(_func_8C083A14, "asm/nonmatching/./knuckles/_func_8C083A14.src");
 
 INLINE_ASM(_func_8C083A80, "asm/nonmatching/./knuckles/_func_8C083A80.src");
+
+INLINE_ASM(_func_8C083AA8, "asm/nonmatching/./knuckles/_func_8C083AA8.src");
+
+INLINE_ASM(_func_8C083B92, "asm/nonmatching/./knuckles/_func_8C083B92.src");
+
+INLINE_ASM(_func_8C083BE0, "asm/nonmatching/./knuckles/_func_8C083BE0.src");
+
+INLINE_ASM(_func_8C083C84, "asm/nonmatching/./knuckles/_func_8C083C84.src");
+
+INLINE_ASM(_func_8C083E0C, "asm/nonmatching/./knuckles/_func_8C083E0C.src");
+
+INLINE_ASM(_func_8C08405C, "asm/nonmatching/./knuckles/_func_8C08405C.src");
+
+INLINE_ASM(_func_8C084060, "asm/nonmatching/./knuckles/_func_8C084060.src");
+
+INLINE_ASM(_func_8C084084, "asm/nonmatching/./knuckles/_func_8C084084.src");
 
 INLINE_ASM(_func_8C0841A2, "asm/nonmatching/./knuckles/_func_8C0841A2.src");
 
@@ -227,6 +259,10 @@ INLINE_ASM(_func_8C086A3A, "asm/nonmatching/./knuckles/_func_8C086A3A.src");
 INLINE_ASM(_func_8C086B20, "asm/nonmatching/./knuckles/_func_8C086B20.src");
 
 INLINE_ASM(_func_8C086C60, "asm/nonmatching/./knuckles/_func_8C086C60.src");
+
+INLINE_ASM(_func_8C086FAC, "asm/nonmatching/./knuckles/_func_8C086FAC.src");
+
+INLINE_ASM(_func_8C0870E0, "asm/nonmatching/./knuckles/_func_8C0870E0.src");
 
 INLINE_ASM(_func_8C08739E, "asm/nonmatching/./knuckles/_func_8C08739E.src");
 

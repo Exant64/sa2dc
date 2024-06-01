@@ -22,6 +22,8 @@ INLINE_ASM(_func_0C502710, "asm/nonmatching/Chao/al_chao_info/_func_0C502710.src
 
 INLINE_ASM(_func_0C502770, "asm/nonmatching/Chao/al_chao_info/_func_0C502770.src");
 
+INLINE_ASM(_func_0C5029F0, "asm/nonmatching/Chao/al_chao_info/_func_0C5029F0.src");
+
 INLINE_ASM(_func_0C502A7E, "asm/nonmatching/Chao/al_chao_info/_func_0C502A7E.src");
 
 INLINE_ASM(_func_0C502B60, "asm/nonmatching/Chao/al_chao_info/_func_0C502B60.src");

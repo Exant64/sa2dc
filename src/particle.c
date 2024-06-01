@@ -6,6 +6,10 @@ INLINE_ASM(_func_8C036F66, "asm/nonmatching/./particle/_func_8C036F66.src");
 
 INLINE_ASM(_func_8C037482, "asm/nonmatching/./particle/_func_8C037482.src");
 
+INLINE_ASM(_func_8C0374B0, "asm/nonmatching/./particle/_func_8C0374B0.src");
+
+INLINE_ASM(_func_8C037520, "asm/nonmatching/./particle/_func_8C037520.src");
+
 INLINE_ASM(_func_8C037536, "asm/nonmatching/./particle/_func_8C037536.src");
 
 INLINE_ASM(_func_8C0375E0, "asm/nonmatching/./particle/_func_8C0375E0.src");

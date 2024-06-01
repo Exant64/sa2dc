@@ -13,8 +13,6 @@ entry: race_stage_header
 
 section_order: P,D,C
 
-overwrite_c_always: true
-
 segments:
   - name: race_stage_header
     type: asm

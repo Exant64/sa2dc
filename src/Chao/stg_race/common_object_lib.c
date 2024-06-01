@@ -42,6 +42,12 @@ INLINE_ASM(_func_0C9CDC0E, "asm/nonmatching/Chao/stg_race/common_object_lib/_fun
 
 INLINE_ASM(_func_0C9CDCE0, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CDCE0.src");
 
+INLINE_ASM(_func_0C9CE052, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE052.src");
+
+INLINE_ASM(_func_0C9CE070, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE070.src");
+
+INLINE_ASM(_func_0C9CE0B6, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE0B6.src");
+
 INLINE_ASM(_func_0C9CE214, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE214.src");
 
 INLINE_ASM(_func_0C9CE23C, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE23C.src");
@@ -72,7 +78,21 @@ INLINE_ASM(_func_0C9CE95E, "asm/nonmatching/Chao/stg_race/common_object_lib/_fun
 
 INLINE_ASM(_func_0C9CE962, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE962.src");
 
+INLINE_ASM(_func_0C9CEA08, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEA08.src");
+
+INLINE_ASM(_func_0C9CEA68, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEA68.src");
+
+INLINE_ASM(_func_0C9CEA9A, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEA9A.src");
+
+INLINE_ASM(_func_0C9CEACE, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEACE.src");
+
+INLINE_ASM(_func_0C9CEAE8, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEAE8.src");
+
+INLINE_ASM(_func_0C9CEB40, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEB40.src");
+
+INLINE_ASM(_func_0C9CEB5A, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEB5A.src");
+
 INLINE_ASM(_func_0C9CEDF6, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEDF6.src");
 
-INLINE_ASM(_func_0C9CEE28, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEE28.src");
+INLINE_ASM(_func_0C9CEE1A, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEE1A.src");
 
