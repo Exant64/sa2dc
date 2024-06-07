@@ -37,7 +37,7 @@ FIX_INLINE := tools/fix_inline_asm.py
 
 FIX_INLINE_C := tools/inline_asm_c.py
 
-DCSPLIT := tools/dcsplit.py
+DCSPLIT := tools/dcsplit/dcsplit.py
 
 SHC_DIR := shc
 
