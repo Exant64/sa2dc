@@ -1,0 +1,3 @@
+[submodule "tools/dcsplit"]
+	path = tools/dcsplit
+	url = https://github.com/Exant64/dcsplit
