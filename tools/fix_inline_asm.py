@@ -13,6 +13,7 @@ with open(sys.argv[1], "r") as file:
     blacklist_import = set()
     exports = set()
     imports = set()
+    labels = set()
 
     merge_dict = {}
 
@@ -27,10 +28,15 @@ with open(sys.argv[1], "r") as file:
             blacklist_export.add(func_name[:-1]) # -1 to remove : from the label
             with open(includeFile, "r") as included:
                 for include_file_line in included.readlines():
+                    if ":" in include_file_line:
+                        labels.add(include_file_line.split(":")[0])
                     if include_file_line.strip().startswith(".EXPORT"):
                         exportName = include_file_line.split('.EXPORT')[1].strip()
                         exports.add(exportName)
             continue
+
+        if ":" in line:
+            labels.add(line.split(":")[0])
 
         if line.startswith("MERGE_LIST"):
             func_name = lines[i-2].split(" ")[0]
@@ -46,7 +52,7 @@ with open(sys.argv[1], "r") as file:
     # make sure rodata is put in the file after the existing rodata
     # that is generated from the c code itself
     import_queue = []
-
+    
     for i in range(length):
         if i < block_lines:
             continue
@@ -57,7 +63,8 @@ with open(sys.argv[1], "r") as file:
         
         if lines[i].strip().startswith(".IMPORT"):
             # dont include imports for stuff exported in this file
-            if lines[i].strip().split(".IMPORT")[1].strip() in exports:
+            imported_label = lines[i].strip().split(".IMPORT")[1].strip()
+            if imported_label in exports or imported_label in labels:
                 continue
 
         if lines[i].strip().startswith("MERGE_LIST"):
@@ -91,9 +98,9 @@ with open(sys.argv[1], "r") as file:
                     if align_count == 1:
                         stop_align = rename_line_index
                 
-                if align_count == 1:
-                    if ":" in rename_line and align_start_index == -1:
-                        align_start_index = rename_line_index              
+                #if align_count == 1:
+                if ":" in rename_line and align_start_index == -1:
+                    align_start_index = rename_line_index              
 
                 if "; function" in rename_line:
                     function_start_index = rename_line_index + 2
@@ -106,7 +113,12 @@ with open(sys.argv[1], "r") as file:
             # find all label offsets and the data they have
             label_offset_dict = {}
             i = 0
-            for label_discovery_index in range(align_start_index + 1, len(out_lines)-1, 1):
+
+            end_index = len(out_lines) - 1
+            if "ALIGN" not in out_lines[end_index]:
+                end_index += 1
+            
+            for label_discovery_index in range(align_start_index + 1, end_index, 1):
                 label_discovery_line = out_lines[label_discovery_index]
                 print(label_discovery_line)
                 sym = label_discovery_line.split(".DATA.")[1][1:].strip()

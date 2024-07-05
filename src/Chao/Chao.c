@@ -44,8 +44,9 @@ void ChaoDestructor(task* tp) {
     ALW_CancelEntry(tp);
 }
 
-//extern NJS_CNK_OBJECT object_al_eggchao_eggchao[];
-//extern NJS_CNK_OBJECT object_al_omorunner_omorunner[];
+extern NJS_CNK_OBJECT object_al_eggchao_eggchao[];
+extern NJS_CNK_OBJECT object_al_omorunner_omorunner[];
+
 extern NJS_CNK_OBJECT* off_C5A8128[];
 void ChaoDisplayer(task* tp) {
     chaowk* work = GET_CHAOWK(tp);
@@ -63,7 +64,7 @@ void ChaoDisplayer(task* tp) {
             njRotateX(NULL, work->ang.x);
             njRotateY(NULL, work->ang.y);
             njSetTexture(&AL_BODY_TEXLIST);
-            haCnkSimpleDrawMotion((NJS_CNK_OBJECT*)0xC8ADD60, &work->MotionCtrl); //haCnkSimpleDrawMotion(object_al_eggchao_eggchao, &work->MotionCtrl);
+            haCnkSimpleDrawMotion(object_al_eggchao_eggchao, &work->MotionCtrl);
             njPopMatrixEx();
             break;
         case AL_FORM_OMOCHAO:
@@ -73,7 +74,7 @@ void ChaoDisplayer(task* tp) {
             njRotateX(NULL, work->ang.x);
             njRotateY(NULL, work->ang.y);
             njSetTexture(&AL_BODY_TEXLIST);
-            haCnkSimpleDrawMotion((NJS_CNK_OBJECT*)0xC8B73D0, &work->MotionCtrl); //haCnkSimpleDrawMotion(object_al_omorunner_omorunner, &work->MotionCtrl);
+            haCnkSimpleDrawMotion(object_al_omorunner_omorunner, &work->MotionCtrl);
             njPopMatrixEx();
             break;
         case AL_FORM_MINIMAL:

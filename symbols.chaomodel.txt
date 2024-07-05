@@ -1,4 +1,6 @@
 object_al_pumpkinhead_pumpkinhead = C8AAAEC;
 object_al_skullhead_skullhead = C8AB540;
 object_al_egghead_egghead = C8ABEDC;
+object_al_eggchao_eggchao = C8ADD60;
+object_al_omorunner_omorunner = C8B73D0;
 ObakeBodyObjectList = C8BA320;

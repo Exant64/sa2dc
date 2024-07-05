@@ -11,7 +11,7 @@ with open(sys.argv[2], "w") as file:
     for i in range(len(lines)):
         line = lines[i]
 
-        if "//" in line: continue
+        if line.lstrip().startswith("//"): continue
 
         if "MERGE_LIST" in line:
             file.write("#pragma inline_asm(merge_%d)" % i + os.linesep)
