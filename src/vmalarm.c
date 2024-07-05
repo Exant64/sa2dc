@@ -19,6 +19,6 @@ INLINE_ASM(_func_8C062516, "asm/nonmatching/./vmalarm/_func_8C062516.src");
 // MERGE_LIST([["h'8C259B58", '_lbl_8C062580'], ['_FreeTask', '_lbl_8C062588']]);
 INLINE_ASM(_func_8C06253C, "asm/nonmatching/./vmalarm/_func_8C06253C.src");
 
-INLINE_ASM(_func_8C062564, "asm/nonmatching/./vmalarm/_func_8C062564.src");
+INLINE_ASM(_func_8C06258C, "asm/nonmatching/./vmalarm/_func_8C06258C.src");
 
-// MERGE_LIST([['_lbl_8C0E8730', '_lbl_8C062780'], ["h'62322F32", 12082]]);
+// MERGE_LIST([['_lbl_8C0E8730', '_lbl_8C062780']]);

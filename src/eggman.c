@@ -52,14 +52,14 @@ INLINE_ASM(_func_8C09EB8A, "asm/nonmatching/./eggman/_func_8C09EB8A.src");
 
 INLINE_ASM(_func_8C09ECC0, "asm/nonmatching/./eggman/_func_8C09ECC0.src");
 
-INLINE_ASM(_func_8C09EF86, "asm/nonmatching/./eggman/_func_8C09EF86.src");
+INLINE_ASM(_func_8C09EFC0, "asm/nonmatching/./eggman/_func_8C09EFC0.src");
 
-INLINE_ASM(_func_8C09F29A, "asm/nonmatching/./eggman/_func_8C09F29A.src");
+INLINE_ASM(_func_8C09F2C0, "asm/nonmatching/./eggman/_func_8C09F2C0.src");
 
 // MERGE_LIST([['_lbl_8C04FAAE', '_lbl_8C09F460'], ['_lbl_8C04F9C0', '_lbl_8C09F464'], ['_lbl_8C04F9E0', '_lbl_8C09F468'], ['_lbl_8C04F9FE', '_lbl_8C09F46C'], ['_lbl_8C04FA80', '_lbl_8C09F470'], ['_lbl_8C04F770', '_lbl_8C09F474'], ['_lbl_8C04F8EE', '_lbl_8C09F478']]);
 INLINE_ASM(_func_8C09F418, "asm/nonmatching/./eggman/_func_8C09F418.src");
 
-INLINE_ASM(_func_8C09F454, "asm/nonmatching/./eggman/_func_8C09F454.src");
+INLINE_ASM(_func_8C09F480, "asm/nonmatching/./eggman/_func_8C09F480.src");
 
 // MERGE_LIST([['_lbl_8C03F602', '_lbl_8C09F620'], ['_lbl_8C011B80', '_lbl_8C09F628'], ['_lbl_8C0505A8', '_lbl_8C09F624']]);
 INLINE_ASM(_func_8C09F4EA, "asm/nonmatching/./eggman/_func_8C09F4EA.src");

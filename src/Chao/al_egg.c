@@ -51,5 +51,5 @@ INLINE_ASM(_CreateChaoEgg, "asm/nonmatching/Chao/al_egg/_CreateChaoEgg.src");
 // MERGE_LIST([["h'3E4CCCCD", '_lbl_0C508BA0'], ["h'3DCCCCCD", '_lbl_0C508BA4'], ['_ChaoGlobal', '_lbl_0C508BA8'], ['__quick_mvn', '_lbl_0C508BAC'], ['_AL_GeneCreate', '_lbl_0C508BB0'], ['_AL_GetStageNumber', '_lbl_0C508BB4'], ['_sub_C502632', '_lbl_0C508BB8']]);
 INLINE_ASM(_func_0C508B76, "asm/nonmatching/Chao/al_egg/_func_0C508B76.src");
 
-INLINE_ASM(_func_0C508B94, "asm/nonmatching/Chao/al_egg/_func_0C508B94.src");
+INLINE_ASM(_func_0C508BBC, "asm/nonmatching/Chao/al_egg/_func_0C508BBC.src");
 

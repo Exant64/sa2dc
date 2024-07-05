@@ -39,11 +39,7 @@ INLINE_ASM(_func_8C06009A, "asm/nonmatching/./task/_func_8C06009A.src");
 
 INLINE_ASM(_func_8C0600BC, "asm/nonmatching/./task/_func_8C0600BC.src");
 
-INLINE_ASM(_func_8C0600DE, "asm/nonmatching/./task/_func_8C0600DE.src");
-
-INLINE_ASM(_func_8C0600E4, "asm/nonmatching/./task/_func_8C0600E4.src");
-
-INLINE_ASM(_func_8C0600EC, "asm/nonmatching/./task/_func_8C0600EC.src");
+INLINE_ASM(_func_8C060100, "asm/nonmatching/./task/_func_8C060100.src");
 
 // MERGE_LIST([['_syCalloc', '_lbl_8C060220']]);
 INLINE_ASM(_func_8C060110, "asm/nonmatching/./task/_func_8C060110.src");

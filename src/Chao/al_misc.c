@@ -11,7 +11,7 @@ INLINE_ASM(_func_0C511832, "asm/nonmatching/Chao/al_misc/_func_0C511832.src");
 // MERGE_LIST([["h'8C11B2F8", '_lbl_0C5118F8']]);
 INLINE_ASM(_AL_Dist2FromAim, "asm/nonmatching/Chao/al_misc/_AL_Dist2FromAim.src");
 
-INLINE_ASM(_func_0C5118C8, "asm/nonmatching/Chao/al_misc/_func_0C5118C8.src");
+INLINE_ASM(_func_0C511900, "asm/nonmatching/Chao/al_misc/_func_0C511900.src");
 
 // MERGE_LIST([["h'4622F986", '_lbl_0C511AE0'], ['_atan2f', '_lbl_0C511AE4'], ['__nj_unit_matrix_', '_lbl_0C511AE8'], ['_njPushMatrix', '_lbl_0C511AEC'], ['_njRotateY', '_lbl_0C511AF0'], ["h'8C118B20", '_lbl_0C511AF4'], ['_njPopMatrixEx', '_lbl_0C511AF8']]);
 INLINE_ASM(_AL_IsGroundStop, "asm/nonmatching/Chao/al_misc/_AL_IsGroundStop.src");

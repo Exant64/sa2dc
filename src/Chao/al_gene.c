@@ -7,7 +7,7 @@ INLINE_ASM(_func_0C50BD26, "asm/nonmatching/Chao/al_gene/_func_0C50BD26.src");
 
 INLINE_ASM(_func_0C50BD40, "asm/nonmatching/Chao/al_gene/_func_0C50BD40.src");
 
-INLINE_ASM(_func_0C50BD5A, "asm/nonmatching/Chao/al_gene/_func_0C50BD5A.src");
+INLINE_ASM(_AL_SucceedGeneParam, "asm/nonmatching/Chao/al_gene/_AL_SucceedGeneParam.src");
 
 // MERGE_LIST([['_ChaoGlobal', '_lbl_0C50BE60'], ["h'387EB852", '_lbl_0C50BE6C'], ['__divls', '_lbl_0C50BE64'], ['_rand', '_lbl_0C50BE68']]);
 INLINE_ASM(_func_0C50BE14, "asm/nonmatching/Chao/al_gene/_func_0C50BE14.src");

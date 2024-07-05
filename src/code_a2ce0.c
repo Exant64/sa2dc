@@ -28,7 +28,7 @@ INLINE_ASM(_func_8C0B31D6, "asm/nonmatching/./code_a2ce0/_func_8C0B31D6.src");
 // MERGE_LIST([["h'8C25B8B8", '_lbl_8C0B3220']]);
 INLINE_ASM(_func_8C0B320C, "asm/nonmatching/./code_a2ce0/_func_8C0B320C.src");
 
-INLINE_ASM(_func_8C0B3216, "asm/nonmatching/./code_a2ce0/_func_8C0B3216.src");
+INLINE_ASM(_func_8C0B3240, "asm/nonmatching/./code_a2ce0/_func_8C0B3240.src");
 
 // MERGE_LIST([["h'8C25B8EC", '_lbl_8C0B3388'], ["h'8C25B8AC", '_lbl_8C0B3384'], ["h'3B5A740E", '_lbl_8C0B3380']]);
 INLINE_ASM(_func_8C0B32B6, "asm/nonmatching/./code_a2ce0/_func_8C0B32B6.src");

@@ -14,6 +14,6 @@ INLINE_ASM(_AL_IconSet, "asm/nonmatching/Chao/al_icon/_AL_IconSet.src");
 // MERGE_LIST([['_sub_8C05B020', '_lbl_0C50E6C8']]);
 INLINE_ASM(_AL_IconReset, "asm/nonmatching/Chao/al_icon/_AL_IconReset.src");
 
-INLINE_ASM(_func_0C50E6AA, "asm/nonmatching/Chao/al_icon/_func_0C50E6AA.src");
+INLINE_ASM(_func_0C50E6CC, "asm/nonmatching/Chao/al_icon/_func_0C50E6CC.src");
 
-// MERGE_LIST([['_lbl_0C56B056', '_lbl_0C50E7E0'], ["h'000BF051", 61521]]);
+// MERGE_LIST([['_lbl_0C56B056', '_lbl_0C50E7E0']]);

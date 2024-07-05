@@ -48,9 +48,44 @@ INLINE_ASM(_func_8C021FB6, "asm/nonmatching/./enemy/_func_8C021FB6.src");
 // MERGE_LIST([['_njRotateY', '_lbl_8C022080'], ['_njScale', '_lbl_8C022084'], ['_lbl_8C0E8124', '_lbl_8C022088'], ['_lbl_8C128D66', '_lbl_8C02208C'], ['_OnControl3D', '_lbl_8C022070'], ['_njPopMatrixEx', '_lbl_8C022090'], ['_njPushMatrixEx', '_lbl_8C022074'], ['_OffControl3D', '_lbl_8C022094'], ["h'3C23D70A", '_lbl_8C022078'], ['_njTranslate', '_lbl_8C02207C']]);
 INLINE_ASM(_func_8C022026, "asm/nonmatching/./enemy/_func_8C022026.src");
 
-INLINE_ASM(_func_8C02204A, "asm/nonmatching/./enemy/_func_8C02204A.src");
+INLINE_ASM(_func_8C0220A0, "asm/nonmatching/./enemy/_func_8C0220A0.src");
 
-// MERGE_LIST([['_lbl_8C11A144', '_lbl_8C022600'], ['_njScalor', '_lbl_8C022604'], ['_njUnitVector', '_lbl_8C022608'], ['_lbl_8C118AA4', '_lbl_8C02260C']]);
+INLINE_ASM(_func_8C0220B2, "asm/nonmatching/./enemy/_func_8C0220B2.src");
+
+// MERGE_LIST([['_lbl_8C08739E', '_lbl_8C022220']]);
+INLINE_ASM(_func_8C0220EC, "asm/nonmatching/./enemy/_func_8C0220EC.src");
+
+INLINE_ASM(_func_8C0220FE, "asm/nonmatching/./enemy/_func_8C0220FE.src");
+
+// MERGE_LIST([['_njSqrt', '_lbl_8C022224']]);
+INLINE_ASM(_func_8C02212E, "asm/nonmatching/./enemy/_func_8C02212E.src");
+
+INLINE_ASM(_func_8C02215C, "asm/nonmatching/./enemy/_func_8C02215C.src");
+
+// MERGE_LIST([['_atan2f', '_lbl_8C022228'], ['_DiffAngle', '_lbl_8C022230'], ["h'4622F986", '_lbl_8C02222C']]);
+INLINE_ASM(_func_8C0221B0, "asm/nonmatching/./enemy/_func_8C0221B0.src");
+
+// MERGE_LIST([['_AdjustAngle', '_lbl_8C022234']]);
+INLINE_ASM(_func_8C0221DE, "asm/nonmatching/./enemy/_func_8C0221DE.src");
+
+INLINE_ASM(_func_8C022240, "asm/nonmatching/./enemy/_func_8C022240.src");
+
+// MERGE_LIST([['_njSqrt', '_lbl_8C0223E0']]);
+INLINE_ASM(_func_8C022262, "asm/nonmatching/./enemy/_func_8C022262.src");
+
+INLINE_ASM(_func_8C022290, "asm/nonmatching/./enemy/_func_8C022290.src");
+
+INLINE_ASM(_func_8C0222B0, "asm/nonmatching/./enemy/_func_8C0222B0.src");
+
+// MERGE_LIST([["h'4622F986", '_lbl_8C0223E8'], ['_atan2f', '_lbl_8C0223E4'], ['_DiffAngle', '_lbl_8C0223EC']]);
+INLINE_ASM(_func_8C022304, "asm/nonmatching/./enemy/_func_8C022304.src");
+
+// MERGE_LIST([['_AdjustAngle', '_lbl_8C0223F0']]);
+INLINE_ASM(_func_8C022332, "asm/nonmatching/./enemy/_func_8C022332.src");
+
+INLINE_ASM(_func_8C022420, "asm/nonmatching/./enemy/_func_8C022420.src");
+
+// MERGE_LIST([['_lbl_8C11A144', '_lbl_8C022600'], ['_njUnitVector', '_lbl_8C022608'], ['_njScalor', '_lbl_8C022604'], ['_lbl_8C118AA4', '_lbl_8C02260C']]);
 INLINE_ASM(_func_8C0224C0, "asm/nonmatching/./enemy/_func_8C0224C0.src");
 
 // MERGE_LIST([['_playertwp', '_lbl_8C022610']]);

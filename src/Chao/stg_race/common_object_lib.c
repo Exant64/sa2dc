@@ -100,7 +100,7 @@ INLINE_ASM(_func_0C9CE8BA, "asm/nonmatching/Chao/stg_race/common_object_lib/_fun
 // MERGE_LIST([["h'8C0A4F20", '_lbl_0C9CE980'], ['_lbl_0C9D7414', '_lbl_0C9CE984'], ['_lbl_0C9CE600', '_lbl_0C9CE988'], ['_CreateElementalTask', '_lbl_0C9CE98C'], ['_lbl_0C9CE5E4', '_lbl_0C9CE990'], ['_Language', '_lbl_0C9CE994'], ['_sub_8C0A6B42', '_lbl_0C9CE998']]);
 INLINE_ASM(_func_0C9CE95E, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE95E.src");
 
-INLINE_ASM(_func_0C9CE962, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE962.src");
+INLINE_ASM(_func_0C9CE9A0, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CE9A0.src");
 
 INLINE_ASM(_func_0C9CEA08, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEA08.src");
 
@@ -122,5 +122,5 @@ INLINE_ASM(_func_0C9CEB5A, "asm/nonmatching/Chao/stg_race/common_object_lib/_fun
 // MERGE_LIST([['_lbl_0CA2B210', '_lbl_0C9CEE20'], ["h'8C11B8AC", '_lbl_0C9CEE24']]);
 INLINE_ASM(_func_0C9CEDF6, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEDF6.src");
 
-INLINE_ASM(_func_0C9CEE1A, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEE1A.src");
+INLINE_ASM(_func_0C9CEE28, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CEE28.src");
 

@@ -16,7 +16,7 @@ INLINE_ASM(_func_8C012D34, "asm/nonmatching/./colli/_func_8C012D34.src");
 // MERGE_LIST([['_njCalcPoint', '_lbl_8C0137C0'], ['_njPopMatrixEx', '_lbl_8C0137C4']]);
 INLINE_ASM(_func_8C013656, "asm/nonmatching/./colli/_func_8C013656.src");
 
-INLINE_ASM(_func_8C0137BA, "asm/nonmatching/./colli/_func_8C0137BA.src");
+INLINE_ASM(_func_8C0137E0, "asm/nonmatching/./colli/_func_8C0137E0.src");
 
 // MERGE_LIST([['_njPushMatrixEx', '_lbl_8C013960'], ['_njTranslateEx', '_lbl_8C013964'], ['_njRotateZ', '_lbl_8C013968'], ['_njRotateY', '_lbl_8C01396C'], ['_njRotateX', '_lbl_8C013970'], ['_lbl_8C118A4C', '_lbl_8C013974'], ['_njPopMatrixEx', '_lbl_8C013978']]);
 INLINE_ASM(_func_8C01387A, "asm/nonmatching/./colli/_func_8C01387A.src");
@@ -107,7 +107,7 @@ INLINE_ASM(_func_8C017DC0, "asm/nonmatching/./colli/_func_8C017DC0.src");
 
 INLINE_ASM(_func_8C017E0E, "asm/nonmatching/./colli/_func_8C017E0E.src");
 
-INLINE_ASM(_func_8C017E50, "asm/nonmatching/./colli/_func_8C017E50.src");
+INLINE_ASM(_func_8C017E60, "asm/nonmatching/./colli/_func_8C017E60.src");
 
 INLINE_ASM(_func_8C017F70, "asm/nonmatching/./colli/_func_8C017F70.src");
 
@@ -118,12 +118,12 @@ INLINE_ASM(_func_8C01808E, "asm/nonmatching/./colli/_func_8C01808E.src");
 
 INLINE_ASM(_func_8C0180BA, "asm/nonmatching/./colli/_func_8C0180BA.src");
 
-INLINE_ASM(_func_8C0180DA, "asm/nonmatching/./colli/_func_8C0180DA.src");
+INLINE_ASM(_func_8C0180E0, "asm/nonmatching/./colli/_func_8C0180E0.src");
 
 // MERGE_LIST([['_lbl_8C018780', '_lbl_8C018208'], ['_lbl_8C01836C', '_lbl_8C01820C']]);
 INLINE_ASM(_func_8C018206, "asm/nonmatching/./colli/_func_8C018206.src");
 
 INLINE_ASM(_func_8C018330, "asm/nonmatching/./colli/_func_8C018330.src");
 
-INLINE_ASM(_func_8C018344, "asm/nonmatching/./colli/_func_8C018344.src");
+INLINE_ASM(_func_8C018360, "asm/nonmatching/./colli/_func_8C018360.src");
 

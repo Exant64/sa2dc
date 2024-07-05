@@ -25,9 +25,8 @@ INLINE_ASM(_func_8C0608FE, "asm/nonmatching/./texture/_func_8C0608FE.src");
 // MERGE_LIST([['_lbl_8C10DFFC', '_lbl_8C060A00'], ['_lbl_8C10E0EE', '_lbl_8C060A08'], ['_lbl_8C10DFC4', '_lbl_8C060A0C'], ['_lbl_8C023E20', '_lbl_8C060A14'], ['_lbl_8C115B30', '_lbl_8C060A18'], ['_lbl_8C10E8A6', '_lbl_8C060A1C']]);
 INLINE_ASM(_func_8C0609B0, "asm/nonmatching/./texture/_func_8C0609B0.src");
 
-INLINE_ASM(_func_8C0609E8, "asm/nonmatching/./texture/_func_8C0609E8.src");
+INLINE_ASM(_func_8C060A20, "asm/nonmatching/./texture/_func_8C060A20.src");
 
-// MERGE_LIST([["h'4F800000", '_lbl_8C060D20'], ["h'FEF94F26", 20262]]);
 INLINE_ASM(_func_8C060A76, "asm/nonmatching/./texture/_func_8C060A76.src");
 
 INLINE_ASM(_func_8C060AB4, "asm/nonmatching/./texture/_func_8C060AB4.src");

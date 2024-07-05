@@ -40,7 +40,7 @@ INLINE_ASM(_func_0C51B4C0, "asm/nonmatching/Chao/al_osanbo/_func_0C51B4C0.src");
 // MERGE_LIST([["h'42B20000", '_lbl_0C51B8C0'], ["h'43030000", '_lbl_0C51B8C4'], ['_lbl_0C522AEC', '_lbl_0C51B8C8'], ['_lbl_0C51FE98', '_lbl_0C51B8CC'], ['_lbl_0C51FF90', '_lbl_0C51B8D0'], ['_lbl_0C522B34', '_lbl_0C51B8D4']]);
 INLINE_ASM(_func_0C51B8BA, "asm/nonmatching/Chao/al_osanbo/_func_0C51B8BA.src");
 
-INLINE_ASM(_func_0C51B8BE, "asm/nonmatching/Chao/al_osanbo/_func_0C51B8BE.src");
+INLINE_ASM(_func_0C51B8E0, "asm/nonmatching/Chao/al_osanbo/_func_0C51B8E0.src");
 
 // MERGE_LIST([['_FreeTask', '_lbl_0C51BA20'], ['_lbl_0C600B3C', '_lbl_0C51BA28'], ['_DeleteTaskSub', '_lbl_0C51BA24']]);
 INLINE_ASM(_func_0C51B940, "asm/nonmatching/Chao/al_osanbo/_func_0C51B940.src");
@@ -105,8 +105,7 @@ INLINE_ASM(_func_0C51DB94, "asm/nonmatching/Chao/al_osanbo/_func_0C51DB94.src");
 
 INLINE_ASM(_func_0C51DBB6, "asm/nonmatching/Chao/al_osanbo/_func_0C51DBB6.src");
 
-INLINE_ASM(_func_0C51DBD8, "asm/nonmatching/Chao/al_osanbo/_func_0C51DBD8.src");
+INLINE_ASM(_func_0C51DC00, "asm/nonmatching/Chao/al_osanbo/_func_0C51DC00.src");
 
-// MERGE_LIST([["h'440860E3", 24803]]);
 INLINE_ASM(_func_0C51DC22, "asm/nonmatching/Chao/al_osanbo/_func_0C51DC22.src");
 

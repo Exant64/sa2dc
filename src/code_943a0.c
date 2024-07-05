@@ -16,5 +16,5 @@ INLINE_ASM(_func_8C0A4640, "asm/nonmatching/./code_943a0/_func_8C0A4640.src");
 // MERGE_LIST([["h'43360B61", '_lbl_8C0A47C8'], ["h'3E888889", '_lbl_8C0A47CC'], ["h'4F000000", '_lbl_8C0A47C4']]);
 INLINE_ASM(_func_8C0A4722, "asm/nonmatching/./code_943a0/_func_8C0A4722.src");
 
-INLINE_ASM(_func_8C0A47B4, "asm/nonmatching/./code_943a0/_func_8C0A47B4.src");
+INLINE_ASM(_func_8C0A47D0, "asm/nonmatching/./code_943a0/_func_8C0A47D0.src");
 

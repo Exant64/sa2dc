@@ -23,6 +23,6 @@ INLINE_ASM(_func_0C5033F4, "asm/nonmatching/Chao/al_collision/_func_0C5033F4.src
 // MERGE_LIST([["h'0000F7FF", '_lbl_0C5034A0'], ['_MOV_DetectCollision', '_lbl_0C503480'], ["h'0000EFFF", '_lbl_0C5034A4'], ["h'0000BFFF", '_lbl_0C5034A8'], ['_AL_GetStageNumber', '_lbl_0C503488'], ["h'C0000000", '_lbl_0C50348C'], ["h'BFC00000", '_lbl_0C503490'], ["h'0000FEFF", '_lbl_0C503494'], ["h'0000FDFF", '_lbl_0C503498'], ["h'0000FBFF", '_lbl_0C50349C']]);
 INLINE_ASM(_func_0C503470, "asm/nonmatching/Chao/al_collision/_func_0C503470.src");
 
-INLINE_ASM(_func_0C50347C, "asm/nonmatching/Chao/al_collision/_func_0C50347C.src");
+INLINE_ASM(_func_0C5034AC, "asm/nonmatching/Chao/al_collision/_func_0C5034AC.src");
 
 // MERGE_LIST([['_njPushMatrixEx', '_lbl_0C503640'], ['_Chao_NodeIndex', '_lbl_0C503660'], ['_AL_CalcMotionMartix', '_lbl_0C503644'], ['_AL_BODY_TEXLIST', '_lbl_0C503664'], ['_njSetTexture', '_lbl_0C503648'], ['_njTranslateEx', '_lbl_0C50364C'], ['_njRotateXYZ', '_lbl_0C503650'], ['_njScale', '_lbl_0C503654'], ['_njCnkSimpleDrawObject', '_lbl_0C503658'], ['_njPopMatrixEx', '_lbl_0C50365C']]);

@@ -99,9 +99,8 @@ INLINE_ASM(_func_8C03A696, "asm/nonmatching/./player/_func_8C03A696.src");
 
 INLINE_ASM(_func_8C03A69A, "asm/nonmatching/./player/_func_8C03A69A.src");
 
-INLINE_ASM(_func_8C03A69E, "asm/nonmatching/./player/_func_8C03A69E.src");
+INLINE_ASM(_func_8C03A6C0, "asm/nonmatching/./player/_func_8C03A6C0.src");
 
-// MERGE_LIST([["h'D111892E", 35118], ["h'C741741C", 29724]]);
 INLINE_ASM(_func_8C03A6C4, "asm/nonmatching/./player/_func_8C03A6C4.src");
 
 INLINE_ASM(_func_8C03A6C8, "asm/nonmatching/./player/_func_8C03A6C8.src");

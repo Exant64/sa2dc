@@ -28,7 +28,7 @@ INLINE_ASM(_func_8C062DBC, "asm/nonmatching/./stage/_func_8C062DBC.src");
 
 INLINE_ASM(_func_8C062DC0, "asm/nonmatching/./stage/_func_8C062DC0.src");
 
-INLINE_ASM(_func_8C062DD6, "asm/nonmatching/./stage/_func_8C062DD6.src");
+INLINE_ASM(_func_8C062E00, "asm/nonmatching/./stage/_func_8C062E00.src");
 
 // MERGE_LIST([["h'8C300000", '_lbl_8C062F40'], ["h'A0000000", '_lbl_8C062F48'], ['_lbl_8C10F3D0', '_lbl_8C062F4C'], ['_lbl_8C023E20', '_lbl_8C062F44']]);
 INLINE_ASM(_func_8C062E30, "asm/nonmatching/./stage/_func_8C062E30.src");

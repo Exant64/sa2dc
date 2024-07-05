@@ -38,6 +38,6 @@ INLINE_ASM(_func_0C5250A8, "asm/nonmatching/Chao/alo_fruit/_func_0C5250A8.src");
 
 INLINE_ASM(_func_0C5250AE, "asm/nonmatching/Chao/alo_fruit/_func_0C5250AE.src");
 
-INLINE_ASM(_func_0C5250B2, "asm/nonmatching/Chao/alo_fruit/_func_0C5250B2.src");
+INLINE_ASM(_func_0C5250E4, "asm/nonmatching/Chao/alo_fruit/_func_0C5250E4.src");
 
 // MERGE_LIST([['_CCL_Disable', '_lbl_0C5251E0']]);

@@ -15,9 +15,6 @@ extern NJS_MATRIX cam_mat, inv_cam_mat;
 extern int PackFlag;
 extern task* WorldMasterTask;
 
-// only ALW_Edit doesn't match but i had to include everything else (data section splits + function boundary recognition really screwed me)
-#ifdef NON_MATCHING
-
 void ALW_ResetEntry(al_entry_work* pEntry) {
     if (!pEntry)
         return;
@@ -475,6 +472,13 @@ int ALW_GetCategory(task* tp) {
     return -1;
 }
 
+
+// only ALW_Edit and ALW_Control doesn't match 
+// however, because of there being an inline asm between them
+// it uses jsr instead of bra to call a function from the file in ALW_Destructor
+// which causes that to not match either, so for now i just wrapped the whole thing in a nonmatching
+
+#ifdef NONMATCHING
 void ALW_Edit() {
     int k = 3;
     const char* CategoryNames[] = {
@@ -561,6 +565,7 @@ void ALW_Edit() {
 
     njPrintColor(0xFFFFFFFF);
 }
+
 extern int PrePlayerMode;
 void ALW_Control(task* tp) {
     taskwk* work = tp->twp;
@@ -668,98 +673,18 @@ int sub_0C51E994(void) {
 }
 
 #else
-
-#include <task.h>
-
-INLINE_ASM(_ALW_ResetEntry, "asm/nonmatching/Chao/al_world/_ALW_ResetEntry.src");
-
-INLINE_ASM(_ALW_ClearEntry, "asm/nonmatching/Chao/al_world/_ALW_ClearEntry.src");
-
-INLINE_ASM(_ALW_GetTask, "asm/nonmatching/Chao/al_world/_ALW_GetTask.src");
-
-INLINE_ASM(_ALW_GetTaskCount, "asm/nonmatching/Chao/al_world/_ALW_GetTaskCount.src");
-
-INLINE_ASM(_ALW_GetEntry, "asm/nonmatching/Chao/al_world/_ALW_GetEntry.src");
-
-INLINE_ASM(_ALW_GetEntryCount, "asm/nonmatching/Chao/al_world/_ALW_GetEntryCount.src");
-
-INLINE_ASM(_ALW_CountEntry, "asm/nonmatching/Chao/al_world/_ALW_CountEntry.src");
-
-INLINE_ASM(_ALW_HeldOn, "asm/nonmatching/Chao/al_world/_ALW_HeldOn.src");
-
-INLINE_ASM(_ALW_HeldOff, "asm/nonmatching/Chao/al_world/_ALW_HeldOff.src");
-
-INLINE_ASM(_ALW_IsHeld, "asm/nonmatching/Chao/al_world/_ALW_IsHeld.src");
-
-INLINE_ASM(_ALW_SetHeldOffset, "asm/nonmatching/Chao/al_world/_ALW_SetHeldOffset.src");
-
-INLINE_ASM(_ALW_SetHeldRadius, "asm/nonmatching/Chao/al_world/_ALW_SetHeldRadius.src");
-
-INLINE_ASM(_ALW_LockOn, "asm/nonmatching/Chao/al_world/_ALW_LockOn.src");
-
-INLINE_ASM(_sub_C51E0DA, "asm/nonmatching/Chao/al_world/_sub_C51E0DA.src");
-
-INLINE_ASM(_ALW_TurnToLockOn, "asm/nonmatching/Chao/al_world/_ALW_TurnToLockOn.src");
-
-INLINE_ASM(_ALW_GetLockOnTask, "asm/nonmatching/Chao/al_world/_ALW_GetLockOnTask.src");
-
-INLINE_ASM(_ALW_CalcDistFromLockOn, "asm/nonmatching/Chao/al_world/_ALW_CalcDistFromLockOn.src");
-
-INLINE_ASM(_ALW_GetLockOn, "asm/nonmatching/Chao/al_world/_ALW_GetLockOn.src");
-
-INLINE_ASM(_ALW_UnkOn, "asm/nonmatching/Chao/al_world/_ALW_UnkOn.src");
-
-INLINE_ASM(_ALW_UnkOff, "asm/nonmatching/Chao/al_world/_ALW_UnkOff.src");
-
-INLINE_ASM(_ALW_IsUnk, "asm/nonmatching/Chao/al_world/_ALW_IsUnk.src");
-
-INLINE_ASM(_ALW_AttentionOn, "asm/nonmatching/Chao/al_world/_ALW_AttentionOn.src");
-
-INLINE_ASM(_ALW_AttentionOff, "asm/nonmatching/Chao/al_world/_ALW_AttentionOff.src");
-
-INLINE_ASM(_func_0C51E236, "asm/nonmatching/Chao/al_world/_func_0C51E236.src");
-
-INLINE_ASM(_ALW_IsSheAttentionOtherOne, "asm/nonmatching/Chao/al_world/_ALW_IsSheAttentionOtherOne.src");
-
-INLINE_ASM(_ALW_CommunicationOn, "asm/nonmatching/Chao/al_world/_ALW_CommunicationOn.src");
-
-INLINE_ASM(_ALW_CommunicationOff, "asm/nonmatching/Chao/al_world/_ALW_CommunicationOff.src");
-
-INLINE_ASM(_ALW_IsCommunication, "asm/nonmatching/Chao/al_world/_ALW_IsCommunication.src");
-
-INLINE_ASM(_func_0C51E312, "asm/nonmatching/Chao/al_world/_func_0C51E312.src");
-
-INLINE_ASM(_ALW_RecieveCommand, "asm/nonmatching/Chao/al_world/_ALW_RecieveCommand.src");
-
-INLINE_ASM(_ALW_SendCommand, "asm/nonmatching/Chao/al_world/_ALW_SendCommand.src");
-
-INLINE_ASM(_sub_C51E3A0, "asm/nonmatching/Chao/al_world/_sub_C51E3A0.src");
-
-INLINE_ASM(_sub_C51E3B2, "asm/nonmatching/Chao/al_world/_sub_C51E3B2.src");
-
-INLINE_ASM(_sub_C51E3C6, "asm/nonmatching/Chao/al_world/_sub_C51E3C6.src");
-
-INLINE_ASM(_sub_C51E3F8, "asm/nonmatching/Chao/al_world/_sub_C51E3F8.src");
-
-INLINE_ASM(_ALW_Entry, "asm/nonmatching/Chao/al_world/_ALW_Entry.src");
-
-INLINE_ASM(_ALW_CancelEntry, "asm/nonmatching/Chao/al_world/_ALW_CancelEntry.src");
-
-INLINE_ASM(_ALW_GetCategory, "asm/nonmatching/Chao/al_world/_ALW_GetCategory.src");
-
-INLINE_ASM(_func_0C51E4EC, "asm/nonmatching/Chao/al_world/_func_0C51E4EC.src");
-
+INLINE_ASM(_ALW_Edit, "asm/nonmatching/Chao/al_world/_ALW_Edit.src");
 INLINE_ASM(_ALW_Control, "asm/nonmatching/Chao/al_world/_ALW_Control.src");
 
 INLINE_ASM(_ALW_Displayer, "asm/nonmatching/Chao/al_world/_ALW_Displayer.src");
 
+// MERGE_LIST([['_cam_mat', '_lbl_0C51E9A0'], ['_njGetMatrix', '_lbl_0C51E9A4'], ['_inv_cam_mat', '_lbl_0C51E9A8'], ['_njInvertMatrix', '_lbl_0C51E9AC'], ['_PackFlag', '_lbl_0C51E9B0'], ['_GetGameState', '_lbl_0C51E9B4'], ['_AL_PackageAllSaveInfo', '_lbl_0C51E9B8']]);
 INLINE_ASM(_ALW_Destructor, "asm/nonmatching/Chao/al_world/_ALW_Destructor.src");
 
+// MERGE_LIST([['_WorldMasterTask', '_lbl_0C51E9BC']]);
 INLINE_ASM(_ALW_Create, "asm/nonmatching/Chao/al_world/_ALW_Create.src");
 
+// MERGE_LIST([['_DestroyTask', '_lbl_0C51E9C0'], ['_lbl_0C5669AC', '_lbl_0C51E9C4'], ['_ALW_Control', '_lbl_0C51E9C8'], ['_CreateElementalTask', '_lbl_0C51E9CC'], ['_ALW_Displayer', '_lbl_0C51E9D0'], ['_ALW_Destructor', '_lbl_0C51E9D4'], ['_AL_ParameterControlInit', '_lbl_0C51E9D8'], ['_AL_EnableMove', '_lbl_0C51E9DC'], ['_WorldMasterTask', '_lbl_0C51E9BC']]);
 INLINE_ASM(_sub_0C51E994, "asm/nonmatching/Chao/al_world/_sub_0C51E994.src");
 
-INLINE_ASM(_func_0C51E998, "asm/nonmatching/Chao/al_world/_func_0C51E998.src");
-
-// clang-format on
 #endif

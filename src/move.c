@@ -10,8 +10,33 @@ INLINE_ASM(_MOV_SetVelo, "asm/nonmatching/./move/_MOV_SetVelo.src");
 
 INLINE_ASM(_MOV_ClearVelo, "asm/nonmatching/./move/_MOV_ClearVelo.src");
 
-INLINE_ASM(_func_8C033C64, "asm/nonmatching/./move/_func_8C033C64.src");
+INLINE_ASM(_func_8C033CC0, "asm/nonmatching/./move/_func_8C033CC0.src");
 
+INLINE_ASM(_MOV_ClearAcc, "asm/nonmatching/./move/_MOV_ClearAcc.src");
+
+INLINE_ASM(_MOV_SetGravity, "asm/nonmatching/./move/_MOV_SetGravity.src");
+
+INLINE_ASM(_sub_8C033CEA, "asm/nonmatching/./move/_sub_8C033CEA.src");
+
+INLINE_ASM(_func_8C033CF0, "asm/nonmatching/./move/_func_8C033CF0.src");
+
+INLINE_ASM(_MOV_PreservePreviousPosition, "asm/nonmatching/./move/_MOV_PreservePreviousPosition.src");
+
+INLINE_ASM(_func_8C033D1C, "asm/nonmatching/./move/_func_8C033D1C.src");
+
+INLINE_ASM(_func_8C033D32, "asm/nonmatching/./move/_func_8C033D32.src");
+
+INLINE_ASM(_func_8C033D48, "asm/nonmatching/./move/_func_8C033D48.src");
+
+INLINE_ASM(_MOV_SetAimPos, "asm/nonmatching/./move/_MOV_SetAimPos.src");
+
+INLINE_ASM(_MOV_DistFromAim, "asm/nonmatching/./move/_MOV_DistFromAim.src");
+
+INLINE_ASM(_func_8C033DC0, "asm/nonmatching/./move/_func_8C033DC0.src");
+
+INLINE_ASM(_func_8C033DEE, "asm/nonmatching/./move/_func_8C033DEE.src");
+
+// MERGE_LIST([['_atan2f', '_lbl_8C033F40'], ["h'4622F986", '_lbl_8C033F44']]);
 INLINE_ASM(_func_8C033E26, "asm/nonmatching/./move/_func_8C033E26.src");
 
 // MERGE_LIST([['_AdjustAngle', '_lbl_8C033F48'], ['_DiffAngle', '_lbl_8C033F4C']]);

@@ -7,4 +7,4 @@ with open(sys.argv[1], "r") as symtxt:
         spl = line.split(" = ")
         print(f"\t.export _{spl[0]}")
         print(f"_{spl[0]}: .equ h'{spl[1].rstrip(';')}")
-        
+    

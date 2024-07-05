@@ -22,7 +22,7 @@ INLINE_ASM(_SetMotionTable, "asm/nonmatching/./motiontable/_SetMotionTable.src")
 
 INLINE_ASM(_SetMotionFrame, "asm/nonmatching/./motiontable/_SetMotionFrame.src");
 
-INLINE_ASM(_func_8C03392C, "asm/nonmatching/./motiontable/_func_8C03392C.src");
+INLINE_ASM(_sub_8C033960, "asm/nonmatching/./motiontable/_sub_8C033960.src");
 
 INLINE_ASM(_GetMotionFrame, "asm/nonmatching/./motiontable/_GetMotionFrame.src");
 

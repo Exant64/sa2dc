@@ -172,14 +172,34 @@ INLINE_ASM(_func_8C05C680, "asm/nonmatching/./sound/_func_8C05C680.src");
 // MERGE_LIST([["h'8C25B894", '_lbl_8C05C780'], ['_njSqrt', '_lbl_8C05C784']]);
 INLINE_ASM(_func_8C05C6FE, "asm/nonmatching/./sound/_func_8C05C6FE.src");
 
-INLINE_ASM(_func_8C05C772, "asm/nonmatching/./sound/_func_8C05C772.src");
+INLINE_ASM(_func_8C05C7A0, "asm/nonmatching/./sound/_func_8C05C7A0.src");
+
+// MERGE_LIST([['_lbl_8C0E8158', '_lbl_8C05C920'], ["h'42FE0000", '_lbl_8C05C940'], ["h'44160000", '_lbl_8C05C924'], ['_lbl_8C0DB22A', '_lbl_8C05C928'], ["h'8C25B894", '_lbl_8C05C92C'], ['_njSqrt', '_lbl_8C05C930'], ["h'41A00000", '_lbl_8C05C934'], ["h'C1A00000", '_lbl_8C05C938'], ['_lbl_8C11A54C', '_lbl_8C05C93C']]);
+INLINE_ASM(_func_8C05C898, "asm/nonmatching/./sound/_func_8C05C898.src");
+
+// MERGE_LIST([["h'C1A00000", '_lbl_8C05CAA0'], ['_lbl_8C11A54C', '_lbl_8C05CAA4'], ["h'42FE0000", '_lbl_8C05CAA8']]);
+INLINE_ASM(_func_8C05C9C6, "asm/nonmatching/./sound/_func_8C05C9C6.src");
+
+INLINE_ASM(_func_8C05CAF4, "asm/nonmatching/./sound/_func_8C05CAF4.src");
+
+INLINE_ASM(_func_8C05CC00, "asm/nonmatching/./sound/_func_8C05CC00.src");
+
+// MERGE_LIST([['_lbl_8C0E8158', '_lbl_8C05CD20'], ['_lbl_8C05A23C', '_lbl_8C05CD28'], ['_lbl_8C0DB24F', '_lbl_8C05CD24']]);
+INLINE_ASM(_func_8C05CC62, "asm/nonmatching/./sound/_func_8C05CC62.src");
+
+// MERGE_LIST([['_lbl_8C05AAC8', '_lbl_8C05D020'], ['_lbl_8C05AB30', '_lbl_8C05D024'], ['_lbl_8C05AB9E', '_lbl_8C05D028'], ['_lbl_8C05ADD0', '_lbl_8C05D02C'], ['_lbl_8C05AA74', '_lbl_8C05D030']]);
+INLINE_ASM(_func_8C05CFFC, "asm/nonmatching/./sound/_func_8C05CFFC.src");
+
+INLINE_ASM(_func_8C05D04A, "asm/nonmatching/./sound/_func_8C05D04A.src");
+
+INLINE_ASM(_func_8C05D070, "asm/nonmatching/./sound/_func_8C05D070.src");
 
 INLINE_ASM(_func_8C05D5C0, "asm/nonmatching/./sound/_func_8C05D5C0.src");
 
 // MERGE_LIST([['_lbl_8C0CE764', '_lbl_8C05D780'], ['_lbl_8C0CE768', '_lbl_8C05D784'], ['_lbl_8C0CE770', '_lbl_8C05D788'], ['_lbl_8C0CE778', '_lbl_8C05D78C'], ['_lbl_8C0CE77C', '_lbl_8C05D790'], ['_lbl_8C0CE780', '_lbl_8C05D794'], ["h'00050006", '_lbl_8C05D798'], ['_lbl_8C0CE794', '_lbl_8C05D79C'], ["h'001B0006", '_lbl_8C05D7A0'], ['_lbl_8C0CE79C', '_lbl_8C05D7A4'], ["h'00050007", '_lbl_8C05D7A8'], ['_lbl_8C0CE7B8', '_lbl_8C05D7AC'], ["h'00050008", '_lbl_8C05D7B0'], ['_lbl_8C0CE7CC', '_lbl_8C05D7B4']]);
 INLINE_ASM(_func_8C05D75E, "asm/nonmatching/./sound/_func_8C05D75E.src");
 
-INLINE_ASM(_func_8C05D768, "asm/nonmatching/./sound/_func_8C05D768.src");
+INLINE_ASM(_func_8C05D7C0, "asm/nonmatching/./sound/_func_8C05D7C0.src");
 
 // MERGE_LIST([['_lbl_8C0270AE', '_lbl_8C05D920'], ['_lbl_8C058206', '_lbl_8C05D940'], ['_lbl_8C059D8A', '_lbl_8C05D924'], ['_lbl_8C05A422', '_lbl_8C05D944'], ['_lbl_8C05996C', '_lbl_8C05D928'], ['_lbl_8C059980', '_lbl_8C05D948'], ['_lbl_8C059D5C', '_lbl_8C05D92C'], ['_lbl_8C0DB225', '_lbl_8C05D930'], ['_sub_8C027060', '_lbl_8C05D934'], ['_lbl_8C0E8158', '_lbl_8C05D938'], ['_lbl_8C058140', '_lbl_8C05D93C']]);
 INLINE_ASM(_func_8C05D846, "asm/nonmatching/./sound/_func_8C05D846.src");

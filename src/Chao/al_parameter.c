@@ -21,7 +21,7 @@ INLINE_ASM(_func_0C513680, "asm/nonmatching/Chao/al_parameter/_func_0C513680.src
 // MERGE_LIST([['_lbl_0C56B050', '_lbl_0C513724']]);
 INLINE_ASM(_func_0C5136EC, "asm/nonmatching/Chao/al_parameter/_func_0C5136EC.src");
 
-INLINE_ASM(_func_0C513702, "asm/nonmatching/Chao/al_parameter/_func_0C513702.src");
+INLINE_ASM(_func_0C513740, "asm/nonmatching/Chao/al_parameter/_func_0C513740.src");
 
 // MERGE_LIST([['_lbl_0C56B060', '_lbl_0C5138C0']]);
 INLINE_ASM(_func_0C513778, "asm/nonmatching/Chao/al_parameter/_func_0C513778.src");
@@ -48,11 +48,8 @@ INLINE_ASM(_AL_ParameterControl, "asm/nonmatching/Chao/al_parameter/_AL_Paramete
 // MERGE_LIST([['_ALW_GetTask', '_lbl_0C5139E0'], ['_lbl_0C6774CC', '_lbl_0C5139CC'], ['_lbl_0C6774D0', '_lbl_0C5139D0'], ['_lbl_0C56B1B6', '_lbl_0C5139D4'], ['_nbMaxEntry', '_lbl_0C5139D8'], ["h'8C0C0FE0", '_lbl_0C5139DC']]);
 INLINE_ASM(_func_0C51399C, "asm/nonmatching/Chao/al_parameter/_func_0C51399C.src");
 
-INLINE_ASM(_func_0C5139B8, "asm/nonmatching/Chao/al_parameter/_func_0C5139B8.src");
+INLINE_ASM(_AL_IsEmotionTimerReset, "asm/nonmatching/Chao/al_parameter/_AL_IsEmotionTimerReset.src");
 
-INLINE_ASM(_func_0C5139C4, "asm/nonmatching/Chao/al_parameter/_func_0C5139C4.src");
-
-// MERGE_LIST([["h'A001F108", 61704]]);
 INLINE_ASM(_func_0C513A1E, "asm/nonmatching/Chao/al_parameter/_func_0C513A1E.src");
 
 // MERGE_LIST([['_njMemCopy', '_lbl_0C513BC0'], ["h'461C4000", '_lbl_0C513BC4']]);

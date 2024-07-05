@@ -39,9 +39,9 @@ INLINE_ASM(_func_8C0A2254, "asm/nonmatching/./ewa_eff/_func_8C0A2254.src");
 // MERGE_LIST([["h'FF908080", '_lbl_8C0A2400'], ["h'8C2512B8", '_lbl_8C0A23E4'], ["h'37800000", '_lbl_8C0A2404'], ['_lbl_8C0CFC40', '_lbl_8C0A23E8'], ['_rand', '_lbl_8C0A2408'], ['_lbl_8C0A2420', '_lbl_8C0A23EC'], ['_lbl_8C0A24DE', '_lbl_8C0A240C'], ['_CreateElementalTask', '_lbl_8C0A23F0'], ['_lbl_8C0A23D6', '_lbl_8C0A2410'], ['_syCalloc', '_lbl_8C0A23F4'], ['_FreeTask', '_lbl_8C0A2414'], ["h'3E99999A", '_lbl_8C0A23F8'], ["h'3F333333", '_lbl_8C0A23FC']]);
 INLINE_ASM(_func_8C0A23D6, "asm/nonmatching/./ewa_eff/_func_8C0A23D6.src");
 
-INLINE_ASM(_func_8C0A23DA, "asm/nonmatching/./ewa_eff/_func_8C0A23DA.src");
+INLINE_ASM(_func_8C0A2420, "asm/nonmatching/./ewa_eff/_func_8C0A2420.src");
 
-// MERGE_LIST([["h'8C2512B8", '_lbl_8C0A2580'], ['_FreeTask', '_lbl_8C0A2584'], ["h'1F000000", '_lbl_8C0A2588'], ["h'3F333333", '_lbl_8C0A258C'], ["h'F352E030", 57392], ["h'3E99999A", '_lbl_8C0A2590']]);
+// MERGE_LIST([["h'8C2512B8", '_lbl_8C0A2580'], ['_FreeTask', '_lbl_8C0A2584'], ["h'1F000000", '_lbl_8C0A2588'], ["h'3F333333", '_lbl_8C0A258C'], ["h'3E99999A", '_lbl_8C0A2590']]);
 INLINE_ASM(_func_8C0A24DE, "asm/nonmatching/./ewa_eff/_func_8C0A24DE.src");
 
 INLINE_ASM(_func_8C0A27EE, "asm/nonmatching/./ewa_eff/_func_8C0A27EE.src");

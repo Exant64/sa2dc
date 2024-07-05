@@ -33,7 +33,7 @@ INLINE_ASM(_func_8C0126E0, "asm/nonmatching/./code_2140/_func_8C0126E0.src");
 // MERGE_LIST([["h'00010000", '_lbl_8C0128A0']]);
 INLINE_ASM(_func_8C012728, "asm/nonmatching/./code_2140/_func_8C012728.src");
 
-INLINE_ASM(_func_8C01289C, "asm/nonmatching/./code_2140/_func_8C01289C.src");
+INLINE_ASM(_func_8C0128C0, "asm/nonmatching/./code_2140/_func_8C0128C0.src");
 
 // MERGE_LIST([['_lbl_8C11A54C', '_lbl_8C0129A0']]);
 INLINE_ASM(_func_8C012960, "asm/nonmatching/./code_2140/_func_8C012960.src");

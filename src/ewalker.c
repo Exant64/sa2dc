@@ -8,7 +8,7 @@ INLINE_ASM(_func_8C08E606, "asm/nonmatching/./ewalker/_func_8C08E606.src");
 // MERGE_LIST([['_lbl_8C090FF4', '_lbl_8C08FF00'], ['_lbl_8C038E04', '_lbl_8C08FF04'], ['_lbl_8C058D20', '_lbl_8C08FF08'], ['_lbl_8C095564', '_lbl_8C08FF0C'], ['_CCL_Entry', '_lbl_8C08FF10'], ['_lbl_8C03934A', '_lbl_8C08FF14'], ['_lbl_8C04626E', '_lbl_8C08FEFC']]);
 INLINE_ASM(_func_8C08FE62, "asm/nonmatching/./ewalker/_func_8C08FE62.src");
 
-INLINE_ASM(_func_8C090F30, "asm/nonmatching/./ewalker/_func_8C090F30.src");
+INLINE_ASM(_func_8C090F60, "asm/nonmatching/./ewalker/_func_8C090F60.src");
 
 // MERGE_LIST([['_lbl_8C03925C', '_lbl_8C091140'], ['_lbl_8C05BF2A', '_lbl_8C091144'], ['_lbl_8C1164B0', '_lbl_8C091148'], ['_syFree', '_lbl_8C09114C'], ['_lbl_8C05212E', '_lbl_8C091150'], ['_lbl_8C038C72', '_lbl_8C091154'], ['_lbl_8C038DA0', '_lbl_8C091158']]);
 INLINE_ASM(_func_8C090FF4, "asm/nonmatching/./ewalker/_func_8C090FF4.src");
@@ -83,8 +83,6 @@ INLINE_ASM(_func_8C0950DC, "asm/nonmatching/./ewalker/_func_8C0950DC.src");
 // MERGE_LIST([['_lbl_8C011B80', '_lbl_8C095200'], ['_lbl_8C05AF7E', '_lbl_8C0951E4'], ['_lbl_8C0CFB00', '_lbl_8C095204'], ['_lbl_8C094FAC', '_lbl_8C095208'], ['_CreateElementalTask', '_lbl_8C09520C'], ['_lbl_8C095060', '_lbl_8C095210'], ['_lbl_8C03F602', '_lbl_8C0951F4'], ['_lbl_8C0508AC', '_lbl_8C095214'], ['_lbl_8C0DB23A', '_lbl_8C0951FC']]);
 INLINE_ASM(_func_8C0951B0, "asm/nonmatching/./ewalker/_func_8C0951B0.src");
 
-INLINE_ASM(_func_8C0951DC, "asm/nonmatching/./ewalker/_func_8C0951DC.src");
-
 INLINE_ASM(_func_8C095220, "asm/nonmatching/./ewalker/_func_8C095220.src");
 
 INLINE_ASM(_func_8C095420, "asm/nonmatching/./ewalker/_func_8C095420.src");
@@ -100,7 +98,7 @@ INLINE_ASM(_func_8C095564, "asm/nonmatching/./ewalker/_func_8C095564.src");
 // MERGE_LIST([["h'00008000", '_lbl_8C095740'], ["h'3F000000", '_lbl_8C095744'], ["h'42480000", '_lbl_8C095748'], ['_lbl_8C01F248', '_lbl_8C09574C']]);
 INLINE_ASM(_func_8C0956E6, "asm/nonmatching/./ewalker/_func_8C0956E6.src");
 
-INLINE_ASM(_func_8C095730, "asm/nonmatching/./ewalker/_func_8C095730.src");
+INLINE_ASM(_func_8C095760, "asm/nonmatching/./ewalker/_func_8C095760.src");
 
 // MERGE_LIST([['_DestroyTask', '_lbl_8C095880'], ['_lbl_8C05285E', '_lbl_8C095884']]);
 INLINE_ASM(_func_8C09578A, "asm/nonmatching/./ewalker/_func_8C09578A.src");
@@ -335,13 +333,10 @@ INLINE_ASM(_func_8C09AB68, "asm/nonmatching/./ewalker/_func_8C09AB68.src");
 // MERGE_LIST([['_lbl_8C118AA4', '_lbl_8C09AF20'], ['_lbl_8C0F30AC', '_lbl_8C09AF24'], ['_lbl_8C11A144', '_lbl_8C09AF28'], ['_lbl_8C04AEC4', '_lbl_8C09AF2C'], ['_njScalor', '_lbl_8C09AF30'], ['_lbl_8C0F30B8', '_lbl_8C09AF34'], ['_lbl_8C09946E', '_lbl_8C09AF38'], ['_lbl_8C097B64', '_lbl_8C09AF3C'], ["h'4622F986", '_lbl_8C09AF40'], ['_lbl_8C0C1408', '_lbl_8C09AF44'], ['_atan2f', '_lbl_8C09AF48'], ["h'48742400", '_lbl_8C09AF4C'], ['_lbl_8C057A70', '_lbl_8C09AF50'], ['_njDistanceP2P', '_lbl_8C09AF54'], ["h'40800000", '_lbl_8C09AF58'], ['_playertwp', '_lbl_8C09AF5C'], ['_CCL_Entry', '_lbl_8C09AF60']]);
 INLINE_ASM(_func_8C09AF02, "asm/nonmatching/./ewalker/_func_8C09AF02.src");
 
-INLINE_ASM(_func_8C09AF06, "asm/nonmatching/./ewalker/_func_8C09AF06.src");
+INLINE_ASM(_func_8C09AF80, "asm/nonmatching/./ewalker/_func_8C09AF80.src");
 
-INLINE_ASM(_func_8C09B1C4, "asm/nonmatching/./ewalker/_func_8C09B1C4.src");
-
-INLINE_ASM(_func_8C09B1C8, "asm/nonmatching/./ewalker/_func_8C09B1C8.src");
-
-INLINE_ASM(_func_8C09B1D0, "asm/nonmatching/./ewalker/_func_8C09B1D0.src");
+// MERGE_LIST([['_lbl_8C04AEC4', '_lbl_8C09B180'], ['_FreeTask', '_lbl_8C09B184'], ['_playertp', '_lbl_8C09B188'], ['__modls', '_lbl_8C09B18C'], ['_lbl_8C0F307C', '_lbl_8C09B190'], ['_CCL_Init', '_lbl_8C09B194'], ["h'0000FFBF", '_lbl_8C09B198'], ["h'40E00000", '_lbl_8C09B19C'], ['_lbl_8C01F248', '_lbl_8C09B1A0'], ["h'4622F986", '_lbl_8C09B1A4'], ['_lbl_8C0C1408', '_lbl_8C09B1A8'], ['_atan2f', '_lbl_8C09B1AC'], ['_rand', '_lbl_8C09B1B0'], ["h'40200000", '_lbl_8C09B1B4'], ["h'38800000", '_lbl_8C09B1B8'], ['_lbl_8C0270AE', '_lbl_8C09B1BC'], ['_lbl_8C09AB68', '_lbl_8C09B1C0'], ['_lbl_8C09A700', '_lbl_8C09B1C4'], ['_lbl_8C09AF02', '_lbl_8C09B1C8'], ['_lbl_8C09A5C8', '_lbl_8C09B1CC']]);
+INLINE_ASM(_func_8C09B09E, "asm/nonmatching/./ewalker/_func_8C09B09E.src");
 
 INLINE_ASM(_func_8C09B1E0, "asm/nonmatching/./ewalker/_func_8C09B1E0.src");
 

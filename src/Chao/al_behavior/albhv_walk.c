@@ -20,13 +20,3 @@ INLINE_ASM(_AL_WalkSelect, "asm/nonmatching/Chao/al_behavior/albhv_walk/_AL_Walk
 // MERGE_LIST([['_AL_SetNextBehavior', '_lbl_0C53B480'], ['_ChaoGlobal', '_lbl_0C53B464'], ['_AL_SetBehavior', '_lbl_0C53B484'], ['_ALBHV_PostureChangeSit', '_lbl_0C53B488'], ['_lbl_0C53AFE2', '_lbl_0C53B48C'], ['_ALBHV_PostureChangeStand', '_lbl_0C53B490'], ['_lbl_0C53B290', '_lbl_0C53B49C'], ['_lbl_0C53B0B8', '_lbl_0C53B494'], ['_lbl_0C53B1BA', '_lbl_0C53B498'], ['_AL_ParameterGetSkill', '_lbl_0C53B47C']]);
 INLINE_ASM(_func_0C53B444, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B444.src");
 
-INLINE_ASM(_func_0C53B450, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B450.src");
-
-INLINE_ASM(_func_0C53B46C, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B46C.src");
-
-INLINE_ASM(_func_0C53B470, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B470.src");
-
-INLINE_ASM(_func_0C53B474, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B474.src");
-
-INLINE_ASM(_func_0C53B490, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B490.src");
-

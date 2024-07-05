@@ -19,7 +19,7 @@ INLINE_ASM(_func_0C9CC872, "asm/nonmatching/Chao/stg_race/alr_chao_related/_func
 
 INLINE_ASM(_func_0C9CC880, "asm/nonmatching/Chao/stg_race/alr_chao_related/_func_0C9CC880.src");
 
-INLINE_ASM(_func_0C9CC88E, "asm/nonmatching/Chao/stg_race/alr_chao_related/_func_0C9CC88E.src");
+INLINE_ASM(_func_0C9CC8C0, "asm/nonmatching/Chao/stg_race/alr_chao_related/_func_0C9CC8C0.src");
 
 INLINE_ASM(_func_0C9CC8CE, "asm/nonmatching/Chao/stg_race/alr_chao_related/_func_0C9CC8CE.src");
 

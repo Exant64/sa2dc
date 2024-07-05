@@ -44,6 +44,6 @@ INLINE_ASM(_func_8C0ADCA4, "asm/nonmatching/./cameraEdit/_func_8C0ADCA4.src");
 // MERGE_LIST([["h'8C268BBC", '_lbl_8C0ADCE0'], ["h'8C264CAC", '_lbl_8C0ADCE4']]);
 INLINE_ASM(_func_8C0ADCBE, "asm/nonmatching/./cameraEdit/_func_8C0ADCBE.src");
 
-INLINE_ASM(_func_8C0ADCC2, "asm/nonmatching/./cameraEdit/_func_8C0ADCC2.src");
+INLINE_ASM(_func_8C0ADCE8, "asm/nonmatching/./cameraEdit/_func_8C0ADCE8.src");
 
 // MERGE_LIST([['_lbl_8C0FB854', '_lbl_8C0ADE80']]);

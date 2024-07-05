@@ -17,12 +17,12 @@ INLINE_ASM(_func_8C0A7030, "asm/nonmatching/./code_96fa0/_func_8C0A7030.src");
 // MERGE_LIST([['_DestroyTask', '_lbl_8C0A709C'], ['_lbl_8C0F6400', '_lbl_8C0A7094']]);
 INLINE_ASM(_func_8C0A704C, "asm/nonmatching/./code_96fa0/_func_8C0A704C.src");
 
-INLINE_ASM(_func_8C0A706C, "asm/nonmatching/./code_96fa0/_func_8C0A706C.src");
+INLINE_ASM(_func_8C0A70A0, "asm/nonmatching/./code_96fa0/_func_8C0A70A0.src");
 
 // MERGE_LIST([['_playertwp', '_lbl_8C0A71A0'], ["h'0000800F", '_lbl_8C0A71A4'], ['_sub_8C05B020', '_lbl_8C0A71AC'], ["h'00008011", '_lbl_8C0A71A8']]);
 INLINE_ASM(_func_8C0A7160, "asm/nonmatching/./code_96fa0/_func_8C0A7160.src");
 
-INLINE_ASM(_func_8C0A719E, "asm/nonmatching/./code_96fa0/_func_8C0A719E.src");
+INLINE_ASM(_func_8C0A71C0, "asm/nonmatching/./code_96fa0/_func_8C0A71C0.src");
 
 INLINE_ASM(_func_8C0A7320, "asm/nonmatching/./code_96fa0/_func_8C0A7320.src");
 

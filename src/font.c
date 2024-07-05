@@ -9,12 +9,12 @@ INLINE_ASM(_func_8C0A4874, "asm/nonmatching/./font/_func_8C0A4874.src");
 // MERGE_LIST([["h'3E008081", '_lbl_8C0A4900'], ["h'4F000000", '_lbl_8C0A4904']]);
 INLINE_ASM(_func_8C0A48A6, "asm/nonmatching/./font/_func_8C0A48A6.src");
 
-INLINE_ASM(_func_8C0A48FE, "asm/nonmatching/./font/_func_8C0A48FE.src");
+INLINE_ASM(_func_8C0A4920, "asm/nonmatching/./font/_func_8C0A4920.src");
 
 // MERGE_LIST([["h'00FFFFFF", '_lbl_8C0A4A20'], ["h'00010000", '_lbl_8C0A4A24'], ["h'8000FFFF", '_lbl_8C0A4A28'], ["h'FFFEFFFF", '_lbl_8C0A4A2C'], ['_lbl_8C0F63B4', '_lbl_8C0A4A30'], ["h'00008000", '_lbl_8C0A4A34']]);
 INLINE_ASM(_func_8C0A49D8, "asm/nonmatching/./font/_func_8C0A49D8.src");
 
-INLINE_ASM(_func_8C0A4A0E, "asm/nonmatching/./font/_func_8C0A4A0E.src");
+INLINE_ASM(_func_8C0A4A40, "asm/nonmatching/./font/_func_8C0A4A40.src");
 
 INLINE_ASM(_func_8C0A4B96, "asm/nonmatching/./font/_func_8C0A4B96.src");
 
@@ -43,7 +43,7 @@ INLINE_ASM(_func_8C0A534E, "asm/nonmatching/./font/_func_8C0A534E.src");
 // MERGE_LIST([['_lbl_8C0F62F8', '_lbl_8C0A5428'], ['_lbl_8C0F6314', '_lbl_8C0A542C']]);
 INLINE_ASM(_func_8C0A53FE, "asm/nonmatching/./font/_func_8C0A53FE.src");
 
-INLINE_ASM(_func_8C0A5410, "asm/nonmatching/./font/_func_8C0A5410.src");
+INLINE_ASM(_func_8C0A5440, "asm/nonmatching/./font/_func_8C0A5440.src");
 
 INLINE_ASM(_func_8C0A569E, "asm/nonmatching/./font/_func_8C0A569E.src");
 
@@ -83,7 +83,7 @@ INLINE_ASM(_func_8C0A5C7A, "asm/nonmatching/./font/_func_8C0A5C7A.src");
 
 INLINE_ASM(_func_8C0A5CBC, "asm/nonmatching/./font/_func_8C0A5CBC.src");
 
-INLINE_ASM(_func_8C0A5CDC, "asm/nonmatching/./font/_func_8C0A5CDC.src");
+INLINE_ASM(_func_8C0A5D00, "asm/nonmatching/./font/_func_8C0A5D00.src");
 
 // MERGE_LIST([['_lbl_8C0C1548', '_lbl_8C0A5E00']]);
 INLINE_ASM(_func_8C0A5D54, "asm/nonmatching/./font/_func_8C0A5D54.src");
@@ -93,7 +93,7 @@ INLINE_ASM(_func_8C0A5E20, "asm/nonmatching/./font/_func_8C0A5E20.src");
 // MERGE_LIST([['_lbl_8C0F63E8', '_lbl_8C0A6160'], ['_lbl_8C0F63EC', '_lbl_8C0A6164'], ['_lbl_8C0F63F0', '_lbl_8C0A6168'], ['_lbl_8C011AA0', '_lbl_8C0A616C'], ['_syFree', '_lbl_8C0A6170'], ['_DestroyTask', '_lbl_8C0A6174']]);
 INLINE_ASM(_func_8C0A6126, "asm/nonmatching/./font/_func_8C0A6126.src");
 
-INLINE_ASM(_func_8C0A614A, "asm/nonmatching/./font/_func_8C0A614A.src");
+INLINE_ASM(_func_8C0A6180, "asm/nonmatching/./font/_func_8C0A6180.src");
 
 // MERGE_LIST([['_lbl_8C0F63E8', '_lbl_8C0A6520'], ['_lbl_8C0F63EC', '_lbl_8C0A6524'], ['_lbl_8C0F63F0', '_lbl_8C0A6528'], ['_lbl_8C011AA0', '_lbl_8C0A652C'], ['_syFree', '_lbl_8C0A6530'], ['_DestroyTask', '_lbl_8C0A6534']]);
 INLINE_ASM(_func_8C0A6494, "asm/nonmatching/./font/_func_8C0A6494.src");

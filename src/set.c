@@ -48,7 +48,7 @@ INLINE_ASM(_func_8C057BFA, "asm/nonmatching/./set/_func_8C057BFA.src");
 
 INLINE_ASM(_func_8C057C06, "asm/nonmatching/./set/_func_8C057C06.src");
 
-INLINE_ASM(_func_8C057C0E, "asm/nonmatching/./set/_func_8C057C0E.src");
+INLINE_ASM(_func_8C057C40, "asm/nonmatching/./set/_func_8C057C40.src");
 
 INLINE_ASM(_func_8C057C4A, "asm/nonmatching/./set/_func_8C057C4A.src");
 
@@ -69,7 +69,7 @@ INLINE_ASM(_func_8C057CC0, "asm/nonmatching/./set/_func_8C057CC0.src");
 
 INLINE_ASM(_func_8C057CD0, "asm/nonmatching/./set/_func_8C057CD0.src");
 
-INLINE_ASM(_func_8C057CDE, "asm/nonmatching/./set/_func_8C057CDE.src");
+INLINE_ASM(_func_8C057D00, "asm/nonmatching/./set/_func_8C057D00.src");
 
 // MERGE_LIST([['_lbl_8C062E62', '_lbl_8C057EC0'], ['_syCalloc', '_lbl_8C057EC4'], ["h'8C300000", '_lbl_8C057EC8'], ['_lbl_8C062DBC', '_lbl_8C057ECC'], ['_lbl_8C111948', '_lbl_8C057ED0'], ["h'8C300020", '_lbl_8C057ED4']]);
 INLINE_ASM(_func_8C057DA4, "asm/nonmatching/./set/_func_8C057DA4.src");

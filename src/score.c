@@ -88,7 +88,7 @@ INLINE_ASM(_func_8C054350, "asm/nonmatching/./score/_func_8C054350.src");
 
 INLINE_ASM(_func_8C0544E0, "asm/nonmatching/./score/_func_8C0544E0.src");
 
-INLINE_ASM(_func_8C054A78, "asm/nonmatching/./score/_func_8C054A78.src");
+INLINE_ASM(_func_8C054AA0, "asm/nonmatching/./score/_func_8C054AA0.src");
 
 // MERGE_LIST([['_lbl_8C0E6754', '_lbl_8C055020'], ['_lbl_8C05388C', '_lbl_8C055024'], ['_lbl_8C0E864C', '_lbl_8C055028'], ['_njSetTexture', '_lbl_8C05502C'], ['_lbl_8C0E7398', '_lbl_8C055030'], ['_lbl_8C0E7380', '_lbl_8C055034'], ['_njPushMatrixEx', '_lbl_8C055038'], ['_lbl_8C11A240', '_lbl_8C05503C'], ['_lbl_8C0E7374', '_lbl_8C055040'], ['_njTranslateEx', '_lbl_8C055044'], ['_njRotateZ', '_lbl_8C055048'], ['_njScale', '_lbl_8C05504C'], ['_lbl_8C0E7344', '_lbl_8C055050'], ['_lbl_8C102DCC', '_lbl_8C055054'], ['_njPopMatrixEx', '_lbl_8C055058'], ['_lbl_8C112BDC', '_lbl_8C05505C'], ['_lbl_8C11C480', '_lbl_8C055060']]);
 INLINE_ASM(_func_8C054F9A, "asm/nonmatching/./score/_func_8C054F9A.src");
