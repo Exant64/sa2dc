@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import ast
 
 out_lines = []
 
@@ -12,6 +13,8 @@ with open(sys.argv[1], "r") as file:
     blacklist_import = set()
     exports = set()
     imports = set()
+
+    merge_dict = {}
 
     for i in range(len(lines)):
         line = lines[i].strip()
@@ -27,6 +30,11 @@ with open(sys.argv[1], "r") as file:
                     if include_file_line.strip().startswith(".EXPORT"):
                         exportName = include_file_line.split('.EXPORT')[1].strip()
                         exports.add(exportName)
+            continue
+
+        if line.startswith("MERGE_LIST"):
+            func_name = lines[i-2].split(" ")[0]
+            blacklist_export.add(func_name[:-1]) # -1 to remove : from the label
             continue
 
         if line.startswith(".EXPORT"):
@@ -51,6 +59,81 @@ with open(sys.argv[1], "r") as file:
             # dont include imports for stuff exported in this file
             if lines[i].strip().split(".IMPORT")[1].strip() in exports:
                 continue
+
+        if lines[i].strip().startswith("MERGE_LIST"):
+            # remove last two function definition lines
+            # ex. _func_9380:                      ; function: func_9380
+            #                                      ; frame size=0
+            out_lines = out_lines[:len(out_lines)-2]
+
+            # parse the merge list
+            python_array = lines[i].split("MERGE_LIST(")[1].split(");")[0]
+            parsed_list = ast.literal_eval(python_array)
+
+            # create a dictionary from it
+            label_dict = {}
+            for lists in parsed_list:
+                if "h'" in lists[0]:
+                    label_dict[lists[0].upper()] = lists[1]
+                else:
+                    label_dict[lists[0]] = lists[1]
+
+            # find the last data section (surrounded by ALIGN 32's) and the start of the func
+            align_count = 0
+            function_start_index = 0
+            stop_align = 0
+            align_start_index = -1
+            for rename_line_index in range(len(out_lines)-1, -1, -1):
+                rename_line = out_lines[rename_line_index]
+                
+                if "ALIGN" in rename_line:
+                    align_count += 1
+                    if align_count == 1:
+                        stop_align = rename_line_index
+                
+                if align_count == 1:
+                    if ":" in rename_line and align_start_index == -1:
+                        align_start_index = rename_line_index              
+
+                if "; function" in rename_line:
+                    function_start_index = rename_line_index + 2
+                    break
+                
+            # get the label name that the references use
+            label_rename_name = out_lines[align_start_index].split(":")[0]
+            print(label_rename_name)
+
+            # find all label offsets and the data they have
+            label_offset_dict = {}
+            i = 0
+            for label_discovery_index in range(align_start_index + 1, len(out_lines)-1, 1):
+                label_discovery_line = out_lines[label_discovery_index]
+                print(label_discovery_line)
+                sym = label_discovery_line.split(".DATA.")[1][1:].strip()
+
+                if i == 0:
+                    label_offset_dict[label_rename_name] = sym
+                else:
+                    label_offset_dict[label_rename_name+"+"+str(i)] = sym
+
+                if ".L" in label_discovery_line:
+                    i += 4
+                else:
+                    i += 2
+
+            if "ALIGN" in out_lines[align_start_index - 1]:
+                out_lines = out_lines[:align_start_index-1]
+            else:
+                out_lines = out_lines[:align_start_index]
+            
+            for function_line_index in range(function_start_index, len(out_lines), 1):
+                func_line = out_lines[function_line_index]
+                if label_rename_name in func_line:
+                    find = label_rename_name + func_line.split(label_rename_name)[1].split(",")[0]
+                    replace = label_dict[label_offset_dict[find]]
+                    out_lines[function_line_index] = func_line.replace(find, replace)
+            
+            continue
 
         if lines[i].strip().startswith(".INCLUDE"):
             # remove last two function definition lines

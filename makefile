@@ -92,7 +92,7 @@ $(CHAO_ELF): $(1ST_READ_ELF) build/asm/1st_read.obj $(O_FILES)
 $(CHAOSTGRACE_ROM): $(CHAOSTGRACE_ELF)
 	$(ELF2BIN) -s $(CHAOSTGRACE_KEY) $< $@
 
-$(CHAOSTGRACE_ELF): $(1ST_READ_ELF) build/asm/1st_read.obj $(O_FILES)
+$(CHAOSTGRACE_ELF): $(1ST_READ_ELF) build/asm/1st_read.obj build/asm/chao.obj $(O_FILES)
 	$(LD) $(LDFLAGS) -sub=chaostgrace_lnk.sub
 
 $(1ST_READ_ROM): $(1ST_READ_ELF) 
@@ -117,3 +117,8 @@ build/asm/%.obj: asm/%.src
 build/asm/1st_read.obj:
 	$(shell grep -v "_lbl_" build/1st_read.fsy > build/1st_read_tmp.fsy)
 	$(PATHHELP) $(WIBO) $(AS) build/1st_read_tmp.fsy $(ASFLAGS) -object=$@
+
+build/asm/chao.obj:
+	$(shell grep -v "_lbl_" build/CHAO.fsy > build/CHAO_tmp.fsy)
+	$(PATHHELP) $(WIBO) $(AS) build/CHAO_tmp.fsy $(ASFLAGS) -object=$@
+

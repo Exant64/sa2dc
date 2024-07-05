@@ -3,7 +3,7 @@ elf_path: build/1ST_READ.elf
 map_path: build/1ST_READ.map
 build_path: build
 key: 0x8C010000
-symbol_addrs_path: symbols.1st_read.txt
+symbol_addrs_path: ["symbols.1st_read.txt"]
 generated_c_preamble: "#include <task.h>"
 src_path: src
 asm_path: asm

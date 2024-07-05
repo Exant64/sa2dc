@@ -2,9 +2,8 @@
 
 INLINE_ASM(_AL_DrawMeter, "asm/nonmatching/Chao/al_parameter_debug/_AL_DrawMeter.src");
 
+// MERGE_LIST([["h'4F800000", '_lbl_0C513D60'], ["h'8C11B2F8", '_lbl_0C513D64']]);
 INLINE_ASM(_func_0C513CA6, "asm/nonmatching/Chao/al_parameter_debug/_func_0C513CA6.src");
 
 INLINE_ASM(_func_0C513DA0, "asm/nonmatching/Chao/al_parameter_debug/_func_0C513DA0.src");
-
-INLINE_ASM(_func_0C514A54, "asm/nonmatching/Chao/al_parameter_debug/_func_0C514A54.src");
 
