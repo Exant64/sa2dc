@@ -1,0 +1,4 @@
+object_al_pumpkinhead_pumpkinhead = C8AAAEC;
+object_al_skullhead_skullhead = C8AB540;
+object_al_egghead_egghead = C8ABEDC;
+ObakeBodyObjectList = C8BA320;

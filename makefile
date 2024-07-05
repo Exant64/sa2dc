@@ -38,6 +38,7 @@ FIX_INLINE := tools/fix_inline_asm.py
 FIX_INLINE_C := tools/inline_asm_c.py
 
 DCSPLIT := tools/dcsplit/dcsplit.py
+GENFSY := tools/genfsy.py
 
 SHC_DIR := shc
 
@@ -74,6 +75,7 @@ endif
 
 setup: 
 	$(MAKE) -C tools
+	$(GENFSY) symbols.chaomodel.txt > asm/chaomodel_symbols.src
 	$(DCSPLIT) 1st_read.yaml
 	$(DCSPLIT) chao.yaml
 	$(DCSPLIT) chaostgrace.yaml
