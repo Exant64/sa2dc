@@ -24,7 +24,7 @@ INLINE_ASM(_func_0C9CD700, "asm/nonmatching/Chao/stg_race/common_object_lib/_fun
 // MERGE_LIST([['_lbl_0CA277C0', '_lbl_0C9CD920'], ['_njScalor', '_lbl_0C9CD928'], ['_playertwp', '_lbl_0C9CD924']]);
 INLINE_ASM(_func_0C9CD81E, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CD81E.src");
 
-// MERGE_LIST([['_rand', '_lbl_0C9CD940'], ["h'3F000000", '_lbl_0C9CD958'], ['_njRotateY', '_lbl_0C9CD944'], ['_njRotateX', '_lbl_0C9CD948'], ['_njPushMatrixEx', '_lbl_0C9CD92C'], ["h'8C118B20", '_lbl_0C9CD94C'], ["h'8C11A240", '_lbl_0C9CD930'], ['_njPopMatrix', '_lbl_0C9CD950'], ["h'C1F00000", '_lbl_0C9CD934'], ["h'38000000", '_lbl_0C9CD954'], ["h'3AF00000", '_lbl_0C9CD938'], ["h'43360B61", '_lbl_0C9CD93C']]);
+// MERGE_LIST([['_rand', '_lbl_0C9CD940'], ["h'3F000000", '_lbl_0C9CD958'], ['_njRotateY', '_lbl_0C9CD944'], ['_njRotateX', '_lbl_0C9CD948'], ['_njPushMatrixEx', '_lbl_0C9CD92C'], ["h'8C118B20", '_lbl_0C9CD94C'], ['_njUnitMatrix', '_lbl_0C9CD930'], ['_njPopMatrix', '_lbl_0C9CD950'], ["h'C1F00000", '_lbl_0C9CD934'], ["h'38000000", '_lbl_0C9CD954'], ["h'3AF00000", '_lbl_0C9CD938'], ["h'43360B61", '_lbl_0C9CD93C']]);
 INLINE_ASM(_func_0C9CD8EE, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CD8EE.src");
 
 INLINE_ASM(_func_0C9CD96C, "asm/nonmatching/Chao/stg_race/common_object_lib/_func_0C9CD96C.src");

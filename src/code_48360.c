@@ -29,7 +29,7 @@ INLINE_ASM(_func_8C0589BA, "asm/nonmatching/./code_48360/_func_8C0589BA.src");
 
 INLINE_ASM(_func_8C058D20, "asm/nonmatching/./code_48360/_func_8C058D20.src");
 
-// MERGE_LIST([['_njRotateX', '_lbl_8C058F40'], ['_lbl_8C050348', '_lbl_8C058F20'], ['_njRotateY', '_lbl_8C058F44'], ['_lbl_8C050440', '_lbl_8C058F24'], ["h'43480000", '_lbl_8C058F28'], ['_lbl_8C118B20', '_lbl_8C058F48'], ['_lbl_8C02B5E0', '_lbl_8C058F2C'], ['_njPopMatrixEx', '_lbl_8C058F4C'], ['_lbl_8C039CC0', '_lbl_8C058F30'], ['_lbl_8C118AA4', '_lbl_8C058F50'], ['_njPushMatrixEx', '_lbl_8C058F34'], ['_lbl_8C11A240', '_lbl_8C058F38'], ['_njRotateZ', '_lbl_8C058F3C']]);
+// MERGE_LIST([['_njRotateX', '_lbl_8C058F40'], ['_lbl_8C050348', '_lbl_8C058F20'], ['_njRotateY', '_lbl_8C058F44'], ['_lbl_8C050440', '_lbl_8C058F24'], ["h'43480000", '_lbl_8C058F28'], ['_lbl_8C118B20', '_lbl_8C058F48'], ['_lbl_8C02B5E0', '_lbl_8C058F2C'], ['_njPopMatrixEx', '_lbl_8C058F4C'], ['_lbl_8C039CC0', '_lbl_8C058F30'], ['_lbl_8C118AA4', '_lbl_8C058F50'], ['_njPushMatrixEx', '_lbl_8C058F34'], ['_njUnitMatrix', '_lbl_8C058F38'], ['_njRotateZ', '_lbl_8C058F3C']]);
 INLINE_ASM(_func_8C058E5E, "asm/nonmatching/./code_48360/_func_8C058E5E.src");
 
 INLINE_ASM(_func_8C059240, "asm/nonmatching/./code_48360/_func_8C059240.src");

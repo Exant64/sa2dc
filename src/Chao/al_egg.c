@@ -2,7 +2,7 @@
 
 INLINE_ASM(_func_0C507740, "asm/nonmatching/Chao/al_egg/_func_0C507740.src");
 
-// MERGE_LIST([['_rand', '_lbl_0C507940'], ['_AL_ClearChaoParam', '_lbl_0C507920'], ['_ALW_CancelEntry', '_lbl_0C507924'], ['_lbl_0C50A244', '_lbl_0C507944'], ['_CreateChao', '_lbl_0C507928'], ['_njMemCopy', '_lbl_0C50792C'], ["h'3E4CCCCD", '_lbl_0C507930'], ["h'3DCCCCCD", '_lbl_0C507934'], ["h'3E99999A", '_lbl_0C507938'], ["h'38000000", '_lbl_0C50793C']]);
+// MERGE_LIST([['_rand', '_lbl_0C507940'], ['_AL_ClearChaoParam', '_lbl_0C507920'], ['_ALW_CancelEntry', '_lbl_0C507924'], ['_AL_Deform', '_lbl_0C507944'], ['_CreateChao', '_lbl_0C507928'], ['_njMemCopy', '_lbl_0C50792C'], ["h'3E4CCCCD", '_lbl_0C507930'], ["h'3DCCCCCD", '_lbl_0C507934'], ["h'3E99999A", '_lbl_0C507938'], ["h'38000000", '_lbl_0C50793C']]);
 INLINE_ASM(_func_0C507894, "asm/nonmatching/Chao/al_egg/_func_0C507894.src");
 
 INLINE_ASM(_func_0C507960, "asm/nonmatching/Chao/al_egg/_func_0C507960.src");

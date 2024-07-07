@@ -23,7 +23,7 @@ INLINE_ASM(_func_8C062D40, "asm/nonmatching/./stage/_func_8C062D40.src");
 // MERGE_LIST([['_syFree', '_lbl_8C062DEC']]);
 INLINE_ASM(_LoadPRSFile, "asm/nonmatching/./stage/_LoadPRSFile.src");
 
-// MERGE_LIST([['_lbl_8C1101E2', '_lbl_8C062DE4'], ["h'8C300000", '_lbl_8C062DE8'], ["h'8C500000", '_lbl_8C062DF4'], ['_lbl_8C023E20', '_lbl_8C062DF8'], ['_lbl_8C111998', '_lbl_8C062DFC']]);
+// MERGE_LIST([['_lbl_8C1101E2', '_lbl_8C062DE4'], ["h'8C300000", '_lbl_8C062DE8'], ["h'8C500000", '_lbl_8C062DF4'], ['_lbl_8C023E20', '_lbl_8C062DF8'], ['_njMemCopy4', '_lbl_8C062DFC']]);
 INLINE_ASM(_func_8C062DBC, "asm/nonmatching/./stage/_func_8C062DBC.src");
 
 INLINE_ASM(_func_8C062DC0, "asm/nonmatching/./stage/_func_8C062DC0.src");

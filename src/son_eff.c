@@ -12,6 +12,6 @@ INLINE_ASM(_func_8C0A12E0, "asm/nonmatching/./son_eff/_func_8C0A12E0.src");
 // MERGE_LIST([['_lbl_8C11C450', '_lbl_8C0A14A0'], ['_lbl_8C0F4FE8', '_lbl_8C0A14C0'], ['_njPushMatrixEx', '_lbl_8C0A14A4'], ['_njCnkSimpleDrawObject', '_lbl_8C0A14C4'], ['_njTranslateEx', '_lbl_8C0A14A8'], ['_njPopMatrixEx', '_lbl_8C0A14C8'], ["h'8C25B8A8", '_lbl_8C0A14AC'], ['_lbl_8C11C480', '_lbl_8C0A14CC'], ["h'8C25B894", '_lbl_8C0A14B0'], ['_njRotateY', '_lbl_8C0A14B4'], ['_njRotateZ', '_lbl_8C0A14B8'], ['_lbl_8C0F4E48', '_lbl_8C0A14BC']]);
 INLINE_ASM(_func_8C0A1336, "asm/nonmatching/./son_eff/_func_8C0A1336.src");
 
-// MERGE_LIST([['_njCalcPoint', '_lbl_8C0A14E0'], ['_njPushMatrixEx', '_lbl_8C0A14A4'], ['_lbl_8C0A12E0', '_lbl_8C0A14E4'], ['_njTranslateEx', '_lbl_8C0A14A8'], ['_njPopMatrixEx', '_lbl_8C0A14C8'], ["h'8C2512B8", '_lbl_8C0A14D0'], ['_FreeTask', '_lbl_8C0A14D4'], ['_njRotateY', '_lbl_8C0A14B4'], ["h'40400000", '_lbl_8C0A14D8'], ['_lbl_8C11A240', '_lbl_8C0A14DC']]);
+// MERGE_LIST([['_njCalcPoint', '_lbl_8C0A14E0'], ['_njPushMatrixEx', '_lbl_8C0A14A4'], ['_lbl_8C0A12E0', '_lbl_8C0A14E4'], ['_njTranslateEx', '_lbl_8C0A14A8'], ['_njPopMatrixEx', '_lbl_8C0A14C8'], ["h'8C2512B8", '_lbl_8C0A14D0'], ['_FreeTask', '_lbl_8C0A14D4'], ['_njRotateY', '_lbl_8C0A14B4'], ["h'40400000", '_lbl_8C0A14D8'], ['_njUnitMatrix', '_lbl_8C0A14DC']]);
 INLINE_ASM(_func_8C0A13C4, "asm/nonmatching/./son_eff/_func_8C0A13C4.src");
 

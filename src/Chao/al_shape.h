@@ -75,7 +75,6 @@ typedef struct al_object {
     Angle3 ItemOffsetAng;
     NJS_MATRIX_PTR pOldMatrix;
     AL_BUYO_PARAM* pBuyoParam;
-    void* DisplayList;
 } al_object;
 
 #endif

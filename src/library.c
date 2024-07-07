@@ -1362,9 +1362,9 @@ INLINE_ASM(_func_8C11196C, "asm/nonmatching/./library/_func_8C11196C.src");
 
 INLINE_ASM(_func_8C111984, "asm/nonmatching/./library/_func_8C111984.src");
 
-INLINE_ASM(_func_8C111998, "asm/nonmatching/./library/_func_8C111998.src");
+INLINE_ASM(_njMemCopy4, "asm/nonmatching/./library/_njMemCopy4.src");
 
-INLINE_ASM(_func_8C1119A8, "asm/nonmatching/./library/_func_8C1119A8.src");
+INLINE_ASM(_njMemCopy2, "asm/nonmatching/./library/_njMemCopy2.src");
 
 INLINE_ASM(_njMemCopy, "asm/nonmatching/./library/_njMemCopy.src");
 
@@ -1964,7 +1964,7 @@ INLINE_ASM(_njTranslate, "asm/nonmatching/./library/_njTranslate.src");
 
 INLINE_ASM(_func_8C11A23C, "asm/nonmatching/./library/_func_8C11A23C.src");
 
-INLINE_ASM(_func_8C11A240, "asm/nonmatching/./library/_func_8C11A240.src");
+INLINE_ASM(_njUnitMatrix, "asm/nonmatching/./library/_njUnitMatrix.src");
 
 INLINE_ASM(_func_8C11A2A8, "asm/nonmatching/./library/_func_8C11A2A8.src");
 
@@ -2406,7 +2406,7 @@ INLINE_ASM(_func_8C125A70, "asm/nonmatching/./library/_func_8C125A70.src");
 
 INLINE_ASM(_func_8C125A74, "asm/nonmatching/./library/_func_8C125A74.src");
 
-// MERGE_LIST([["h'8C2E3C00", '_lbl_8C125D00'], ["h'8C28DF20", '_lbl_8C125D18'], ['_lbl_8C111998', '_lbl_8C125D04'], ["h'8C28DF28", '_lbl_8C125D08'], ["h'8C2E4240", '_lbl_8C125CEC'], ["h'8C28DEF8", '_lbl_8C125D0C'], ["h'358637BD", '_lbl_8C125CF0'], ['_lbl_8C11A564', '_lbl_8C125D10'], ["h'8C28DF0C", '_lbl_8C125CF4'], ["h'8C28DEF4", '_lbl_8C125D14'], ["h'8C28DF24", '_lbl_8C125D1C'], ["h'8C28DF08", '_lbl_8C125CF8'], ["h'8C28DFEC", '_lbl_8C125CFC']]);
+// MERGE_LIST([["h'8C2E3C00", '_lbl_8C125D00'], ["h'8C28DF20", '_lbl_8C125D18'], ['_njMemCopy4', '_lbl_8C125D04'], ["h'8C28DF28", '_lbl_8C125D08'], ["h'8C2E4240", '_lbl_8C125CEC'], ["h'8C28DEF8", '_lbl_8C125D0C'], ["h'358637BD", '_lbl_8C125CF0'], ['_lbl_8C11A564', '_lbl_8C125D10'], ["h'8C28DF0C", '_lbl_8C125CF4'], ["h'8C28DEF4", '_lbl_8C125D14'], ["h'8C28DF24", '_lbl_8C125D1C'], ["h'8C28DF08", '_lbl_8C125CF8'], ["h'8C28DFEC", '_lbl_8C125CFC']]);
 INLINE_ASM(_func_8C125CEA, "asm/nonmatching/./library/_func_8C125CEA.src");
 
 // MERGE_LIST([["h'000000FF", 255], ["h'00080002", '_lbl_8C126A4C'], ['_lbl_8C13FA84', '_lbl_8C126A50'], ["h'8C296E4C", '_lbl_8C126A54']]);
@@ -2420,13 +2420,13 @@ INLINE_ASM(_func_8C126B02, "asm/nonmatching/./library/_func_8C126B02.src");
 // MERGE_LIST([["h'8C296E54", '_lbl_8C126CE0'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_njTranslateEx', '_lbl_8C126CE8'], ['_lbl_8C1189B4', '_lbl_8C126CEC'], ['_lbl_8C118A4C', '_lbl_8C126CF0'], ['_njPopMatrixEx', '_lbl_8C126CF4']]);
 INLINE_ASM(_func_8C126BAC, "asm/nonmatching/./library/_func_8C126BAC.src");
 
-// MERGE_LIST([["h'8C296E40", '_lbl_8C126D00'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_lbl_8C11359E', '_lbl_8C126D04'], ["h'8C296E48", '_lbl_8C126CD0'], ['_njPopMatrixEx', '_lbl_8C126CF4'], ['_lbl_8C113540', '_lbl_8C126CF8'], ['_lbl_8C11A240', '_lbl_8C126CFC']]);
+// MERGE_LIST([["h'8C296E40", '_lbl_8C126D00'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_lbl_8C11359E', '_lbl_8C126D04'], ["h'8C296E48", '_lbl_8C126CD0'], ['_njPopMatrixEx', '_lbl_8C126CF4'], ['_lbl_8C113540', '_lbl_8C126CF8'], ['_njUnitMatrix', '_lbl_8C126CFC']]);
 INLINE_ASM(_func_8C126BEE, "asm/nonmatching/./library/_func_8C126BEE.src");
 
-// MERGE_LIST([["h'8C296E40", '_lbl_8C126D00'], ["h'8C296E54", '_lbl_8C126CE0'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_lbl_8C11359E', '_lbl_8C126D04'], ["h'8C296E48", '_lbl_8C126CD0'], ['_njPopMatrixEx', '_lbl_8C126CF4'], ['_lbl_8C113540', '_lbl_8C126CF8'], ['_lbl_8C11A240', '_lbl_8C126CFC']]);
+// MERGE_LIST([["h'8C296E40", '_lbl_8C126D00'], ["h'8C296E54", '_lbl_8C126CE0'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_lbl_8C11359E', '_lbl_8C126D04'], ["h'8C296E48", '_lbl_8C126CD0'], ['_njPopMatrixEx', '_lbl_8C126CF4'], ['_lbl_8C113540', '_lbl_8C126CF8'], ['_njUnitMatrix', '_lbl_8C126CFC']]);
 INLINE_ASM(_func_8C126C36, "asm/nonmatching/./library/_func_8C126C36.src");
 
-// MERGE_LIST([["h'8C296E40", '_lbl_8C126D00'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_lbl_8C11359E', '_lbl_8C126D04'], ["h'8C296E44", '_lbl_8C126D08'], ["h'8C296E48", '_lbl_8C126CD0'], ['_njPopMatrixEx', '_lbl_8C126CF4'], ['_lbl_8C113540', '_lbl_8C126CF8'], ['_lbl_8C11A240', '_lbl_8C126CFC']]);
+// MERGE_LIST([["h'8C296E40", '_lbl_8C126D00'], ['_njPushMatrixEx', '_lbl_8C126CE4'], ['_lbl_8C11359E', '_lbl_8C126D04'], ["h'8C296E44", '_lbl_8C126D08'], ["h'8C296E48", '_lbl_8C126CD0'], ['_njPopMatrixEx', '_lbl_8C126CF4'], ['_lbl_8C113540', '_lbl_8C126CF8'], ['_njUnitMatrix', '_lbl_8C126CFC']]);
 INLINE_ASM(_func_8C126C80, "asm/nonmatching/./library/_func_8C126C80.src");
 
 INLINE_ASM(_func_8C126D0C, "asm/nonmatching/./library/_func_8C126D0C.src");
@@ -3875,10 +3875,10 @@ INLINE_ASM(_func_8C13A138, "asm/nonmatching/./library/_func_8C13A138.src");
 
 INLINE_ASM(_func_8C13A174, "asm/nonmatching/./library/_func_8C13A174.src");
 
-// MERGE_LIST([["h'8C28EB84", '_lbl_8C13A2B0'], ["h'005F9000", '_lbl_8C13A2B4'], ["h'A0000000", '_lbl_8C13A2AC'], ['_lbl_8C111998', '_lbl_8C13A2B8']]);
+// MERGE_LIST([["h'8C28EB84", '_lbl_8C13A2B0'], ["h'005F9000", '_lbl_8C13A2B4'], ["h'A0000000", '_lbl_8C13A2AC'], ['_njMemCopy4', '_lbl_8C13A2B8']]);
 INLINE_ASM(_func_8C13A1D4, "asm/nonmatching/./library/_func_8C13A1D4.src");
 
-// MERGE_LIST([["h'8C28EB84", '_lbl_8C13A2B0'], ["h'005F9000", '_lbl_8C13A2B4'], ['_lbl_8C111998', '_lbl_8C13A2B8']]);
+// MERGE_LIST([["h'8C28EB84", '_lbl_8C13A2B0'], ["h'005F9000", '_lbl_8C13A2B4'], ['_njMemCopy4', '_lbl_8C13A2B8']]);
 INLINE_ASM(_func_8C13A224, "asm/nonmatching/./library/_func_8C13A224.src");
 
 // MERGE_LIST([['_lbl_8C13A794', '_lbl_8C13A2C0'], ['_lbl_8C13A7F4', '_lbl_8C13A2C4'], ['_lbl_8C13A7EC', '_lbl_8C13A2C8'], ["h'4C505650", '_lbl_8C13A2CC'], ['_lbl_8C116BD0', '_lbl_8C13A2BC']]);
@@ -5852,7 +5852,7 @@ INLINE_ASM(_func_8C15D4C4, "asm/nonmatching/./library/_func_8C15D4C4.src");
 
 INLINE_ASM(_func_8C15D5D8, "asm/nonmatching/./library/_func_8C15D5D8.src");
 
-// MERGE_LIST([["h'8C2E4240", '_lbl_8C15D66C'], ['_lbl_8C11A240', '_lbl_8C15D670'], ['_lbl_8C119BC8', '_lbl_8C15D674'], ['_lbl_8C118B20', '_lbl_8C15D678'], ['_njUnitVector', '_lbl_8C15D67C']]);
+// MERGE_LIST([["h'8C2E4240", '_lbl_8C15D66C'], ['_njUnitMatrix', '_lbl_8C15D670'], ['_lbl_8C119BC8', '_lbl_8C15D674'], ['_lbl_8C118B20', '_lbl_8C15D678'], ['_njUnitVector', '_lbl_8C15D67C']]);
 INLINE_ASM(_func_8C15D66A, "asm/nonmatching/./library/_func_8C15D66A.src");
 
 INLINE_ASM(_func_8C15DC18, "asm/nonmatching/./library/_func_8C15DC18.src");

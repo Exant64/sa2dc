@@ -56,7 +56,7 @@ INLINE_ASM(_func_8C0B6880, "asm/nonmatching/./cameraFuncs/_func_8C0B6880.src");
 // MERGE_LIST([['_lbl_8C0AB3EC', '_lbl_8C0B6A00'], ['_lbl_8C0AB454', '_lbl_8C0B6A04'], ['_lbl_8C0AB880', '_lbl_8C0B6A08'], ['_lbl_8C0AB5AC', '_lbl_8C0B6A0C'], ['_lbl_8C0AB6E0', '_lbl_8C0B6A10']]);
 INLINE_ASM(_func_8C0B6902, "asm/nonmatching/./cameraFuncs/_func_8C0B6902.src");
 
-// MERGE_LIST([['_njPushMatrixEx', '_lbl_8C0B6B20'], ['_lbl_8C11A240', '_lbl_8C0B6B24'], ['_njRotateY', '_lbl_8C0B6B28'], ['_lbl_8C118B20', '_lbl_8C0B6B2C'], ['_lbl_8C0AC1B8', '_lbl_8C0B6B30'], ['_njPopMatrixEx', '_lbl_8C0B6B34']]);
+// MERGE_LIST([['_njPushMatrixEx', '_lbl_8C0B6B20'], ['_njUnitMatrix', '_lbl_8C0B6B24'], ['_njRotateY', '_lbl_8C0B6B28'], ['_lbl_8C118B20', '_lbl_8C0B6B2C'], ['_lbl_8C0AC1B8', '_lbl_8C0B6B30'], ['_njPopMatrixEx', '_lbl_8C0B6B34']]);
 INLINE_ASM(_func_8C0B6AEC, "asm/nonmatching/./cameraFuncs/_func_8C0B6AEC.src");
 
 INLINE_ASM(_func_8C0B6B44, "asm/nonmatching/./cameraFuncs/_func_8C0B6B44.src");

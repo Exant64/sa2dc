@@ -146,7 +146,7 @@ INLINE_ASM(_func_8C02392C, "asm/nonmatching/./enemy/_func_8C02392C.src");
 
 INLINE_ASM(_func_8C0239E0, "asm/nonmatching/./enemy/_func_8C0239E0.src");
 
-// MERGE_LIST([['_lbl_8C102E7C', '_lbl_8C023BC0'], ['_njPopMatrixEx', '_lbl_8C023BE0'], ["h'447A0000", '_lbl_8C023BC4'], ['_lbl_8C100688', '_lbl_8C023BE4'], ['_njPushMatrixEx', '_lbl_8C023BC8'], ['_lbl_8C11A240', '_lbl_8C023BCC'], ['_njRotateY', '_lbl_8C023BD0'], ["h'00008000", '_lbl_8C023BD4'], ['_njRotateZ', '_lbl_8C023BD8'], ['_lbl_8C118B20', '_lbl_8C023BDC']]);
+// MERGE_LIST([['_lbl_8C102E7C', '_lbl_8C023BC0'], ['_njPopMatrixEx', '_lbl_8C023BE0'], ["h'447A0000", '_lbl_8C023BC4'], ['_lbl_8C100688', '_lbl_8C023BE4'], ['_njPushMatrixEx', '_lbl_8C023BC8'], ['_njUnitMatrix', '_lbl_8C023BCC'], ['_njRotateY', '_lbl_8C023BD0'], ["h'00008000", '_lbl_8C023BD4'], ['_njRotateZ', '_lbl_8C023BD8'], ['_lbl_8C118B20', '_lbl_8C023BDC']]);
 INLINE_ASM(_func_8C023A4C, "asm/nonmatching/./enemy/_func_8C023A4C.src");
 
 // MERGE_LIST([['_lbl_8C118A4C', '_lbl_8C023C00'], ['_njPopMatrixEx', '_lbl_8C023BE0'], ['_njCnkSimpleDrawObject', '_lbl_8C023C04'], ["h'40200000", '_lbl_8C023BE8'], ['_njPushMatrixEx', '_lbl_8C023BC8'], ['_playertwp', '_lbl_8C023BEC'], ["h'8C2512B8", '_lbl_8C023BF0'], ['_njRotateY', '_lbl_8C023BD0'], ['_lbl_8C0A9BA0', '_lbl_8C023BF4'], ['_njSetTexture', '_lbl_8C023BF8'], ['_njTranslateEx', '_lbl_8C023BFC']]);

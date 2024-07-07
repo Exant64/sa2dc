@@ -94,7 +94,7 @@ INLINE_ASM(_func_8C02E258, "asm/nonmatching/./code_1d340/_func_8C02E258.src");
 
 INLINE_ASM(_func_8C02E282, "asm/nonmatching/./code_1d340/_func_8C02E282.src");
 
-// MERGE_LIST([['_lbl_8C1101E2', '_lbl_8C02E480'], ["h'3F666666", '_lbl_8C02E484'], ['_lbl_8C0DB2E8', '_lbl_8C02E488'], ['_lbl_8C111998', '_lbl_8C02E48C']]);
+// MERGE_LIST([['_lbl_8C1101E2', '_lbl_8C02E480'], ["h'3F666666", '_lbl_8C02E484'], ['_lbl_8C0DB2E8', '_lbl_8C02E488'], ['_njMemCopy4', '_lbl_8C02E48C']]);
 INLINE_ASM(_func_8C02E412, "asm/nonmatching/./code_1d340/_func_8C02E412.src");
 
 INLINE_ASM(_func_8C02E4A0, "asm/nonmatching/./code_1d340/_func_8C02E4A0.src");

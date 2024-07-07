@@ -37,20 +37,20 @@ INLINE_ASM(_func_0C540440, "asm/nonmatching/Chao/OBJECT/_func_0C540440.src");
 
 INLINE_ASM(_func_0C5406C0, "asm/nonmatching/Chao/OBJECT/_func_0C5406C0.src");
 
-// MERGE_LIST([['_njPushMatrixEx', '_lbl_0C540920'], ["h'472AAAAB", '_lbl_0C540940'], ["h'8C11A240", '_lbl_0C540924'], ['_njRotateX', '_lbl_0C540944'], ['_njTranslateEx', '_lbl_0C540928'], ['_njCalcPoint', '_lbl_0C540948'], ['_rand', '_lbl_0C54092C'], ["h'8C118B20", '_lbl_0C54094C'], ["h'40800000", '_lbl_0C540930'], ['_lbl_0C53F660', '_lbl_0C540950'], ['_njRotateY', '_lbl_0C540934'], ['_njPopMatrixEx', '_lbl_0C540954'], ["h'BF000000", '_lbl_0C540938'], ["h'38000000", '_lbl_0C54093C']]);
+// MERGE_LIST([['_njPushMatrixEx', '_lbl_0C540920'], ["h'472AAAAB", '_lbl_0C540940'], ['_njUnitMatrix', '_lbl_0C540924'], ['_njRotateX', '_lbl_0C540944'], ['_njTranslateEx', '_lbl_0C540928'], ['_njCalcPoint', '_lbl_0C540948'], ['_rand', '_lbl_0C54092C'], ["h'8C118B20", '_lbl_0C54094C'], ["h'40800000", '_lbl_0C540930'], ['_lbl_0C53F660', '_lbl_0C540950'], ['_njRotateY', '_lbl_0C540934'], ['_njPopMatrixEx', '_lbl_0C540954'], ["h'BF000000", '_lbl_0C540938'], ["h'38000000", '_lbl_0C54093C']]);
 INLINE_ASM(_func_0C54076C, "asm/nonmatching/Chao/OBJECT/_func_0C54076C.src");
 
-// MERGE_LIST([['_njPushMatrixEx', '_lbl_0C540920'], ["h'472AAAAB", '_lbl_0C540940'], ["h'8C11A240", '_lbl_0C540924'], ['_njRotateX', '_lbl_0C540944'], ['_njTranslateEx', '_lbl_0C540928'], ['_njCalcPoint', '_lbl_0C540948'], ['_rand', '_lbl_0C54092C'], ["h'8C118B20", '_lbl_0C54094C'], ["h'40800000", '_lbl_0C540930'], ['_njRotateY', '_lbl_0C540934'], ['_njPopMatrixEx', '_lbl_0C540954'], ["h'BF000000", '_lbl_0C540938'], ["h'38000000", '_lbl_0C54093C']]);
+// MERGE_LIST([['_njPushMatrixEx', '_lbl_0C540920'], ["h'472AAAAB", '_lbl_0C540940'], ['_njUnitMatrix', '_lbl_0C540924'], ['_njRotateX', '_lbl_0C540944'], ['_njTranslateEx', '_lbl_0C540928'], ['_njCalcPoint', '_lbl_0C540948'], ['_rand', '_lbl_0C54092C'], ["h'8C118B20", '_lbl_0C54094C'], ["h'40800000", '_lbl_0C540930'], ['_njRotateY', '_lbl_0C540934'], ['_njPopMatrixEx', '_lbl_0C540954'], ["h'BF000000", '_lbl_0C540938'], ["h'38000000", '_lbl_0C54093C']]);
 INLINE_ASM(_func_0C540816, "asm/nonmatching/Chao/OBJECT/_func_0C540816.src");
 
 INLINE_ASM(_func_0C540980, "asm/nonmatching/Chao/OBJECT/_func_0C540980.src");
 
-// MERGE_LIST([['_lbl_0C568058', '_lbl_0C540BE0'], ["h'8C118B20", '_lbl_0C540C00'], ['_lbl_0C568064', '_lbl_0C540BE4'], ['_njCalcPoint', '_lbl_0C540C04'], ["h'00010000", '_lbl_0C540BE8'], ['_lbl_0C53F8C0', '_lbl_0C540C08'], ['__divls', '_lbl_0C540BEC'], ['_njPopMatrixEx', '_lbl_0C540C0C'], ['_rand', '_lbl_0C540BF0'], ['_njPushMatrixEx', '_lbl_0C540BF4'], ["h'8C11A240", '_lbl_0C540BF8'], ['_njRotateY', '_lbl_0C540BFC']]);
+// MERGE_LIST([['_lbl_0C568058', '_lbl_0C540BE0'], ["h'8C118B20", '_lbl_0C540C00'], ['_lbl_0C568064', '_lbl_0C540BE4'], ['_njCalcPoint', '_lbl_0C540C04'], ["h'00010000", '_lbl_0C540BE8'], ['_lbl_0C53F8C0', '_lbl_0C540C08'], ['__divls', '_lbl_0C540BEC'], ['_njPopMatrixEx', '_lbl_0C540C0C'], ['_rand', '_lbl_0C540BF0'], ['_njPushMatrixEx', '_lbl_0C540BF4'], ['_njUnitMatrix', '_lbl_0C540BF8'], ['_njRotateY', '_lbl_0C540BFC']]);
 INLINE_ASM(_func_0C540A86, "asm/nonmatching/Chao/OBJECT/_func_0C540A86.src");
 
 INLINE_ASM(_func_0C540C20, "asm/nonmatching/Chao/OBJECT/_func_0C540C20.src");
 
-// MERGE_LIST([['_lbl_0C568088', '_lbl_0C540EA0'], ['_njRotateY', '_lbl_0C540EC0'], ['_lbl_0C568094', '_lbl_0C540EA4'], ['_njCalcPoint', '_lbl_0C540EC4'], ["h'00010000", '_lbl_0C540EA8'], ["h'8C118B20", '_lbl_0C540EC8'], ['__divls', '_lbl_0C540EAC'], ['_lbl_0C53F7C8', '_lbl_0C540ECC'], ['_rand', '_lbl_0C540EB0'], ['_njPopMatrixEx', '_lbl_0C540ED0'], ['_njPushMatrixEx', '_lbl_0C540EB4'], ["h'8C11A240", '_lbl_0C540EB8'], ["h'37800000", '_lbl_0C540EBC']]);
+// MERGE_LIST([['_lbl_0C568088', '_lbl_0C540EA0'], ['_njRotateY', '_lbl_0C540EC0'], ['_lbl_0C568094', '_lbl_0C540EA4'], ['_njCalcPoint', '_lbl_0C540EC4'], ["h'00010000", '_lbl_0C540EA8'], ["h'8C118B20", '_lbl_0C540EC8'], ['__divls', '_lbl_0C540EAC'], ['_lbl_0C53F7C8', '_lbl_0C540ECC'], ['_rand', '_lbl_0C540EB0'], ['_njPopMatrixEx', '_lbl_0C540ED0'], ['_njPushMatrixEx', '_lbl_0C540EB4'], ['_njUnitMatrix', '_lbl_0C540EB8'], ["h'37800000", '_lbl_0C540EBC']]);
 INLINE_ASM(_func_0C540D74, "asm/nonmatching/Chao/OBJECT/_func_0C540D74.src");
 
 INLINE_ASM(_func_0C540F00, "asm/nonmatching/Chao/OBJECT/_func_0C540F00.src");
@@ -126,7 +126,7 @@ INLINE_ASM(_func_0C541EC4, "asm/nonmatching/Chao/OBJECT/_func_0C541EC4.src");
 
 INLINE_ASM(_func_0C542040, "asm/nonmatching/Chao/OBJECT/_func_0C542040.src");
 
-// MERGE_LIST([["h'39200000", '_lbl_0C542220'], ['_njPushMatrixEx', '_lbl_0C542240'], ["h'38000000", '_lbl_0C542224'], ["h'8C11A240", '_lbl_0C542244'], ['_rand', '_lbl_0C542228'], ['_njTranslateV', '_lbl_0C542248'], ["h'41400000", '_lbl_0C542238'], ['_GetCharID', '_lbl_0C54222C'], ['_njRotateY', '_lbl_0C54224C'], ["h'41C80000", '_lbl_0C542230'], ['_njCalcPoint', '_lbl_0C542250'], ["h'41F00000", '_lbl_0C542234'], ['_njPopMatrix', '_lbl_0C542254'], ["h'00008800", '_lbl_0C542258'], ["h'41500000", '_lbl_0C54223C']]);
+// MERGE_LIST([["h'39200000", '_lbl_0C542220'], ['_njPushMatrixEx', '_lbl_0C542240'], ["h'38000000", '_lbl_0C542224'], ['_njUnitMatrix', '_lbl_0C542244'], ['_rand', '_lbl_0C542228'], ['_njTranslateV', '_lbl_0C542248'], ["h'41400000", '_lbl_0C542238'], ['_GetCharID', '_lbl_0C54222C'], ['_njRotateY', '_lbl_0C54224C'], ["h'41C80000", '_lbl_0C542230'], ['_njCalcPoint', '_lbl_0C542250'], ["h'41F00000", '_lbl_0C542234'], ['_njPopMatrix', '_lbl_0C542254'], ["h'00008800", '_lbl_0C542258'], ["h'41500000", '_lbl_0C54223C']]);
 INLINE_ASM(_func_0C542120, "asm/nonmatching/Chao/OBJECT/_func_0C542120.src");
 
 // MERGE_LIST([["h'3F7851EC", '_lbl_0C542480'], ['_njScalor', '_lbl_0C542484']]);
@@ -166,7 +166,7 @@ INLINE_ASM(_func_0C544AC8, "asm/nonmatching/Chao/OBJECT/_func_0C544AC8.src");
 
 INLINE_ASM(_func_0C544BA6, "asm/nonmatching/Chao/OBJECT/_func_0C544BA6.src");
 
-// MERGE_LIST([['_lbl_0C568270', '_lbl_0C544D40'], ['_rand', '_lbl_0C544D60'], ['_lbl_0C56827C', '_lbl_0C544D44'], ['_njRotateY', '_lbl_0C544D64'], ["h'00010000", '_lbl_0C544D48'], ['_njCalcPoint', '_lbl_0C544D68'], ['__divls', '_lbl_0C544D4C'], ['_njPopMatrixEx', '_lbl_0C544D6C'], ['_njPushMatrixEx', '_lbl_0C544D50'], ["h'8C11A240", '_lbl_0C544D54'], ["h'8C118B20", '_lbl_0C544D58'], ["h'37800000", '_lbl_0C544D5C']]);
+// MERGE_LIST([['_lbl_0C568270', '_lbl_0C544D40'], ['_rand', '_lbl_0C544D60'], ['_lbl_0C56827C', '_lbl_0C544D44'], ['_njRotateY', '_lbl_0C544D64'], ["h'00010000", '_lbl_0C544D48'], ['_njCalcPoint', '_lbl_0C544D68'], ['__divls', '_lbl_0C544D4C'], ['_njPopMatrixEx', '_lbl_0C544D6C'], ['_njPushMatrixEx', '_lbl_0C544D50'], ['_njUnitMatrix', '_lbl_0C544D54'], ["h'8C118B20", '_lbl_0C544D58'], ["h'37800000", '_lbl_0C544D5C']]);
 INLINE_ASM(_func_0C544CE0, "asm/nonmatching/Chao/OBJECT/_func_0C544CE0.src");
 
 // MERGE_LIST([['_lbl_0C568288', '_lbl_0C544E40'], ['_lbl_0C544DF2', '_lbl_0C544E44'], ['_CreateElementalTask', '_lbl_0C544E48'], ['_lbl_0C544DD2', '_lbl_0C544E4C'], ['_lbl_0C63EF20', '_lbl_0C544E50']]);
@@ -243,7 +243,7 @@ INLINE_ASM(_func_0C546E40, "asm/nonmatching/Chao/OBJECT/_func_0C546E40.src");
 // MERGE_LIST([['_CheckRangeOutWithR', '_lbl_0C546FE0'], ['_CCL_Entry', '_lbl_0C546FE4'], ["h'00008080", '_lbl_0C546FE8'], ["h'41700000", '_lbl_0C546FEC'], ["h'8C049688", '_lbl_0C546FF0'], ["h'8C02BCE0", '_lbl_0C546FF4'], ["h'8C02BD78", '_lbl_0C546FF8']]);
 INLINE_ASM(_func_0C546EEC, "asm/nonmatching/Chao/OBJECT/_func_0C546EEC.src");
 
-// MERGE_LIST([["h'41F00000", '_lbl_0C5471A0'], ["h'40000001", '_lbl_0C5471A4'], ["h'60000001", '_lbl_0C5471A8'], ["h'8C02BCE0", '_lbl_0C5471AC'], ['_njPushMatrixEx', '_lbl_0C5471B0'], ["h'8C11A240", '_lbl_0C5471B4'], ['_njTranslateEx', '_lbl_0C5471B8'], ['_njRotateZ', '_lbl_0C5471BC'], ['_njRotateY', '_lbl_0C5471C0'], ['_njRotateX', '_lbl_0C5471C4'], ['_njCalcPoint', '_lbl_0C5471C8'], ['_njPopMatrixEx', '_lbl_0C5471CC'], ['_lbl_0C546D1E', '_lbl_0C5471D0'], ['_lbl_0C546CE0', '_lbl_0C5471D4'], ['_lbl_0C546E40', '_lbl_0C5471D8'], ['_lbl_0C546DA6', '_lbl_0C5471DC'], ['_CCL_Init', '_lbl_0C5471E0']]);
+// MERGE_LIST([["h'41F00000", '_lbl_0C5471A0'], ["h'40000001", '_lbl_0C5471A4'], ["h'60000001", '_lbl_0C5471A8'], ["h'8C02BCE0", '_lbl_0C5471AC'], ['_njPushMatrixEx', '_lbl_0C5471B0'], ['_njUnitMatrix', '_lbl_0C5471B4'], ['_njTranslateEx', '_lbl_0C5471B8'], ['_njRotateZ', '_lbl_0C5471BC'], ['_njRotateY', '_lbl_0C5471C0'], ['_njRotateX', '_lbl_0C5471C4'], ['_njCalcPoint', '_lbl_0C5471C8'], ['_njPopMatrixEx', '_lbl_0C5471CC'], ['_lbl_0C546D1E', '_lbl_0C5471D0'], ['_lbl_0C546CE0', '_lbl_0C5471D4'], ['_lbl_0C546E40', '_lbl_0C5471D8'], ['_lbl_0C546DA6', '_lbl_0C5471DC'], ['_CCL_Init', '_lbl_0C5471E0']]);
 INLINE_ASM(_func_0C5470FC, "asm/nonmatching/Chao/OBJECT/_func_0C5470FC.src");
 
 INLINE_ASM(_func_0C547380, "asm/nonmatching/Chao/OBJECT/_func_0C547380.src");
@@ -262,7 +262,7 @@ INLINE_ASM(_func_0C54758C, "asm/nonmatching/Chao/OBJECT/_func_0C54758C.src");
 // MERGE_LIST([["h'8C02130C", '_lbl_0C5476C8']]);
 INLINE_ASM(_func_0C547592, "asm/nonmatching/Chao/OBJECT/_func_0C547592.src");
 
-// MERGE_LIST([['_njCalcPoint', '_lbl_0C5476E0'], ["h'C1700000", '_lbl_0C5476E4'], ["h'41700000", '_lbl_0C5476E8'], ['_njPushMatrixEx', '_lbl_0C5476CC'], ['_njTranslateEx', '_lbl_0C5476EC'], ["h'8C11A240", '_lbl_0C5476D0'], ['_njPopMatrixEx', '_lbl_0C5476F0'], ['_njRotateY', '_lbl_0C5476D4'], ['_CCL_Entry', '_lbl_0C5476F4'], ['_njTranslate', '_lbl_0C5476D8'], ["h'8C2512B8", '_lbl_0C5476DC']]);
+// MERGE_LIST([['_njCalcPoint', '_lbl_0C5476E0'], ["h'C1700000", '_lbl_0C5476E4'], ["h'41700000", '_lbl_0C5476E8'], ['_njPushMatrixEx', '_lbl_0C5476CC'], ['_njTranslateEx', '_lbl_0C5476EC'], ['_njUnitMatrix', '_lbl_0C5476D0'], ['_njPopMatrixEx', '_lbl_0C5476F0'], ['_njRotateY', '_lbl_0C5476D4'], ['_CCL_Entry', '_lbl_0C5476F4'], ['_njTranslate', '_lbl_0C5476D8'], ["h'8C2512B8", '_lbl_0C5476DC']]);
 INLINE_ASM(_func_0C5476A6, "asm/nonmatching/Chao/OBJECT/_func_0C5476A6.src");
 
 INLINE_ASM(_func_0C547704, "asm/nonmatching/Chao/OBJECT/_func_0C547704.src");
@@ -275,7 +275,7 @@ INLINE_ASM(_func_0C54777A, "asm/nonmatching/Chao/OBJECT/_func_0C54777A.src");
 
 INLINE_ASM(_func_0C5478A0, "asm/nonmatching/Chao/OBJECT/_func_0C5478A0.src");
 
-// MERGE_LIST([['_lbl_0C5476A6', '_lbl_0C547A40'], ['_njCalcPoint', '_lbl_0C547A60'], ['_CreateChildTask', '_lbl_0C547A44'], ['_njPopMatrixEx', '_lbl_0C547A64'], ["h'C1F00000", '_lbl_0C547A48'], ['_njPushMatrixEx', '_lbl_0C547A4C'], ["h'8C11A240", '_lbl_0C547A50'], ['_njTranslateEx', '_lbl_0C547A54'], ["h'8C1189B4", '_lbl_0C547A58'], ["h'8C118B20", '_lbl_0C547A5C']]);
+// MERGE_LIST([['_lbl_0C5476A6', '_lbl_0C547A40'], ['_njCalcPoint', '_lbl_0C547A60'], ['_CreateChildTask', '_lbl_0C547A44'], ['_njPopMatrixEx', '_lbl_0C547A64'], ["h'C1F00000", '_lbl_0C547A48'], ['_njPushMatrixEx', '_lbl_0C547A4C'], ['_njUnitMatrix', '_lbl_0C547A50'], ['_njTranslateEx', '_lbl_0C547A54'], ["h'8C1189B4", '_lbl_0C547A58'], ["h'8C118B20", '_lbl_0C547A5C']]);
 INLINE_ASM(_func_0C54794A, "asm/nonmatching/Chao/OBJECT/_func_0C54794A.src");
 
 INLINE_ASM(_func_0C547998, "asm/nonmatching/Chao/OBJECT/_func_0C547998.src");
@@ -683,7 +683,7 @@ INLINE_ASM(_func_0C54F40C, "asm/nonmatching/Chao/OBJECT/_func_0C54F40C.src");
 // MERGE_LIST([['_lbl_0C646118', '_lbl_0C54F600'], ['_lbl_0C646114', '_lbl_0C54F608'], ['_lbl_0C548A78', '_lbl_0C54F604']]);
 INLINE_ASM(_func_0C54F444, "asm/nonmatching/Chao/OBJECT/_func_0C54F444.src");
 
-// MERGE_LIST([['_njPushMatrixEx', '_lbl_0C54F60C'], ["h'8C11A240", '_lbl_0C54F610'], ['_njRotateY', '_lbl_0C54F614'], ["h'8C118B20", '_lbl_0C54F618'], ['_njPopMatrixEx', '_lbl_0C54F61C']]);
+// MERGE_LIST([['_njPushMatrixEx', '_lbl_0C54F60C'], ['_njUnitMatrix', '_lbl_0C54F610'], ['_njRotateY', '_lbl_0C54F614'], ["h'8C118B20", '_lbl_0C54F618'], ['_njPopMatrixEx', '_lbl_0C54F61C']]);
 INLINE_ASM(_func_0C54F4EA, "asm/nonmatching/Chao/OBJECT/_func_0C54F4EA.src");
 
 // MERGE_LIST([["h'41200000", '_lbl_0C54F800'], ["h'08000001", '_lbl_0C54F804'], ["h'43480000", '_lbl_0C54F808'], ["h'42C80000", '_lbl_0C54F80C'], ["h'28000001", '_lbl_0C54F810'], ["h'48000001", '_lbl_0C54F814'], ["h'68000001", '_lbl_0C54F818'], ["h'8C02BCE0", '_lbl_0C54F81C'], ['_lbl_0C646168', '_lbl_0C54F820'], ['_CCL_Init', '_lbl_0C54F824']]);
@@ -934,7 +934,7 @@ INLINE_ASM(_func_0C5567B6, "asm/nonmatching/Chao/OBJECT/_func_0C5567B6.src");
 
 INLINE_ASM(_func_0C5567D4, "asm/nonmatching/Chao/OBJECT/_func_0C5567D4.src");
 
-// MERGE_LIST([['_lbl_0C650EE0', '_lbl_0C556C80'], ['_njScalor', '_lbl_0C556C7C'], ["h'48000000", '_lbl_0C556C60'], ['_njPushMatrix', '_lbl_0C556C64'], ["h'8C11A240", '_lbl_0C556C68'], ['_njScale', '_lbl_0C556C6C'], ['_njRotateX', '_lbl_0C556C70'], ['_njCalcPoint', '_lbl_0C556C74'], ['_njPopMatrix', '_lbl_0C556C78']]);
+// MERGE_LIST([['_lbl_0C650EE0', '_lbl_0C556C80'], ['_njScalor', '_lbl_0C556C7C'], ["h'48000000", '_lbl_0C556C60'], ['_njPushMatrix', '_lbl_0C556C64'], ['_njUnitMatrix', '_lbl_0C556C68'], ['_njScale', '_lbl_0C556C6C'], ['_njRotateX', '_lbl_0C556C70'], ['_njCalcPoint', '_lbl_0C556C74'], ['_njPopMatrix', '_lbl_0C556C78']]);
 INLINE_ASM(_func_0C556C3E, "asm/nonmatching/Chao/OBJECT/_func_0C556C3E.src");
 
 INLINE_ASM(_func_0C556CA0, "asm/nonmatching/Chao/OBJECT/_func_0C556CA0.src");
@@ -1021,7 +1021,7 @@ INLINE_ASM(_func_0C55A2AA, "asm/nonmatching/Chao/OBJECT/_func_0C55A2AA.src");
 
 INLINE_ASM(_func_0C55A2C8, "asm/nonmatching/Chao/OBJECT/_func_0C55A2C8.src");
 
-// MERGE_LIST([['_njSin', '_lbl_0C55A480'], ["h'3DCCCCCD", '_lbl_0C55A484'], ['_lbl_0C654430', '_lbl_0C55A488'], ['_lbl_0C653CC0', '_lbl_0C55A48C'], ['_njSetTexture', '_lbl_0C55A490'], ["h'8C11C450", '_lbl_0C55A494'], ['_njPushMatrixEx', '_lbl_0C55A498'], ["h'8C11A240", '_lbl_0C55A49C'], ['_njTranslateEx', '_lbl_0C55A4A0'], ['_njRotateY', '_lbl_0C55A4A4'], ['_lbl_0C6544B4', '_lbl_0C55A4A8'], ["h'3F4CCCCD", '_lbl_0C55A4AC'], ['_njScale', '_lbl_0C55A4B0'], ["h'8C112B58", '_lbl_0C55A4B4'], ['_njCnkSimpleDrawModel', '_lbl_0C55A4B8'], ['_njCalcPoint', '_lbl_0C55A4BC'], ['_njColorBlendingMode', '_lbl_0C55A4C0'], ["h'3F866666", '_lbl_0C55A4C4'], ["h'8C0365D2", '_lbl_0C55A4C8'], ['_njPopMatrixEx', '_lbl_0C55A4CC'], ["h'8C11C480", '_lbl_0C55A4D0']]);
+// MERGE_LIST([['_njSin', '_lbl_0C55A480'], ["h'3DCCCCCD", '_lbl_0C55A484'], ['_lbl_0C654430', '_lbl_0C55A488'], ['_lbl_0C653CC0', '_lbl_0C55A48C'], ['_njSetTexture', '_lbl_0C55A490'], ["h'8C11C450", '_lbl_0C55A494'], ['_njPushMatrixEx', '_lbl_0C55A498'], ['_njUnitMatrix', '_lbl_0C55A49C'], ['_njTranslateEx', '_lbl_0C55A4A0'], ['_njRotateY', '_lbl_0C55A4A4'], ['_lbl_0C6544B4', '_lbl_0C55A4A8'], ["h'3F4CCCCD", '_lbl_0C55A4AC'], ['_njScale', '_lbl_0C55A4B0'], ["h'8C112B58", '_lbl_0C55A4B4'], ['_njCnkSimpleDrawModel', '_lbl_0C55A4B8'], ['_njCalcPoint', '_lbl_0C55A4BC'], ['_njColorBlendingMode', '_lbl_0C55A4C0'], ["h'3F866666", '_lbl_0C55A4C4'], ["h'8C0365D2", '_lbl_0C55A4C8'], ['_njPopMatrixEx', '_lbl_0C55A4CC'], ["h'8C11C480", '_lbl_0C55A4D0']]);
 INLINE_ASM(_func_0C55A400, "asm/nonmatching/Chao/OBJECT/_func_0C55A400.src");
 
 // MERGE_LIST([["h'40400000", '_lbl_0C55A640'], ["h'3F666666", '_lbl_0C55A644'], ["h'3FC00000", '_lbl_0C55A648'], ['_DestroyTask', '_lbl_0C55A658'], ["h'8C0DB251", '_lbl_0C55A64C'], ["h'3DCCCCCD", '_lbl_0C55A650'], ["h'3E4CCCCD", '_lbl_0C55A654']]);
@@ -1124,7 +1124,7 @@ INLINE_ASM(_func_0C55C694, "asm/nonmatching/Chao/OBJECT/_func_0C55C694.src");
 
 INLINE_ASM(_func_0C55C800, "asm/nonmatching/Chao/OBJECT/_func_0C55C800.src");
 
-// MERGE_LIST([['_lbl_0C568F04', '_lbl_0C55C9C0'], ['_rand', '_lbl_0C55C9E0'], ['_lbl_0C568F10', '_lbl_0C55C9C4'], ['_njRotateY', '_lbl_0C55C9E4'], ["h'00010000", '_lbl_0C55C9C8'], ['_njCalcPoint', '_lbl_0C55C9E8'], ['__divls', '_lbl_0C55C9CC'], ['_njPopMatrixEx', '_lbl_0C55C9EC'], ['_njPushMatrixEx', '_lbl_0C55C9D0'], ["h'8C11A240", '_lbl_0C55C9D4'], ["h'8C118B20", '_lbl_0C55C9D8'], ["h'37800000", '_lbl_0C55C9DC']]);
+// MERGE_LIST([['_lbl_0C568F04', '_lbl_0C55C9C0'], ['_rand', '_lbl_0C55C9E0'], ['_lbl_0C568F10', '_lbl_0C55C9C4'], ['_njRotateY', '_lbl_0C55C9E4'], ["h'00010000", '_lbl_0C55C9C8'], ['_njCalcPoint', '_lbl_0C55C9E8'], ['__divls', '_lbl_0C55C9CC'], ['_njPopMatrixEx', '_lbl_0C55C9EC'], ['_njPushMatrixEx', '_lbl_0C55C9D0'], ['_njUnitMatrix', '_lbl_0C55C9D4'], ["h'8C118B20", '_lbl_0C55C9D8'], ["h'37800000", '_lbl_0C55C9DC']]);
 INLINE_ASM(_func_0C55C93A, "asm/nonmatching/Chao/OBJECT/_func_0C55C93A.src");
 
 // MERGE_LIST([['_CreateElementalTask', '_lbl_0C55CA00'], ['_lbl_0C55C996', '_lbl_0C55CA04'], ['_lbl_0C656A88', '_lbl_0C55C9F0'], ['_lbl_0C55CA20', '_lbl_0C55C9F4'], ['_CreateChildTask', '_lbl_0C55C9F8'], ['_lbl_0C568F1C', '_lbl_0C55C9FC']]);

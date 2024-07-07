@@ -455,13 +455,13 @@ INLINE_ASM(_func_8C076366, "asm/nonmatching/./sonic/_func_8C076366.src");
 // MERGE_LIST([['_lbl_8C0EC4A0', '_lbl_8C0765C0'], ['_lbl_8C0EC5D8', '_lbl_8C0765C4'], ['_lbl_8C11C450', '_lbl_8C0765C8'], ['_njCnkEasyDrawObject', '_lbl_8C0765CC'], ['_lbl_8C11C480', '_lbl_8C0765D0']]);
 INLINE_ASM(_func_8C076440, "asm/nonmatching/./sonic/_func_8C076440.src");
 
-// MERGE_LIST([['_playertwp', '_lbl_8C0767C0'], ['_lbl_8C11A144', '_lbl_8C0767C4'], ['_njScalor', '_lbl_8C0767C8'], ['_njPushMatrixEx', '_lbl_8C0767CC'], ['_lbl_8C11A240', '_lbl_8C0767D0'], ['_njTranslateEx', '_lbl_8C0767D4'], ['_njRotateY', '_lbl_8C0767D8'], ['_njRotateZ', '_lbl_8C0767DC'], ['_njScale', '_lbl_8C0767E0'], ["h'FFFF0000", '_lbl_8C0767E4'], ["h'8C24FE00", '_lbl_8C0767E8'], ["h'8C2512B8", '_lbl_8C0767EC'], ['_njPopMatrixEx', '_lbl_8C0767F0']]);
+// MERGE_LIST([['_playertwp', '_lbl_8C0767C0'], ['_lbl_8C11A144', '_lbl_8C0767C4'], ['_njScalor', '_lbl_8C0767C8'], ['_njPushMatrixEx', '_lbl_8C0767CC'], ['_njUnitMatrix', '_lbl_8C0767D0'], ['_njTranslateEx', '_lbl_8C0767D4'], ['_njRotateY', '_lbl_8C0767D8'], ['_njRotateZ', '_lbl_8C0767DC'], ['_njScale', '_lbl_8C0767E0'], ["h'FFFF0000", '_lbl_8C0767E4'], ["h'8C24FE00", '_lbl_8C0767E8'], ["h'8C2512B8", '_lbl_8C0767EC'], ['_njPopMatrixEx', '_lbl_8C0767F0']]);
 INLINE_ASM(_func_8C07671A, "asm/nonmatching/./sonic/_func_8C07671A.src");
 
 // MERGE_LIST([['_syFree', '_lbl_8C0767F4']]);
 INLINE_ASM(_func_8C076768, "asm/nonmatching/./sonic/_func_8C076768.src");
 
-// MERGE_LIST([['_syFree', '_lbl_8C076980'], ['_lbl_8C1101E2', '_lbl_8C076984'], ["h'FFFF0000", '_lbl_8C076988'], ['_lbl_8C111998', '_lbl_8C07698C'], ['_lbl_8C07671A', '_lbl_8C076990'], ['_lbl_8C076366', '_lbl_8C076994']]);
+// MERGE_LIST([['_syFree', '_lbl_8C076980'], ['_lbl_8C1101E2', '_lbl_8C076984'], ["h'FFFF0000", '_lbl_8C076988'], ['_njMemCopy4', '_lbl_8C07698C'], ['_lbl_8C07671A', '_lbl_8C076990'], ['_lbl_8C076366', '_lbl_8C076994']]);
 INLINE_ASM(_func_8C0768E2, "asm/nonmatching/./sonic/_func_8C0768E2.src");
 
 // MERGE_LIST([['_lbl_8C076440', '_lbl_8C076998'], ['_lbl_8C0757BC', '_lbl_8C07699C']]);

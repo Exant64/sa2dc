@@ -35,7 +35,7 @@ INLINE_ASM(_func_0C5107C0, "asm/nonmatching/Chao/al_material/_func_0C5107C0.src"
 
 INLINE_ASM(_func_0C510840, "asm/nonmatching/Chao/al_material/_func_0C510840.src");
 
-// MERGE_LIST([['_syCalloc', '_lbl_0C510A80'], ["h'8C1119A8", '_lbl_0C510A84']]);
+// MERGE_LIST([['_syCalloc', '_lbl_0C510A80'], ['_njMemCopy2', '_lbl_0C510A84']]);
 INLINE_ASM(_func_0C5109CE, "asm/nonmatching/Chao/al_material/_func_0C5109CE.src");
 
 // MERGE_LIST([['_syFree', '_lbl_0C510A88']]);

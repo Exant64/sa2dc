@@ -7,7 +7,7 @@ INLINE_ASM(_func_0C53D238, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D238.
 
 INLINE_ASM(_func_0C53D2C0, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D2C0.src");
 
-// MERGE_LIST([['_lbl_0C567498', '_lbl_0C53D760'], ["h'4622F986", '_lbl_0C53D764'], ["h'8C11A240", '_lbl_0C53D768'], ["h'8C119BC8", '_lbl_0C53D76C'], ["h'8C1194B0", '_lbl_0C53D770'], ["h'8C11A0D0", '_lbl_0C53D774'], ["h'00008000", '_lbl_0C53D778']]);
+// MERGE_LIST([['_lbl_0C567498', '_lbl_0C53D760'], ["h'4622F986", '_lbl_0C53D764'], ['_njUnitMatrix', '_lbl_0C53D768'], ["h'8C119BC8", '_lbl_0C53D76C'], ["h'8C1194B0", '_lbl_0C53D770'], ["h'8C11A0D0", '_lbl_0C53D774'], ["h'00008000", '_lbl_0C53D778']]);
 INLINE_ASM(_func_0C53D660, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D660.src");
 
 // MERGE_LIST([['_CCL_Enable', '_lbl_0C53D780'], ['_playertwp', '_lbl_0C53D784'], ['_ALW_CommunicationOff', '_lbl_0C53D788'], ["h'3ECCCCCD", '_lbl_0C53D78C'], ["h'3F333333", '_lbl_0C53D790'], ['_MOV_ClearAcc', '_lbl_0C53D794'], ['_MOV_PreservePreviousPosition', '_lbl_0C53D798'], ["h'00008000", '_lbl_0C53D778'], ['_CCL_Disable', '_lbl_0C53D77C']]);
