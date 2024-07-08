@@ -22,10 +22,16 @@ with open(sys.argv[2], "w") as file:
 
         if "INLINE_ASM" in line:
             params = line.strip().split("(")[1].split(")")[0].split(",")
-            file.write("#pragma inline_asm(%s)" % params[0] + os.linesep)
-            file.write("void %s() {" % params[0] + os.linesep)
-            file.write("\t.INCLUDE %s" % params[1] + os.linesep)
-            file.write("}" + os.linesep )
+            if len(params) == 3:
+                file.write("#pragma inline_asm(%s(size=%s))" % (params[0], params[1]) + os.linesep)
+                file.write("void %s() {" % params[0] + os.linesep)
+                file.write("\t.INCLUDE %s" % params[2] + os.linesep)
+                file.write("}" + os.linesep )
+            else:
+                file.write("#pragma inline_asm(%s)" % (params[0]) + os.linesep)
+                file.write("void %s() {" % params[0] + os.linesep)
+                file.write("\t.INCLUDE %s" % params[1] + os.linesep)
+                file.write("}" + os.linesep )
             continue
         
         file.write(line)

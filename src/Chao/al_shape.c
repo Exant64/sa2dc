@@ -69,12 +69,12 @@ void AL_FreeChaoObject(al_object* pObject) {
 
 MERGE_LIST([['_syFree', '_lbl_0C517B20']]);
 
-INLINE_ASM(_func_0C517A6C, "asm/nonmatching/Chao/al_shape/_func_0C517A6C.src");
+INLINE_ASM(_func_0C517A6C, 0x1d4, "asm/nonmatching/Chao/al_shape/_func_0C517A6C.src");
 
-INLINE_ASM(_AL_CopyChaoObject, "asm/nonmatching/Chao/al_shape/_AL_CopyChaoObject.src");
+INLINE_ASM(_AL_CopyChaoObject, 0x28c, "asm/nonmatching/Chao/al_shape/_AL_CopyChaoObject.src");
 
 // MERGE_LIST([['__divls', '_lbl_0C517F20'], ['_syCalloc', '_lbl_0C517F24'], ['_njMemCopy2', '_lbl_0C517F28']]);
-INLINE_ASM(_AL_CalcBuyoWeight, "asm/nonmatching/Chao/al_shape/_AL_CalcBuyoWeight.src");
+INLINE_ASM(_AL_CalcBuyoWeight, 0xc0, "asm/nonmatching/Chao/al_shape/_AL_CalcBuyoWeight.src");
 
 // MERGE_LIST([['_njScalor', '_lbl_0C5180C0']]);
 float lbl_0C517F8C(al_object* pObject, al_object* pParent, Float dist) {
@@ -117,12 +117,12 @@ Bool lbl_0C517FCE(int index) {
 }
 
 MERGE_LIST([['_NullMergeTreeList', '_lbl_0C5180C4']]);
-INLINE_ASM(_AL_CalcBuyoParam, "asm/nonmatching/Chao/al_shape/_AL_CalcBuyoParam.src");
+INLINE_ASM(_AL_CalcBuyoParam, 0x312, "asm/nonmatching/Chao/al_shape/_AL_CalcBuyoParam.src");
 
 #ifndef NONMATCHING
-INLINE_ASM(_AL_CreateOrgVertexList, "asm/nonmatching/Chao/al_shape/_AL_CreateOrgVertexList.src");
+INLINE_ASM(_AL_CreateOrgVertexList, 0x120, "asm/nonmatching/Chao/al_shape/_AL_CreateOrgVertexList.src");
 #else
-extern short lbl_0C67D100;
+extern short tree_count;
 // it's matching, but it uses JSR instead of relative branch because of the inline asms between it and FreeChaoObj
 Bool AL_CreateOrgVertexList(al_object *pObject) {
     al_model* pModel = pObject->pModel;
@@ -185,7 +185,7 @@ Bool AL_CreateOrgVertexList(al_object *pObject) {
         }
     }
 
-    lbl_0C67D100++;
+    tree_count++;
 
     if(pObject->pChild) {
         AL_CreateOrgVertexList(pObject->pChild);
@@ -198,14 +198,83 @@ Bool AL_CreateOrgVertexList(al_object *pObject) {
     return TRUE;
 }
 #endif
-INLINE_ASM(_AL_ShapeInit, "asm/nonmatching/Chao/al_shape/_AL_ShapeInit.src");
 
-// MERGE_LIST([['_PartsNumber', '_lbl_0C518680'], ['_tree_count', '_lbl_0C518684'], ['_AL_RootObject', '_lbl_0C518688'], ['_syCalloc', '_lbl_0C51868C'], ['_AL_Deform', '_lbl_0C518690'], ['_AL_SetCurrMatrix', '_lbl_0C518694'], ["h'FF66BBFF", '_lbl_0C518698'], ['_lbl_0C510C3E', '_lbl_0C51869C']]);
-INLINE_ASM(_AL_ShapeControl, "asm/nonmatching/Chao/al_shape/_AL_ShapeControl.src");
+#if 1
+INLINE_ASM(_AL_ShapeInit, 0x218, "asm/nonmatching/Chao/al_shape/_AL_ShapeInit.src");
+#else
+
+extern int PartsNumber;
+extern NJS_CNK_OBJECT* AL_RootObject[];
+Bool AL_ShapeInit(task* tp)
+{
+	chaowk* twp = (chaowk*)tp->twp;
+	AL_SHAPE* asp = &twp->Shape;
+	CHAO_PARAM* pParam = &twp->param;
+    Sint32 type;
+
+	tree_count = 0;
+	PartsNumber = 0;
+
+	type = pParam->type - 2;
+
+	asp->pObject = (al_object*)AL_CopyChaoObject(AL_RootObject[6 * type], AL_RootObject[2], 0);
+	
+	if (!asp->pObject)
+		return FALSE;
+
+	AL_GetObjectList(asp->pObject, asp->CurrObjectList);
+
+	asp->pObjectList = (AL_GROUP_OBJECT_LIST*)syCalloc(1, sizeof(AL_GROUP_OBJECT_LIST));
+
+	if (!asp->pObjectList)
+		return FALSE;
+
+	AL_GetObjectList((al_object*)AL_RootObject[6 * type + 0], (al_object**)asp->pObjectList->Zero);
+	AL_GetObjectList((al_object*)AL_RootObject[6 * type + 1], (al_object**)asp->pObjectList->Normal);
+	AL_GetObjectList((al_object*)AL_RootObject[6 * type + 2], (al_object**)asp->pObjectList->Swim);
+	AL_GetObjectList((al_object*)AL_RootObject[6 * type + 3], (al_object**)asp->pObjectList->Fly);
+	AL_GetObjectList((al_object*)AL_RootObject[6 * type + 4], (al_object**)asp->pObjectList->Run);
+	AL_GetObjectList((al_object*)AL_RootObject[6 * type + 5], (al_object**)asp->pObjectList->Power);
+
+	asp->pObjectListH = (AL_GROUP_OBJECT_LIST*)syCalloc(1, sizeof(AL_GROUP_OBJECT_LIST));
+
+	if (!asp->pObjectListH)
+		return FALSE;
+
+	AL_GetObjectList((al_object*)AL_RootObject[6], (al_object**)asp->pObjectListH->Zero);
+	AL_GetObjectList((al_object*)AL_RootObject[7], (al_object**)asp->pObjectListH->Normal);
+	AL_GetObjectList((al_object*)AL_RootObject[8], (al_object**)asp->pObjectListH->Swim);
+	AL_GetObjectList((al_object*)AL_RootObject[9], (al_object**)asp->pObjectListH->Fly);
+	AL_GetObjectList((al_object*)AL_RootObject[10], (al_object**)asp->pObjectListH->Run);
+	AL_GetObjectList((al_object*)AL_RootObject[11], (al_object**)asp->pObjectListH->Power);
+
+	asp->pObjectListD = (AL_GROUP_OBJECT_LIST*)syCalloc(1, sizeof(AL_GROUP_OBJECT_LIST));
+
+	if (!asp->pObjectListD)
+		return FALSE;
+
+	AL_GetObjectList((al_object*)AL_RootObject[12], (al_object**)asp->pObjectListD->Zero);
+	AL_GetObjectList((al_object*)AL_RootObject[13], (al_object**)asp->pObjectListD->Normal);
+	AL_GetObjectList((al_object*)AL_RootObject[14], (al_object**)asp->pObjectListD->Swim);
+	AL_GetObjectList((al_object*)AL_RootObject[15], (al_object**)asp->pObjectListD->Fly);
+	AL_GetObjectList((al_object*)AL_RootObject[16], (al_object**)asp->pObjectListD->Run);
+	AL_GetObjectList((al_object*)AL_RootObject[17], (al_object**)asp->pObjectListD->Power);
+
+	AL_CreateOrgVertexList(asp->pObject);
+	AL_Deform(tp);
+	AL_CalcBuyoParam(tp);
+	AL_SetCurrMatrix(tp);
+	asp->IconColor = 0xFF66BBFF;
+	AL_MaterialInit(tp);
+
+    return TRUE;
+}
+#endif
+//MERGE_LIST([['_PartsNumber', '_lbl_0C518680'], ['_tree_count', '_lbl_0C518684'], ['_AL_RootObject', '_lbl_0C518688'], ['_syCalloc', '_lbl_0C51868C'], ['_AL_Deform', '_lbl_0C518690'], ['_AL_SetCurrMatrix', '_lbl_0C518694'], ["h'FF66BBFF", '_lbl_0C518698'], ['_lbl_0C510C3E', '_lbl_0C51869C']]);
+INLINE_ASM(_AL_ShapeControl, 0x12e, "asm/nonmatching/Chao/al_shape/_AL_ShapeControl.src");
 
 // MERGE_LIST([["h'0000FFF7", '_lbl_0C5187E0'], ["h'3DCCCCCD", '_lbl_0C5187E4'], ['_AL_BuyoBuyoControl', '_lbl_0C5187E8']]);
-INLINE_ASM(_AL_ShapeExit, "asm/nonmatching/Chao/al_shape/_AL_ShapeExit.src");
+INLINE_ASM(_AL_ShapeExit, 0x46, "asm/nonmatching/Chao/al_shape/_AL_ShapeExit.src");
 
 // MERGE_LIST([['_syFree', '_lbl_0C5187EC']]);
-INLINE_ASM(_AL_ShapeChangeType, "asm/nonmatching/Chao/al_shape/_AL_ShapeChangeType.src");
-
+INLINE_ASM(_AL_ShapeChangeType, 0xb4, "asm/nonmatching/Chao/al_shape/_AL_ShapeChangeType.src");
