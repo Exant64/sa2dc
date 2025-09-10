@@ -12,7 +12,7 @@ extern NJS_CNK_OBJECT* pMedalObjectList[];
 extern short Chao_NodeIndex;
 extern int Chao_UseEasy;
 
-void AL_DrawSub(task* tp, al_object* pObject) {
+static void AL_DrawSub(task* tp, al_object* pObject) {
     chaowk* cwk = GET_CHAOWK(tp);
     AL_SHAPE* pShape = &cwk->Shape;
     CHAO_PARAM* pParam = &cwk->param;
@@ -159,121 +159,80 @@ void AL_DrawSub(task* tp, al_object* pObject) {
         AL_DrawSub(tp, pObject->pSibling);
 }
 
-MERGE_LIST([['_njCnkSimpleDrawModel', '_lbl_0C503AC0'], ['_njPopMatrixEx', '_lbl_0C503AC4']]);
+extern NJS_CNK_MODEL model_kage_marukage_marukage[];
 
-#ifndef NONMATCHING
-INLINE_ASM(_AL_ShadowDraw, "asm/nonmatching/Chao/al_draw/_AL_ShadowDraw.src");
-#else
-extern NJS_CNK_OBJECT object_kage_marukage_marukage[];
-
-#define start(pos)    \
-    njPushMatrixEx(); \
-    njTranslateEx(pos);
-#define pop() njPopMatrixEx();
-#define rotate() njRotateY(0, cwk->ang.y)
-
-static void poppush() {
-    njPopMatrixEx();
-    njPushMatrixEx();
-}
-
-static void pop_() {
-    njPopMatrixEx();
-}
-
-#define drawmodel() njCnkModDrawModel(object_kage_marukage_marukage.model)
-
-void AL_ShadowDraw(task* tp) {
-
+static void AL_ShadowDraw(task* tp) {
+    chaowk* entity = GET_CHAOWK(tp);
     chaowk* cwk = GET_CHAOWK(tp);
     AL_SHAPE* pShape = &cwk->Shape;
+    int unused;
+    float dist;
     al_entry_work* pEntry = ALW_ENTRY_WORK(tp);
-    float dist = pEntry ? pEntry->CamDist : 300;
-    // if(pEntry) dist = pEntry->CamDist;
-    // else dist = 300.0f;
+
+    if(pEntry) dist = pEntry->CamDist;
+    else dist = 300.f;
 
     if (AL_GetStageNumber() == 4) {
         njPushMatrixEx();
         njTranslateEx(&pShape->HeadPos);
-        njRotateY(0, cwk->ang.y);
+        njRotateY(0, entity->ang.y);
         njScale(0, 1.6f, 0.7, 1.5);
-        njCnkModDrawModel(object_kage_marukage_marukage.model);
+        njCnkModDrawModel(model_kage_marukage_marukage);
         njPopMatrixEx();
         njPushMatrixEx();
         njTranslateEx(&pShape->BodyPos);
-        njRotateY(0, cwk->ang.y);
+        njRotateY(0, entity->ang.y);
         njScale(0, 1.4f, 0.7, 1.4f);
-        njCnkModDrawModel(object_kage_marukage_marukage.model);
-        pop();
-        return;
+        njCnkModDrawModel(model_kage_marukage_marukage);
+        njPopMatrixEx();
     }
-
-    if (dist < GET_GLOBAL()->CamDistShadowCutLev4) {
-        start(&pShape->HeadPos);
-        rotate();
+    else if (dist < GET_GLOBAL()->CamDistShadowCutLev4) {
+        njPushMatrixEx();
+        njTranslateEx(&pShape->HeadPos);
+        njRotateY(0, entity->ang.y);
         njScale(0, 1.6f, 0.7, 1.5);
-        njCnkModDrawModel(object_kage_marukage_marukage);
-        pop();
+        njCnkModDrawModel(model_kage_marukage_marukage);
+        njPopMatrixEx();
+
         if (dist < GET_GLOBAL()->CamDistShadowCutLev2) {
             njPushMatrixEx();
-            njTranslateEx(&pShape->HeadPos);
-            njRotateY(0, cwk->ang.y);
-            njScale(0, 1.6f, 0.7, 1.5);
-            drawmodel();
-            pop();
-            if (dist < GET_GLOBAL()->CamDistShadowCutLev2) {
+            if (pShape->Flag & AL_SHAPE_FLAG_SHADOW)
+                pShape->LeftHandPos.y = entity->pos.y + 0.01f;
+            njTranslateEx(&pShape->LeftHandPos);
+            njRotateY(0, entity->ang.y);
+            njScale(0, 0.65f, 0.6f, 0.65f);
+            njCnkModDrawModel(model_kage_marukage_marukage);
+            njPopMatrixEx();
+
+            njPushMatrixEx();
+            if (pShape->Flag & AL_SHAPE_FLAG_SHADOW)
+                pShape->RightHandPos.y = entity->pos.y + 0.01f;
+            njTranslateEx(&pShape->RightHandPos);
+            njRotateY(0, entity->ang.y);
+            njScale(0, 0.65f, 0.6f, 0.65f);
+            njCnkModDrawModel(model_kage_marukage_marukage);
+            njPopMatrixEx();
+            if (dist < GET_GLOBAL()->CamDistShadowCutLev1) {
                 njPushMatrixEx();
-                if (pShape->Flag & AL_SHAPE_FLAG_SHADOW)
-                    pShape->LeftHandPos.y = cwk->pos.y + 0.01f;
-                njTranslateEx(&pShape->LeftHandPos);
-                njRotateY(0, cwk->ang.y);
-                njScale(0, 0.65f, 0.6f, 0.65f);
-                drawmodel();
+                njTranslateEx(&pShape->BodyPos);
+                njRotateY(0, entity->ang.y);
+                njScale(0, 1.4f, 0.7, 1.4f);
+                njCnkModDrawModel(model_kage_marukage_marukage);
                 njPopMatrixEx();
 
-                njPushMatrixEx();
-                if (pShape->Flag & AL_SHAPE_FLAG_SHADOW)
-                    pShape->RightHandPos.y = cwk->pos.y + 0.01f;
-                njTranslateEx(&pShape->RightHandPos);
-                njRotateY(0, cwk->ang.y);
-                njScale(0, 0.65f, 0.6f, 0.65f);
-                drawmodel();
-                njPopMatrixEx();
-                if (dist < GET_GLOBAL()->CamDistShadowCutLev1) {
+                if (!GET_CHAOPARAM(tp)->body.ObakeBody) {
                     njPushMatrixEx();
-                    njTranslateEx(&pShape->BodyPos);
-                    njRotateY(0, cwk->ang.y);
-                    njScale(0, 1.4f, 0.7, 1.4f);
-                    drawmodel();
+                    njTranslateEx(&pShape->LeftFootPos);
+                    njRotateY(0, entity->ang.y);
+                    njScale(0, 0.6f, 0.6f, 0.9f);
+                    njCnkModDrawModel(model_kage_marukage_marukage);
                     njPopMatrixEx();
 
-                    if (!GET_CHAOPARAM(tp)->body.ObakeBody) {
-                        njPushMatrixEx();
-                        njTranslateEx(&pShape->LeftFootPos);
-                        njRotateY(0, cwk->ang.y);
-                        njScale(0, 0.6f, 0.6f, 0.9f);
-                        drawmodel();
-                        njPopMatrixEx();
-
-                        njPushMatrixEx();
-                        njTranslateEx(&pShape->RightFootPos);
-                        njRotateY(0, cwk->ang.y);
-                        njScale(0, 0.6f, 0.6f, 0.9f);
-                        drawmodel();
-                        njPopMatrixEx();
-                    }
-
                     njPushMatrixEx();
-                    {
-                        NJS_POINT3* IconPos = &GET_CHAOWK(tp)->Icon.Lower.Pos;
-                        if ((pShape->Flag & AL_SHAPE_FLAG_SHADOW))
-                            njTranslate(0, IconPos->x, cwk->pos.y + 0.001f, IconPos->z);
-                        else
-                            njTranslateEx(IconPos);
-                    }
-                    njRotateY(0, cwk->ang.y);
-                    njScale(0, 0.5, 0.7, 0.5);
-                    drawmodel();
+                    njTranslateEx(&pShape->RightFootPos);
+                    njRotateY(0, entity->ang.y);
+                    njScale(0, 0.6f, 0.6f, 0.9f);
+                    njCnkModDrawModel(model_kage_marukage_marukage);
                     njPopMatrixEx();
                 }
 
@@ -281,27 +240,23 @@ void AL_ShadowDraw(task* tp) {
                 {
                     NJS_POINT3* IconPos = &GET_CHAOWK(tp)->Icon.Lower.Pos;
                     if ((pShape->Flag & AL_SHAPE_FLAG_SHADOW))
-                        njTranslate(0, IconPos->x, cwk->pos.y + 0.001f, IconPos->z);
+                        njTranslate(0, IconPos->x, entity->pos.y + 0.001f, IconPos->z);
                     else
                         njTranslateEx(IconPos);
                 }
-                rotate();
+                njRotateY(0, entity->ang.y);
                 njScale(0, 0.5, 0.7, 0.5);
-                njCnkModDrawModel(object_kage_marukage_marukage);
-                pop();
+                njCnkModDrawModel(model_kage_marukage_marukage);
+                njPopMatrixEx();
             }
         }
     }
 }
-#endif
-
-// MERGE_LIST([['_lbl_0C56B098', '_lbl_0C503D40'], ['_njPushMatrixEx', '_lbl_0C503D44'], ['_njRotateY', '_lbl_0C503D48'], ["h'3FCCCCCD", '_lbl_0C503D4C'], ['_lbl_0C56B090', '_lbl_0C503D50'], ["h'3C23D70A", '_lbl_0C503D54'], ["h'3F19999A", '_lbl_0C503D58'], ["h'3F266666", '_lbl_0C503D5C'], ['_lbl_0C56B08C', '_lbl_0C503D60'], ["h'3F666666", '_lbl_0C503D64'], ["h'3A83126F", '_lbl_0C503D68'], ['_njTranslate', '_lbl_0C503D6C'], ["h'3F000000", '_lbl_0C503D70']]);
-#ifndef NONMATCHING
-INLINE_ASM(_AL_Draw, "asm/nonmatching/Chao/al_draw/_AL_Draw.src");
-#else
 
 void AL_Draw(task* tp) {
+    chaowk* entity = GET_CHAOWK(tp);
     chaowk* cwk = GET_CHAOWK(tp);
+    MOTION_CTRL* pMotion = &cwk->MotionCtrl;
     AL_SHAPE* pShape = &cwk->Shape;
 
     if (!AL_IsOnScreen3(tp, 5.2f, 4.5f, 2.9f)) {
@@ -311,7 +266,6 @@ void AL_Draw(task* tp) {
 
         if (GET_CHAOWK(tp)->ChaoFlag & CHAO_FLAG_DRAW_ENABLE) {
             CHAO_PARAM* pParam = &cwk->param;
-            float v;
 
             Chao_UseEasy = 0;
             switch (pParam->type) {
@@ -322,45 +276,43 @@ void AL_Draw(task* tp) {
                 case TYPE_H_POWER:
                     if (pParam->body.JewelNum == AL_JEWEL_NONE) // 713
                         Chao_UseEasy = 1;                       // 714
-                    break;
-            }
-            // 716
-            if (!pParam->body.ColorNum) { // 719
-            } else {
-                Chao_UseEasy = 0;
+                        break;
             }
 
-            njControl3D_Backup(); // 726
-            njControl3D_Remove(0x204);
+            if (pParam->body.ColorNum) {
+                Chao_UseEasy = 0;
+            }
+            else {}
+
+            SaveControl3D();
+            OffControl3D(0x204);
             SaveConstantAttr();
             SetMaterial(0, 0, 0, 0);
             Chao_NodeIndex = 0;
             AL_InitCalcMotionMatrix(tp);
 
-            if (1) {
-                njSetTexture(&AL_BODY_TEXLIST);
-                alpalSetBank(tp, cwk->id);
-            }
+            njSetTexture(&AL_BODY_TEXLIST);
+            alpalSetBank(tp, entity->id);
 
             if (pShape->Flag & AL_SHAPE_FLAG_SHADOW) {
-                njControl3D_Add(0x2400);
+                OnControl3D(0x2400);
             }
 
-            njPushMatrixEx(); // 748
-            if (cwk->flag & 0x8000) {
-                njTranslate(0, 0, -1, 0); // 750
+            njPushMatrixEx();
+            if (entity->flag & 0x8000) {
+                njTranslate(0, 0, -1, 0);
             }
-            njTranslateV(0, &cwk->pos);
-            njRotateZ(0, cwk->ang.z);
-            njRotateX(0, cwk->ang.x);
-            njRotateY(0, cwk->ang.y); // 755
+            njTranslateV(0, &entity->pos);
+            njRotateZ(0, entity->ang.z);
+            njRotateX(0, entity->ang.x);
+            njRotateY(0, entity->ang.y);
 
             {
-                v = 1;
-                njTranslate(0, 0, -v, 0); // 759
-                njRotateX(0, cwk->pitch); // 760
+                float v = 1;
+                njTranslate(0, 0, -v, 0);
+                njRotateX(0, cwk->pitch);
 
-                njTranslate(0, 0, v, 0); // 762
+                njTranslate(0, 0, v, 0);
             }
 
             AL_DrawSub(tp, cwk->Shape.pObject);
@@ -394,11 +346,10 @@ void AL_Draw(task* tp) {
             AL_IconDraw(tp);
             AL_ShadowDraw(tp);
 
-            njControl3D_Remove(0x2400);
+            OffControl3D(0x2400);
             SetMaterial(0, 0, 0, 0);
             LoadConstantAttr();
-            njControl3D_Restore();
+            LoadControl3D();
         }
     }
 }
-#endif
