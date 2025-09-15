@@ -245,13 +245,11 @@ int AL_SearchFruit(task* tp) {
         }
     }
 }
-
-#ifdef NON_MATCHING
 int AL_SearchTree(task* tp) {
     int count;
     chaowk* cwk = GET_CHAOWK(tp); // 92
-    NJS_POINT3* pos = &cwk->pos;
     
+    NJS_POINT3* pos = &cwk->pos;
     int ang = cwk->ang.y;
 
     AL_PERCEPTION* pPerception = &GET_CHAOWK(tp)->Perception;
@@ -282,18 +280,18 @@ int AL_SearchTree(task* tp) {
             taskwk* wk = player->twp;
 
             if (wk) {
-                NJS_VECTOR* playerPos = &wk->pos;
+                NJS_POINT3* playerPos = &wk->pos;
                 float dist = njDistanceP2P(pos, playerPos);
-
-                if (dist < SightRange) {
-                    Angle f = njArcTan2(playerPos->x - pos->x, playerPos->z - pos->z);
+    
+                if (dist >= SightRange) {} else {
+                    const Angle f = njArcTan2(playerPos->x - pos->x, playerPos->z - pos->z);
                     int diff = DiffAngle(f, ang);
-
+                    
                     if (diff < SightAngleHalf) {
                         pInfo->InSightFlag = 1;
                         pLink->InSightFlag = 1;
                         flag = 1;
-
+            
                         pLink->dist = dist;
                         pLink->pEntry = player->EntityData2;
                     }
@@ -325,18 +323,18 @@ int AL_SearchTree(task* tp) {
             taskwk* wk = player->twp;
 
             if (wk) {
-                NJS_VECTOR* playerPos = &wk->pos;
+                NJS_POINT3* playerPos = &wk->pos;
                 float dist = njDistanceP2P(pos, playerPos);
-
-                if (dist < SightRange) {
-                    Angle f = njArcTan2(playerPos->x - pos->x, playerPos->z - pos->z);
+    
+                if (dist >= SightRange) {} else {
+                    const Angle f = njArcTan2(playerPos->x - pos->x, playerPos->z - pos->z);
                     int diff = DiffAngle(f, ang);
-
+                    
                     if (diff < SightAngleHalf) {
                         pInfo->InSightFlag = 1;
                         pLink->InSightFlag = 1;
                         flag = 1;
-
+            
                         pLink->dist = dist;
                         pLink->pEntry = player->EntityData2;
                     }
@@ -356,9 +354,6 @@ int AL_SearchTree(task* tp) {
         }
     }
 }
-#else
-INLINE_ASM(_AL_SearchTree, 0x1c0, "asm/nonmatching/Chao/al_perception/_AL_SearchTree.src");
-#endif
 
 int AL_SearchToy(task* tp) {
     int count;
@@ -427,9 +422,6 @@ int AL_SearchToy(task* tp) {
     }
 }
 
-// not nonmatching, only nonmatching because of SearchTree
-// (compiler can't figure out it can bsr to it instead of pointer-jsr)
-#ifdef NONMATCHING
 int AL_SearchSound(task* tp) {}
 
 int AL_CalcPerceptionAll(task* tp) {
@@ -445,7 +437,6 @@ int AL_CalcPerceptionAll(task* tp) {
 
     return val;
 }
-//INLINE_ASM(_AL_CalcPerceptionAll, 0x34, "asm/nonmatching/Chao/al_perception/_AL_CalcPerceptionAll.src");
 
 al_perception_link* AL_GetFoundPlayer(task *tp) {
     AL_PERCEPTION* pPerception = &GET_CHAOWK(tp)->Perception;
@@ -468,16 +459,6 @@ task* AL_GetFoundPlayerTask(task* tp) {
 
     return NULL;
 }
-#else
-MERGE_LIST([['_ALW_CountEntry', '_lbl_0C516020'], ["h'4622F986", '_lbl_0C516024'], ['_ALW_GetTaskCount', '_lbl_0C516028'], ['_njDistanceP2P', '_lbl_0C51602C'], ['_atan2f', '_lbl_0C516030'], ['_DiffAngle', '_lbl_0C516034']]);
-INLINE_ASM(_func_0C515F96, 0x4, "asm/nonmatching/Chao/al_perception/_func_0C515F96.src");
-
-INLINE_ASM(_AL_CalcPerceptionAll, 0x34, "asm/nonmatching/Chao/al_perception/_AL_CalcPerceptionAll.src");
-
-INLINE_ASM(_AL_GetFoundPlayer, 0x2e, "asm/nonmatching/Chao/al_perception/_AL_GetFoundPlayer.src");
-
-INLINE_ASM(_AL_GetFoundPlayerTask, 0x44, "asm/nonmatching/Chao/al_perception/_AL_GetFoundPlayerTask.src");
-#endif
 
 al_perception_link* AL_GetFoundFruit(task *tp) {
     AL_PERCEPTION* pPerception = &GET_CHAOWK(tp)->Perception;
