@@ -1,6 +1,6 @@
 #include <task.h>
 
-INLINE_ASM(_func_0C511700, 0xba, "asm/nonmatching/Chao/al_misc/_func_0C511700.src");
+INLINE_ASM(_AL_InterpolateAngle, 0xba, "asm/nonmatching/Chao/al_misc/_AL_InterpolateAngle.src");
 
 // MERGE_LIST([["h'3BB40000", '_lbl_0C5118E0'], ["h'43340000", '_lbl_0C5118E4'], ["h'43B40000", '_lbl_0C5118E8'], ["h'C3340000", '_lbl_0C5118EC'], ["h'43360B61", '_lbl_0C5118F0']]);
 INLINE_ASM(_func_0C5117BA, 0x78, "asm/nonmatching/Chao/al_misc/_func_0C5117BA.src");

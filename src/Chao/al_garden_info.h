@@ -3,6 +3,12 @@
 
 #include "Chao/al_race_info.h"
 
+typedef enum eCHAO_STAGE_NUMBER {
+    CHAO_STG_NEUT = 1,
+    CHAO_STG_HERO = 2,
+    CHAO_STG_DARK = 3,
+} eCHAO_STAGE_NUMBER;
+
 typedef struct TREE_SAVE_INFO {
     char kind;
     char state;
