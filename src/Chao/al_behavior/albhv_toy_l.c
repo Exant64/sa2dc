@@ -12,24 +12,24 @@ INLINE_ASM(_func_0C53A3AE, 0x2f2, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/
 
 INLINE_ASM(_func_0C53A6A0, 0x6c, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A6A0.src");
 
-// MERGE_LIST([['_lbl_0C516128', '_lbl_0C53A7C0'], ['_ALBHV_GoToLockOn', '_lbl_0C53A7E0'], ['_ALO_GetTVWatchPos', '_lbl_0C53A7C4'], ['_ALBHV_Touch', '_lbl_0C53A7E4'], ['_ALW_LockOn', '_lbl_0C53A7C8'], ['_ALBHV_GoToAim', '_lbl_0C53A7E8'], ['_MOV_SetAimPos', '_lbl_0C53A7CC'], ['_ALBHV_TurnToLockOn', '_lbl_0C53A7EC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A7D0'], ['_lbl_0C539EE0', '_lbl_0C53A7F0'], ['_AL_SetBehavior', '_lbl_0C53A7D4'], ['_AL_SetNextBehavior', '_lbl_0C53A7D8'], ['_ALBHV_Notice', '_lbl_0C53A7DC']]);
+// MERGE_LIST([['_AL_GetFoundToyTask', '_lbl_0C53A7C0'], ['_ALBHV_GoToLockOn', '_lbl_0C53A7E0'], ['_ALO_GetTVWatchPos', '_lbl_0C53A7C4'], ['_ALBHV_Touch', '_lbl_0C53A7E4'], ['_ALW_LockOn', '_lbl_0C53A7C8'], ['_ALBHV_GoToAim', '_lbl_0C53A7E8'], ['_MOV_SetAimPos', '_lbl_0C53A7CC'], ['_ALBHV_TurnToLockOn', '_lbl_0C53A7EC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A7D0'], ['_lbl_0C539EE0', '_lbl_0C53A7F0'], ['_AL_SetBehavior', '_lbl_0C53A7D4'], ['_AL_SetNextBehavior', '_lbl_0C53A7D8'], ['_ALBHV_Notice', '_lbl_0C53A7DC']]);
 INLINE_ASM(_func_0C53A70C, 0x6c, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A70C.src");
 
-// MERGE_LIST([['_lbl_0C516128', '_lbl_0C53A7C0'], ['_ALBHV_GoToLockOn', '_lbl_0C53A7E0'], ['_lbl_0C53A0D4', '_lbl_0C53A7F8'], ['_ALBHV_Touch', '_lbl_0C53A7E4'], ['_ALW_LockOn', '_lbl_0C53A7C8'], ['_ALBHV_GoToAim', '_lbl_0C53A7E8'], ['_MOV_SetAimPos', '_lbl_0C53A7CC'], ['_ALBHV_TurnToLockOn', '_lbl_0C53A7EC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A7D0'], ['_AL_SetBehavior', '_lbl_0C53A7D4'], ['_ALO_GetRadicaseListenPos', '_lbl_0C53A7F4'], ['_AL_SetNextBehavior', '_lbl_0C53A7D8'], ['_ALBHV_Notice', '_lbl_0C53A7DC']]);
+// MERGE_LIST([['_AL_GetFoundToyTask', '_lbl_0C53A7C0'], ['_ALBHV_GoToLockOn', '_lbl_0C53A7E0'], ['_lbl_0C53A0D4', '_lbl_0C53A7F8'], ['_ALBHV_Touch', '_lbl_0C53A7E4'], ['_ALW_LockOn', '_lbl_0C53A7C8'], ['_ALBHV_GoToAim', '_lbl_0C53A7E8'], ['_MOV_SetAimPos', '_lbl_0C53A7CC'], ['_ALBHV_TurnToLockOn', '_lbl_0C53A7EC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A7D0'], ['_AL_SetBehavior', '_lbl_0C53A7D4'], ['_ALO_GetRadicaseListenPos', '_lbl_0C53A7F4'], ['_AL_SetNextBehavior', '_lbl_0C53A7D8'], ['_ALBHV_Notice', '_lbl_0C53A7DC']]);
 INLINE_ASM(_func_0C53A778, 0xe, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A778.src");
 
-// MERGE_LIST([['_lbl_0C516128', '_lbl_0C53A7C0']]);
+// MERGE_LIST([['_AL_GetFoundToyTask', '_lbl_0C53A7C0']]);
 INLINE_ASM(_func_0C53A786, 0xe, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A786.src");
 
-// MERGE_LIST([['_lbl_0C516128', '_lbl_0C53A7C0']]);
+// MERGE_LIST([['_AL_GetFoundToyTask', '_lbl_0C53A7C0']]);
 INLINE_ASM(_func_0C53A794, 0x6c, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A794.src");
 
 INLINE_ASM(_func_0C53A800, 0x64, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A800.src");
 
-// MERGE_LIST([['_lbl_0C516128', '_lbl_0C53A9A0'], ['_ALBHV_GoToAim', '_lbl_0C53A9C0'], ['_ALW_IsSheAttentionOtherOne', '_lbl_0C53A9A4'], ['_ALBHV_TurnToAim', '_lbl_0C53A9C4'], ['_MOV_SetAimPos', '_lbl_0C53A9A8'], ['_lbl_0C53A3AE', '_lbl_0C53A9C8'], ['_ALW_CommunicationOn', '_lbl_0C53A9AC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A9B0'], ['_AL_SetBehavior', '_lbl_0C53A9B4'], ['_AL_SetNextBehavior', '_lbl_0C53A9B8'], ['_ALBHV_Notice', '_lbl_0C53A9BC']]);
+// MERGE_LIST([['_AL_GetFoundToyTask', '_lbl_0C53A9A0'], ['_ALBHV_GoToAim', '_lbl_0C53A9C0'], ['_ALW_IsSheAttentionOtherOne', '_lbl_0C53A9A4'], ['_ALBHV_TurnToAim', '_lbl_0C53A9C4'], ['_MOV_SetAimPos', '_lbl_0C53A9A8'], ['_lbl_0C53A3AE', '_lbl_0C53A9C8'], ['_ALW_CommunicationOn', '_lbl_0C53A9AC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A9B0'], ['_AL_SetBehavior', '_lbl_0C53A9B4'], ['_AL_SetNextBehavior', '_lbl_0C53A9B8'], ['_ALBHV_Notice', '_lbl_0C53A9BC']]);
 INLINE_ASM(_func_0C53A864, 0x4c, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_func_0C53A864.src");
 
-// MERGE_LIST([['_lbl_0C516128', '_lbl_0C53A9A0'], ['_ALBHV_Think', '_lbl_0C53A9D8'], ['_ALW_LockOn', '_lbl_0C53A9CC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A9B0'], ['_ALBHV_GoToLockOn', '_lbl_0C53A9D0'], ['_AL_SetBehavior', '_lbl_0C53A9B4'], ['_ALBHV_Touch', '_lbl_0C53A9D4'], ['_AL_SetNextBehavior', '_lbl_0C53A9B8'], ['_ALBHV_Notice', '_lbl_0C53A9BC']]);
+// MERGE_LIST([['_AL_GetFoundToyTask', '_lbl_0C53A9A0'], ['_ALBHV_Think', '_lbl_0C53A9D8'], ['_ALW_LockOn', '_lbl_0C53A9CC'], ['_ALBHV_PostureChangeStand', '_lbl_0C53A9B0'], ['_ALBHV_GoToLockOn', '_lbl_0C53A9D0'], ['_AL_SetBehavior', '_lbl_0C53A9B4'], ['_ALBHV_Touch', '_lbl_0C53A9D4'], ['_AL_SetNextBehavior', '_lbl_0C53A9B8'], ['_ALBHV_Notice', '_lbl_0C53A9BC']]);
 INLINE_ASM(_AL_CalcIntentionScore_ListenRadicase, 0x170, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_AL_CalcIntentionScore_ListenRadicase.src");
 
 INLINE_ASM(_AL_CalcIntentionScore_WatchTV, 0xd2, "asm/nonmatching/Chao/al_behavior/albhv_toy_l/_AL_CalcIntentionScore_WatchTV.src");

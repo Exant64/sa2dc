@@ -8,7 +8,7 @@ INLINE_ASM(_func_0C52E60A, 0xf8, "asm/nonmatching/Chao/al_behavior/albhv_hungry/
 // MERGE_LIST([['_AL_FaceChangeMouth', '_lbl_0C52E880'], ['_rand', '_lbl_0C52E884'], ["h'3B720000", '_lbl_0C52E888']]);
 INLINE_ASM(_AL_CalcIntentionScore_Hunger, 0x228, "asm/nonmatching/Chao/al_behavior/albhv_hungry/_AL_CalcIntentionScore_Hunger.src");
 
-// MERGE_LIST([['_lbl_0C51609A', '_lbl_0C52E9E0']]);
+// MERGE_LIST([['_AL_GetFoundTree', '_lbl_0C52E9E0']]);
 INLINE_ASM(_func_0C52E92A, 0x176, "asm/nonmatching/Chao/al_behavior/albhv_hungry/_func_0C52E92A.src");
 
 // MERGE_LIST([['_AL_ClearIntention', '_lbl_0C52EBA0'], ["h'3F000000", '_lbl_0C52EBC0'], ['_lbl_0C56B210', '_lbl_0C52EBA4'], ["h'4F000000", '_lbl_0C52EBC4'], ['_AL_SetIntervalTimer', '_lbl_0C52EBC8'], ["h'4F800000", '_lbl_0C52EBA8'], ['_lbl_0C56B214', '_lbl_0C52EBAC'], ['_rand', '_lbl_0C52EBB0'], ['_AL_EmotionGetValue', '_lbl_0C52EBB4'], ["h'38D1B717", '_lbl_0C52EBB8'], ["h'38000000", '_lbl_0C52EBBC']]);
