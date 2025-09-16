@@ -68,19 +68,19 @@ typedef enum HDAttr {
     HDAttr_Dark = 0x2,
 } HDAttr;
 
-enum {
-    SKILL_SWIM = 0x0,
-    SKILL_FLY = 0x1,
-    SKILL_RUN = 0x2,
-    SKILL_POWER = 0x3,
-    SKILL_STAMINA = 0x4,
-    SKILL_GUTS = 0x5,
-    SKILL_INTELLECT = 0x6,
-    SKILL_EMPTY = 0x7,
-    NB_SKILL = 0x8,
+enum 
+{
+    SKILL_SWIM,
+    SKILL_FLY,
+    SKILL_RUN,
+    SKILL_POWER,
+    SKILL_GUTS,
+    SKILL_INTELLECT,
+    SKILL_STAMINA,
+    NB_SKILL
 };
 
-Uint32 AL_IsDark2(task* pChaoTask);
+Bool AL_IsDark2(task* pChaoTask);
 void AL_ParameterAddUserLike(task* tp, int add, float AddAttr);
 void AL_DrawMeter(int x, int y, unsigned int length, unsigned int color, unsigned int color2);
 int AL_ParameterGetSkill(task* pChaoTask, Uint16 SkillKind);

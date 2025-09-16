@@ -137,3 +137,4 @@ syCalloc = 0x8C110504;
 syCfgGetIndividualID = 0x8C1116F6;
 syFree = 0x8C1102B0;
 syRtcGetDate = 0x8C11061A;
+_modlu = 8C0C0FE0;

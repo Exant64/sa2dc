@@ -5,7 +5,7 @@ INLINE_ASM(_func_0C53ADE0, 0x202, "asm/nonmatching/Chao/al_behavior/albhv_walk/_
 // MERGE_LIST([['_lbl_0C5312C0', '_lbl_0C53B100'], ['_AL_IsEmotionTimerReset', '_lbl_0C53B104'], ['_lbl_0C56B184', '_lbl_0C53B108'], ['_AL_EmotionAdd', '_lbl_0C53B10C'], ['_lbl_0C56B196', '_lbl_0C53B110']]);
 INLINE_ASM(_func_0C53AFE2, 0xd6, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53AFE2.src");
 
-// MERGE_LIST([['_rand', '_lbl_0C53B120'], ['_AL_ForwardAcc', '_lbl_0C53B138'], ["h'38000000", '_lbl_0C53B124'], ["h'3E99999A", '_lbl_0C53B128'], ["h'3F000000", '_lbl_0C53B12C'], ['_sub_8C05B020', '_lbl_0C53B130'], ['_AL_ParameterGetSkill', '_lbl_0C53B114'], ['_lbl_0C56B040', '_lbl_0C53B134'], ['_AL_SetMotionLink', '_lbl_0C53B118'], ["h'8C0C0FE0", '_lbl_0C53B11C']]);
+// MERGE_LIST([['_rand', '_lbl_0C53B120'], ['_AL_ForwardAcc', '_lbl_0C53B138'], ["h'38000000", '_lbl_0C53B124'], ["h'3E99999A", '_lbl_0C53B128'], ["h'3F000000", '_lbl_0C53B12C'], ['_sub_8C05B020', '_lbl_0C53B130'], ['_AL_ParameterGetSkill', '_lbl_0C53B114'], ['_lbl_0C56B040', '_lbl_0C53B134'], ['_AL_SetMotionLink', '_lbl_0C53B118'], ['__modlu', '_lbl_0C53B11C']]);
 INLINE_ASM(_func_0C53B0B8, 0x102, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B0B8.src");
 
 // MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C53B2E0'], ['_AL_ForwardAcc', '_lbl_0C53B300'], ['__modls', '_lbl_0C53B2E4'], ['_njScalor', '_lbl_0C53B304'], ["h'41800000", '_lbl_0C53B308'], ['_rand', '_lbl_0C53B2E8'], ['_AL_SetMotionSpd', '_lbl_0C53B30C'], ["h'38000000", '_lbl_0C53B2EC'], ["h'3CF5C28F", '_lbl_0C53B2F0'], ['_ALBHV_Koke', '_lbl_0C53B2F4'], ['_AL_SetBehavior', '_lbl_0C53B2F8'], ['_lbl_0C56B03C', '_lbl_0C53B2FC']]);

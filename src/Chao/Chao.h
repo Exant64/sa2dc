@@ -346,6 +346,26 @@ typedef struct AL_BODY_INFO {
     char a[3];
 } AL_BODY_INFO;
 
+typedef struct AL_SHAPE_ELEMENT {
+  Sint8 type;
+  Sint8 DefaultEyeNum;
+  Sint8 DefaultMouthNum;
+  Sint8 HonbuNum;
+  Sint8 ObakeHead;
+  Sint8 ObakeBody;
+  Sint8 MedalNum;
+  Sint8 ColorNum;
+  Sint8 JewelNum;
+  Sint8 MultiNum;
+  Sint8 MinimalParts[8];
+  Sint16 HPos;
+  Sint16 VPos;
+  Sint16 APos;
+  Sint16 Growth;
+  char name[8];
+  Uint16 Skill[7];
+} AL_SHAPE_ELEMENT;
+
 typedef struct CHAO_PARAM {
     Uint8 type;
     Uint8 place;
@@ -353,16 +373,20 @@ typedef struct CHAO_PARAM {
 
     char ClassNum;
     char unk_2;
-    char pad_[10];
+    char pad_[2];
+    char name[8];
     char SkillRelated[8];
-    Uint16 Skill[8];
+    Uint16 Skill[7];
+    Uint16 age;
     Uint16 nbSucceed;
 
-    char pad2[18];
+    Uint16 LifeTimer;
+    char pad2[16];
     int thing; // used in al_gene GeneAnalyze Skill[6] thing
     char pad3[4];
 
-    Uint16 Abl[8];
+    Uint16 Abl[7];
+    Uint16 old;
 
     Uint16 life;
     Uint16 LifeMax;

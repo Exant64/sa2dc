@@ -61,6 +61,9 @@ typedef struct al_entry_work {
 
 #define ALW_ENTRY_WORK(tp) ((al_entry_work*)tp->EntityData2)
 
+extern const Uint32 nbMaxEntry[];
+
+task* ALW_GetTask(Uint16 category, Uint16 num);
 al_entry_work* ALW_IsCommunication(task* tp);
 int ALW_TurnToLockOn(task* pMyTask, int RotSpd);
 float ALW_CalcDistFromLockOn(task* tp);

@@ -5,7 +5,7 @@ INLINE_ASM(_func_0C5246A0, 0x98, "asm/nonmatching/Chao/alo_fruit/_func_0C5246A0.
 // MERGE_LIST([["h'BF000000", '_lbl_0C524848'], ["h'40800000", '_lbl_0C524840'], ["h'3F59999A", '_lbl_0C52484C'], ['_GetShadowPos', '_lbl_0C524844']]);
 INLINE_ASM(_func_0C524738, 0x8a, "asm/nonmatching/Chao/alo_fruit/_func_0C524738.src");
 
-// MERGE_LIST([['_lbl_0C51385E', '_lbl_0C524860'], ['_ChaoGlobal', '_lbl_0C524850'], ['_lbl_0C513740', '_lbl_0C524854'], ['_lbl_0C513680', '_lbl_0C524858'], ['_lbl_0C51383A', '_lbl_0C52485C']]);
+// MERGE_LIST([['_AL_ParameterAddLifeMax', '_lbl_0C524860'], ['_ChaoGlobal', '_lbl_0C524850'], ['_AL_ParameterAddGrowth', '_lbl_0C524854'], ['_AL_ParameterAddSkill', '_lbl_0C524858'], ['_AL_ParameterAddLife', '_lbl_0C52485C']]);
 INLINE_ASM(_func_0C5247C2, 0xbe, "asm/nonmatching/Chao/alo_fruit/_func_0C5247C2.src");
 
 INLINE_ASM(_func_0C524880, 0xd6, "asm/nonmatching/Chao/alo_fruit/_func_0C524880.src");

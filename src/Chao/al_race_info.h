@@ -1,27 +1,6 @@
 #ifndef _AL_RACE_INFO_H_
 #define _AL_RACE_INFO_H_
 
-typedef struct AL_SHAPE_ELEMENT
-{
-  char type;
-  char DefaultEyeNum;
-  char DefaultMouthNum;
-  char HonbuNum;
-  char ObakeHead;
-  char ObakeBody;
-  char MedalNum;
-  char ColorNum;
-  char JewelNum;
-  char MultiNum;
-  char MinimalParts[8];
-  Sint16 HPos;
-  Sint16 VPos;
-  Sint16 APos;
-  Sint16 Growth;
-  char name[8];
-  Uint16 Skill[7];
-} AL_SHAPE_ELEMENT;
-
 typedef enum eRACE_ACTIVE_FLAG
 {
   RACE_ACTIVE_FLAG_NONE = 0x0,

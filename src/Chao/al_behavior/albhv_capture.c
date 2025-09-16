@@ -50,13 +50,13 @@ int ALBHV_TurnToMinimal(task* tp) {
 }
 
 MERGE_LIST([['_MOV_TurnToAim2', '_lbl_0C52A2C0'], ['_StopHoldingTaskP', '_lbl_0C52A2C4'], ['_ALBHV_Capture', '_lbl_0C52A2A4'], ['_AL_GrabObjectBothHands', '_lbl_0C52A2C8'], ['_CCL_IsHitKind2', '_lbl_0C52A2AC'], ['_ALW_IsHeld', '_lbl_0C52A2B0'], ['_AL_SetBehavior', '_lbl_0C52A2B8'], ['_AL_SetMotionLinkStep', '_lbl_0C52A2BC']]);
-INLINE_ASM(_func_0C52A256, "asm/nonmatching/Chao/al_behavior/albhv_capture/_func_0C52A256.src");
+INLINE_ASM(_func_0C52A256, 0x98, "asm/nonmatching/Chao/al_behavior/albhv_capture/_func_0C52A256.src");
 
-INLINE_ASM(_func_0C52A2EE, "asm/nonmatching/Chao/al_behavior/albhv_capture/_func_0C52A2EE.src");
+INLINE_ASM(_func_0C52A2EE, 0x102, "asm/nonmatching/Chao/al_behavior/albhv_capture/_func_0C52A2EE.src");
 
 // MERGE_LIST([['_lbl_0C567250', '_lbl_0C52A440'], ["h'40133333", '_lbl_0C52A444'], ['_njSin', '_lbl_0C52A448'], ['_njCos', '_lbl_0C52A44C'], ['_lbl_0C541720', '_lbl_0C52A450'], ['_FreeTask', '_lbl_0C52A454'], ["h'3D75C28F", '_lbl_0C52A458']]);
-INLINE_ASM(_func_0C52A3F0, "asm/nonmatching/Chao/al_behavior/albhv_capture/_func_0C52A3F0.src");
+INLINE_ASM(_func_0C52A3F0, 0xe, "asm/nonmatching/Chao/al_behavior/albhv_capture/_func_0C52A3F0.src");
 
 // MERGE_LIST([['_CreateChildTask', '_lbl_0C52A460'], ['_lbl_0C52A2EE', '_lbl_0C52A45C']]);
-INLINE_ASM(_ALBHV_Capture, "asm/nonmatching/Chao/al_behavior/albhv_capture/_ALBHV_Capture.src");
+INLINE_ASM(_ALBHV_Capture, 0xa42, "asm/nonmatching/Chao/al_behavior/albhv_capture/_ALBHV_Capture.src");
 

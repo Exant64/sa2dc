@@ -3,6 +3,7 @@
 
 #include <task.h>
 
+#define AL_SHAPE_FLAG_DEFORM BIT_1
 #define AL_SHAPE_FLAG_SHADOW BIT_3
 #define AL_SHAPE_FLAG_ENV BIT_4
 
