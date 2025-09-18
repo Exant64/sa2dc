@@ -24,7 +24,7 @@ typedef struct al_model {
     Uint16* PList;
     NJS_POINT3 Center;
     float Radius;
-    Uint16 OrgTexId[4];
+    Sint16 OrgTexId[4];
     int PListSize;
     int nbVertex;
     CNK_VN_VERTEX* pVertex;

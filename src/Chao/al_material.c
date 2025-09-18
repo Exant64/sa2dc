@@ -46,7 +46,7 @@ INLINE_ASM(_func_0C510A6A, 0x36, "asm/nonmatching/Chao/al_material/_func_0C510A6
 
 INLINE_ASM(_func_0C510AA0, 0x19e, "asm/nonmatching/Chao/al_material/_func_0C510AA0.src");
 
-INLINE_ASM(_func_0C510C3E, 0xa2, "asm/nonmatching/Chao/al_material/_func_0C510C3E.src");
+INLINE_ASM(_AL_MaterialInit, 0xa2, "asm/nonmatching/Chao/al_material/_AL_MaterialInit.src");
 
 INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_material/rodata.src");
 

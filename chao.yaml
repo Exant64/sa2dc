@@ -28,46 +28,46 @@ segments:
     subsegments: 
       - [0x20, asm, al_stage]
       - [0xBE0, asm, code_0C500BE0]
-      - [0xC60, asm, al_behavior]
+      - [0xC60, asm, al_behavior] # done
       - [0x1440, asm, code_0C501440]
       - [0x1460, asm, al_buyobuyo]
       - [0x23C0, asm, al_chao_info]
-      - [0x2C40, asm, al_control]
+      - [0x2C40, asm, al_control] # done
       - [0x2D40, asm, al_collision]
-      - [0x34C0, asm, al_draw]
+      - [0x34C0, asm, al_draw] # done
       - [0x4040, asm, al_edit_func]
       - [0x7740, asm, al_egg]
-      - [0x8BC0, asm, al_emotion]
+      - [0x8BC0, asm, al_emotion] # done
       - [0x8D40, asm, al_deform]
-      - [0xA6C0, asm, al_face]
-      - [0xAD00, asm, al_field]
-      - [0xB3A0, asm, al_garden_info]
+      - [0xA6C0, asm, al_face] # done
+      - [0xAD00, asm, al_field] # done
+      - [0xB3A0, asm, al_garden_info] # done
       - [0xBB20, asm, al_gene]
-      - [0xCBC0, asm, al_hold]
+      - [0xCBC0, asm, al_hold] # done
       - [0xCF60, asm, al_icon]
-      - [0xE6E0, asm, al_intention]
+      - [0xE6E0, asm, al_intention] # done
       - [0xEF80, asm, code_0C50EF80]
-      - [0xF540, asm, al_knowledge]
-      - [0xFDA0, asm, al_landmark]
+      - [0xF540, asm, al_knowledge] # done
+      - [0xFDA0, asm, al_landmark] # done
       - [0x10040, asm, al_material]
       - [0x10CE0, asm, al_message]
       - [0x10E00, asm, al_minimal]
       - [0x11700, asm, al_misc]
-      - [0x12260, asm, al_motion]
+      - [0x12260, asm, al_motion] # done
       - [0x12420, asm, al_msg_font]
-      - [0x12D80, asm, al_parameter]
+      - [0x12D80, asm, al_parameter] # done
       - [0x13BE0, asm, al_parameter_debug]
-      - [0x14A60, asm, al_parts]
+      - [0x14A60, asm, al_parts] # done
       - [0x14F40, asm, al_path]
-      - [0x15900, asm, al_perception]
+      - [0x15900, asm, al_perception] # done
       - [0x16160, asm, code_0C516160]
       - [0x16740, asm, code_0C516740]
-      - [0x17960, asm, al_shape]
+      - [0x17960, asm, al_shape] # done
       - [0x18860, asm, al_sound]
       - [0x18A00, asm, al_edit_sa1]
       - [0x19500, asm, al_osanbo]
       - [0x1DC40, asm, al_water]
-      - [0x1DE00, asm, al_world]
+      - [0x1DE00, asm, al_world] # done but ALW_Edit isnt
       - [0x1E9E0, asm, al_osamenu]
       - [0x22B80, asm, al_palette]
       - [0x237E0, asm, al_chaosdrive]
@@ -76,7 +76,7 @@ segments:
       - [0x25100, asm, alo_growtree]
       - [0x26FC0, asm, alo_obake_head]
       - [0x27660, asm, alo_osanpo]
-      - [0x287A0, asm, alo_seed]
+      - [0x287A0, asm, alo_seed] # done
       - [0x28D60, asm, al_icon_thing]
       - [0x28EC0, asm, alef_ripple]
       - [0x28F60, asm, al_behavior/albhv_art]
@@ -130,6 +130,8 @@ segments:
       - [0x5DAC5, rodata, al_field] # unused strings
       - [0x5DBFC, rodata, al_knowledge]
       - [0x5DC14, rodata, al_material] # rodata_1
+      - [0x65D44, rodata, al_shape]
+      - [0x65D50, rodata, al_sound] # rodata_ 1 half
       - [0x6709C, rodata, alo_obake_head]
       - [0x6713C, rodata, alo_osanpo]
       - [0x67150, rodata, alo_seed]

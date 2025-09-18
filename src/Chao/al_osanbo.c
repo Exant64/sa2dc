@@ -98,7 +98,7 @@ INLINE_ASM(_func_0C51D99E, 0x18a, "asm/nonmatching/Chao/al_osanbo/_func_0C51D99E
 // MERGE_LIST([['_FreeTask', '_lbl_0C51DBE0']]);
 INLINE_ASM(_func_0C51DB28, 0x4a, "asm/nonmatching/Chao/al_osanbo/_func_0C51DB28.src");
 
-// MERGE_LIST([['_lbl_0C566810', '_lbl_0C51DBE4'], ['_lbl_0C51D99E', '_lbl_0C51DBE8'], ['_CreateElementalTask', '_lbl_0C51DBEC'], ["h'8C1101E2", '_lbl_0C51DBF0'], ['_DestroyTask', '_lbl_0C51DBF4']]);
+// MERGE_LIST([['_lbl_0C566810', '_lbl_0C51DBE4'], ['_lbl_0C51D99E', '_lbl_0C51DBE8'], ['_CreateElementalTask', '_lbl_0C51DBEC'], ['_syMalloc', '_lbl_0C51DBF0'], ['_DestroyTask', '_lbl_0C51DBF4']]);
 INLINE_ASM(_func_0C51DB72, 0x22, "asm/nonmatching/Chao/al_osanbo/_func_0C51DB72.src");
 
 INLINE_ASM(_func_0C51DB94, 0x22, "asm/nonmatching/Chao/al_osanbo/_func_0C51DB94.src");

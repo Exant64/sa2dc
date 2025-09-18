@@ -87,3 +87,5 @@ void sub_0C5188F4(void) {
             break;
     }
 }
+
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_sound/rodata.src");

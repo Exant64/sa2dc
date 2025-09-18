@@ -4,10 +4,10 @@ INLINE_ASM(_func_0C504040, 0x5c0, "asm/nonmatching/Chao/al_edit_func/_func_0C504
 
 INLINE_ASM(_func_0C504600, 0xac, "asm/nonmatching/Chao/al_edit_func/_func_0C504600.src");
 
-// MERGE_LIST([['_ALW_GetTaskCount', '_lbl_0C504760'], ['_SWDATA', '_lbl_0C504764'], ["h'001A000A", '_lbl_0C504768'], ['_njPrintD', '_lbl_0C50476C'], ['_lbl_0C51067C', '_lbl_0C504770'], ['_lbl_0C510C3E', '_lbl_0C504774']]);
+// MERGE_LIST([['_ALW_GetTaskCount', '_lbl_0C504760'], ['_SWDATA', '_lbl_0C504764'], ["h'001A000A", '_lbl_0C504768'], ['_njPrintD', '_lbl_0C50476C'], ['_lbl_0C51067C', '_lbl_0C504770'], ['_AL_MaterialInit', '_lbl_0C504774']]);
 INLINE_ASM(_func_0C5046AC, 0x62, "asm/nonmatching/Chao/al_edit_func/_func_0C5046AC.src");
 
-// MERGE_LIST([['_ALW_GetTaskCount', '_lbl_0C504760'], ['_lbl_0C510C3E', '_lbl_0C504774'], ['_SWDATA', '_lbl_0C504764']]);
+// MERGE_LIST([['_ALW_GetTaskCount', '_lbl_0C504760'], ['_AL_MaterialInit', '_lbl_0C504774'], ['_SWDATA', '_lbl_0C504764']]);
 INLINE_ASM(_func_0C50470E, 0x39a, "asm/nonmatching/Chao/al_edit_func/_func_0C50470E.src");
 
 // MERGE_LIST([["h'00140000", '_lbl_0C504B00'], ['_lbl_0C55D2A8', '_lbl_0C504B04'], ["h'8C24F154", '_lbl_0C504B08']]);

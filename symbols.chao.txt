@@ -685,4 +685,5 @@ AL_IsLifeTimerReset = 0x0C51399C;
 AL_ShapeElementFromParam = 0x0C513A1E;
 Clock = 0x0C6774CC;
 ChaoGlobalTimer = 0x0C6774D0;
-_modlu = 8C0C0FE0;
+_modlu = 0x8C0C0FE0;
+AL_MaterialInit = 0x0C510C3E;
