@@ -1,6 +1,6 @@
 #include <task.h>
 
-INLINE_ASM(_func_0C50CF60, 0x640, "asm/nonmatching/Chao/al_icon/_func_0C50CF60.src");
+INLINE_ASM(_AL_CalcIconColor, 0x640, "asm/nonmatching/Chao/al_icon/_AL_CalcIconColor.src");
 
 INLINE_ASM(_AL_IconInit, 0x89c, "asm/nonmatching/Chao/al_icon/_AL_IconInit.src");
 

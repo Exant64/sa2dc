@@ -1,13 +1,10 @@
 #include <task.h>
-
-#include <task.h>
 #include <Chao/Chao.h>
 
 #define PART_ATTR_MODEL 0x1
 #define PART_ATTR_NODE  0x2
 
 extern Uint16 AL_PartAttr[];
-//Uint16 AL_PartAttr[] = { 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 4, 5, 2, 4, 5, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 2, 3 };
 
 extern al_object** CurrObjectList;
 extern NJS_CNK_OBJECT** ZeroObjectList;
@@ -40,8 +37,17 @@ extern Float col_inv_ratio_g;
 extern Float col_div_ratio_h;
 extern Float col_div_ratio_v;
 
+enum {
+    ATTR_HERO = 0x0,
+    ATTR_DARK = 0x1,
+};
+
+extern int HDattr;
+
+void AL_FitToBaseObject(task* tp, al_object* pObject);
+void AL_InterpolateAngle(Angle3* pAng1, Angle3* pAng2, float ratio, Angle3* pAnswer);
+
 #define lerp(a,b, t) (a * inv_##t + b * t) //((Float)a + ((Float)b - (Float)a) * t)
-//#define lerp(a,b, t) (inv_##t * (Float)a + b * t) //((Float)a + ((Float)b - (Float)a) * t)
 
 void AL_DeformObject(chaowk* pChao) {
     AL_SHAPE* pShape = &pChao->Shape;
@@ -178,23 +184,13 @@ void AL_DeformObject(chaowk* pChao) {
         VerticalObjectList++;        
 	}
 }
-MERGE_LIST([['_col_inv_ratio_g', '_lbl_0C5093A0'], ['_CurrObjectList', '_lbl_0C5093A4'], ['_ZeroObjectList', '_lbl_0C5093A8'], ['_NormalObjectList', '_lbl_0C5093AC'], ['_HorizonObjectList', '_lbl_0C5093B0'], ['_VerticalObjectList', '_lbl_0C5093B4']]);
 
-#if 0
-enum {
-    ATTR_HERO = 0x0,
-    ATTR_DARK = 0x1,
-};
-
-extern int HDattr;
-
-void AL_InterpolateAngle(Angle3* pAng1, Angle3* pAng2, float ratio, Angle3* pAnswer);
 void AL_DeformObjectChild(chaowk* pChao) {
     AL_SHAPE* pShape = &pChao->Shape;
-    Int i;
     CHAO_PARAM* pParam;
     float ratio_a;
     float inv_ratio_a;
+    Int i;
 
     pParam = &pChao->param;
     ratio_a = pParam->body.APos;
@@ -382,15 +378,15 @@ void AL_DeformObjectChild(chaowk* pChao) {
         
 		// if (attr & PART_ATTR_NODE)
 		{
-            NJS_POINT3* pPos = (NJS_POINT3*)((*CurrObjectList)->Pos);
-            NJS_POINT3* pPosZ = (NJS_POINT3*)((*ZeroObjectList)->pos);
-            NJS_POINT3* pPosN = (NJS_POINT3*)((*NormalObjectList)->pos);
-            NJS_POINT3* pPosH = (NJS_POINT3*)((*HorizonObjectList)->pos);
-            NJS_POINT3* pPosV = (NJS_POINT3*)((*VerticalObjectList)->pos);
             NJS_POINT3* pPosAZ;
             NJS_POINT3* pPosAN;
             NJS_POINT3* pPosAH;
             NJS_POINT3* pPosAV;
+            NJS_POINT3* pPos = (NJS_POINT3*)&((*CurrObjectList)->Pos[0]);
+            NJS_POINT3* pPosZ = (NJS_POINT3*)&((*ZeroObjectList)->pos[0]);
+            NJS_POINT3* pPosN = (NJS_POINT3*)&((*NormalObjectList)->pos[0]);
+            NJS_POINT3* pPosH = (NJS_POINT3*)&((*HorizonObjectList)->pos[0]);
+            NJS_POINT3* pPosV = (NJS_POINT3*)&((*VerticalObjectList)->pos[0]);
             float zhvPosX;
             float zhvPosY;
             float zhvPosZ;
@@ -399,40 +395,43 @@ void AL_DeformObjectChild(chaowk* pChao) {
             float zhvaPosZ;
             
             if(HDattr == ATTR_HERO) {
-                pPosAZ = (NJS_POINT3*)((*ZeroObjectListH)->pos);
-                pPosAN = (NJS_POINT3*)((*NormalObjectListH)->pos);
-                pPosAH = (NJS_POINT3*)((*HorizonObjectListH)->pos);
-                pPosAV = (NJS_POINT3*)((*VerticalObjectListH)->pos);
+                pPosAZ = (NJS_POINT3*)&((*ZeroObjectListH)->pos[0]);
+                pPosAN = (NJS_POINT3*)&((*NormalObjectListH)->pos[0]);
+                pPosAH = (NJS_POINT3*)&((*HorizonObjectListH)->pos[0]);
+                pPosAV = (NJS_POINT3*)&((*VerticalObjectListH)->pos[0]);
             }
             else {
-                pPosAZ = (NJS_POINT3*)((*ZeroObjectListD)->pos);
-                pPosAN = (NJS_POINT3*)((*NormalObjectListD)->pos);
-                pPosAH = (NJS_POINT3*)((*HorizonObjectListD)->pos);
-                pPosAV = (NJS_POINT3*)((*VerticalObjectListD)->pos);
+                pPosAZ = (NJS_POINT3*)&((*ZeroObjectListD)->pos[0]);
+                pPosAN = (NJS_POINT3*)&((*NormalObjectListD)->pos[0]);
+                pPosAH = (NJS_POINT3*)&((*HorizonObjectListD)->pos[0]);
+                pPosAV = (NJS_POINT3*)&((*VerticalObjectListD)->pos[0]);
             }
-            #define posLerp(a,b,t) (a * inv_##t + b * t)
 
-            zhvPosX = div_ratio_h * posLerp(pPosN->x, pPosH->x, ratio_h)
-                            + div_ratio_v * posLerp(pPosN->x, pPosV->x, ratio_v);
-            zhvPosY = div_ratio_h * posLerp(pPosN->y, pPosH->y, ratio_h)
-                            + div_ratio_v * posLerp(pPosN->y, pPosV->y, ratio_v);
-            zhvPosZ = div_ratio_h * posLerp(pPosN->z, pPosH->z, ratio_h)
-                            + div_ratio_v * posLerp(pPosN->z, pPosV->z, ratio_v);
+             #define posLerp(a,b,t) (a * inv_##t + b * t)
+            zhvPosX = div_ratio_h * lerp(pPosN->x, pPosH->x, ratio_h)
+                            + div_ratio_v * lerp(pPosN->x, pPosV->x, ratio_v);
+            zhvPosY = div_ratio_h * lerp(pPosN->y, pPosH->y, ratio_h)
+                            + div_ratio_v * lerp(pPosN->y, pPosV->y, ratio_v);
+            zhvPosZ = div_ratio_h * lerp(pPosN->z, pPosH->z, ratio_h)
+                            + div_ratio_v * lerp(pPosN->z, pPosV->z, ratio_v);
 
-            zhvPosX = lerp(pPosZ->x, zhvPosX, ratio_g);
-            zhvPosY = lerp(pPosZ->y, zhvPosY, ratio_g);
-            zhvPosZ = lerp(pPosZ->z, zhvPosZ, ratio_g);
+            zhvPosX = posLerp(pPosZ->x, zhvPosX, ratio_g);
+            zhvPosY = posLerp(pPosZ->y, zhvPosY, ratio_g);
+            zhvPosZ = posLerp(pPosZ->z, zhvPosZ, ratio_g);
 
-            zhvaPosX = div_ratio_h * posLerp(pPosAN->x, pPosAH->x, ratio_h)
-                            + div_ratio_v * posLerp(pPosAN->x, pPosAV->x, ratio_v);
-            zhvaPosY = div_ratio_h * posLerp(pPosAN->y, pPosAH->y, ratio_h)
-                            + div_ratio_v * posLerp(pPosAN->y, pPosAV->y, ratio_v);
-            zhvaPosZ = div_ratio_h * posLerp(pPosAN->z, pPosAH->z, ratio_h)
-                            + div_ratio_v * posLerp(pPosAN->z, pPosAV->z, ratio_v);
-
-            zhvaPosX = lerp(pPosAZ->x, zhvaPosX, ratio_g);
-            zhvaPosY = lerp(pPosAZ->y, zhvaPosY, ratio_g);
-            zhvaPosZ = lerp(pPosAZ->z, zhvaPosZ, ratio_g);
+            {
+                
+                zhvaPosX = div_ratio_h * lerp(pPosAN->x, pPosAH->x, ratio_h)
+                                + div_ratio_v * lerp(pPosAN->x, pPosAV->x, ratio_v);
+                zhvaPosY = div_ratio_h * lerp(pPosAN->y, pPosAH->y, ratio_h)
+                                + div_ratio_v * lerp(pPosAN->y, pPosAV->y, ratio_v);
+                zhvaPosZ = div_ratio_h * lerp(pPosAN->z, pPosAH->z, ratio_h)
+                                + div_ratio_v * lerp(pPosAN->z, pPosAV->z, ratio_v);
+    
+                zhvaPosX = lerp(pPosAZ->x, zhvaPosX, ratio_g);
+                zhvaPosY = lerp(pPosAZ->y, zhvaPosY, ratio_g);
+                zhvaPosZ = lerp(pPosAZ->z, zhvaPosZ, ratio_g);
+            }
 
             pPos->x = lerp(zhvPosX, zhvaPosX, ratio_a);
             pPos->y = lerp(zhvPosY, zhvaPosY, ratio_a);
@@ -457,16 +456,16 @@ void AL_DeformObjectChild(chaowk* pChao) {
             Angle3 IntAngA;
 
             if(HDattr == ATTR_HERO) {
-                pAngAZ = (Angle3*)((*ZeroObjectListH)->ang);
-                pAngAN = (Angle3*)((*NormalObjectListH)->ang);
-                pAngAH = (Angle3*)((*HorizonObjectListH)->ang);
-                pAngAV = (Angle3*)((*VerticalObjectListH)->ang);
+                pAngAZ = (Angle3*)&((*ZeroObjectListH)->ang[0]);
+                pAngAN = (Angle3*)&((*NormalObjectListH)->ang[0]);
+                pAngAH = (Angle3*)&((*HorizonObjectListH)->ang[0]);
+                pAngAV = (Angle3*)&((*VerticalObjectListH)->ang[0]);
             }
             else {
-                pAngAZ = (Angle3*)((*ZeroObjectListD)->ang);
-                pAngAN = (Angle3*)((*NormalObjectListD)->ang);
-                pAngAH = (Angle3*)((*HorizonObjectListD)->ang);
-                pAngAV = (Angle3*)((*VerticalObjectListD)->ang);
+                pAngAZ = (Angle3*)&((*ZeroObjectListD)->ang[0]);
+                pAngAN = (Angle3*)&((*NormalObjectListD)->ang[0]);
+                pAngAH = (Angle3*)&((*HorizonObjectListD)->ang[0]);
+                pAngAV = (Angle3*)&((*VerticalObjectListD)->ang[0]);
             }
             
             AL_InterpolateAngle(pAngN, pAngH, ratio_h, &Answer0);
@@ -508,15 +507,176 @@ void AL_DeformObjectChild(chaowk* pChao) {
         VerticalObjectListD++;       
 	}
 }
-#else
-//MERGE_LIST([['_ZeroObjectListD', '_lbl_0C50A320'], ['_NormalObjectListD', '_lbl_0C50A324'], ['_HorizonObjectListD', '_lbl_0C50A328'], ['_VerticalObjectListD', '_lbl_0C50A32C'], ['_AL_InterpolateAngle', '_lbl_0C50A330'], ['_CurrObjectList', '_lbl_0C50A334'], ['_ZeroObjectList', '_lbl_0C50A338'], ['_NormalObjectList', '_lbl_0C50A33C'], ['_HorizonObjectList', '_lbl_0C50A340'], ['_VerticalObjectList', '_lbl_0C50A344'], ['_ZeroObjectListH', '_lbl_0C50A348'], ['_NormalObjectListH', '_lbl_0C50A34C'], ['_HorizonObjectListH', '_lbl_0C50A350'], ['_VerticalObjectListH', '_lbl_0C50A354']]);
-INLINE_ASM(_AL_DeformObjectChild, 0xeec, "asm/nonmatching/Chao/al_deform/_AL_DeformObjectChild.src");
-#endif
-INLINE_ASM(_AL_Deform, 0x3a6, "asm/nonmatching/Chao/al_deform/_AL_Deform.src");
 
-// MERGE_LIST([['_lbl_0C50CF60', '_lbl_0C50A680'], ['_AL_DeformObjectChild', '_lbl_0C50A684'], ['_AL_DeformObject', '_lbl_0C50A688'], ['_col_div_ratio_h', '_lbl_0C50A678'], ['_lbl_0C510C3E', '_lbl_0C50A68C'], ["h'0000FFFD", '_lbl_0C50A690'], ['_lbl_0C522DC8', '_lbl_0C50A67C'], ['_col_ratio_v', '_lbl_0C50A660'], ['_col_ratio_g', '_lbl_0C50A664'], ['_col_inv_ratio_h', '_lbl_0C50A668'], ['_col_inv_ratio_v', '_lbl_0C50A66C'], ['_col_inv_ratio_g', '_lbl_0C50A670'], ['_col_div_ratio_v', '_lbl_0C50A674']]);
-INLINE_ASM(_func_0C50A5EA, 0xbe, "asm/nonmatching/Chao/al_deform/_func_0C50A5EA.src");
+void AL_Deform(task* tp) {
+	chaowk* work = GET_CHAOWK(tp);
+    AL_SHAPE* pShape = &work->Shape;
+	CHAO_PARAM* pParam = &work->param;
 
-INLINE_ASM(_func_0C50A6A8, 0x9c, "asm/nonmatching/Chao/al_deform/_func_0C50A6A8.src");
+	ratio_h = pParam->body.HPos;
+	ratio_v = pParam->body.VPos;
 
-// MERGE_LIST([['__modls', '_lbl_0C50A7C0']]);
+	CurrObjectList = pShape->CurrObjectList;
+
+	switch(pParam->type) {
+        case TYPE_CHILD: {
+            ZeroObjectList = pShape->pObjectList->Zero;
+            NormalObjectList = pShape->pObjectList->Normal;
+            ZeroObjectListH = pShape->pObjectListH->Zero;
+            NormalObjectListH = pShape->pObjectListH->Normal;
+            ZeroObjectListD = pShape->pObjectListD->Zero;
+            NormalObjectListD = pShape->pObjectListD->Normal;
+
+            if (ratio_h >= 0.0f)
+            {
+                HorizonObjectList = pShape->pObjectList->Power;
+                HorizonObjectListH = pShape->pObjectListH->Power;
+                HorizonObjectListD = pShape->pObjectListD->Power;
+            }
+            else
+            {
+                HorizonObjectList = pShape->pObjectList->Run;
+                HorizonObjectListH = pShape->pObjectListH->Run;
+                HorizonObjectListD = pShape->pObjectListD->Run;
+                ratio_h *= -1.0f;
+            }
+
+            if (ratio_v >= 0.0f)
+            {
+                VerticalObjectList = pShape->pObjectList->Fly;
+                VerticalObjectListH = pShape->pObjectListH->Fly;
+                VerticalObjectListD = pShape->pObjectListD->Fly;
+            }
+            else
+            {
+                VerticalObjectList = pShape->pObjectList->Swim;
+                VerticalObjectListH = pShape->pObjectListH->Swim;
+                VerticalObjectListD = pShape->pObjectListD->Swim;
+                ratio_v *= -1.0f;
+            }
+            break;
+	    }
+        default: {
+            ZeroObjectList = pShape->pObjectList->Zero;
+            NormalObjectList = pShape->pObjectList->Normal;
+
+            if (ratio_h >= 0.0f)
+            {
+                HorizonObjectList = pShape->pObjectList->Power;
+            }
+            else
+            {
+                HorizonObjectList = pShape->pObjectList->Run;
+                ratio_h *= -1.0f;
+            }
+
+            if (ratio_v >= 0.0f)
+            {
+                VerticalObjectList = pShape->pObjectList->Fly;
+            }
+            else
+            {
+                VerticalObjectList = pShape->pObjectList->Swim;
+                ratio_v *= -1.0f;
+            }
+        } 
+    }
+
+	ratio_g = pParam->body.growth;
+
+	if (ratio_h == 0.0f)
+		ratio_h = 0.000001f;
+	if (ratio_v == 0.0f)
+		ratio_v = 0.000001f;
+
+	inv_ratio_h = 1.0f - ratio_h;
+	inv_ratio_v = 1.0f - ratio_v;
+	inv_ratio_g = 1.0f - ratio_g;
+
+	div_ratio_h = div_ratio_v = 1.0f / (ratio_v + ratio_h);
+	div_ratio_h *= ratio_h;
+	div_ratio_v *= ratio_v;
+
+	if (ratio_h > 1.0f) {
+		col_ratio_h = 1.0f;
+	}
+    else if (ratio_h < -1.0f) {
+        col_ratio_h = -1.0f;
+    }
+    else {
+        col_ratio_h = ratio_h;
+    }
+
+	if (ratio_v > 1.0f) {
+		col_ratio_v = 1.0f;
+	}
+    else if (ratio_v < -1.0f) {
+        col_ratio_v = -1.0f;
+    }
+    else {
+        col_ratio_v = ratio_v;
+    }
+
+	if (ratio_g > 1.0f) {
+		col_ratio_g = 1.0f;
+	}
+    else if (ratio_g < -1.0f) {
+        col_ratio_g = -1.0f;
+    }
+    else {
+        col_ratio_g = ratio_g;
+    }
+
+	col_inv_ratio_h = 1.0f - col_ratio_h;
+	col_inv_ratio_v = 1.0f - col_ratio_v;
+	col_inv_ratio_g = 1.0f - col_ratio_g;
+    col_div_ratio_h = col_div_ratio_v = 1.0f / (ratio_v + ratio_h);
+	col_div_ratio_h *= col_ratio_h;
+	col_div_ratio_v *= col_ratio_v;
+
+	switch (pParam->type) {
+        case TYPE_CHILD:
+    		AL_PaletteSetColorRatio(pParam, GET_CHAOWK(tp)->id);
+    		AL_CalcIconColor(tp);
+    		AL_DeformObjectChild(work);
+            break;
+        default:
+    		AL_PaletteSetColorRatio(pParam, GET_CHAOWK(tp)->id);
+    		AL_CalcIconColor(tp);
+    		AL_DeformObject(work);
+            break;
+	}
+
+    AL_FitToBaseObject(tp, pShape->pObject);
+    AL_MaterialInit(tp);
+
+	pShape->Flag &= ~AL_SHAPE_FLAG_DEFORM;
+}
+
+void AL_FitToBaseObject(task* tp, al_object* pObject) {
+	al_model* pModel = pObject->pModel;
+
+	if (pObject->pModel) {
+		CNK_VN_VERTEX* pVertex = pModel->pVertex;
+		NJS_POINT3* pOrgVertexPos = pModel->pOrgVertexPos;
+		NJS_VECTOR* pOrgVertexNormal = pModel->pOrgVertexNormal;
+        CNK_VN_VERTEX* pVertexEnd = &pVertex[pModel->nbVertex];
+        
+		while (pVertex < pVertexEnd) {
+			pVertex->Pos = *pOrgVertexPos;
+			pVertex->Normal = *pOrgVertexNormal;
+			
+			pVertex++;
+			pOrgVertexPos++;
+			pOrgVertexNormal++;
+		}
+	}
+
+	if (pObject->pChild) {
+		AL_FitToBaseObject(tp, pObject->pChild);
+	}
+
+	if (pObject->pSibling) {
+		AL_FitToBaseObject(tp, pObject->pSibling);
+	}
+}

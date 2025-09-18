@@ -6,7 +6,7 @@ INLINE_ASM(_func_0C522B80, 0x20, "asm/nonmatching/Chao/al_palette/_func_0C522B80
 INLINE_ASM(_func_0C522BA0, 0x228, "asm/nonmatching/Chao/al_palette/_func_0C522BA0.src");
 
 // MERGE_LIST([["h'8C0C1668", '_lbl_0C522E20'], ['_lbl_0C566B70', '_lbl_0C522E24'], ['_syFree', '_lbl_0C522E28'], ["h'8C13A0FA", '_lbl_0C522E2C']]);
-INLINE_ASM(_func_0C522DC8, 0x638, "asm/nonmatching/Chao/al_palette/_func_0C522DC8.src");
+INLINE_ASM(_AL_PaletteSetColorRatio, 0x638, "asm/nonmatching/Chao/al_palette/_AL_PaletteSetColorRatio.src");
 
 INLINE_ASM(_func_0C523400, 0xb8, "asm/nonmatching/Chao/al_palette/_func_0C523400.src");
 
