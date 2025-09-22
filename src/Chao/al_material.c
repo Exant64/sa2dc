@@ -69,7 +69,7 @@ void AL_MatSetChaoColor(task* tp, Sint16 ColorNum) {
 
     pParam->body.ColorNum = ColorNum;
 
-    for (i = 0; i < 40; i++) {
+    for (i = 0; i < AL_PART_END; i++) {
         if (*pSetList == -1) {
             break;
         }
@@ -478,9 +478,9 @@ void AL_MatSwitchModelEnvironmentMapping(al_model* pModel, Bool Enable) {
                 Uint16 size;
 
                 if (Enable > 0)
-                    *plist |= 0x4000;
+                    *plist |= NJD_FST_ENV;
                 else
-                    *plist &= ~0x4000;
+                    *plist &= ~NJD_FST_ENV;
 
                 plist++;
                 size = *(plist) + 1;
@@ -501,13 +501,13 @@ void AL_MatSetChaoEnvOn(task* tp, int EnvNum) {
     Sint16* pSetList = EnvSetList;
     int i;
 
-    if (pShape->Flag & 0x40) {
+    if (pShape->Flag & AL_SHAPE_FLAG_MULTI) {
         AL_MatSetChaoMultiOff(tp);
     }
 
-    pShape->Flag |= 0x10;
+    pShape->Flag |= AL_SHAPE_FLAG_ENV;
 
-    for (i = 0; i < 40; i++) {
+    for (i = 0; i < AL_PART_END; i++) {
         if (*pSetList == -1) {
             break;
         }
@@ -530,9 +530,9 @@ void AL_MatSetChaoEnvOff(task* tp) {
     Sint16* pSetList = EnvSetList;
     int i;
 
-    pShape->Flag &= ~0x10;
+    pShape->Flag &= ~AL_SHAPE_FLAG_ENV;
 
-    for (i = 0; i < 40; i++) {
+    for (i = 0; i < AL_PART_END; i++) {
         if (*pSetList == -1) {
             break;
         }
@@ -588,11 +588,12 @@ void AL_MatSetChaoMultiOn(task* tp) {
     Sint16* pSetList = EnvSetList;
     int i;
 
-    if (pShape->Flag & 0x10)
+    if (pShape->Flag & AL_SHAPE_FLAG_ENV)
         AL_MatSetChaoEnvOff(tp);
-    pShape->Flag |= 0x40;
 
-    for (i = 0; i < 40; i++) {
+    pShape->Flag |= AL_SHAPE_FLAG_MULTI;
+
+    for (i = 0; i < AL_PART_END; i++) {
         if (*pSetList == -1) {
             break;
         }
@@ -614,9 +615,9 @@ void AL_MatSetChaoMultiOff(task* tp) {
     Sint16* pSetList = EnvSetList;
     int i;
 
-    pShape->Flag &= ~0x40;
+    pShape->Flag &= ~AL_SHAPE_FLAG_MULTI;
 
-    for (i = 0; i < 40; i++) {
+    for (i = 0; i < AL_PART_END; i++) {
         if (*pSetList == -1) {
             break;
         }

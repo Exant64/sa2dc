@@ -6,6 +6,7 @@
 #define AL_SHAPE_FLAG_DEFORM BIT_1
 #define AL_SHAPE_FLAG_SHADOW BIT_3
 #define AL_SHAPE_FLAG_ENV BIT_4
+#define AL_SHAPE_FLAG_MULTI BIT_6
 
 typedef struct CNK_VN_VERTEX {
     NJS_POINT3 Pos;
