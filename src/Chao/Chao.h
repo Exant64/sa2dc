@@ -338,9 +338,9 @@ typedef struct AL_BODY_INFO {
     Uint8 ObakeHead;
     Uint8 ObakeBody;
     Uint8 MedalNum;
-    char ColorNum;
-    char JewelNum;
-    char MultiNum;
+    Uint8 ColorNum;
+    Uint8 JewelNum;
+    Uint8 MultiNum;
     Uint8 BodyType;
     Uint8 FormSubNum;
     char a[3];

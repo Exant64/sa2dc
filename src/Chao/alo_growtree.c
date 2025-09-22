@@ -14,7 +14,7 @@ INLINE_ASM(_func_0C52515C, 0x20, "asm/nonmatching/Chao/alo_growtree/_func_0C5251
 // MERGE_LIST([['_lbl_0C682024', '_lbl_0C5251E8'], ['_ALW_CountEntry', '_lbl_0C5251EC'], ['_lbl_0C6192A8', '_lbl_0C5251E4']]);
 INLINE_ASM(_func_0C52517C, 0x32, "asm/nonmatching/Chao/alo_growtree/_func_0C52517C.src");
 
-// MERGE_LIST([['_lbl_0C619138', '_lbl_0C5251F0'], ['_lbl_0C510840', '_lbl_0C5251F4']]);
+// MERGE_LIST([['_lbl_0C619138', '_lbl_0C5251F0'], ['_AL_MatCopyObject', '_lbl_0C5251F4']]);
 INLINE_ASM(_func_0C5251AE, 0x4, "asm/nonmatching/Chao/alo_growtree/_func_0C5251AE.src");
 
 INLINE_ASM(_func_0C5251B2, 0x4e, "asm/nonmatching/Chao/alo_growtree/_func_0C5251B2.src");

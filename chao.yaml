@@ -38,7 +38,7 @@ segments:
       - [0x4040, asm, al_edit_func]
       - [0x7740, asm, al_egg]
       - [0x8BC0, asm, al_emotion] # done
-      - [0x8D40, asm, al_deform]
+      - [0x8D40, asm, al_deform] # done
       - [0xA6C0, asm, al_face] # done
       - [0xAD00, asm, al_field] # done
       - [0xB3A0, asm, al_garden_info] # done
@@ -71,38 +71,38 @@ segments:
       - [0x1E9E0, asm, al_osamenu]
       - [0x22B80, asm, al_palette]
       - [0x237E0, asm, al_chaosdrive]
-      - [0x24360, asm, alo_flower]
+      - [0x24360, asm, alo_flower] # done
       - [0x246A0, asm, alo_fruit]
       - [0x25100, asm, alo_growtree]
-      - [0x26FC0, asm, alo_obake_head]
+      - [0x26FC0, asm, alo_obake_head] # done
       - [0x27660, asm, alo_osanpo]
       - [0x287A0, asm, alo_seed] # done
       - [0x28D60, asm, al_icon_thing]
-      - [0x28EC0, asm, alef_ripple]
+      - [0x28EC0, asm, alef_ripple] # done
       - [0x28F60, asm, al_behavior/albhv_art]
-      - [0x298E0, asm, al_behavior/albhv_anger]
+      - [0x298E0, asm, al_behavior/albhv_anger] # done
       - [0x2A180, asm, al_behavior/albhv_capture]
-      - [0x2AE40, asm, al_behavior/albhv_common]
+      - [0x2AE40, asm, al_behavior/albhv_common] # done
       - [0x2B4C0, asm, al_behavior/albhv_dakko]
       - [0x2BDC0, asm, al_behavior/albhv_damage]
       - [0x2C6A0, asm, al_behavior/albhv_dance]
       - [0x2D120, asm, al_behavior/albhv_eat]
       - [0x2DD80, asm, al_behavior/albhv_fear]
-      - [0x2E300, asm, al_behavior/albhv_hima]
+      - [0x2E300, asm, al_behavior/albhv_hima] # done
       - [0x2E520, asm, al_behavior/albhv_hungry]
-      - [0x2ED40, asm, al_behavior/albhv_illness]
-      - [0x2F780, asm, al_behavior/albhv_life]
+      - [0x2ED40, asm, al_behavior/albhv_illness] # done
+      - [0x2F780, asm, al_behavior/albhv_life] # done
       - [0x30160, asm, al_behavior/albhv_minimal]
       - [0x30F20, asm, al_behavior/albhv_move]
-      - [0x31BC0, asm, al_behavior/albhv_music]
-      - [0x32D40, asm, al_behavior/albhv_nade]
+      - [0x31BC0, asm, al_behavior/albhv_music] # done
+      - [0x32D40, asm, al_behavior/albhv_nade] # done
       - [0x330C0, asm, al_behavior/albhv_nest]
-      - [0x33840, asm, al_behavior/albhv_obake_head]
-      - [0x33C40, asm, al_behavior/albhv_pain]
-      - [0x33F00, asm, al_behavior/albhv_pleasure]
+      - [0x33840, asm, al_behavior/albhv_obake_head] # done
+      - [0x33C40, asm, al_behavior/albhv_pain] # done
+      - [0x33F00, asm, al_behavior/albhv_pleasure] # done
       - [0x34280, asm, al_behavior/albhv_player]
-      - [0x34880, asm, al_behavior/albhv_posture]
-      - [0x34A20, asm, al_behavior/albhv_rest]
+      - [0x34880, asm, al_behavior/albhv_posture] # done
+      - [0x34A20, asm, al_behavior/albhv_rest] # done
       - [0x34CA0, asm, al_behavior/albhv_seed]
       - [0x358E0, asm, al_behavior/albhv_sing]
       - [0x36AC0, asm, al_behavior/albhv_sleep]
@@ -111,7 +111,7 @@ segments:
       - [0x38500, asm, al_behavior/albhv_swim]
       - [0x391A0, asm, al_behavior/albhv_toy]
       - [0x39EE0, asm, al_behavior/albhv_toy_l]
-      - [0x3AC80, asm, al_behavior/albhv_thirsty]
+      - [0x3AC80, asm, al_behavior/albhv_thirsty] # done
       - [0x3ADE0, asm, al_behavior/albhv_walk]
       - [0x3B4A0, asm, al_behavior/albhv_betafuncs]
       - [0x3BC20, asm, al_camera]
@@ -119,10 +119,10 @@ segments:
       - [0x3C880, asm, alm_func_walk]
       - [0x3D1A0, asm, al_toy/alo_ball]
       - [0x3DC20, asm, al_toy/alo_box]
-      - [0x3E1C0, asm, al_toy/alo_horse]
-      - [0x3E4E0, asm, al_toy/alo_radicase]
-      - [0x3E9C0, asm, al_toy/alo_tv]
-      - [0x3F040, asm, Chao]
+      - [0x3E1C0, asm, al_toy/alo_horse] # done
+      - [0x3E4E0, asm, al_toy/alo_radicase] # done
+      - [0x3E9C0, asm, al_toy/alo_tv] # done
+      - [0x3F040, asm, Chao] # done
       - [0x3F660, asm, OBJECT]
       - [0x5D040, rodata, al_stage]
       - [0x5DA20, rodata, al_face]
