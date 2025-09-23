@@ -65,7 +65,7 @@ INLINE_ASM(_func_0C506AAA, 0x96, "asm/nonmatching/Chao/al_edit_func/_func_0C506A
 
 INLINE_ASM(_func_0C506B40, 0x10e, "asm/nonmatching/Chao/al_edit_func/_func_0C506B40.src");
 
-// MERGE_LIST([['_SWDATA', '_lbl_0C506CC0'], ["h'3F000000", '_lbl_0C506CE0'], ['_lbl_0C569768', '_lbl_0C506CC4'], ["h'7F000000", '_lbl_0C506CE4'], ['_lbl_0C511832', '_lbl_0C506CE8'], ['_FreeTask', '_lbl_0C506CC8'], ['_ALW_CountEntry', '_lbl_0C506CCC'], ['_lbl_0C660060', '_lbl_0C506CD0'], ['_njPrintColor', '_lbl_0C506CD4'], ["h'FF00FF00", '_lbl_0C506CD8'], ["h'FFFF6F00", '_lbl_0C506CDC']]);
+// MERGE_LIST([['_SWDATA', '_lbl_0C506CC0'], ["h'3F000000", '_lbl_0C506CE0'], ['_lbl_0C569768', '_lbl_0C506CC4'], ["h'7F000000", '_lbl_0C506CE4'], ['_AL_DrawRectangle2', '_lbl_0C506CE8'], ['_FreeTask', '_lbl_0C506CC8'], ['_ALW_CountEntry', '_lbl_0C506CCC'], ['_lbl_0C660060', '_lbl_0C506CD0'], ['_njPrintColor', '_lbl_0C506CD4'], ["h'FF00FF00", '_lbl_0C506CD8'], ["h'FFFF6F00", '_lbl_0C506CDC']]);
 INLINE_ASM(_func_0C506C4E, 0x128, "asm/nonmatching/Chao/al_edit_func/_func_0C506C4E.src");
 
 // MERGE_LIST([['_lbl_0C569784', '_lbl_0C506E60'], ['_lbl_0C55D4A8', '_lbl_0C506E80'], ["h'8C24F090", '_lbl_0C506E64'], ["h'000A0015", '_lbl_0C506E84'], ["h'00100015", '_lbl_0C506E88'], ["h'8C05AF7E", '_lbl_0C506E68'], ['_lbl_0C55D4A0', '_lbl_0C506E6C'], ['_njPrintD', '_lbl_0C506E8C'], ["h'000A0014", '_lbl_0C506E70'], ['_njPrintC', '_lbl_0C506E74'], ["h'00100014", '_lbl_0C506E78'], ["h'8C12ADCE", '_lbl_0C506E7C']]);

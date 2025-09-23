@@ -46,6 +46,7 @@ enum {
 
 extern const char* gPaletteFilename[];
 extern char gPalette[39][48 * 4];
+extern Uint32 TexBankList[6][3];
 
 void lbl_0C522B80(const char* pStr) {
     njPrintColor(0xFFFF0000);
@@ -367,12 +368,125 @@ void AL_PaletteSetColorRatio(CHAO_PARAM* pParam, Sint32 cno) {
     }
 }
 
-INLINE_ASM(_func_0C523400, 0xb8, "asm/nonmatching/Chao/al_palette/_func_0C523400.src");
+void func_0C523400(int id, float rat) {
+    float ratio = rat;
+    void* p = syMalloc(4 * 48);
 
-// MERGE_LIST([['_syMalloc', '_lbl_0C5235E0'], ['_syFree', '_lbl_0C5235EC'], ['_gPalette', '_lbl_0C5235E4'],
-// ["h'_njSetPaletteData", '_lbl_0C5235E8']]);
-INLINE_ASM(_func_0C5234B8, 0x148, "asm/nonmatching/Chao/al_palette/_func_0C5234B8.src");
+    Uint8* pPaletteZ = (Uint8*)gPalette[PVP_NCZ];
+    Uint8* pPaletteA = (Uint8*)gPalette[PVP_NCN];
+    Uint8* pColor = p;
 
-INLINE_ASM(_alpalSetBank, 0xc0, "asm/nonmatching/Chao/al_palette/_alpalSetBank.src");
+    int i;
 
-INLINE_ASM(_func_0C5236C0, 0x120, "asm/nonmatching/Chao/al_palette/_func_0C5236C0.src");
+    if (ratio > 1.0f) {
+        ratio = 1.0f;
+    } else if (ratio < -1.0f) {
+        ratio = -1.0f;
+    }
+
+    if (ratio < 0.0f) {
+        pPaletteA = (Uint8*)gPalette[PVP_HCZ];
+        ratio = -ratio;
+    }
+
+    for (i = 192 - 1; i >= 0; i--) {
+        *(pColor++) = (Uint8)(*pPaletteZ + (int)((*pPaletteA - *pPaletteZ) * ratio));
+
+        ++pPaletteZ;
+        ++pPaletteA;
+    }
+
+    njSetPaletteData(id * 3, 3, p);
+    syFree(p);
+}
+
+void func_0C5234B8(int id, float ratio, float ratio_g) {
+    void* p = syMalloc(4 * 48);
+
+    Uint8* pNCZ = (Uint8*)gPalette[PVP_NCZ];
+    Uint8* pNCN = (Uint8*)gPalette[PVP_NCN];
+    Uint8* pHCN = (Uint8*)gPalette[PVP_HCN];
+    Uint8* pColor = p;
+
+    int i;
+
+    if (ratio_g > 1.0f)
+        ratio_g = 1.0f;
+
+    if (ratio > 1.0f) {
+        ratio = 1.0f;
+    } else if (ratio < -1.0f) {
+        ratio = -1.0f;
+    }
+
+    if (ratio < 0.0f) {
+        pNCN = (Uint8*)gPalette[PVP_HCZ];
+        ratio = -ratio;
+    }
+
+    for (i = 192 - 1; i >= 0; i--) {
+        *(pColor) = (Uint8)(*pNCZ + (int)((*pHCN - *pNCZ) * ratio_g));
+        *(pColor) = (Uint8)(*pColor + (int)((*pNCN - *pColor) * ratio));
+
+        pColor++;
+        ++pNCZ;
+        ++pHCN;
+        ++pNCN;
+    }
+
+    njSetPaletteData(id * 48, 48, p);
+    syFree(p);
+}
+
+void alpalSetBank(task* tp, Sint32 cno) {
+    CHAO_PARAM* pParam = GET_CHAOPARAM(tp);
+	int no = 0;
+    int i;
+    
+	switch (pParam->type)
+	{
+	case TYPE_CHILD:
+		no = 0;
+		break;
+	case TYPE_H_NORMAL:
+		no = 1;
+		break;
+	case TYPE_H_SWIM:
+		no = 2;
+		break;
+	case TYPE_H_FLY:
+		no = 3;
+		break;
+	case TYPE_H_RUN:
+		no = 4;
+		break;
+	case TYPE_H_POWER:
+		no = 5;
+		break;
+	default:
+		return;
+	}
+
+    for (i = 0; i < 3; i++) {
+        Sint32 num = TexBankList[no][i];
+        
+		njSetPaletteBankNum(num, i + 3 * cno);
+	}
+}
+
+void func_0C5236C0() {
+    Uint32 palette[0x1000/4];
+    int i;
+    
+    njGetPaletteData(0, 512, palette);
+
+    for(i = 0; i < 1024; i++) {
+        AL_DrawRectangle(
+            4 * (i % 128) + 50, 
+            15 * (i / 128) + 350, 
+            4 * (i % 128 + 1) + 50, 
+            15 * (i / 128 + 1) + 348, 
+            palette[i]
+        );
+    }
+}

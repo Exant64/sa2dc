@@ -718,3 +718,6 @@ AL_MatSetChaoEnvOff = 0x0C51067C;
 alpalLoadTexpalette = 0x0C522BA0;
 gPaletteFilename = 0xC601E6C;
 gPalette = 0xC6802E4;
+TexBankList = 0x0C601E24;
+AL_DrawRectangle = 0x0C5117BA;
+AL_DrawRectangle2 = 0x0C511832;
