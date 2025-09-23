@@ -715,3 +715,6 @@ AL_MatSwitchObjectEnvironmentMapping = 0xC510538;
 AL_MatSwitchModelEnvironmentMapping = 0x0C510550;
 AL_MatChangeModelTexture = 0x0C5100CE;
 AL_MatSetChaoEnvOff = 0x0C51067C;
+alpalLoadTexpalette = 0x0C522BA0;
+gPaletteFilename = 0xC601E6C;
+gPalette = 0xC6802E4;

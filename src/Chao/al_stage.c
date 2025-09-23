@@ -5,7 +5,7 @@ INLINE_ASM(_func_0C500020, 0xa, "asm/nonmatching/Chao/al_stage/_func_0C500020.sr
 // MERGE_LIST([['_lbl_0C568F60', '_lbl_0C5001A0']]);
 INLINE_ASM(_func_0C50002A, 0x2da, "asm/nonmatching/Chao/al_stage/_func_0C50002A.src");
 
-// MERGE_LIST([['_sub_C50B724', '_lbl_0C5003A0'], ['_AL_InitChaoSaveInfo', '_lbl_0C5003A4'], ['_lbl_0C568F64', '_lbl_0C5003A8'], ['_lbl_0C568F60', '_lbl_0C5003AC'], ['_lbl_0C516260', '_lbl_0C5003B0'], ["h'8C05FEB2", '_lbl_0C5003B4'], ["h'8C1127CE", '_lbl_0C5003B8']]);
+// MERGE_LIST([['_sub_C50B724', '_lbl_0C5003A0'], ['_AL_InitChaoSaveInfo', '_lbl_0C5003A4'], ['_lbl_0C568F64', '_lbl_0C5003A8'], ['_lbl_0C568F60', '_lbl_0C5003AC'], ['_lbl_0C516260', '_lbl_0C5003B0'], ["h'8C05FEB2", '_lbl_0C5003B4'], ['_njWaitVSync', '_lbl_0C5003B8']]);
 INLINE_ASM(_func_0C500304, 0x132, "asm/nonmatching/Chao/al_stage/_func_0C500304.src");
 
 INLINE_ASM(_func_0C500436, 0xf4, "asm/nonmatching/Chao/al_stage/_func_0C500436.src");

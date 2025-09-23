@@ -193,4 +193,4 @@ INLINE_ASM(_func_0C522B48, 0x2c, "asm/nonmatching/Chao/al_osamenu/_func_0C522B48
 
 INLINE_ASM(_func_0C522B74, 0x2c, "asm/nonmatching/Chao/al_osamenu/_func_0C522B74.src");
 
-// MERGE_LIST([["h'FFFF0000", '_lbl_0C522C80'], ['_njPrintColor', '_lbl_0C522C84'], ['_njPrintC', '_lbl_0C522C88'], ["h'8C1127CE", '_lbl_0C522C8C'], ["h'00030003", '_lbl_0C522C90']]);
+// MERGE_LIST([["h'FFFF0000", '_lbl_0C522C80'], ['_njPrintColor', '_lbl_0C522C84'], ['_njPrintC', '_lbl_0C522C88'], ['_njWaitVSync', '_lbl_0C522C8C'], ["h'00030003", '_lbl_0C522C90']]);

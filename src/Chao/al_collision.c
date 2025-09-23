@@ -12,7 +12,7 @@ INLINE_ASM(_func_0C50303C, 0x164, "asm/nonmatching/Chao/al_collision/_func_0C503
 
 INLINE_ASM(_func_0C5031A0, 0x9e, "asm/nonmatching/Chao/al_collision/_func_0C5031A0.src");
 
-// MERGE_LIST([['_lbl_0C55D1EC', '_lbl_0C503340'], ["h'C3480000", '_lbl_0C503360'], ["h'0014000A", '_lbl_0C503344'], ["h'4F800000", '_lbl_0C503364'], ['_njPrintC', '_lbl_0C503348'], ['_DrawLineV', '_lbl_0C503368'], ["h'8C1127CE", '_lbl_0C50334C'], ['_lbl_0C569590', '_lbl_0C503350'], ['_lbl_0C660050', '_lbl_0C503354'], ["h'C2C80000", '_lbl_0C503358'], ["h'3D23D70A", '_lbl_0C50335C']]);
+// MERGE_LIST([['_lbl_0C55D1EC', '_lbl_0C503340'], ["h'C3480000", '_lbl_0C503360'], ["h'0014000A", '_lbl_0C503344'], ["h'4F800000", '_lbl_0C503364'], ['_njPrintC', '_lbl_0C503348'], ['_DrawLineV', '_lbl_0C503368'], ['_njWaitVSync', '_lbl_0C50334C'], ['_lbl_0C569590', '_lbl_0C503350'], ['_lbl_0C660050', '_lbl_0C503354'], ["h'C2C80000", '_lbl_0C503358'], ["h'3D23D70A", '_lbl_0C50335C']]);
 INLINE_ASM(_func_0C50323E, 0x22, "asm/nonmatching/Chao/al_collision/_func_0C50323E.src");
 
 INLINE_ASM(_AL_DetectCollision, 0x194, "asm/nonmatching/Chao/al_collision/_AL_DetectCollision.src");
