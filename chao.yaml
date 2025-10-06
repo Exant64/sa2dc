@@ -27,11 +27,11 @@ segments:
     dir: Chao
     subsegments: 
       - [0x20, asm, al_stage]
-      - [0xBE0, asm, code_0C500BE0]
+      - [0xBE0, asm, code_0C500BE0] # done
       - [0xC60, asm, al_behavior] # done
-      - [0x1440, asm, code_0C501440]
+      - [0x1440, asm, code_0C501440] # done
       - [0x1460, asm, al_buyobuyo]
-      - [0x23C0, asm, al_chao_info]
+      - [0x23C0, asm, al_chao_info] # done
       - [0x2C40, asm, al_control] # done
       - [0x2D40, asm, al_collision]
       - [0x34C0, asm, al_draw] # done
@@ -49,7 +49,7 @@ segments:
       - [0xEF80, asm, code_0C50EF80]
       - [0xF540, asm, al_knowledge] # done
       - [0xFDA0, asm, al_landmark] # done
-      - [0x10040, asm, al_material]
+      - [0x10040, asm, al_material] # done
       - [0x10CE0, asm, al_message]
       - [0x10E00, asm, al_minimal]
       - [0x11700, asm, al_misc]
@@ -63,13 +63,13 @@ segments:
       - [0x16160, asm, code_0C516160]
       - [0x16740, asm, code_0C516740]
       - [0x17960, asm, al_shape] # done
-      - [0x18860, asm, al_sound]
+      - [0x18860, asm, al_sound] # done
       - [0x18A00, asm, al_edit_sa1]
       - [0x19500, asm, al_osanbo]
       - [0x1DC40, asm, al_water]
       - [0x1DE00, asm, al_world] # done but ALW_Edit isnt
       - [0x1E9E0, asm, al_osamenu]
-      - [0x22B80, asm, al_palette]
+      - [0x22B80, asm, al_palette] # done
       - [0x237E0, asm, al_chaosdrive]
       - [0x24360, asm, alo_flower] # done
       - [0x246A0, asm, alo_fruit]

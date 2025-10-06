@@ -1,9 +1,9 @@
 #ifndef _CHAO_H_
 #define _CHAO_H_
 
-#include "task.h"
-#include "motion.h"
-#include "move.h"
+#include <task.h>
+#include <motion.h>
+#include <move.h>
 
 #include "Chao/al_global.h"
 #include "Chao/al_behavior.h"

@@ -191,7 +191,7 @@ INLINE_ASM(_func_0C545448, 0x1c4, "asm/nonmatching/Chao/OBJECT/_func_0C545448.sr
 // MERGE_LIST([["h'3E99999A", '_lbl_0C545760'], ['_AdjustAngle', '_lbl_0C545764']]);
 INLINE_ASM(_func_0C54560C, 0xab4, "asm/nonmatching/Chao/OBJECT/_func_0C54560C.src");
 
-// MERGE_LIST([["h'8C118AA4", '_lbl_0C546200'], ["h'8C119684", '_lbl_0C546204']]);
+// MERGE_LIST([['_njAddVector', '_lbl_0C546200'], ["h'8C119684", '_lbl_0C546204']]);
 INLINE_ASM(_func_0C5460C0, 0x50, "asm/nonmatching/Chao/OBJECT/_func_0C5460C0.src");
 
 INLINE_ASM(_func_0C546110, 0x6, "asm/nonmatching/Chao/OBJECT/_func_0C546110.src");
@@ -262,7 +262,7 @@ INLINE_ASM(_func_0C54758C, 0x6, "asm/nonmatching/Chao/OBJECT/_func_0C54758C.src"
 // MERGE_LIST([["h'8C02130C", '_lbl_0C5476C8']]);
 INLINE_ASM(_func_0C547592, 0x114, "asm/nonmatching/Chao/OBJECT/_func_0C547592.src");
 
-// MERGE_LIST([['_njCalcPoint', '_lbl_0C5476E0'], ["h'C1700000", '_lbl_0C5476E4'], ["h'41700000", '_lbl_0C5476E8'], ['_njPushMatrixEx', '_lbl_0C5476CC'], ['_njTranslateEx', '_lbl_0C5476EC'], ['_njUnitMatrix', '_lbl_0C5476D0'], ['_njPopMatrixEx', '_lbl_0C5476F0'], ['_njRotateY', '_lbl_0C5476D4'], ['_CCL_Entry', '_lbl_0C5476F4'], ['_njTranslate', '_lbl_0C5476D8'], ["h'8C2512B8", '_lbl_0C5476DC']]);
+// MERGE_LIST([['_njCalcPoint', '_lbl_0C5476E0'], ["h'C1700000", '_lbl_0C5476E4'], ["h'41700000", '_lbl_0C5476E8'], ['_njPushMatrixEx', '_lbl_0C5476CC'], ['_njTranslateEx', '_lbl_0C5476EC'], ['_njUnitMatrix', '_lbl_0C5476D0'], ['_njPopMatrixEx', '_lbl_0C5476F0'], ['_njRotateY', '_lbl_0C5476D4'], ['_CCL_Entry', '_lbl_0C5476F4'], ['_njTranslate', '_lbl_0C5476D8'], ['_playerpwp', '_lbl_0C5476DC']]);
 INLINE_ASM(_func_0C5476A6, 0x5e, "asm/nonmatching/Chao/OBJECT/_func_0C5476A6.src");
 
 INLINE_ASM(_func_0C547704, 0x40, "asm/nonmatching/Chao/OBJECT/_func_0C547704.src");
@@ -291,7 +291,7 @@ INLINE_ASM(_func_0C547ABE, 0x32, "asm/nonmatching/Chao/OBJECT/_func_0C547ABE.src
 // MERGE_LIST([["h'8C300000", '_lbl_0C547BA0'], ["h'0000FFFF", '_lbl_0C547BA4']]);
 INLINE_ASM(_func_0C547AF0, 0x2a, "asm/nonmatching/Chao/OBJECT/_func_0C547AF0.src");
 
-// MERGE_LIST([["h'8C2512B8", '_lbl_0C547BAC']]);
+// MERGE_LIST([['_playerpwp', '_lbl_0C547BAC']]);
 INLINE_ASM(_func_0C547B1A, 0x46, "asm/nonmatching/Chao/OBJECT/_func_0C547B1A.src");
 
 // MERGE_LIST([["h'8C25B8A8", '_lbl_0C547BB0'], ["h'8C25B894", '_lbl_0C547BB4'], ["h'8C11A0A8", '_lbl_0C547BB8']]);
@@ -535,7 +535,7 @@ INLINE_ASM(_func_0C54B8D2, 0x8e, "asm/nonmatching/Chao/OBJECT/_func_0C54B8D2.src
 
 INLINE_ASM(_func_0C54B960, 0x138, "asm/nonmatching/Chao/OBJECT/_func_0C54B960.src");
 
-// MERGE_LIST([["h'40F00000", '_lbl_0C54BB00'], ["h'3DCCCCCD", '_lbl_0C54BB04'], ["h'40C00000", '_lbl_0C54BB08'], ['_lbl_0C558560', '_lbl_0C54BB0C'], ["h'0000800D", '_lbl_0C54BB10'], ["h'8C05AF7E", '_lbl_0C54BB14'], ["h'8C036220", '_lbl_0C54BB18'], ["h'8C057BC8", '_lbl_0C54BB1C'], ['_CCL_Entry', '_lbl_0C54BB20'], ["h'8C0DB244", '_lbl_0C54BB24'], ["h'40A00000", '_lbl_0C54BB28'], ["h'8C01F380", '_lbl_0C54BAE0'], ["h'8C01F408", '_lbl_0C54BAE4'], ["h'8C04AEC4", '_lbl_0C54BAE8'], ["h'8C2512B8", '_lbl_0C54BAEC'], ['_lbl_0C642874', '_lbl_0C54BAF0'], ['_lbl_0C556232', '_lbl_0C54BAF4'], ['_lbl_0C642878', '_lbl_0C54BAF8'], ["h'8C022E6E", '_lbl_0C54BAFC']]);
+// MERGE_LIST([["h'40F00000", '_lbl_0C54BB00'], ["h'3DCCCCCD", '_lbl_0C54BB04'], ["h'40C00000", '_lbl_0C54BB08'], ['_lbl_0C558560', '_lbl_0C54BB0C'], ["h'0000800D", '_lbl_0C54BB10'], ["h'8C05AF7E", '_lbl_0C54BB14'], ["h'8C036220", '_lbl_0C54BB18'], ["h'8C057BC8", '_lbl_0C54BB1C'], ['_CCL_Entry', '_lbl_0C54BB20'], ["h'8C0DB244", '_lbl_0C54BB24'], ["h'40A00000", '_lbl_0C54BB28'], ["h'8C01F380", '_lbl_0C54BAE0'], ["h'8C01F408", '_lbl_0C54BAE4'], ["h'8C04AEC4", '_lbl_0C54BAE8'], ['_playerpwp', '_lbl_0C54BAEC'], ['_lbl_0C642874', '_lbl_0C54BAF0'], ['_lbl_0C556232', '_lbl_0C54BAF4'], ['_lbl_0C642878', '_lbl_0C54BAF8'], ["h'8C022E6E", '_lbl_0C54BAFC']]);
 INLINE_ASM(_func_0C54BA98, 0xa8, "asm/nonmatching/Chao/OBJECT/_func_0C54BA98.src");
 
 INLINE_ASM(_func_0C54BB40, 0xc8, "asm/nonmatching/Chao/OBJECT/_func_0C54BB40.src");
@@ -628,7 +628,7 @@ INLINE_ASM(_func_0C54D29C, 0x44, "asm/nonmatching/Chao/OBJECT/_func_0C54D29C.src
 // MERGE_LIST([["h'3F666666", '_lbl_0C54D3C8'], ["h'BF666666", '_lbl_0C54D3CC']]);
 INLINE_ASM(_func_0C54D2E0, 0xa18, "asm/nonmatching/Chao/OBJECT/_func_0C54D2E0.src");
 
-// MERGE_LIST([["h'8C0DB244", '_lbl_0C54DD40'], ["h'40A00000", '_lbl_0C54DD44'], ["h'8C01F380", '_lbl_0C54DD48'], ["h'0000FFFE", '_lbl_0C54DD4C'], ["h'C0000000", '_lbl_0C54DD50'], ["h'8C04AEC4", '_lbl_0C54DD54'], ["h'8C2512B8", '_lbl_0C54DD58'], ["h'8C2512BC", '_lbl_0C54DD5C'], ["h'8C0523F6", '_lbl_0C54DD60'], ["h'8C05B55E", '_lbl_0C54DD64'], ["h'3DCCCCCD", '_lbl_0C54DD68'], ["h'8C04C8A6", '_lbl_0C54DD6C'], ['_CCL_Entry', '_lbl_0C54DD70'], ['_lbl_0C54C5FA', '_lbl_0C54DD74'], ['_DestroyTask', '_lbl_0C54DD78']]);
+// MERGE_LIST([["h'8C0DB244", '_lbl_0C54DD40'], ["h'40A00000", '_lbl_0C54DD44'], ["h'8C01F380", '_lbl_0C54DD48'], ["h'0000FFFE", '_lbl_0C54DD4C'], ["h'C0000000", '_lbl_0C54DD50'], ["h'8C04AEC4", '_lbl_0C54DD54'], ['_playerpwp', '_lbl_0C54DD58'], ["h'8C2512BC", '_lbl_0C54DD5C'], ["h'8C0523F6", '_lbl_0C54DD60'], ["h'8C05B55E", '_lbl_0C54DD64'], ["h'3DCCCCCD", '_lbl_0C54DD68'], ["h'8C04C8A6", '_lbl_0C54DD6C'], ['_CCL_Entry', '_lbl_0C54DD70'], ['_lbl_0C54C5FA', '_lbl_0C54DD74'], ['_DestroyTask', '_lbl_0C54DD78']]);
 INLINE_ASM(_func_0C54DCF8, 0x88, "asm/nonmatching/Chao/OBJECT/_func_0C54DCF8.src");
 
 INLINE_ASM(_func_0C54DD80, 0x1a0, "asm/nonmatching/Chao/OBJECT/_func_0C54DD80.src");
@@ -781,7 +781,7 @@ INLINE_ASM(_func_0C55269E, 0x14, "asm/nonmatching/Chao/OBJECT/_func_0C55269E.src
 // MERGE_LIST([['_lbl_0C546762', '_lbl_0C55278C']]);
 INLINE_ASM(_func_0C5526B2, 0x682, "asm/nonmatching/Chao/OBJECT/_func_0C5526B2.src");
 
-// MERGE_LIST([['_lbl_0C5566C2', '_lbl_0C552D80'], ["h'8C2512B8", '_lbl_0C552D84'], ["h'02000410", '_lbl_0C552D88'], ['_CCL_Entry', '_lbl_0C552D8C'], ["h'8C057C56", '_lbl_0C552D90'], ["h'3DCCCCCD", '_lbl_0C552D94'], ['__modls', '_lbl_0C552D98'], ["h'8C0A8EE0", '_lbl_0C552D9C'], ["h'8C057C40", '_lbl_0C552DA0'], ["h'8C057C92", '_lbl_0C552DA4'], ['_FreeTask', '_lbl_0C552DA8']]);
+// MERGE_LIST([['_lbl_0C5566C2', '_lbl_0C552D80'], ['_playerpwp', '_lbl_0C552D84'], ["h'02000410", '_lbl_0C552D88'], ['_CCL_Entry', '_lbl_0C552D8C'], ["h'8C057C56", '_lbl_0C552D90'], ["h'3DCCCCCD", '_lbl_0C552D94'], ['__modls', '_lbl_0C552D98'], ["h'8C0A8EE0", '_lbl_0C552D9C'], ["h'8C057C40", '_lbl_0C552DA0'], ["h'8C057C92", '_lbl_0C552DA4'], ['_FreeTask', '_lbl_0C552DA8']]);
 INLINE_ASM(_func_0C552D34, 0x2a0, "asm/nonmatching/Chao/OBJECT/_func_0C552D34.src");
 
 INLINE_ASM(_func_0C552FD4, 0x30, "asm/nonmatching/Chao/OBJECT/_func_0C552FD4.src");
@@ -795,7 +795,7 @@ INLINE_ASM(_func_0C55306C, 0x14, "asm/nonmatching/Chao/OBJECT/_func_0C55306C.src
 // MERGE_LIST([['_lbl_0C546762', '_lbl_0C553170']]);
 INLINE_ASM(_func_0C553080, 0x700, "asm/nonmatching/Chao/OBJECT/_func_0C553080.src");
 
-// MERGE_LIST([["h'8C0A8EE0", '_lbl_0C553800'], ["h'8C057C40", '_lbl_0C553804'], ["h'8C057C92", '_lbl_0C553808'], ['_FreeTask', '_lbl_0C55380C'], ['_lbl_0C5566C2', '_lbl_0C5537E0'], ["h'8C2512B8", '_lbl_0C5537E4'], ["h'08001000", '_lbl_0C5537E8'], ["h'00040008", '_lbl_0C5537EC'], ['_CCL_Entry', '_lbl_0C5537F0'], ["h'8C057C56", '_lbl_0C5537F4'], ["h'3DCCCCCD", '_lbl_0C5537F8'], ['__modls', '_lbl_0C5537FC']]);
+// MERGE_LIST([["h'8C0A8EE0", '_lbl_0C553800'], ["h'8C057C40", '_lbl_0C553804'], ["h'8C057C92", '_lbl_0C553808'], ['_FreeTask', '_lbl_0C55380C'], ['_lbl_0C5566C2', '_lbl_0C5537E0'], ['_playerpwp', '_lbl_0C5537E4'], ["h'08001000", '_lbl_0C5537E8'], ["h'00040008", '_lbl_0C5537EC'], ['_CCL_Entry', '_lbl_0C5537F0'], ["h'8C057C56", '_lbl_0C5537F4'], ["h'3DCCCCCD", '_lbl_0C5537F8'], ['__modls', '_lbl_0C5537FC']]);
 INLINE_ASM(_func_0C553780, 0xc0, "asm/nonmatching/Chao/OBJECT/_func_0C553780.src");
 
 INLINE_ASM(_func_0C553840, 0x84, "asm/nonmatching/Chao/OBJECT/_func_0C553840.src");
@@ -1136,7 +1136,7 @@ INLINE_ASM(_func_0C55CC60, 0x104, "asm/nonmatching/Chao/OBJECT/_func_0C55CC60.sr
 
 INLINE_ASM(_func_0C55CD64, 0x94, "asm/nonmatching/Chao/OBJECT/_func_0C55CD64.src");
 
-// MERGE_LIST([["h'8C2512B8", '_lbl_0C55CEC0'], ["h'3A400000", '_lbl_0C55CEE0'], ['_DestroyTask', '_lbl_0C55CEC4'], ["h'8C0DB244", '_lbl_0C55CEC8'], ["h'3EE66666", '_lbl_0C55CECC'], ["h'3E4CCCCD", '_lbl_0C55CED0'], ['_FreeTask', '_lbl_0C55CED4'], ['_rand', '_lbl_0C55CED8'], ["h'41000000", '_lbl_0C55CEDC']]);
+// MERGE_LIST([['_playerpwp', '_lbl_0C55CEC0'], ["h'3A400000", '_lbl_0C55CEE0'], ['_DestroyTask', '_lbl_0C55CEC4'], ["h'8C0DB244", '_lbl_0C55CEC8'], ["h'3EE66666", '_lbl_0C55CECC'], ["h'3E4CCCCD", '_lbl_0C55CED0'], ['_FreeTask', '_lbl_0C55CED4'], ['_rand', '_lbl_0C55CED8'], ["h'41000000", '_lbl_0C55CEDC']]);
 INLINE_ASM(_func_0C55CDF8, 0x128, "asm/nonmatching/Chao/OBJECT/_func_0C55CDF8.src");
 
 INLINE_ASM(_func_0C55CF20, 0x5c, "asm/nonmatching/Chao/OBJECT/_func_0C55CF20.src");

@@ -10,7 +10,7 @@ INLINE_ASM(_func_0C53BC2C, 0xa, "asm/nonmatching/Chao/al_camera/_func_0C53BC2C.s
 // MERGE_LIST([['_lbl_0C632A98', '_lbl_0C53BDC8'], ['_lbl_0C53C3E0', '_lbl_0C53BDC4'], ["h'8C0AB69C", '_lbl_0C53BDCC']]);
 INLINE_ASM(_func_0C53BC36, 0x4fa, "asm/nonmatching/Chao/al_camera/_func_0C53BC36.src");
 
-// MERGE_LIST([["h'3BA3D70A", '_lbl_0C53C180'], ['_lbl_0C5033F4', '_lbl_0C53C184'], ['_CCL_Entry', '_lbl_0C53C188'], ['_lbl_0C632AA4', '_lbl_0C53C160'], ['_lbl_0C632AA8', '_lbl_0C53C164'], ["h'41F00000", '_lbl_0C53C168'], ["h'3DCCCCCD", '_lbl_0C53C16C'], ['_njScalor', '_lbl_0C53C170'], ['_lbl_0C632AAC', '_lbl_0C53C174'], ['_njUnitVector', '_lbl_0C53C178'], ["h'8C118AA4", '_lbl_0C53C17C']]);
+// MERGE_LIST([["h'3BA3D70A", '_lbl_0C53C180'], ['_lbl_0C5033F4', '_lbl_0C53C184'], ['_CCL_Entry', '_lbl_0C53C188'], ['_lbl_0C632AA4', '_lbl_0C53C160'], ['_lbl_0C632AA8', '_lbl_0C53C164'], ["h'41F00000", '_lbl_0C53C168'], ["h'3DCCCCCD", '_lbl_0C53C16C'], ['_njScalor', '_lbl_0C53C170'], ['_lbl_0C632AAC', '_lbl_0C53C174'], ['_njUnitVector', '_lbl_0C53C178'], ['_njAddVector', '_lbl_0C53C17C']]);
 INLINE_ASM(_func_0C53C130, 0x8, "asm/nonmatching/Chao/al_camera/_func_0C53C130.src");
 
 // MERGE_LIST([['_lbl_0C632A9C', '_lbl_0C53C18C']]);
