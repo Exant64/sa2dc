@@ -15,7 +15,7 @@ pip install sh4dis
 - put /Lib's contents in shc/lib
 - Obtain and extract the rom for Sonic Adventure 2 (US) for the Dreamcast
 - Decompress CHAO.PRS and CHAOSTGRACE.PRS
-- Put 1ST_READ.bin and the decompressed files (make sure their extension is .bin) in the "rom" folder in the repo
+- Put 1ST_READ.BIN and the decompressed files (make sure their extension is exactly .BIN - case sensitive) in the "rom" folder in the repo
 - Run "make setup"
 
 # Extra info
