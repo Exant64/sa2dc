@@ -11,11 +11,12 @@ pip install sh4dis
 - Obtain Katana r11, and the folders /Include, /Dev/Hitachi, /Lib
 - Put /Include in the repo
 - create an "shc" folder
+- put /Include/SHC's contents into shc/include
 - put /Dev/Hitachi's contents in shc/bin
 - put /Lib's contents in shc/lib
 - Obtain and extract the rom for Sonic Adventure 2 (US) for the Dreamcast
 - Decompress CHAO.PRS and CHAOSTGRACE.PRS
-- Put 1ST_READ.bin and the decompressed files (make sure their extension is .bin) in the "rom" folder in the repo
+- Put 1ST_READ.BIN and the decompressed files (make sure their extension is exactly .BIN - case sensitive) in the "rom" folder of the repo
 - Run "make setup"
 
 # Extra info
