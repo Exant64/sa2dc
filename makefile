@@ -76,6 +76,8 @@ endif
 
 setup: 
 	$(MAKE) -C tools
+	$(GENFSY) symbols.1st_read.txt > asm/1st_read_symbols.src
+	$(GENFSY) symbols.chao.txt > asm/chao_symbols.src
 	$(GENFSY) symbols.chaomodel.txt > asm/chaomodel_symbols.src
 	$(DCSPLIT) 1st_read.yaml
 	$(DCSPLIT) chao.yaml
@@ -89,13 +91,13 @@ clean:
 $(CHAO_ROM): $(CHAO_ELF)
 	$(ELF2BIN) -s $(CHAO_KEY) $< $@
 
-$(CHAO_ELF): $(1ST_READ_ELF) build/asm/1st_read.obj $(O_FILES)
+$(CHAO_ELF): $(O_FILES)
 	$(LD) $(LDFLAGS) -sub=chao_lnk.sub
 
 $(CHAOSTGRACE_ROM): $(CHAOSTGRACE_ELF)
 	$(ELF2BIN) -s $(CHAOSTGRACE_KEY) $< $@
 
-$(CHAOSTGRACE_ELF): $(1ST_READ_ELF) build/asm/1st_read.obj build/asm/chao.obj $(O_FILES)
+$(CHAOSTGRACE_ELF): $(O_FILES)
 	$(LD) $(LDFLAGS) -sub=chaostgrace_lnk.sub
 
 $(1ST_READ_ROM): $(1ST_READ_ELF) 
@@ -103,7 +105,6 @@ $(1ST_READ_ROM): $(1ST_READ_ELF)
 
 $(1ST_READ_ELF): $(O_FILES)
 	$(LD) $(LDFLAGS) -sub=1st_read_lnk.sub
-	$(shell mv 1st_read.fsy build/1st_read.fsy)
 
 # wibo doesn't support envvar conversion so we use wine for shc
 # wine crashes asmsh, and asmsh doesn't use the envvars
@@ -116,12 +117,3 @@ build/src/%.obj: src/%.c
 
 build/asm/%.obj: asm/%.src
 	$(PATHHELP) $(WIBO) $(AS) $< $(ASFLAGS) -object=$@
-
-build/asm/1st_read.obj:
-	$(shell grep -v "_lbl_" build/1st_read.fsy > build/1st_read_tmp.fsy)
-	$(PATHHELP) $(WIBO) $(AS) build/1st_read_tmp.fsy $(ASFLAGS) -object=$@
-
-build/asm/chao.obj:
-	$(shell grep -v "_lbl_" build/CHAO.fsy > build/CHAO_tmp.fsy)
-	$(PATHHELP) $(WIBO) $(AS) build/CHAO_tmp.fsy $(ASFLAGS) -object=$@
-

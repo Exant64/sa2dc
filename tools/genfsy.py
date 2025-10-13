@@ -6,5 +6,5 @@ with open(sys.argv[1], "r") as symtxt:
     for line in lines:
         spl = line.split(" = ")
         print(f"\t.export _{spl[0]}")
-        print(f"_{spl[0]}: .equ h'{spl[1].rstrip(';')}")
+        print(f"_{spl[0]}: .equ h'{spl[1].replace('0x', '').rstrip(';')}")
     

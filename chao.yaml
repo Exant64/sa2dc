@@ -13,7 +13,7 @@ entry: chao_stage_header
 
 section_order: P,C,D,PSG,CSG,DSG,B
 
-additional_linker: ["input .\\build\\asm\\1st_read.obj", "input .\\build\\asm\\chaomodel_symbols.obj", "fsymbol P,C,D,PSG,CSG,CSG32,DSG,DSG32,B,BSG,BSG32"]
+additional_linker: ["input .\\build\\asm\\1st_read_symbols.obj", "input .\\build\\asm\\chaomodel_symbols.obj"]
 
 segments:
   - name: chao_stage_header

@@ -13,7 +13,7 @@ entry: race_stage_header
 
 section_order: P,D,C
 
-additional_linker: ["input .\\build\\asm\\1st_read.obj", "input .\\build\\asm\\chao.obj"]
+additional_linker: ["input .\\build\\asm\\1st_read_symbols.obj", "input .\\build\\asm\\chao_symbols.obj"]
 
 segments:
   - name: race_stage_header
