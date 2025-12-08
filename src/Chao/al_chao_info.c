@@ -15,8 +15,6 @@ int ALBHV_Sleep(task *tp);
 
 task* CreateChaoEgg(AL_GENE* pGene, CHAO_PARAM* pParam, NJS_POINT3* pos, int, chao_info* pInfo);
 task* lbl_0C508B76(AL_GENE* pGene, NJS_POINT3* pos, int, chao_info* pInfo);
-task* CreateChao(AL_GENE* pGene, CHAO_PARAM* pParam, void* pElement, NJS_POINT3* pPos, int angy,
-                 chao_info* pParamAgain);
 task* lbl_0C5029F0(chao_info* pInfo, NJS_POINT3* pos, int ang);
 
 static chao_info* AL_GetHoldingChaoInfo();
@@ -371,7 +369,7 @@ task* AL_CreateHoldingChao() {
 
 void AL_SetHoldingChaoInfo(task *pChaoTask) {
     if(pChaoTask) {
-        pHoldingChaoSaveInfo = GET_CHAOWK(pChaoTask)->pParam;
+        pHoldingChaoSaveInfo = GET_CHAOWK(pChaoTask)->pInfo;
         if(DiffAngle(GetAngToPlayer(pChaoTask, 0), GET_CHAOWK(pChaoTask)->ang.y) < 0x4000) {
             HoldingFront = 1;
         }
@@ -385,5 +383,5 @@ void AL_SetHoldingChaoInfo(task *pChaoTask) {
 }
 
 void AL_SetHoldingEggInfo(task *pChaoTask) {
-    pHoldingChaoSaveInfo = GET_CHAOWK(pChaoTask)->pParam;
+    pHoldingChaoSaveInfo = GET_CHAOWK(pChaoTask)->pInfo;
 }

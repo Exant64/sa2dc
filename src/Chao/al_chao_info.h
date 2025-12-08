@@ -107,7 +107,9 @@ typedef struct AL_BODY_INFO {
     float AimVPos;
     float AimAPos;
     float growth;
-    char pad[41];
+    char pad1;
+    char unk[30];
+    char pad2[10];
     Uint8 DefaultEyeNum;
     Uint8 DefaultMouthNum;
     char HonbuNum;
@@ -159,7 +161,8 @@ typedef struct CHAO_PARAM {
     Uint16 nbSucceed;
 
     Uint16 LifeTimer;
-    char pad2[16];
+    char unk_arr[8];
+    char pad2[8];
     int thing; // used in al_gene GeneAnalyze Skill[6] thing
     char pad3[4];
 

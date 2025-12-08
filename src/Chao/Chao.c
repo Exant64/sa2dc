@@ -98,7 +98,7 @@ CCL_INFO chao_colli_info[] = {
     CCL_SPHERE(0, CI_PUSH_TH_CMN, 0, CI_ATTR_2000 | CI_ATTR_DAMAGE | CI_ATTR_IGNORE, 0, 2, 0, 1.4f, 0, 0)
 };
 task* CreateChao(AL_GENE* pGene, CHAO_PARAM* pParam, AL_SHAPE_ELEMENT* pElement, NJS_POINT3* pPos, int angy,
-                 CHAO_PARAM* pParamAgain) {
+                 chao_info* pInfo) {
     task* tp = CreateElementalTask(0, 2, ChaoExecutor, "CHAO");
     MOVE_WORK* move;
     int stage;
@@ -179,9 +179,9 @@ task* CreateChao(AL_GENE* pGene, CHAO_PARAM* pParam, AL_SHAPE_ELEMENT* pElement,
     // GET_CHAOWK(tp)->ChaoFlag |= 0x80000;
     // GET_CHAOWK(tp)->ChaoFlag |= 0x100000;
 
-    if (pParamAgain) {
-        work2->pParam = pParamAgain;
-        sub_C5025E0(tp, work2->pParam);
+    if (pInfo) {
+        work2->pInfo = pInfo;
+        sub_C5025E0(tp, work2->pInfo);
     }
 
     if (pParam && pParam->body.BodyType == AL_FORM_MINIMAL) {
@@ -204,8 +204,8 @@ task* CreateChaoElement(AL_SHAPE_ELEMENT* pElement, NJS_POINT3* pPos, int angy) 
 void KillChao(task* tp) {
     chaowk* work = GET_CHAOWK(tp);
 
-    AL_ClearChaoParam(work->pParam);
-    work->pParam = 0;
+    AL_ClearChaoParam(work->pInfo);
+    work->pInfo = 0;
 
     FreeTask(tp);
 }

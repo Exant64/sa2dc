@@ -1,8 +1,66 @@
-#include <task.h>
+#include <Chao/Chao.h>
 
-INLINE_ASM(_func_0C507740, 0x154, "asm/nonmatching/Chao/al_egg/_func_0C507740.src");
+task* CreateChaoFromEgg(task* tp) {
+    taskwk* twp = tp->twp;
+    chaowk* work = GET_CHAOWK(tp);
+    CHAO_PARAM* pParam = GET_CHAOPARAM(tp);
+    task* pChao;
+    
+    if(work->pInfo) {
+        AL_ClearChaoParam(work->pInfo);
+    }
 
-// MERGE_LIST([['_rand', '_lbl_0C507940'], ['_AL_ClearChaoParam', '_lbl_0C507920'], ['_ALW_CancelEntry', '_lbl_0C507924'], ['_AL_Deform', '_lbl_0C507944'], ['_CreateChao', '_lbl_0C507928'], ['_njMemCopy', '_lbl_0C50792C'], ["h'3E4CCCCD", '_lbl_0C507930'], ["h'3DCCCCCD", '_lbl_0C507934'], ["h'3E99999A", '_lbl_0C507938'], ["h'38000000", '_lbl_0C50793C']]);
+    ALW_CancelEntry(tp);   
+
+    pChao = CreateChao(&work->gene, NULL, NULL, &twp->pos, twp->ang.y, work->pInfo);
+    
+    if(pParam->unk_2) {
+        CHAO_PARAM* pChaoParam = GET_CHAOPARAM(pChao);
+
+        pChaoParam->like = pParam->like;
+        if(pParam->name[0]) {
+            njMemCopy(pChaoParam->name, pParam->name, sizeof(pParam->name));
+        }
+
+        pChaoParam->nbSucceed = pParam->nbSucceed;
+
+        if(pParam->unk_arr[0]) {
+             njMemCopy(pChaoParam->unk_arr, pParam->unk_arr, sizeof(pParam->unk_arr));
+        }
+
+        pChaoParam->body.HPos = pParam->body.HPos * 0.2;
+        pChaoParam->body.VPos = pParam->body.VPos * 0.2;
+        pChaoParam->body.APos = pParam->body.APos * 0.2;
+
+        pChaoParam->body.growth = pParam->body.growth * 0.1;
+
+        njMemCopy(&pChaoParam->body.unk, &pParam->body.unk, sizeof(pParam->body.unk));
+
+        if(njRandom() < 0.3f) {
+            pChaoParam->body.ObakeHead = pParam->body.ObakeHead;
+        }
+
+        if(njRandom() < 0.3f) {
+            pChaoParam->body.ObakeBody = pParam->body.ObakeBody;
+        }
+
+        pChaoParam->body.MedalNum = pParam->body.MedalNum;
+        pChaoParam->body.ColorNum = pParam->body.ColorNum;
+        pChaoParam->body.JewelNum = pParam->body.JewelNum;
+        pChaoParam->body.MultiNum = pParam->body.MultiNum;
+        pChaoParam->body.BodyType = pParam->body.BodyType;
+        pChaoParam->body.FormSubNum = pParam->body.FormSubNum;
+
+        AL_Deform(pChao);
+    }
+
+    GET_CHAOWK(pChao)->ang.y = twp->ang.y;
+    work->pInfo = NULL;
+    
+    return pChao;
+}
+MERGE_LIST([['_rand', '_lbl_0C507940'], ['_AL_ClearChaoParam', '_lbl_0C507920'], ['_ALW_CancelEntry', '_lbl_0C507924'], ['_AL_Deform', '_lbl_0C507944'], ['_CreateChao', '_lbl_0C507928'], ['_njMemCopy', '_lbl_0C50792C'], ["h'3E4CCCCD", '_lbl_0C507930'], ["h'3DCCCCCD", '_lbl_0C507934'], ["h'3E99999A", '_lbl_0C507938'], ["h'38000000", '_lbl_0C50793C']]);
+
 INLINE_ASM(_func_0C507894, 0xcc, "asm/nonmatching/Chao/al_egg/_func_0C507894.src");
 
 INLINE_ASM(_func_0C507960, 0xf8, "asm/nonmatching/Chao/al_egg/_func_0C507960.src");

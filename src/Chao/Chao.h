@@ -288,7 +288,7 @@ typedef struct chaowk {
     int RememberNum;
     int pitch;
     int gap420;
-    chao_info* pParam;
+    chao_info* pInfo;
     int field_428;
     int field_42C;
     int field_430;
@@ -312,5 +312,8 @@ typedef struct chaowk {
 
 #define GET_CHAOWK(tp) ((chaowk*)tp->twp)
 #define GET_CHAOPARAM(tp) (&GET_CHAOWK(tp)->param)
+
+task* CreateChao(AL_GENE* pGene, CHAO_PARAM* pParam, AL_SHAPE_ELEMENT* pElement, NJS_POINT3* pPos, int angy,
+                 chao_info* pInfo);
 
 #endif
