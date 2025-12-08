@@ -204,4 +204,6 @@ typedef struct chao_info {
 #define GET_INFO_PARAM(info) (&(((chao_info_*)info)->param))
 #define GET_INFO_GENE(info) (&((&((chao_info_*)info)->gene_pad)->gene))
 
+extern chao_info ChaoInfo[24];
+
 #endif

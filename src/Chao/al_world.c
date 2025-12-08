@@ -7,13 +7,27 @@
 // this is higher on sa2b/sadx iirc
 #define NB_WORLD_ENTRY 16
 
+extern int PrePlayerMode;
+
 extern int nbWorldEntry[];
 extern al_entry_work WorldEntryList[NB_CATEGORY][NB_WORLD_ENTRY];
-extern const Uint32 nbMaxEntry[];
 extern Uint16 CommuID;
 extern NJS_MATRIX cam_mat, inv_cam_mat;
 extern int PackFlag;
 extern task* WorldMasterTask;
+
+const Uint32 nbMaxEntry[] = {
+    16, // ALW_CATEGORY_CHAO
+    16, // ALW_CATEGORY_EGG
+    10, // ALW_CATEGORY_MINIMAL
+    16, // ALW_CATEGORY_FRUIT
+    8,  // ALW_CATEGORY_TREE
+    6,  // ALW_CATEGORY_GROWTREE
+    32, // ALW_CATEGORY_TOY
+    10, // ALW_CATEGORY_SEED
+    16, // ALW_CATEGORY_SOUND
+    16  // ALW_CATEGORY_MASK
+};
 
 void ALW_ResetEntry(al_entry_work* pEntry) {
     if (!pEntry)
@@ -273,11 +287,14 @@ void ALW_AttentionOff(task* tp) {
     }
 }
 
+// the else has been added so it doesn't get inlined in ALW_Edit
+// code still matches
+// todo: this is probably not what they wrote though
 al_entry_work* ALW_IsAttention(task* tp) {
     al_entry_work* pEntry = ALW_ENTRY_WORK(tp);
     if (pEntry)
         return pEntry->pCommu;
-
+    else return NULL;
     return NULL;
 }
 
@@ -472,36 +489,38 @@ int ALW_GetCategory(task* tp) {
     return -1;
 }
 
-
-// only ALW_Edit and ALW_Control doesn't match 
-// however, because of there being an inline asm between them
-// it uses jsr instead of bra to call a function from the file in ALW_Destructor
-// which causes that to not match either, so for now i just wrapped the whole thing in a nonmatching
-
-#ifdef NONMATCHING
 void ALW_Edit() {
-    int k = 3;
+    int i;
+    int xPos;
+    int yPos = 3;
+    
     const char* CategoryNames[] = {
         "CHAO", "EGG", "MINIMAL", "FRUIT", "TREE", "GTREE", "TOY", "SEED", "SOUND", "HEAD"
     };
 
-    const int CommuColor[] = { 0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFF00,
+    const Uint32 CommuColor[] = { 0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFF00,
                                0xFFFF00FF, 0xFF00FFFF, 0xFFFF7F7F, 0xFF7F7FFF };
-
-    int i = 0;
-
-    do {
+    
+    
+    for(i = 0; i < NB_CATEGORY; i++) {
         int j;
-        // int k = ; //  int y = 3 + i;
 
-#define yPos k
-        njPrintC(NJM_LOCATION(1, yPos), CategoryNames[i]);
-        njPrintD(NJM_LOCATION(7, yPos), ALW_CountEntry(i), 2);
-
+        // very likely false match
+        if(0) njPrintColor(0);
+        
+        xPos = 1;
+        njPrintC(NJM_LOCATION(xPos, yPos), CategoryNames[i]);
+        
+        xPos += 6;
+        njPrintD(NJM_LOCATION(xPos, yPos), ALW_CountEntry(i), 2);
+        
+        xPos += 3;
+        
         for (j = 0; j < nbMaxEntry[i]; j++) {
             task* tp = ALW_GetTask(i, j);
-            // int pos = 3 + NJM_LOCATION(j + 10, i);
-#define secondYPos NJM_LOCATION(j + 10, yPos)
+            
+            #define secondYPos NJM_LOCATION((j + xPos), yPos)
+            
             if (tp) {
                 if (ALW_IsCommunication(tp)) {
                     if (ALW_ENTRY_WORK(tp)->CommuID >= 0) {
@@ -522,20 +541,25 @@ void ALW_Edit() {
                     njPrintColor(0xFFFFFFFF);
                     njPrintC(secondYPos, "-");
                 }
-            } else {
+            } 
+            else  {
                 njPrintColor(0xFFCCCCCC);
                 njPrintC(secondYPos, ".");
             }
-
+            
             njPrintColor(0xFFFFFFFF);
         }
-        i++;
-        k++;
-    } while (i <= NB_CATEGORY - 1);
-
-#define counter i
-    for (counter = 0; counter < 24; counter++) {
-        CHAO_PARAM* pParam = &ChaoInfo[counter].chao.param;
+        
+        yPos += 1;
+    }
+    
+    for (i = 0; i < 24; i++) {
+        CHAO_PARAM* pParam = GET_INFO_PARAM(&ChaoInfo[i]);
+        
+        if(1) {
+            
+        }
+        
         switch (pParam->place) {
             case CHAO_STG_NEUT:
                 njPrintColor(0xFF7FFF7F);
@@ -550,23 +574,24 @@ void ALW_Edit() {
                 njPrintColor(0xFFFFFFFF);
                 break;
         }
-
+        
         switch (pParam->type) {
             case TYPE_NONE:
-                njPrintC(NJM_LOCATION(counter, 14), ".");
+                njPrintC(NJM_LOCATION(i + 1, 14), ".");
                 break;
             case TYPE_EGG:
-                njPrintC(NJM_LOCATION(counter, 14), "E");
+                njPrintC(NJM_LOCATION(i + 1, 14), "E");
                 break;
             default:
-                njPrintC(NJM_LOCATION(counter, 14), "C");
+                njPrintC(NJM_LOCATION(i + 1, 14), "C");
+                break;
         }
+        
     }
 
     njPrintColor(0xFFFFFFFF);
 }
 
-extern int PrePlayerMode;
 void ALW_Control(task* tp) {
     taskwk* work = tp->twp;
     eCHAO_STAGE_NUMBER stage;
@@ -596,10 +621,9 @@ void ALW_Control(task* tp) {
                     obakeCount = ALW_CountEntry(ALW_CATEGORY_MASK);
                     if (obakeCount < 8) {
                         if (PrePlayerMode == 61 && playertwp[0]->mode == 62) {
-                            float count = (obakeCount + 1);
-                            float count2 = count;
-                            float chance = count2 * count2;
-                            if (njRandom() < 0.1f / chance) {
+                            float squareChance = (obakeCount + 1);
+                            squareChance = squareChance * squareChance;
+                            if (njRandom() < 0.1f / squareChance) {
                                 int id;
                                 NJS_POINT3 pos;
                                 NJS_VECTOR velo;
@@ -657,7 +681,7 @@ Bool ALW_Create(void) {
         WorldMasterTask = NULL;
     }
 
-    WorldMasterTask = CreateElementalTask(2, 1, ALW_Control, (const char*)0x0C5669AC);
+    WorldMasterTask = CreateElementalTask(2, 1, ALW_Control, "ALW_Control");
     WorldMasterTask->disp = ALW_Displayer;
     WorldMasterTask->dest = ALW_Destructor;
 
@@ -671,20 +695,3 @@ Bool ALW_Create(void) {
 int sub_0C51E994(void) {   
     return 0;
 }
-
-#else
-INLINE_ASM(_ALW_Edit, "asm/nonmatching/Chao/al_world/_ALW_Edit.src");
-INLINE_ASM(_ALW_Control, "asm/nonmatching/Chao/al_world/_ALW_Control.src");
-
-INLINE_ASM(_ALW_Displayer, "asm/nonmatching/Chao/al_world/_ALW_Displayer.src");
-
-// MERGE_LIST([['_cam_mat', '_lbl_0C51E9A0'], ['_njGetMatrix', '_lbl_0C51E9A4'], ['_inv_cam_mat', '_lbl_0C51E9A8'], ['_njInvertMatrix', '_lbl_0C51E9AC'], ['_PackFlag', '_lbl_0C51E9B0'], ['_GetGameState', '_lbl_0C51E9B4'], ['_AL_PackageAllSaveInfo', '_lbl_0C51E9B8']]);
-INLINE_ASM(_ALW_Destructor, "asm/nonmatching/Chao/al_world/_ALW_Destructor.src");
-
-// MERGE_LIST([['_WorldMasterTask', '_lbl_0C51E9BC']]);
-INLINE_ASM(_ALW_Create, "asm/nonmatching/Chao/al_world/_ALW_Create.src");
-
-// MERGE_LIST([['_DestroyTask', '_lbl_0C51E9C0'], ['_lbl_0C5669AC', '_lbl_0C51E9C4'], ['_ALW_Control', '_lbl_0C51E9C8'], ['_CreateElementalTask', '_lbl_0C51E9CC'], ['_ALW_Displayer', '_lbl_0C51E9D0'], ['_ALW_Destructor', '_lbl_0C51E9D4'], ['_AL_ParameterControlInit', '_lbl_0C51E9D8'], ['_AL_EnableMove', '_lbl_0C51E9DC'], ['_WorldMasterTask', '_lbl_0C51E9BC']]);
-INLINE_ASM(_sub_0C51E994, "asm/nonmatching/Chao/al_world/_sub_0C51E994.src");
-
-#endif

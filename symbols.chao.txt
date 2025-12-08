@@ -224,7 +224,6 @@ AL_ClearParts = 0x0C514AD0;
 AL_ClearPartsSub = 0x0C514AA4;
 AL_ColliKindList = 0x0C56B394;
 AL_CreateGardenInfo = 0x0C50BA12;
-AL_CurrentPlayerAction = 0x0C67D858;
 AL_DecideBehavior = 0x0C50EEC0;
 AL_DecideBehaviorArt = 0x0C52963E;
 AL_DecideBehaviorDance = 0x0C52C8BC;

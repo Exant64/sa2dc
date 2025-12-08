@@ -42,7 +42,7 @@ segments:
       - [0xA6C0, asm, al_face] # done
       - [0xAD00, asm, al_field] # done
       - [0xB3A0, asm, al_garden_info] # done
-      - [0xBB20, asm, al_gene]
+      - [0xBB20, asm, al_gene] # done
       - [0xCBC0, asm, al_hold] # done
       - [0xCF60, asm, al_icon]
       - [0xE6E0, asm, al_intention] # done
@@ -67,7 +67,7 @@ segments:
       - [0x18A00, asm, al_edit_sa1]
       - [0x19500, asm, al_osanbo]
       - [0x1DC40, asm, al_water]
-      - [0x1DE00, asm, al_world] # done but ALW_Edit isnt
+      - [0x1DE00, asm, al_world] # done
       - [0x1E9E0, asm, al_osamenu]
       - [0x22B80, asm, al_palette] # done
       - [0x237E0, asm, al_chaosdrive]
@@ -118,7 +118,7 @@ segments:
       - [0x3C3E0, asm, al_editor]
       - [0x3C880, asm, alm_func_walk]
       - [0x3D1A0, asm, al_toy/alo_ball]
-      - [0x3DC20, asm, al_toy/alo_box]
+      - [0x3DC20, asm, al_toy/alo_box] # done
       - [0x3E1C0, asm, al_toy/alo_horse] # done
       - [0x3E4E0, asm, al_toy/alo_radicase] # done
       - [0x3E9C0, asm, al_toy/alo_tv] # done
@@ -132,6 +132,8 @@ segments:
       - [0x5DC14, rodata, al_material] # rodata_1
       - [0x65D44, rodata, al_shape]
       - [0x65D50, rodata, al_sound] # rodata_ 1 half
+      - [0x66924, rodata, al_world]
+      - [0x66A00, rodata, al_osamenu] 
       - [0x6709C, rodata, alo_obake_head]
       - [0x6713C, rodata, alo_osanpo]
       - [0x67150, rodata, alo_seed]

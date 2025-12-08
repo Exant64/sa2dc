@@ -5,7 +5,6 @@
 #include <Chao/al_chao_info.h>
 #include <sg_syrtc.h>
 
-extern chao_info ChaoInfo[24];
 extern NJS_POINT3 ChaoSetPosition[3][16];
 extern chao_info* pHoldingChaoSaveInfo;
 extern int HoldingFront;
