@@ -10,10 +10,6 @@ extern float float_C6352C4;
 extern float float_C6352C8;
 extern NJS_MOTION motion_alo_box[];
 
-// only BoxExecutor is unmatching but since it fucks up the alignment in all kinds of ways
-// i have to include basically everything around it too
-#ifdef NON_MATCHING
-
 Sint8 ALO_GetBoxMode(void) {
     if (!pBoxTask)
         return -1;
@@ -101,13 +97,6 @@ void ALO_BoxExecutor(task* tp) {
         case 2:
         case 3:
             if (work->scl.y > 0) {
-                // these 3 lines are the only unmatching part in the whole thing
-                // i tried everything at this point, no clue
-
-                //(5 - work->scl.y) * 0.15f
-                // const float b = float_C6352C0;
-                // const float a = float_C6352BC;
-
                 work->scl.z += float_C6352C0 * -(-float_C6352BC + work->scl.y);
 
                 work->scl.z *= float_C6352C4;
@@ -207,20 +196,3 @@ void CreateALO_Box(NJS_VECTOR* pos, int ang) {
     box->disp = ALO_BoxDisplayer;
     box->dest = ALO_BoxDestroyer;
 }
-#else
-
-INLINE_ASM(_func_0C53DC20, "asm/nonmatching/Chao/al_toy/alo_box/_func_0C53DC20.src");
-
-// MERGE_LIST([['_pBoxTask', '_lbl_0C53DD40']]);
-INLINE_ASM(_ALO_BoxExecutor, "asm/nonmatching/Chao/al_toy/alo_box/_ALO_BoxExecutor.src");
-
-INLINE_ASM(_func_0C53DF40, "asm/nonmatching/Chao/al_toy/alo_box/_func_0C53DF40.src");
-
-// MERGE_LIST([["h'8C1297EA", '_lbl_0C53E180'], ['_model_kage_marukage_marukage', '_lbl_0C53E184'], ["h'8C128D52", '_lbl_0C53E188'], ["h'40200000", '_lbl_0C53E120'], ['_AL_IsOnScreen2', '_lbl_0C53E124'], ['_AL_TOY_TEXLIST', '_lbl_0C53E128'], ["h'8C116A08", '_lbl_0C53E12C'], ["h'8C118968", '_lbl_0C53E130'], ["h'8C118A8C", '_lbl_0C53E134'], ["h'8C119A90", '_lbl_0C53E138'], ["h'8C11A1D8", '_lbl_0C53E13C'], ["h'40400000", '_lbl_0C53E140'], ["h'00008000", '_lbl_0C53E144'], ["h'3C23D70A", '_lbl_0C53E148'], ['_object_alo_box', '_lbl_0C53E14C'], ["h'8C1282BE", '_lbl_0C53E150'], ['_motion_alo_box', '_lbl_0C53E154'], ["h'8C122E6A", '_lbl_0C53E158'], ["h'8C118928", '_lbl_0C53E15C'], ["h'3FC00000", '_lbl_0C53E160'], ["h'3F000000", '_lbl_0C53E164'], ["h'45AAAAAB", '_lbl_0C53E168'], ["h'8C11A528", '_lbl_0C53E16C'], ["h'8C1199FC", '_lbl_0C53E170'], ["h'8C119B2C", '_lbl_0C53E174'], ["h'8C119FFC", '_lbl_0C53E178'], ['_model_C634768', '_lbl_0C53E17C']]);
-INLINE_ASM(_func_0C53E090, "asm/nonmatching/Chao/al_toy/alo_box/_func_0C53E090.src");
-
-// MERGE_LIST([['_pBoxTask', '_lbl_0C53E190'], ['_ALW_CancelEntry', '_lbl_0C53E18C']]);
-INLINE_ASM(_func_0C53E0A2, "asm/nonmatching/Chao/al_toy/alo_box/_func_0C53E0A2.src");
-
-
-#endif

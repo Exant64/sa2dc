@@ -8,11 +8,12 @@ I only tested on WSL, I doubt it currently works with Wine but it's worth a shot
 ```
 pip install sh4dis
 ```
-- Obtain Katana r11, and the folders /Include, /Dev/Hitachi, /Lib
+- Obtain Katana r11, and the folders /Include, /Dev, and /Lib from it
+- Obtain SHC v5r13
 - Put /Include in the repo
 - create an "shc" folder
 - put /Include/SHC's contents into shc/include
-- put /Dev/Hitachi's contents in shc/bin
+- put the SHC v5r13 executables into shc/bin
 - put /Lib's contents in shc/lib
 - Obtain and extract the rom for Sonic Adventure 2 (US) for the Dreamcast
 - Decompress CHAO.PRS and CHAOSTGRACE.PRS
