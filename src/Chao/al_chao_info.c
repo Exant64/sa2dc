@@ -2,34 +2,24 @@
 #include <player.h>
 #include <Chao/Chao.h>
 #include <Chao/al_garden_info.h>
+#include <Chao/al_chao_info.h>
 #include <sg_syrtc.h>
 
-typedef struct gene_padding {
-    char pad[0x368];
-    AL_GENE gene;
-} gene_padding;
-
-typedef union chao_info_ {
-    CHAO_PARAM param;
-    gene_padding gene_pad;
-} chao_info_;
-
-#define GET_INFO_PARAM(info) (&(((chao_info_*)info)->param))
 extern chao_info ChaoInfo[24];
-
-extern int HoldingFront;
-int DiffAngle(int a, int b);
-int ALBHV_Sleep(task *tp);
 extern NJS_POINT3 ChaoSetPosition[3][16];
 extern chao_info* pHoldingChaoSaveInfo;
+extern int HoldingFront;
+
+int DiffAngle(int a, int b);
+int ALBHV_Sleep(task *tp);
 
 task* CreateChaoEgg(AL_GENE* pGene, CHAO_PARAM* pParam, NJS_POINT3* pos, int, chao_info* pInfo);
 task* lbl_0C508B76(AL_GENE* pGene, NJS_POINT3* pos, int, chao_info* pInfo);
 task* CreateChao(AL_GENE* pGene, CHAO_PARAM* pParam, void* pElement, NJS_POINT3* pPos, int angy,
                  chao_info* pParamAgain);
 task* lbl_0C5029F0(chao_info* pInfo, NJS_POINT3* pos, int ang);
-static chao_info* AL_GetHoldingChaoInfo();
 
+static chao_info* AL_GetHoldingChaoInfo();
 
 Uint32 AL_InitChaoID(void) {
     SYS_RTC_DATE date;
@@ -57,8 +47,6 @@ Uint32 AL_InitChaoID(void) {
         return id;
     }
 }
-
-GARDEN_ID* AL_GetGardenID();
 
 void AL_SetChaoID(task* tp) {
     CHAO_ID* pID = &GET_CHAOWK(tp)->gene.ChaoID;

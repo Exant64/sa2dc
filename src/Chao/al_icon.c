@@ -17,3 +17,5 @@ INLINE_ASM(_AL_IconReset, 0x36, "asm/nonmatching/Chao/al_icon/_AL_IconReset.src"
 INLINE_ASM(_func_0C50E6CC, 0x38, "asm/nonmatching/Chao/al_icon/_func_0C50E6CC.src");
 
 // MERGE_LIST([['_lbl_0C56B056', '_lbl_0C50E7E0']]);
+INLINE_ASM(_data, "asm/nonmatching/Chao/al_icon/data.src");
+

@@ -724,3 +724,7 @@ AL_DrawRectangle2 = 0x0C511832;
 ChaoSetPosition = 0x0C569350;
 pHoldingChaoSaveInfo = 0xC569348;
 HoldingFront = 0xC56934C;
+AL_CreateChildGene = 0x0C50C1A0;
+eye_default_num = 0x0C56B580;
+mouse_default_num = 0x0C56B59B;
+CreateChaoFromEgg = 0xC507740;

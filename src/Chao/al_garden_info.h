@@ -58,6 +58,7 @@ typedef struct CHAO_SAVE {
 
 extern chao_info ChaoInfo[24];
 
+GARDEN_ID* AL_GetGardenID();
 void AL_PackageAllSaveInfo();
 int sub_C50B7A0();
 int sub_C519920(OsanpoThing*);
