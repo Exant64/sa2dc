@@ -1,30 +1,454 @@
+#include <shinobi.h>
+
 #include <task.h>
+#include <c_colli.h>
+#include <move.h>
+#include <shadow.h>
+#include <player.h>
 
-INLINE_ASM(_func_0C53D1A0, 0x98, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D1A0.src");
+#include <Chao/al_texlist.h>
+#include <Chao/al_world.h>
+#include <Chao/al_colli_kind.h>
+#include <Chao/al_control.h>
+#include <Chao/al_global.h>
 
-// MERGE_LIST([["h'BF000000", '_lbl_0C53D2A8'], ['_GetShadowPos', '_lbl_0C53D2A4'], ["h'3F59999A", '_lbl_0C53D2AC'], ["h'40800000", '_lbl_0C53D2A0']]);
-INLINE_ASM(_func_0C53D238, 0x88, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D238.src");
+extern NJS_CNK_MODEL model_kage_marukage_marukage[];
 
-INLINE_ASM(_func_0C53D2C0, 0x3a0, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D2C0.src");
+typedef struct BALL_WORK {
+    float inv_radius;
+    int HeldAng;
+    int RotSpd;
+    NJS_POINT3 axis;
+    NJS_MATRIX mat;
+} BALL_WORK;
 
-// MERGE_LIST([['_lbl_0C567498', '_lbl_0C53D760'], ["h'4622F986", '_lbl_0C53D764'], ['_njUnitMatrix', '_lbl_0C53D768'], ["h'8C119BC8", '_lbl_0C53D76C'], ["h'8C1194B0", '_lbl_0C53D770'], ["h'8C11A0D0", '_lbl_0C53D774'], ["h'00008000", '_lbl_0C53D778']]);
-INLINE_ASM(_func_0C53D660, 0x98, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D660.src");
+#define GET_MOVE_WK(tp) ((MOVE_WORK*)tp->Data2)
+#define GET_BALL_WK(tp) ((BALL_WORK*)tp->UnknownA_ptr)
 
-// MERGE_LIST([['_CCL_Enable', '_lbl_0C53D780'], ['_playertwp', '_lbl_0C53D784'], ['_ALW_CommunicationOff', '_lbl_0C53D788'], ["h'3ECCCCCD", '_lbl_0C53D78C'], ["h'3F333333", '_lbl_0C53D790'], ['_MOV_ClearAcc', '_lbl_0C53D794'], ['_MOV_PreservePreviousPosition', '_lbl_0C53D798'], ["h'00008000", '_lbl_0C53D778'], ['_CCL_Disable', '_lbl_0C53D77C']]);
-INLINE_ASM(_func_0C53D6F8, 0x104, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D6F8.src");
+extern task* pBallTask; // C682CB0;
+extern int BallFlag; // lbl_0C682CB4
+extern int BallWaterFlag; // 0C682CB8
 
-// MERGE_LIST([['_ALW_SendCommand', '_lbl_0C53D8A0'], ['_FreeTask', '_lbl_0C53D8A4'], ['_AL_TraceHoldingPosition', '_lbl_0C53D8A8']]);
-INLINE_ASM(_func_0C53D7FC, 0xc4, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D7FC.src");
+static const CCL_INFO colli[] = {
+    CCL_CYLINDER(0, 0x70, 0, 0x2400, 0, 1.5f, 0, 15.f, 3.f, 0),
+    CCL_SPHERE(0, 6, 0xC, 0, 0, 0, 0, 2.0, 0, 0),
+    CCL_CYLINDER(CI_KIND_AL_BALL, 0x70, 0xC, 0, 0, -2.0f, 0, 4.2f, 5.f, 0),
+};
 
-INLINE_ASM(_func_0C53D8C0, 0x130, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D8C0.src");
+// can't make static cuz it's an unused function and it would get unlinked
+// because of this, the rest are most likely not static either, but eh
+void lbl_0C53D1A0(task* tp) {
+    taskwk* work = tp->twp;
+    MOVE_WORK* move = GET_MOVE_WK(tp);
 
-// MERGE_LIST([['_AL_IsOnScreen2', '_lbl_0C53DA00'], ['_njPushMatrix', '_lbl_0C53DA04'], ['_njTranslateV', '_lbl_0C53DA08'], ['_njTranslate', '_lbl_0C53DA0C'], ["h'00008000", '_lbl_0C53DA10'], ["h'3ECCCCCD", '_lbl_0C53DA14'], ['_njPushMatrixEx', '_lbl_0C53DA18'], ['_AL_IsHitKindWithNum', '_lbl_0C53DA1C'], ['_OnControl3D', '_lbl_0C53DA20'], ["h'8C1194B0", '_lbl_0C53DA24'], ['_njCnkEasyDrawObject', '_lbl_0C53DA28'], ['_AL_GetStageNumber', '_lbl_0C53DA2C'], ['_object_item_lball_lball', '_lbl_0C53DA30'], ['_AL_TOY_TEXLIST', '_lbl_0C53DA34'], ['_njSetTexture', '_lbl_0C53DA38'], ['_object_item_hball_hball', '_lbl_0C53DA3C'], ['_object_item_dball_dball', '_lbl_0C53DA40'], ['_OffControl3D', '_lbl_0C53DA44'], ['_njPopMatrixEx', '_lbl_0C53DA48'], ['_lbl_0C56B090', '_lbl_0C53DA4C'], ["h'BFB9999A", '_lbl_0C53DA50'], ["h'3FE66666", '_lbl_0C53DA54'], ["h'3F333333", '_lbl_0C53DA58'], ['_njScale', '_lbl_0C53DA5C'], ['_model_kage_marukage_marukage', '_lbl_0C53DA60'], ['_njCnkModDrawModel', '_lbl_0C53DA64'], ['_njPopMatrix', '_lbl_0C53DA68']]);
-INLINE_ASM(_func_0C53D9F0, 0x90, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53D9F0.src");
+    if(move->Timer++ > 3) {
+        Angle3 rot;
+        
+        move->Timer = 0;
+        move->BottomY = GetShadowPos(work->pos.x, work->pos.y + 4.f, work->pos.z, &rot);
+    }
 
-INLINE_ASM(_func_0C53DA80, 0x48, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53DA80.src");
+    work->flag &= ~1;
 
-// MERGE_LIST([['_lbl_0C5673FC', '_lbl_0C53DBC0'], ['_CCL_Init', '_lbl_0C53DBC4'], ['_ObjectMovableInitialize', '_lbl_0C53DBC8'], ['_lbl_0C53D7FC', '_lbl_0C53DBCC'], ['_lbl_0C53D9F0', '_lbl_0C53DBD0'], ['_lbl_0C53D8C0', '_lbl_0C53DBD4'], ['_ALW_Entry', '_lbl_0C53DBD8'], ['_pBallTask', '_lbl_0C53DBDC']]);
-INLINE_ASM(_func_0C53DAC8, 0x158, "asm/nonmatching/Chao/al_toy/alo_ball/_func_0C53DAC8.src");
+    if(work->pos.y < move->BottomY) {
+        if(move->Velo.y < 0) move->Velo.y *= -0.5f;
+        
+        move->Velo.x *= 0.85f;
+        move->Velo.z *= 0.85f;
 
-INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_toy/alo_ball/rodata.src");
+        work->pos.y = move->BottomY;
+        work->flag |= 1;
+    }
+}
 
+static void lbl_0C53D238(task* tp) {
+    taskwk* work = tp->twp;
+    MOVE_WORK* movewk = GET_MOVE_WK(tp);
+    colliwk* cwp = work->cwp;
+    BALL_WORK* ballwk = GET_BALL_WK(tp);
+
+    switch(work->smode) {
+        case 0:
+            CCL_Enable(tp,0);
+            CCL_Enable(tp,1);
+            CCL_Disable(tp,2);
+            work->smode++;
+            break;
+    }
+
+    if(work->flag & 0x8000) {
+        work->mode = 2;
+        work->smode = 0;
+        return;
+    }
+    
+    if(CCL_IsHit(tp)) {
+        work->mode = 1;
+        work->smode = 0;
+    }
+}
+
+static void lbl_0C53D2C0(task* tp) {
+    taskwk* work = tp->twp;
+    MOVE_WORK* movewk = GET_MOVE_WK(tp);
+    colliwk* cwp = work->cwp;
+    BALL_WORK* ballwk = GET_BALL_WK(tp);
+
+    if(AL_IsMovable()) {
+        
+    }
+
+    switch(work->smode) {
+        case 0:
+            CCL_Enable(tp,0);
+            CCL_Enable(tp,1);
+            CCL_Disable(tp,2);
+            work->smode++;
+            break;
+    }
+
+    if(CCL_IsPushed(tp)) {
+        NJS_VECTOR diff;
+        NJS_VECTOR direct;
+        float scalor;
+        float inner1, inner2;
+        
+        diff.x = work->pos.x - movewk->PrePos.x;
+        diff.y = work->pos.y - movewk->PrePos.y;
+        diff.z = work->pos.z - movewk->PrePos.z;
+
+        direct = diff;
+
+        scalor = njScalor(&direct);
+        if(scalor >= 0.01f) {
+            njUnitVector(&direct);
+        }
+
+        inner1 = njInnerProduct(&direct, &movewk->Velo);
+        inner2 = njInnerProduct(&direct, &diff);
+
+        if(inner2 > inner1) {
+            float x = 1.1f * (inner2 - inner1);
+            
+            if(AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_CHAO)) {
+                x *= 2.9f;
+                movewk->Velo.y += 0.28f;
+            }
+            
+            if(x > 1) x = 1;
+
+            movewk->Velo.x += direct.x * x;
+            movewk->Velo.y += direct.y * x;
+            movewk->Velo.z += direct.z * x;
+        }
+    }
+
+    if ( work->pos.y < movewk->WaterY + 1.5f ) {
+        if ( work->pos.y > movewk->WaterY - 1.5 ) {
+            movewk->Acc.y += -movewk->Gravity * (movewk->WaterY - work->pos.y + 1.5f) * 0.66666666f;
+        }
+        else {
+            movewk->Acc.y += -2.f * movewk->Gravity;
+        }
+        
+        movewk->Velo.x *= 0.975f;
+        movewk->Velo.y *= 0.93f;
+        movewk->Velo.z *= 0.975f;
+        
+        ballwk->RotSpd = NJM_DEG_ANG(NJM_ANG_DEG(ballwk->RotSpd * 0.96f));
+        BallWaterFlag = 1;
+    }
+
+    MOV_Control(tp);
+    MOV_PreservePreviousPosition(tp);
+    MOV_DetectCollision(tp);
+
+    if(work->flag & 1) {
+        float scalor;
+        
+        movewk->Velo.x *= 0.99f;
+        movewk->Velo.z *= 0.99f;
+
+        scalor = njScalor(&movewk->Velo);
+        if(scalor > 0.0001) {
+            {
+                const NJS_VECTOR normal = {0, 1, 0};
+                
+                njOuterProduct(&normal, &movewk->Velo, &ballwk->axis);
+                
+                if(njScalor(&ballwk->axis) > 0) {
+                    njUnitVector(&ballwk->axis);
+                }
+                else {
+                    ballwk->axis.x = 0;
+                    ballwk->axis.y = 1;
+                    ballwk->axis.z = 0;
+                }
+            }
+            
+            {
+                NJS_VECTOR normal = {0, 1, 0};
+                NJS_VECTOR velo;
+                float scalor;
+                float inner = njInnerProduct(&normal, &movewk->Velo);
+                
+                normal.x *= inner;
+                normal.y *= inner;
+                normal.z *= inner;
+
+                velo.x = movewk->Velo.x - normal.x;
+                velo.y = movewk->Velo.y - normal.y;
+                velo.z = movewk->Velo.z - normal.z;
+
+                scalor = njScalor(&velo);
+                ballwk->RotSpd = NJM_RAD_ANG(scalor * ballwk->inv_radius);
+            }
+        }
+        else {
+            ballwk->RotSpd = 0;
+        }
+    }
+
+    if(ballwk->RotSpd) {
+        NJS_MATRIX tmp_mat;
+
+        njUnitMatrix(&tmp_mat);
+        njRotate(&tmp_mat, &ballwk->axis, ballwk->RotSpd);
+        njMultiMatrix(&tmp_mat, &ballwk->mat);
+
+        njSetMatrix(&ballwk->mat, &tmp_mat);
+    }
+
+    if(work->flag & 0x8000) {
+        ballwk->RotSpd = 0;
+        work->mode = 2;
+        work->smode = 0;
+    }
+}
+
+static void lbl_0C53D660(task* tp) {
+    taskwk* work = tp->twp;
+    MOVE_WORK* movewk = GET_MOVE_WK(tp);
+    
+    switch(work->smode) {
+        case 0:
+            CCL_Disable(tp, 0);
+            CCL_Disable(tp, 1);
+            CCL_Enable(tp, 2);
+
+            movewk->AimAng.y = work->ang.y + playertwp[0]->ang.y;
+
+            ALW_CommunicationOff(tp);
+            
+            work->smode++;
+            break;
+    }
+    
+    work->ang.y = -playertwp[0]->ang.y + movewk->AimAng.y;
+    
+    if(!(work->flag & 0x8000)) {
+        movewk->Velo.x *= 0.4f;
+        movewk->Velo.y *= 0.7f;
+        movewk->Velo.z *= 0.4f;
+    
+        MOV_ClearAcc(tp);
+        MOV_PreservePreviousPosition(tp);
+    
+        work->mode = 1;
+        work->smode = 0;
+    }
+}
+
+static void lbl_0C53D6F8(task *tp) {
+    taskwk* work = tp->twp;
+    MOVE_WORK* movewk = GET_MOVE_WK(tp);
+
+    Uint32 command = ALW_RecieveCommand(tp);
+    
+    switch(work->smode) {
+        case 0:
+            CCL_Disable(tp, 0);
+            CCL_Disable(tp, 1);
+            CCL_Disable(tp, 2);
+
+            work->smode++;
+            work->wtimer = 0;
+            
+            break;
+    }
+
+    switch (command) {
+        case 2:
+            if(work->wtimer++ > 180) {
+                work->wtimer = 0;
+                
+                --work->id;
+                if(work->id == 0) {
+                    ALW_SendCommand(tp, 4);
+                    FreeTask(tp);
+                }
+            }
+            break;
+        case 3:
+            work->mode = 1;
+            work->smode = 0;     
+            break;
+    }
+
+    if(!AL_TraceHoldingPosition(tp)){
+        work->mode = 1;
+        work->smode = 0;
+    }
+}
+
+static void ALO_BallExecutor(task* tp) {
+    taskwk* work = tp->twp;
+    MOVE_WORK* movewk = GET_MOVE_WK(tp);
+
+    BallWaterFlag = 0;
+
+    movewk->Flag |= 4;
+
+    switch(work->mode) {
+        case 0:
+            lbl_0C53D238(tp);
+            break;
+        case 1:
+            lbl_0C53D2C0(tp);
+            break;
+        case 2:
+            lbl_0C53D660(tp);
+            break;
+        case 3:
+            lbl_0C53D6F8(tp);
+            break;
+    }
+
+    if(work->mode == 1) {
+        if(njScalor(&movewk->Velo) > 0.4f) {
+            BallFlag = 1;
+        }
+        else {
+            BallFlag = 0;
+        }
+    }
+    else {
+        BallFlag = 0;
+    }
+
+    CCL_Entry(tp);
+}
+
+static void ALO_BallDisplayer(task* tp) {
+    taskwk* work = tp->twp;
+    BALL_WORK* ball = GET_BALL_WK(tp);
+
+    if(AL_IsOnScreen2(tp, 2.f, 0.f)) {
+        njPushMatrix(NULL);
+        njTranslateV(NULL, &work->pos);
+
+        if(work->flag & 0x8000) {
+            njTranslate(NULL, 0, 0.4f, 0);
+        }
+
+        njPushMatrixEx();
+        if(AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_SHADOW)) {
+            OnControl3D(0x2400);
+        }
+
+        njMultiMatrix(NULL, ball->mat);
+        
+        switch(AL_GetStageNumber()){
+            case 1:
+                njCnkEasyDrawObject((NJS_CNK_OBJECT*)0xC632FC8);
+                break;
+            case 2:
+                njSetTexture(&AL_TOY_TEXLIST);
+                njCnkEasyDrawObject((NJS_CNK_OBJECT*)0xC6336FC);
+                break;
+            case 3:
+                njSetTexture(&AL_TOY_TEXLIST);
+                njCnkEasyDrawObject((NJS_CNK_OBJECT*)0xC633DB4);
+                break;
+        }
+        
+        OffControl3D(0x2400);
+        njPopMatrixEx();
+
+        if (ALW_ENTRY_WORK(tp)->CamDist < GET_GLOBAL()->CamDistShadowCutLev2) {
+            if(AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_SHADOW)) {
+                njTranslate(NULL, 0, -1.45f, 0);
+            }
+            else {
+                njTranslate(NULL, 0, -1, 0);
+            }
+            
+            njScale(NULL, 1.8f, 0.7f, 1.8f);
+            njCnkModDrawModel(model_kage_marukage_marukage);
+        }
+
+        njPopMatrix(1);
+    }
+}
+
+static void ALO_BallDestroyer(task* tp){
+    ALW_CancelEntry(tp);
+}
+
+static void ALO_Ball(task* tp) {
+    taskwk* work = tp->twp;
+
+    CCL_Init(tp, colli, sizeof(colli) / sizeof(colli[0]), 5);
+    ObjectMovableInitialize(work, GET_MOVE_WK(tp), 10);
+
+    tp->exec = ALO_BallExecutor;
+    tp->dest = ALO_BallDestroyer;
+    tp->disp = ALO_BallDisplayer;
+
+    work->mode = 1;
+    work->smode = 0;
+
+    ALW_Entry(ALW_CATEGORY_TOY, tp, ALW_KIND_BALL);
+
+    pBallTask = tp;
+}
+
+void ALO_BallCreate(NJS_POINT3* pPos, NJS_VECTOR* pVelo) {
+    task* tp = CreateElementalTask(2, 2, ALO_Ball, "ALO_Ball");
+    taskwk* work = tp->twp;
+    BALL_WORK* ball;
+    MOVE_WORK* move;
+    
+    tp->UnknownA_ptr = syCalloc(1, sizeof(BALL_WORK));
+
+    ball = GET_BALL_WK(tp);
+
+    ball->inv_radius = 0.66666666f;
+    ball->HeldAng = 0;
+    ball->RotSpd = 0;
+    
+    ball->axis.x = 0;
+    ball->axis.y = 1;
+    ball->axis.z = 0;
+    
+    njUnitMatrix(&ball->mat);
+    
+    move = MOV_Init(tp);
+
+    work->pos = *pPos;
+    move->Velo = *pVelo;
+
+    MOV_SetGravity(tp, -0.05f);
+    
+    move->Top = 1.5f;
+    move->Bottom = -2.5f;
+    move->BoundFloor = 0.85f;
+    move->Offset.y = 1.f;
+    move->BoundFriction = 0.99f;
+
+    if(GetCharID(0) != 3) move->rad = 3328;
+    else move->rad = -4864;
+    
+    MOV_PreservePreviousPosition(tp);
+    BallWaterFlag = 0;
+}

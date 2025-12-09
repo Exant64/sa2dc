@@ -70,4 +70,7 @@ float ALW_CalcDistFromLockOn(task* tp);
 Bool ALW_Entry(Uint16 category, task* tp, Uint16 kind);
 task* ALW_GetTaskCount(Uint16 category, Uint16 count);
 int ALW_CountEntry(Uint16 category);
+
+Sint16 ALW_RecieveCommand(task* tp);
+
 #endif
