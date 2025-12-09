@@ -11,6 +11,7 @@ CCL_Init = 0x8C0188A0;
 CCL_IsHitKind2 = 0x8C01F6A8;
 CCL_IsHitPlayerWithNum2 = 0x8C01F7BC;
 CCL_IsPushed = 0x8C01F318;
+CCL_IsHit = 0x8C01F33C;
 CheckRangeOutWithR = 0x8C057A54;
 CreateChildTask = 0x8C0601B2;
 CreateElementalTask = 0x8C05FC48;

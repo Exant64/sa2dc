@@ -177,14 +177,21 @@ void ALO_BoxDestroyer(task* tp) {
     pBoxTask = 0;
 }
 
-void CreateALO_Box(NJS_VECTOR* pos, int ang) {
-    task* box = CreateElementalTask(2, 4, ALO_BoxExecutor, (const char*)0x0C5674E0);
-    taskwk* work;
-    pBoxTask = box;
-    work = box->twp;
-    CCL_Init(box, (CCL_INFO*)0xC5674B0, 1, 4);
+static const CCL_INFO colli[] = {
+    CCL_SPHERE(0, 0x77, 0xC, 0x8000, 0, 1.6, 0, 1.6, 0, 0)
+};
 
-    ALW_Entry(6, box, 8);
+void CreateALO_Box(NJS_VECTOR* pos, int ang) {
+    task* box = CreateElementalTask(2, 4, ALO_BoxExecutor, "ALO_BoxExecutor");
+    taskwk* work;
+
+    pBoxTask = box;
+
+    work = box->twp;
+    
+    CCL_Init(box, colli, sizeof(colli) / sizeof(colli[0]), 4);
+
+    ALW_Entry(ALW_CATEGORY_TOY, box, ALW_KIND_BOX);
     work->pos = *pos;
     work->ang.y = ang;
 

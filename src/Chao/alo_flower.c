@@ -1,4 +1,5 @@
 #include <Chao/Chao.h>
+#include <shadow.h>
 
 void ALO_NestFlowerExecutor(task* tp) {
     task* pNestTask = tp->ptp;
@@ -64,29 +65,28 @@ task* ALO_CreateNestFlower(task* pNestTask, NJS_POINT3* pPos) {
     return tp;
 }
 
-float GetShadowPos(float x, float y, float z, NJS_VECTOR* pPos);
-
 void ALO_NestExecutor(task* tp) {
     taskwk* work = tp->twp;
     work->ang.x = 0;
     switch (work->mode) {
         case 0:
             if (work->wtimer++ > GET_GLOBAL()->NestFlowerInterval) {
-                NJS_POINT3* pos = &work->pos;
-                NJS_POINT3 flower_pos, out_vec;
+                NJS_POINT3* pPos = &work->pos;
+                NJS_POINT3 pos;
+                Angle3 AnsAng;
 
                 int ang = work->ang.y;
 
                 float range = GET_GLOBAL()->NestRange * (0.9f + njRandom() * 0.1f);
                 work->ang.y -= NJM_DEG_ANG(360.0f / GET_GLOBAL()->nbNestFlower);
 
-                flower_pos.x = pos->x + njSin(ang) * range;
-                flower_pos.y = pos->y + 2.0f;
-                flower_pos.z = pos->z + njCos(ang) * range;
+                pos.x = pPos->x + njSin(ang) * range;
+                pos.y = pPos->y + 2.0f;
+                pos.z = pPos->z + njCos(ang) * range;
 
-                flower_pos.y = GetShadowPos(flower_pos.x, flower_pos.y, flower_pos.z, &out_vec);
+                pos.y = GetShadowPos(pos.x, pos.y, pos.z, &AnsAng);
 
-                ALO_CreateNestFlower(tp, &flower_pos);
+                ALO_CreateNestFlower(tp, &pos);
 
                 work->id++;
                 if (work->id >= GET_GLOBAL()->nbNestFlower) {
