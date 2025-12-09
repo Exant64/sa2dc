@@ -22,6 +22,12 @@ typedef struct BALL_WORK {
     NJS_MATRIX mat;
 } BALL_WORK;
 
+enum {
+    CI_ID_BODY1 = 0,
+    CI_ID_BODY2 = 1,
+    CI_ID_SWITCH = 2,
+};
+
 #define GET_MOVE_WK(tp) ((MOVE_WORK*)tp->Data2)
 #define GET_BALL_WK(tp) ((BALL_WORK*)tp->UnknownA_ptr)
 
@@ -69,9 +75,9 @@ static void lbl_0C53D238(task* tp) {
 
     switch(work->smode) {
         case 0:
-            CCL_Enable(tp,0);
-            CCL_Enable(tp,1);
-            CCL_Disable(tp,2);
+            CCL_Enable(tp, CI_ID_BODY1);
+            CCL_Enable(tp, CI_ID_BODY2);
+            CCL_Disable(tp, CI_ID_SWITCH);
             work->smode++;
             break;
     }
@@ -100,9 +106,9 @@ static void lbl_0C53D2C0(task* tp) {
 
     switch(work->smode) {
         case 0:
-            CCL_Enable(tp,0);
-            CCL_Enable(tp,1);
-            CCL_Disable(tp,2);
+            CCL_Enable(tp, CI_ID_BODY1);
+            CCL_Enable(tp, CI_ID_BODY2);
+            CCL_Disable(tp, CI_ID_SWITCH);
             work->smode++;
             break;
     }
@@ -232,9 +238,9 @@ static void lbl_0C53D660(task* tp) {
     
     switch(work->smode) {
         case 0:
-            CCL_Disable(tp, 0);
-            CCL_Disable(tp, 1);
-            CCL_Enable(tp, 2);
+            CCL_Disable(tp, CI_ID_BODY1);
+            CCL_Disable(tp, CI_ID_BODY2);
+            CCL_Enable(tp, CI_ID_SWITCH);
 
             movewk->AimAng.y = work->ang.y + playertwp[0]->ang.y;
 
@@ -267,9 +273,9 @@ static void lbl_0C53D6F8(task *tp) {
     
     switch(work->smode) {
         case 0:
-            CCL_Disable(tp, 0);
-            CCL_Disable(tp, 1);
-            CCL_Disable(tp, 2);
+            CCL_Disable(tp, CI_ID_BODY1);
+            CCL_Disable(tp, CI_ID_BODY2);
+            CCL_Disable(tp, CI_ID_SWITCH);
 
             work->smode++;
             work->wtimer = 0;
