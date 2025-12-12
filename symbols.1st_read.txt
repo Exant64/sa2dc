@@ -156,3 +156,4 @@ njAddVector = 0x8C118AA4;
 playerpwp = 0x8C2512B8;
 GetAngToPlayer = 0x8C034088;
 HoldTaskP = 0x8C04B820;
+njGetTranslation = 0x8C118BB8;

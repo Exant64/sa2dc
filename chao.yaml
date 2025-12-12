@@ -73,7 +73,7 @@ segments:
       - [0x237E0, asm, al_chaosdrive]
       - [0x24360, asm, alo_flower] # done
       - [0x246A0, asm, alo_fruit]
-      - [0x25100, asm, alo_growtree]
+      - [0x25100, asm, alo_growtree] # done
       - [0x26FC0, asm, alo_obake_head] # done
       - [0x27660, asm, alo_osanpo]
       - [0x287A0, asm, alo_seed] # done
@@ -117,7 +117,7 @@ segments:
       - [0x3BC20, asm, al_camera]
       - [0x3C3E0, asm, al_editor]
       - [0x3C880, asm, alm_func_walk]
-      - [0x3D1A0, asm, al_toy/alo_ball]
+      - [0x3D1A0, asm, al_toy/alo_ball] # done
       - [0x3DC20, asm, al_toy/alo_box] # done
       - [0x3E1C0, asm, al_toy/alo_horse] # done
       - [0x3E4E0, asm, al_toy/alo_radicase] # done
@@ -133,7 +133,9 @@ segments:
       - [0x65D44, rodata, al_shape]
       - [0x65D50, rodata, al_sound] # rodata_ 1 half
       - [0x66924, rodata, al_world]
-      - [0x66A00, rodata, al_osamenu] 
+      - [0x66A00, rodata, al_osamenu]
+      - [0x66E14, rodata, alo_fruit]
+      - [0x66EB0, rodata, alo_growtree] 
       - [0x6709C, rodata, alo_obake_head]
       - [0x6713C, rodata, alo_osanpo]
       - [0x67150, rodata, alo_seed]

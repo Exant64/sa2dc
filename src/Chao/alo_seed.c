@@ -178,7 +178,7 @@ void ALO_SeedExecutor(task* tp) {
     CCL_Entry(tp);
 }
 
-extern NJS_CNK_OBJECT* pSeedModels[];
+extern NJS_CNK_OBJECT* SeedObjectList[];
 extern NJS_CNK_MODEL model_kage_marukage_marukage[];
 void ALO_SeedDisplayer(task* tp) {
     taskwk* work = tp->twp;
@@ -195,7 +195,7 @@ void ALO_SeedDisplayer(task* tp) {
         njRotateY(NULL, work->ang.y);
         njScale(NULL, 1.5f, 1.5f, 1.5f);
         OnControl3D(0x2400);
-        njCnkEasyDrawModel(pSeedModels[work->ang.x]->model);
+        njCnkEasyDrawModel(SeedObjectList[work->ang.x]->model);
         OffControl3D(0x2400);
 
         if (ALW_ENTRY_WORK(tp)->CamDist < GET_GLOBAL()->CamDistShadowCutLev1) {

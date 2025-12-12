@@ -23,7 +23,7 @@ INLINE_ASM(_AL_IsOnScreen2, 0x14, "asm/nonmatching/Chao/al_misc/_AL_IsOnScreen2.
 
 INLINE_ASM(_func_0C511B54, 0xc, "asm/nonmatching/Chao/al_misc/_func_0C511B54.src");
 
-INLINE_ASM(_func_0C511B60, 0x22c, "asm/nonmatching/Chao/al_misc/_func_0C511B60.src");
+INLINE_ASM(_AL_InterpolateObject, 0x22c, "asm/nonmatching/Chao/al_misc/_AL_InterpolateObject.src");
 
 INLINE_ASM(_func_0C511D8C, 0x34, "asm/nonmatching/Chao/al_misc/_func_0C511D8C.src");
 

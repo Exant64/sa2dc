@@ -72,5 +72,6 @@ task* ALW_GetTaskCount(Uint16 category, Uint16 count);
 int ALW_CountEntry(Uint16 category);
 
 Sint16 ALW_RecieveCommand(task* tp);
+int sub_C51E3B2(task* tp);
 
 #endif

@@ -406,7 +406,7 @@ Bool sub_C51E3A0(al_entry_work* pEntry, Sint16 command) {
     return FALSE;
 }
 
-int sub_C51E3B2(task* tp, Sint16 command) {
+int sub_C51E3B2(task* tp) {
     al_entry_work* pEntry = ALW_ENTRY_WORK(tp);
     int retval = -1;
     if (pEntry) {
