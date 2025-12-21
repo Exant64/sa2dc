@@ -108,7 +108,7 @@ enum {
     MD_FADEOUT = 10,
 };
 
-static const CCL_INFO colli[9] = {
+static const CCL_INFO colli_info[9] = {
     CCL_CYLINDER(0, 0x70, 0, 0x2000, 0, 16, 0, 8, 16, 0),
     CCL_CYLINDER(0, 0x77, 0, 0x208000, 0, 14, 0, 2, 14, 0),
     CCL_CYLINDER(CI_KIND_AL_SHADOW, 0x70, 0, 0x3C8000, 0, 15, 0, 12, 15, 0),
@@ -1018,8 +1018,8 @@ task* ALO_CreateGrowTree(NJS_POINT3 *pPos, TREE_SAVE_INFO *pInfo) {
     tp->dest = ALO_GrowTreeDestructor;
 
     {
-        int count = sizeof(colli)/sizeof(colli[0]);
-        CCL_Init(tp, colli, count, 5);
+        int count = sizeof(colli_info)/sizeof(colli_info[0]);
+        CCL_Init(tp, colli_info, count, 5);
     }
     
     lbl_0C525100(tp);

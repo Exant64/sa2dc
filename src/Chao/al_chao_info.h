@@ -3,6 +3,11 @@
 
 #include <task.h>
 
+typedef enum eAL_HONBU_BASE {
+    HONBU_NORMAL = 0x0,
+    HONBU_FIRE_OBAKE = 0x1,
+} eAL_HONBU_BASE;
+
 typedef struct GARDEN_ID {
     Uint32 id[3];
 } GARDEN_ID;
@@ -112,7 +117,7 @@ typedef struct AL_BODY_INFO {
     char pad2[10];
     Uint8 DefaultEyeNum;
     Uint8 DefaultMouthNum;
-    char HonbuNum;
+    Uint8 HonbuNum;
     char HonbuColorNum;
     char pad4[3];
     Uint8 ObakeHead;
