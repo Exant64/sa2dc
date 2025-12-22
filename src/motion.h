@@ -3,6 +3,17 @@
 
 #include <task.h>
 
+enum {
+    MD_MTN_LOOP,
+    MD_MTN_ADLP,
+    MD_MTN_LKLP,
+    MD_MTN_STOP,
+    MD_MTN_LINK,
+    MD_MTN_SKIP,
+    MD_MTN_CHNG,
+    MD_MTN_BACK,
+};
+
 typedef struct MOTION_INFO {
     Uint16 mode;
     float frame;

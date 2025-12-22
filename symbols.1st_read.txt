@@ -63,6 +63,7 @@ SetMotionLink = 0x8C033504;
 SetMotionLinkStep = 0x8C0335EA;
 SetMotionLinkSync = 0x8C033644;
 SetMotionSkip = 0x8C03371C;
+SetMotionChange = 0x8C03376E;
 SetMotionSpd = 0x8C03381A;
 SetMotionTable = 0x8C0338E8;
 StopHoldingTaskP = 0x8C04B84C;

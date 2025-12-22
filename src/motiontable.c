@@ -1,9 +1,15 @@
 #include <task.h>
 #include <motion.h>
 
-void SetMotionSkip(MOTION_CTRL *pMtnCtrl, int MtnNum) ;
+#define MTN_FLAG_END BIT_0
+#define MTN_FLAG_LINK BIT_1
+#define MTN_FLAG_SYNC BIT_2
+#define MTN_FLAG_STOP BIT_3
+#define MTN_FLAG_LKLP BIT_4
+
+void SetMotionSkip(MOTION_CTRL *pMtnCtrl, int MtnNum);
 void lbl_8C0337CC(MOTION_CTRL *pMtnCtrl, int MtnNum);
-void lbl_8C03376E(MOTION_CTRL *pMtnCtrl, int MtnNum);
+void SetMotionChange(MOTION_CTRL *pMtnCtrl, int MtnNum);
 void lbl_8C03356E(MOTION_CTRL *pMtnCtrl);
 
 void MotionInit(MOTION_CTRL *pMtnCtrl, MOTION_TABLE *pTable) {
@@ -28,6 +34,7 @@ void MotionInit(MOTION_CTRL *pMtnCtrl, MOTION_TABLE *pTable) {
     pInfo->start = 0;
     pInfo->end = 0;
     pInfo->pMotion = NULL;
+
     pMtnCtrl->table = pTable;
     
     SetMotionSkip(pMtnCtrl, 0);    
@@ -38,14 +45,14 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
     MOTION_INFO* pInfo1 = &pMtnCtrl->minfo[1];
     Bool ended = FALSE;
     
-    pMtnCtrl->flag &= ~9;
+    pMtnCtrl->flag &= ~(MTN_FLAG_END | MTN_FLAG_STOP);
 
-    if(pMtnCtrl->flag & 2) {
+    if(pMtnCtrl->flag & MTN_FLAG_LINK) {
         if(pMtnCtrl->link_spd < 0) pMtnCtrl->link_spd *= -1;
 
         pMtnCtrl->ratio += pMtnCtrl->link_spd * pMtnCtrl->multi_spd;
 
-        if(pMtnCtrl->flag & 4) {
+        if(pMtnCtrl->flag & MTN_FLAG_SYNC) {
             Bool ended1;
             
             pInfo0->frame += pInfo0->spd * pMtnCtrl->multi_spd;
@@ -89,7 +96,7 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
         }
         else {
             if(pMtnCtrl->ratio >= 1.f) {
-                if(pMtnCtrl->flag & 0x10) {
+                if(pMtnCtrl->flag & MTN_FLAG_LKLP) {
                     if(pInfo0->spd > 0) {
                         pInfo0->frame = pInfo0->start + (pMtnCtrl->ratio - 1);
                     }
@@ -98,7 +105,7 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
                     }
 
                     pMtnCtrl->ratio = 1;
-                    pMtnCtrl->flag &= ~0x12;
+                    pMtnCtrl->flag &= ~(MTN_FLAG_LKLP | MTN_FLAG_LINK);
                 }
                 else {
                     pMtnCtrl->ratio = 1;
@@ -111,7 +118,7 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
         pInfo0->frame += pInfo0->spd * pMtnCtrl->multi_spd;
 
         if(pInfo0->spd >= 0.f) {
-            if(pInfo0->mode != 1) {
+            if(pInfo0->mode != MD_MTN_ADLP) {
                 if(pInfo0->frame >= pInfo0->end ) {
                     ended = TRUE;
                 }
@@ -123,7 +130,7 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
             }
         }
         else {
-            if(pInfo0->mode != 1) {
+            if(pInfo0->mode != MD_MTN_ADLP) {
                 if(pInfo0->frame <= pInfo0->end ) {
                     ended = TRUE;
                 }
@@ -137,12 +144,12 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
 
         if(ended) {
             switch(pInfo0->mode){
-                case 0:
+                case MD_MTN_LOOP:
                     pInfo0->frame -= pInfo0->end - pInfo0->start;
                     
-                    pMtnCtrl->flag |= 1;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
                     break;
-                case 1:
+                case MD_MTN_ADLP:
                     if(pInfo0->spd >= 0) {
                         pInfo0->frame -= (pInfo0->end + 1) - pInfo0->start;
                     }
@@ -150,9 +157,9 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
                         pInfo0->frame -= (pInfo0->end - 1) - pInfo0->start;
                     }
                     
-                    pMtnCtrl->flag |= 1;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
                     break;
-                case 2: {
+                case MD_MTN_LKLP: {
                     MOTION_INFO* pInfo1 = &pMtnCtrl->minfo[1];
                     if(pInfo0->spd > 0) {
                         pMtnCtrl->link_spd = pInfo0->spd;
@@ -173,39 +180,39 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
                     pInfo1->pMotion = pInfo0->pMotion;
                     
                     pMtnCtrl->flag = 0;
-                    pMtnCtrl->flag |= 0x13;
+                    pMtnCtrl->flag |= MTN_FLAG_END | MTN_FLAG_LINK | MTN_FLAG_LKLP;
                     break;
                 }
-                case 3:
+                case MD_MTN_STOP:
                     pInfo0->frame = pInfo0->end;
 
-                    pMtnCtrl->flag |= 1;
-                    pMtnCtrl->flag |= 8;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
+                    pMtnCtrl->flag |= MTN_FLAG_STOP;
                     break;
-                case 4:
+                case MD_MTN_LINK:
                     pInfo0->frame = pInfo0->end;
 
                     if(pMtnCtrl->next_num != -1) {
                         lbl_8C03356E(pMtnCtrl);
                     }
                     
-                    pMtnCtrl->flag |= 1;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
                     break;
-                case 5:
+                case MD_MTN_SKIP:
                     if(pMtnCtrl->next_num != -1) {
                         SetMotionSkip(pMtnCtrl, pMtnCtrl->next_num);
                     }
                     
-                    pMtnCtrl->flag |= 1;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
                     break;
-                case 6:
+                case MD_MTN_CHNG:
                     if(pMtnCtrl->next_num != -1) {
-                        lbl_8C03376E(pMtnCtrl, pMtnCtrl->next_num);
+                        SetMotionChange(pMtnCtrl, pMtnCtrl->next_num);
                     }
                     
-                    pMtnCtrl->flag |= 1;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
                     break;
-                case 7: {
+                case MD_MTN_BACK: {
                     float bckp;
                     
                     pInfo0->frame = pInfo0->end;
@@ -214,7 +221,7 @@ void MotionControl(MOTION_CTRL *pMtnCtrl) {
                     pInfo0->end = bckp;
                     pInfo0->spd *= -1;
 
-                    pMtnCtrl->flag |= 1;
+                    pMtnCtrl->flag |= MTN_FLAG_END;
                     break;
                 }
             }
@@ -247,7 +254,7 @@ void SetMotionLink(MOTION_CTRL *pMtnCtrl, int MtnNum) {
     pInfo1->pMotion = pTable->pMotion;
 
     pMtnCtrl->flag = 0;
-    pMtnCtrl->flag |= 2;
+    pMtnCtrl->flag |= MTN_FLAG_LINK;
 }
 
 void lbl_8C03356E(MOTION_CTRL *pMtnCtrl) {
@@ -274,7 +281,7 @@ void lbl_8C03356E(MOTION_CTRL *pMtnCtrl) {
     pInfo1->pMotion = pNextTable->pMotion;
 
     pMtnCtrl->flag = 0;
-    pMtnCtrl->flag |= 2;
+    pMtnCtrl->flag |= MTN_FLAG_LINK;
 }
 
 void SetMotionLinkStep(MOTION_CTRL *pMtnCtrl, int MtnNum, Uint16 step) {
@@ -294,9 +301,8 @@ void SetMotionLinkStep(MOTION_CTRL *pMtnCtrl, int MtnNum, Uint16 step) {
     pInfo1->pMotion = pTable->pMotion;
 
     pMtnCtrl->flag = 0;
-    pMtnCtrl->flag |= 2;
+    pMtnCtrl->flag |= MTN_FLAG_LINK;
 }
-
 
 void SetMotionLinkSync(MOTION_CTRL *pMtnCtrl, int MtnNum) {
     MOTION_TABLE* pTable = &pMtnCtrl->table[MtnNum];
@@ -318,6 +324,7 @@ void SetMotionLinkSync(MOTION_CTRL *pMtnCtrl, int MtnNum) {
         float start = pInfo0->start;
         float end = pInfo0->end;
         float ratio = (pInfo0->frame - start) / (end - start);
+
         pInfo1->mode = pTable->mode;
         pInfo1->frame = pTable->start + (pTable->end - pTable->start) * ratio;
         pInfo1->start = pTable->start;
@@ -327,10 +334,10 @@ void SetMotionLinkSync(MOTION_CTRL *pMtnCtrl, int MtnNum) {
     }
     
     pMtnCtrl->flag = 0;
-    pMtnCtrl->flag |= 2;
+    pMtnCtrl->flag |= MTN_FLAG_LINK;
 
-    if(pInfo0->mode == 0 && pInfo1->mode == 0) {
-        pMtnCtrl->flag |= 4;
+    if(pInfo0->mode == MD_MTN_LOOP && pInfo1->mode == MD_MTN_LOOP) {
+        pMtnCtrl->flag |= MTN_FLAG_SYNC;
     }
 }
 
@@ -356,7 +363,7 @@ void SetMotionSkip(MOTION_CTRL *pMtnCtrl, int MtnNum) {
     pMtnCtrl->flag = 0;
 }
 
-void lbl_8C03376E(MOTION_CTRL *pMtnCtrl, int MtnNum) {
+void SetMotionChange(MOTION_CTRL *pMtnCtrl, int MtnNum) {
     MOTION_TABLE* pTable = &pMtnCtrl->table[MtnNum];
     MOTION_INFO* pInfo0 = &pMtnCtrl->minfo[0];
     
@@ -406,7 +413,7 @@ void SetMotionSpd(MOTION_CTRL *pMtnCtrl, float spd) {
 }
 
 Bool IsMotionEnd(MOTION_CTRL *pMtnCtrl) {
-    if(pMtnCtrl->flag & 1) {
+    if(pMtnCtrl->flag & MTN_FLAG_END) {
         return TRUE;
     }
 
@@ -414,7 +421,7 @@ Bool IsMotionEnd(MOTION_CTRL *pMtnCtrl) {
 }
 
 Bool IsMotionStop(MOTION_CTRL *pMtnCtrl) {
-    if(pMtnCtrl->flag & 8) {
+    if(pMtnCtrl->flag & MTN_FLAG_STOP) {
         return TRUE;
     }
 
@@ -427,7 +434,7 @@ void haCnkEasyDrawMotion(NJS_CNK_OBJECT *pObject, MOTION_CTRL *pMtnCtrl) {
     
     NJS_MOTION_LINK motionlink;
 
-    if(pMtnCtrl->flag & 2) {
+    if(pMtnCtrl->flag & MTN_FLAG_LINK) {
         motionlink.motion[0] = pInfo0->pMotion;
         motionlink.motion[1] = pInfo1->pMotion;
         motionlink.frame[0] = pInfo0->frame;
@@ -446,7 +453,7 @@ void haCnkSimpleDrawMotion(NJS_CNK_OBJECT *pObject, MOTION_CTRL *pMtnCtrl) {
     
     NJS_MOTION_LINK motionlink;
 
-    if(pMtnCtrl->flag & 2) {
+    if(pMtnCtrl->flag & MTN_FLAG_LINK) {
         motionlink.motion[0] = pInfo0->pMotion;
         motionlink.motion[1] = pInfo1->pMotion;
         motionlink.frame[0] = pInfo0->frame;
