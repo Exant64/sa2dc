@@ -110,7 +110,9 @@ segments:
       - [0xAA920, asm]
       - [0xACE60, asm]
       - [0xAD2E0, asm]
-      - [0xBD860, rodata]
+      - [0xBD860, rodata, a_window] # "part 1"
+      - [0xBDB58, rodata, motiontable]
+      - [0xBDB90, rodata, move] # "part 2"
       - [0xC17C0, data]
       - [0xF04E0, libasm, library]
       - [0x169E8C, librodata, library]

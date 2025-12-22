@@ -143,7 +143,7 @@ void ALO_BoxDisplayer(task* tp) {
         if (work->scl.x < 0.01f) {
             njCnkEasyDrawObject(object_alo_box);
         } else {
-            njCnkEasyMotion(object_alo_box, motion_alo_box, work->scl.x);
+            njCnkEasyDrawMotion(object_alo_box, motion_alo_box, work->scl.x);
         }
         njPopMatrixEx();
 
