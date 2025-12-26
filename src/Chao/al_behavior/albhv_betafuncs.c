@@ -20,4 +20,6 @@ INLINE_ASM(_func_0C53BB20, 0xe0, "asm/nonmatching/Chao/al_behavior/albhv_betafun
 
 INLINE_ASM(_func_0C53BC00, 0x28, "asm/nonmatching/Chao/al_behavior/albhv_betafuncs/_func_0C53BC00.src");
 
-// MERGE_LIST([['_lbl_0C68284C', '_lbl_0C53BDC0']]);
+// MERGE_LIST([['_CameraMode', '_lbl_0C53BDC0']]);
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_behavior/albhv_betafuncs/rodata.src");
+

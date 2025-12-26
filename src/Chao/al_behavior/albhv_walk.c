@@ -1,22 +1,223 @@
-#include <task.h>
+#include <Chao/Chao.h>
+#include <Chao/al_landmark.h>
 
-INLINE_ASM(_func_0C53ADE0, 0x202, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53ADE0.src");
+#include <playsound.h>
 
-// MERGE_LIST([['_lbl_0C5312C0', '_lbl_0C53B100'], ['_AL_IsEmotionTimerReset', '_lbl_0C53B104'], ['_lbl_0C56B184', '_lbl_0C53B108'], ['_AL_EmotionAdd', '_lbl_0C53B10C'], ['_lbl_0C56B196', '_lbl_0C53B110']]);
-INLINE_ASM(_func_0C53AFE2, 0xd6, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53AFE2.src");
+int ALBHV_Climb(task*);
+int ALBHV_Turn(task*);
+int ALBHV_JumpToPond(task*);
+int ALBHV_Glide(task*);
+int ALBHV_Koke(task*);
+int ALBHV_PostureChangeSit(task *tp);
+int ALBHV_PostureChangeStand(task *tp);
 
-// MERGE_LIST([['_rand', '_lbl_0C53B120'], ['_AL_ForwardAcc', '_lbl_0C53B138'], ["h'38000000", '_lbl_0C53B124'], ["h'3E99999A", '_lbl_0C53B128'], ["h'3F000000", '_lbl_0C53B12C'], ['_sub_8C05B020', '_lbl_0C53B130'], ['_AL_ParameterGetSkill', '_lbl_0C53B114'], ['_lbl_0C56B040', '_lbl_0C53B134'], ['_AL_SetMotionLink', '_lbl_0C53B118'], ['__modlu', '_lbl_0C53B11C']]);
-INLINE_ASM(_func_0C53B0B8, 0x102, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B0B8.src");
+int WalkControl(task *tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    taskwk* twk = tp->twp;
+    MOVE_WORK* move = tp->Data2;
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C53B2E0'], ['_AL_ForwardAcc', '_lbl_0C53B300'], ['__modls', '_lbl_0C53B2E4'], ['_njScalor', '_lbl_0C53B304'], ["h'41800000", '_lbl_0C53B308'], ['_rand', '_lbl_0C53B2E8'], ['_AL_SetMotionSpd', '_lbl_0C53B30C'], ["h'38000000", '_lbl_0C53B2EC'], ["h'3CF5C28F", '_lbl_0C53B2F0'], ['_ALBHV_Koke', '_lbl_0C53B2F4'], ['_AL_SetBehavior', '_lbl_0C53B2F8'], ['_lbl_0C56B03C', '_lbl_0C53B2FC']]);
-INLINE_ASM(_func_0C53B1BA, 0xd6, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B1BA.src");
+    if(AL_Dist2FromAim(tp) < 36.f) return TRUE;
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C53B2E0'], ['_njCos', '_lbl_0C53B320'], ["h'41600000", '_lbl_0C53B324'], ['__modls', '_lbl_0C53B2E4'], ['_njScalor', '_lbl_0C53B304'], ['_rand', '_lbl_0C53B2E8'], ['_AL_SetMotionSpd', '_lbl_0C53B30C'], ["h'38000000", '_lbl_0C53B2EC'], ['_AL_ParameterGetSkill', '_lbl_0C53B310'], ['_AL_SetBehavior', '_lbl_0C53B2F8'], ["h'3CA3D70A", '_lbl_0C53B314'], ['_ALBHV_Koke', '_lbl_0C53B2F4'], ['_ChaoGlobal', '_lbl_0C53B318'], ['_njSin', '_lbl_0C53B31C']]);
-INLINE_ASM(_func_0C53B290, 0x120, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B290.src");
+    if(move->Flag & 0x4000) {
+        if (CCL_IsHitKind2(tp, CI_KIND_AL_CLIMB)) {
+            AL_SetBehavior(tp, ALBHV_Climb);
+            twk->pos.y += 0.1f;
+        }
+        else {
+            AL_SetBehavior(tp, ALBHV_Turn);
+        }
+    }
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C53B460'], ['_ChaoGlobal', '_lbl_0C53B464'], ['_njSin', '_lbl_0C53B468'], ['_njCos', '_lbl_0C53B46C'], ['_njScalor', '_lbl_0C53B470'], ["h'41600000", '_lbl_0C53B474'], ['_AL_SetMotionSpd', '_lbl_0C53B478']]);
-INLINE_ASM(_AL_WalkSelect, 0x94, "asm/nonmatching/Chao/al_behavior/albhv_walk/_AL_WalkSelect.src");
+    if(twk->wtimer++ > 30 && AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_FURIMUKI)) {
+        AL_SetBehavior(tp, ALBHV_Turn);
+    }
 
-// MERGE_LIST([['_AL_SetNextBehavior', '_lbl_0C53B480'], ['_ChaoGlobal', '_lbl_0C53B464'], ['_AL_SetBehavior', '_lbl_0C53B484'], ['_ALBHV_PostureChangeSit', '_lbl_0C53B488'], ['_lbl_0C53AFE2', '_lbl_0C53B48C'], ['_ALBHV_PostureChangeStand', '_lbl_0C53B490'], ['_lbl_0C53B290', '_lbl_0C53B49C'], ['_lbl_0C53B0B8', '_lbl_0C53B494'], ['_lbl_0C53B1BA', '_lbl_0C53B498'], ['_AL_ParameterGetSkill', '_lbl_0C53B47C']]);
-INLINE_ASM(_func_0C53B444, 0x5c, "asm/nonmatching/Chao/al_behavior/albhv_walk/_func_0C53B444.src");
+    MOV_TurnToAim2(tp, 288);
 
+    if(move->Flag & 0x400) {
+        const NJS_VECTOR up = {0, 1, 0};
+        const float dot = njInnerProduct(&move->Shadow.hit[2].normal, &up);
+
+        if(dot < 0.7f) {
+            move->Velo.y += 0.55f;
+            AL_SetBehavior(tp, ALBHV_JumpToPond);
+        }
+    }
+    else if (twk->pos.y - move->Shadow.hit[2].onpos > 2) {
+        move->Velo.y += 0.55f;
+        if(AL_GetCurrLandAttr(&move->AimPos) == LMA_WATER) {
+            AL_SetBehavior(tp, ALBHV_JumpToPond);
+        }
+        else if(AL_ParameterGetSkill(tp, SKILL_FLY) < 400 || njRandom() < 0.6f) {
+            AL_SetBehavior(tp, ALBHV_JumpToPond);
+        }
+        else {
+            AL_SetBehavior(tp, ALBHV_Glide);
+        }
+    }
+
+    if (AL_IsEmotionTimerReset(tp)) {
+        AL_EmotionAdd(tp, EM_ST_TEDIOUS, -GET_GLOBAL()->ParamSubTediousWalk);
+        AL_EmotionAdd(tp, EM_ST_TIRE, GET_GLOBAL()->ParamAddTireWalk);
+    }
+
+    return FALSE;
+}
+
+int ALBHV_HaiHai(task *tp ) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    taskwk* twk = tp->twp;
+    Uint16 skill = AL_ParameterGetSkill(tp, SKILL_RUN);
+    MOVE_WORK* move = tp->Data2;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_HAIHAI);
+            bhv->Mode++;
+            break;
+        case 1:
+            break;
+    }
+
+    if(!(GET_CHAOWK(tp)->Timer % 120) && njRandom() < 0.3f) {
+        if(njRandom() < 0.5f) {
+            sub_8C05B020(0x6014, 0, 0, 110, &GET_CHAOWK(tp)->pos);
+        }
+        else {
+            sub_8C05B020(0x6015, 0, 0, 110, &GET_CHAOWK(tp)->pos);
+        }
+    }
+
+    if(move->Flag & 0x400) {
+        AL_ForwardAcc(tp, GET_GLOBAL()->WalkSlowAcc);
+    }
+
+    return WalkControl(tp);
+}
+
+int ALBHV_WalkNormal(task *tp ) {
+    taskwk* twk = tp->twp;
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    Uint16 skill = AL_ParameterGetSkill(tp, SKILL_RUN);
+    MOVE_WORK* move = tp->Data2;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_ARUKU);
+            bhv->Mode++;
+            break;
+        case 1:
+            break;
+    }
+
+    if((bhv->Timer++ % 85) == 1) {
+        if(njRandom() < 0.03f) {
+            AL_SetBehavior(tp, ALBHV_Koke);
+        }
+    }
+
+    if(move->Flag & 0x400) {
+        AL_ForwardAcc(tp, GET_GLOBAL()->WalkAcc);
+    }
+
+    {
+        float velo = njScalor(&move->Velo);
+        AL_SetMotionSpd(tp, velo * 16);
+    }
+    
+    return WalkControl(tp);
+}
+
+int ALBHV_Run(task* tp) {
+    taskwk* twk = tp->twp;
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    Uint16 skill = AL_ParameterGetSkill(tp, SKILL_RUN);
+    MOVE_WORK* move = tp->Data2;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_HASIRU);
+            bhv->Mode++;
+            break;
+        case 1:
+            break;
+    }
+
+    if(!(bhv->Timer++ % 100)) {
+        if(njRandom() < 0.02f) {
+            AL_SetBehavior(tp, ALBHV_Koke);
+        }
+    }
+
+    if(move->Flag & 0x400) {
+        const float acc = GET_GLOBAL()->SkillRunAccBase + skill * GET_GLOBAL()->SkillRunAccRatio;
+        
+        move->Acc.x = njSin(twk->ang.y) * acc;
+        move->Acc.z = njCos(twk->ang.y) * acc;
+    }
+
+    {
+        float velo = njScalor(&move->Velo);
+        AL_SetMotionSpd(tp, velo * 14);
+    }
+    
+    return WalkControl(tp);
+}
+
+int ALBHV_Run2(task* tp) {
+    taskwk* twk = tp->twp;
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    Uint16 skill = AL_ParameterGetSkill(tp, SKILL_RUN);
+    MOVE_WORK* move = tp->Data2;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_HASIRU_HIROGE);
+            bhv->Mode++;
+            break;
+        case 1:;
+    }
+
+    if(move->Flag & 0x400) {
+        const float acc = GET_GLOBAL()->SkillRunAccBase + skill * GET_GLOBAL()->SkillRunAccRatio;
+        
+        move->Acc.x = njSin(twk->ang.y) * acc;
+        move->Acc.z = njCos(twk->ang.y) * acc;
+    }
+
+    {
+        float velo = njScalor(&move->Velo);
+        AL_SetMotionSpd(tp, velo * 14);
+    }
+    
+    return WalkControl(tp);
+}
+
+void AL_WalkSelect(task *tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    taskwk* twk = tp->twp;
+    Uint16 skill = AL_ParameterGetSkill(tp, SKILL_RUN);
+    MOVE_WORK* move = tp->Data2;
+
+    if(skill < GET_GLOBAL()->SkillWalk) {
+        AL_SetBehavior(tp, ALBHV_PostureChangeSit);
+        AL_SetNextBehavior(tp, ALBHV_HaiHai);
+    }
+    else if(skill < GET_GLOBAL()->SkillRun) {
+        AL_SetBehavior(tp, ALBHV_PostureChangeStand);
+        AL_SetNextBehavior(tp, ALBHV_WalkNormal);
+    }
+    else if(skill < GET_GLOBAL()->SkillRun2) {
+        AL_SetBehavior(tp, ALBHV_PostureChangeStand);
+        AL_SetNextBehavior(tp, ALBHV_Run);
+    }
+    else {
+        AL_SetBehavior(tp, ALBHV_PostureChangeStand);
+        AL_SetNextBehavior(tp, ALBHV_Run2);
+    }
+}
+
+int ALBHV_WalkSelect(task *tp) {
+    AL_WalkSelect(tp);
+    return 0;
+}

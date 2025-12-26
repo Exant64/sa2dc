@@ -11,14 +11,14 @@ void CreateEggSucceed(task* pChaoTask) {
     pParam->nbSucceed++;
     AL_SucceedGeneParam(pGene, pParam);
 
-    if (cwk->pParam)
-        AL_ClearChaoParam(cwk->pParam);
+    if (cwk->pInfo)
+        AL_ClearChaoParam(cwk->pInfo);
     ALW_CancelEntry(pChaoTask);
 
     pParam->unk_2 = 1;
-    CreateChaoEgg(pGene, pParam, &GET_CHAOWK(pChaoTask)->pos, CREATE_EGG_SUCCEED, cwk->pParam);
+    CreateChaoEgg(pGene, pParam, &GET_CHAOWK(pChaoTask)->pos, CREATE_EGG_SUCCEED, cwk->pInfo);
 
-    cwk->pParam = NULL;
+    cwk->pInfo = NULL;
 }
 
 int ALBHV_BornPon(task* tp) {
@@ -96,11 +96,11 @@ Uint8 DecideNextType(task* tp) {
         if (APos > 0) {
             type++;
             AL_OnGardenFlag(0x10);
-            PlayJingle((const char*)0x0C56725C);
+            PlayJingle("chao_g_born_h2.adx");
         } else {
             type += 2;
             AL_OnGardenFlag(0x40);
-            PlayJingle((const char*)0x0C567270);
+            PlayJingle("chao_g_born_d2.adx");
         }
     }
 
@@ -305,13 +305,13 @@ int ALBHV_Mayu(task* tp) {
                     case TYPE_N_CHAOS:
                     case TYPE_H_CHAOS:
                     case TYPE_D_CHAOS:
-                        PlayJingle((const char*)0x0C567284);
+                        PlayJingle("chao_g_born_c.adx");
                         break;
                     default:
                         if (AL_IsHero2(tp))
-                            PlayJingle((const char*)0x00C567298);
+                            PlayJingle("chao_g_born_h.adx");
                         else if (AL_IsDark2(tp))
-                            PlayJingle((const char*)0x0C5672AC);
+                            PlayJingle("chao_g_born_d.adx");
                         break;
                 }
             }
@@ -400,7 +400,7 @@ int ALBHV_Dead(task* tp) {
                 if (AL_CanISucceed(tp)) {
                     CreateEggSucceed(tp);
                 } else {
-                    PlayJingle((const char*)0x0C5672C0);
+                    PlayJingle("chao_g_dead.adx");
                 }
 
                 GET_CHAOWK(tp)->ChaoFlag &= ~CHAO_FLAG_DRAW_ENABLE;

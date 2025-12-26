@@ -12,6 +12,8 @@
 #include <Chao/al_control.h>
 #include <Chao/al_global.h>
 
+#include <Chao/al_toy/alo_ball.h>
+
 extern NJS_CNK_MODEL model_kage_marukage_marukage[];
 
 typedef struct BALL_WORK {
@@ -30,10 +32,6 @@ enum {
 
 #define GET_MOVE_WK(tp) ((MOVE_WORK*)tp->Data2)
 #define GET_BALL_WK(tp) ((BALL_WORK*)tp->UnknownA_ptr)
-
-extern task* pBallTask; // C682CB0;
-extern int BallFlag; // lbl_0C682CB4
-extern int BallWaterFlag; // 0C682CB8
 
 static const CCL_INFO colli[] = {
     CCL_CYLINDER(0, 0x70, 0, 0x2400, 0, 1.5f, 0, 15.f, 3.f, 0),

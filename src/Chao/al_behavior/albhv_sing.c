@@ -39,3 +39,5 @@ INLINE_ASM(_AL_CalcIntentionScore_JoinOnchi, 0x7a, "asm/nonmatching/Chao/al_beha
 // MERGE_LIST([['_lbl_0C56B260', '_lbl_0C5369E0'], ['_AL_SetBehavior', '_lbl_0C536A00'], ['_AL_EmotionGetValue', '_lbl_0C5369E4'], ['_AL_IsHitKindWithNum', '_lbl_0C5369E8'], ['_rand', '_lbl_0C5369EC'], ["h'38000000", '_lbl_0C5369F0'], ["h'3F333333", '_lbl_0C5369F4'], ["h'3F7D70A4", '_lbl_0C5369F8'], ['_lbl_0C536562', '_lbl_0C5369FC']]);
 INLINE_ASM(_AL_DecideBehaviorSing, 0x266, "asm/nonmatching/Chao/al_behavior/albhv_sing/_AL_DecideBehaviorSing.src");
 
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_behavior/albhv_sing/rodata.src");
+

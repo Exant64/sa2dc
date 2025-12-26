@@ -287,7 +287,7 @@ typedef struct chaowk {
     int AimNum;
     int RememberNum;
     int pitch;
-    int gap420;
+    float ClimbFirstPos;
     chao_info* pInfo;
     int field_428;
     int field_42C;

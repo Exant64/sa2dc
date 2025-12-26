@@ -60,3 +60,4 @@ INLINE_ASM(_func_0C52A3F0, 0xe, "asm/nonmatching/Chao/al_behavior/albhv_capture/
 // MERGE_LIST([['_CreateChildTask', '_lbl_0C52A460'], ['_lbl_0C52A2EE', '_lbl_0C52A45C']]);
 INLINE_ASM(_ALBHV_Capture, 0xa42, "asm/nonmatching/Chao/al_behavior/albhv_capture/_ALBHV_Capture.src");
 
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_behavior/albhv_capture/rodata.src");

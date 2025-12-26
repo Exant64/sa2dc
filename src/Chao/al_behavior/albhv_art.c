@@ -17,3 +17,5 @@ INLINE_ASM(_func_0C5293A0, 0x29e, "asm/nonmatching/Chao/al_behavior/albhv_art/_f
 
 INLINE_ASM(_AL_DecideBehaviorArt, 0x2a2, "asm/nonmatching/Chao/al_behavior/albhv_art/_AL_DecideBehaviorArt.src");
 
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_behavior/albhv_art/rodata.src");
+

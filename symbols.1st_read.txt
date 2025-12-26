@@ -34,6 +34,7 @@ LoadConstantAttr = 0x8C02D8A8;
 LoadControl3D = 0x8C02D940;
 LoadMLT = 0x8C059A00;
 LoadPRSFile = 0x8C062D46;
+MOV_Dist2FromAim = 0x8C033DC0;
 MOV_ClearAcc = 0x8C033CD0;
 MOV_ClearVelo = 0x8C033C54;
 MOV_Control = 0x8C033B34;
