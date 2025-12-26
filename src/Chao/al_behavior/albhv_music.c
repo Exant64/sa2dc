@@ -19,7 +19,7 @@ void AL_CalcIntentionScore_JoinMusic(task* tp, float* pMaxScore) {
     float score = 0.0f;
     Uint32 trigger = GET_GLOBAL()->IntentionHimaTrigger >> 1;
     Uint32 value = AL_EmotionGetValue(tp, EM_ST_TEDIOUS);
-    task* pField = AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC);
+    task* pField = AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC);
 
     int indices[8];
     int len = 0;
@@ -79,7 +79,7 @@ Bool AL_DecideBehaviorMusic(task* tp) {
 
     // this is a mistake, AL_IsHitKindWithNum calls it too
     CCL_ClearSearch();
-    if (!AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC)) {
+    if (!AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC)) {
         int i;
         for (i = 0; i < 8; i++) {
             if (AL_KW_IsMusicFlagOn(tp, i)) {
@@ -163,7 +163,7 @@ int ALBHV_Maracas(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Bell(task* tp) {
@@ -192,7 +192,7 @@ int ALBHV_Bell(task* tp) {
         default:
             break;
     }
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Drum(task* tp) {
@@ -249,7 +249,7 @@ int ALBHV_Drum(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Fue(task* tp) {
@@ -278,7 +278,7 @@ int ALBHV_Fue(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Castanets(task* tp) {
@@ -339,7 +339,7 @@ int ALBHV_Castanets(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Rappa(task* tp) {
@@ -373,7 +373,7 @@ int ALBHV_Rappa(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Cymbal(task* tp) {
@@ -424,7 +424,7 @@ int ALBHV_Cymbal(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_Tambourine(task* tp) {
@@ -473,7 +473,7 @@ int ALBHV_Tambourine(task* tp) {
             break;
     }
 
-    return AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC) == NULL;
+    return AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC) == NULL;
 }
 
 int ALBHV_ListenMusic(task* tp) {
@@ -498,7 +498,7 @@ int ALBHV_ListenMusic(task* tp) {
                 bhv->Mode = 0;
             }
 
-            if (AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_RANDOM_MUSIC))
+            if (AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_RANDOM_MUSIC))
                 break;
 
             AL_SetMotionLink(tp, ALM_HAKUSYU_SIT);

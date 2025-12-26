@@ -100,7 +100,7 @@ int ALBHV_Climb(task *tp) {
             if(bhv->Timer > 3 && (move->Flag & 0x400)) {
                 const NJS_VECTOR up = {0, 1, 0};
         
-                if(njInnerProduct(&move->Shadow.hit[2].normal, &up) > 0.7f) {
+                if(njInnerProduct(&move->Shadow.hit[XYZS_ASS_YL].normal, &up) > 0.7f) {
                     AL_SetBehavior(tp, ALBHV_Move);
                 }
             }

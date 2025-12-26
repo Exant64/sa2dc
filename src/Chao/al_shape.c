@@ -691,7 +691,7 @@ void AL_ShapeControl(task* tp) {
         AL_CalcBuyoParam(tp);
     }
 
-    if (AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_SHADOW))
+    if (AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SHADOW))
         pShape->Flag |= AL_SHAPE_FLAG_SHADOW;
     else
         pShape->Flag &= ~AL_SHAPE_FLAG_SHADOW;

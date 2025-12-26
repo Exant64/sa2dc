@@ -211,4 +211,7 @@ typedef struct chao_info {
 
 extern chao_info ChaoInfo[24];
 
+void sub_C5025E0(task* tp, chao_info* pParamAgain);
+void sub_C502632(task* tp, chao_info* pParamAgain);
+
 #endif

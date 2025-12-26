@@ -110,7 +110,7 @@ void AL_CalcIntentionScore_Jyouro(task* tp, float* pMaxScore) {
     if (*pMaxScore < 1) {
         task* pTree;
 
-        if (pTree = AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_THIRSTY)) {
+        if (pTree = AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_THIRSTY)) {
             Uint32 value = AL_EmotionGetValue(tp, EM_ST_THIRSTY);
             Uint32 trigger = GET_GLOBAL()->IntentionJyouroThirstyTrigger;
 
@@ -194,7 +194,7 @@ void AL_CalcIntentionScore_MakeNest(task* tp, float* pMaxScore) {
                 return;
         }
 
-        if (AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_NEST)) {
+        if (AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_NEST)) {
             return;
         }
 
@@ -233,7 +233,7 @@ void AL_CalcIntentionScore_ApproachNest(task* tp, float* pMaxScore) {
             return;
     }
 
-    if (AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_NEST)) {
+    if (AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_NEST)) {
         if (value > trigger) {
             score = 0.88f;
             score *= GET_GLOBAL()->IntentionApproachNestMaxScore;

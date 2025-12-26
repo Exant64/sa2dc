@@ -25,7 +25,7 @@ INLINE_ASM(_func_0C539784, 0xd4, "asm/nonmatching/Chao/al_behavior/albhv_toy/_fu
 // MERGE_LIST([["h'41700000", '_lbl_0C539920'], ["h'3E19999A", '_lbl_0C539924'], ["h'41B80000", '_lbl_0C539928'], ['_FreeTask', '_lbl_0C53992C']]);
 INLINE_ASM(_func_0C539858, 0x5e, "asm/nonmatching/Chao/al_behavior/albhv_toy/_func_0C539858.src");
 
-// MERGE_LIST([['_njTranslateV', '_lbl_0C539940'], ['_njPopMatrixEx', '_lbl_0C539958'], ['_njRotateY', '_lbl_0C539944'], ['_njScale', '_lbl_0C539948'], ['_lbl_0C632A0C', '_lbl_0C53994C'], ["h'3C23D70A", '_lbl_0C539930'], ['_lbl_0C62B4D0', '_lbl_0C539950'], ['_AL_TOY_TEXLIST', '_lbl_0C539934'], ['_njCnkEasyMotion', '_lbl_0C539954'], ['_njSetTexture', '_lbl_0C539938'], ['_njPushMatrixEx', '_lbl_0C53993C']]);
+// MERGE_LIST([['_njTranslateV', '_lbl_0C539940'], ['_njPopMatrixEx', '_lbl_0C539958'], ['_njRotateY', '_lbl_0C539944'], ['_njScale', '_lbl_0C539948'], ['_lbl_0C632A0C', '_lbl_0C53994C'], ["h'3C23D70A", '_lbl_0C539930'], ['_lbl_0C62B4D0', '_lbl_0C539950'], ['_AL_TOY_TEXLIST', '_lbl_0C539934'], ['_njCnkEasyDrawMotion', '_lbl_0C539954'], ['_njSetTexture', '_lbl_0C539938'], ['_njPushMatrixEx', '_lbl_0C53993C']]);
 INLINE_ASM(_func_0C5398B6, 0x4, "asm/nonmatching/Chao/al_behavior/albhv_toy/_func_0C5398B6.src");
 
 INLINE_ASM(_func_0C5398BA, 0xc6, "asm/nonmatching/Chao/al_behavior/albhv_toy/_func_0C5398BA.src");
@@ -46,3 +46,5 @@ INLINE_ASM(_AL_DecideBehaviorSToy, 0x164, "asm/nonmatching/Chao/al_behavior/albh
 INLINE_ASM(_func_0C539EDC, 0x34, "asm/nonmatching/Chao/al_behavior/albhv_toy/_func_0C539EDC.src");
 
 // MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C539FE0'], ['_rand', '_lbl_0C539FE4']]);
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_behavior/albhv_toy/rodata.src");
+

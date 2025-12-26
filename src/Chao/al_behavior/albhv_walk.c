@@ -28,7 +28,7 @@ int WalkControl(task *tp) {
         }
     }
 
-    if(twk->wtimer++ > 30 && AL_IsHitKindWithNum(tp, 1, CI_KIND_AL_FURIMUKI)) {
+    if(twk->wtimer++ > 30 && AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_FURIMUKI)) {
         AL_SetBehavior(tp, ALBHV_Turn);
     }
 
@@ -36,14 +36,14 @@ int WalkControl(task *tp) {
 
     if(move->Flag & 0x400) {
         const NJS_VECTOR up = {0, 1, 0};
-        const float dot = njInnerProduct(&move->Shadow.hit[2].normal, &up);
+        const float dot = njInnerProduct(&move->Shadow.hit[XYZS_ASS_YL].normal, &up);
 
         if(dot < 0.7f) {
             move->Velo.y += 0.55f;
             AL_SetBehavior(tp, ALBHV_JumpToPond);
         }
     }
-    else if (twk->pos.y - move->Shadow.hit[2].onpos > 2) {
+    else if (twk->pos.y - move->Shadow.hit[XYZS_ASS_YL].onpos > 2) {
         move->Velo.y += 0.55f;
         if(AL_GetCurrLandAttr(&move->AimPos) == LMA_WATER) {
             AL_SetBehavior(tp, ALBHV_JumpToPond);

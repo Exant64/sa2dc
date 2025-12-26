@@ -204,9 +204,6 @@ void AL_SetObjectOnTheGarden(void) {
     }
 }
 
-void sub_C5025E0(task* tp, CHAO_PARAM* pParam);
-void sub_C502632(task* tp, CHAO_PARAM* pParam);
-
 void AL_PackageChaoSaveInfo(void) {
     int count = ALW_CountEntry(ALW_CATEGORY_CHAO);
     while (count) {
@@ -214,8 +211,8 @@ void AL_PackageChaoSaveInfo(void) {
         --count;
         tp = ALW_GetTaskCount(ALW_CATEGORY_CHAO, count);
         if (tp) {
-            CHAO_PARAM* pParam = GET_CHAOWK(tp)->pParam;
-            sub_C5025E0(tp, pParam);
+            chao_info* pInfo = GET_CHAOWK(tp)->pInfo;
+            sub_C5025E0(tp, pInfo);
         }
     }
 
@@ -225,8 +222,8 @@ void AL_PackageChaoSaveInfo(void) {
         --count;
         tp = ALW_GetTaskCount(ALW_CATEGORY_EGG, count);
         if (tp) {
-            CHAO_PARAM* pParam = GET_CHAOWK(tp)->pParam;
-            sub_C502632(tp, pParam);
+            chao_info* pInfo = GET_CHAOWK(tp)->pInfo;
+            sub_C502632(tp, pInfo);
         }
     }
 }

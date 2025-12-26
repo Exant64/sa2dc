@@ -68,7 +68,7 @@ INLINE_ASM(_func_8C034022, 0x34, "asm/nonmatching/./move/_func_8C034022.src");
 INLINE_ASM(_MOV_Dist2FromPlayer, 0x32, "asm/nonmatching/./move/_MOV_Dist2FromPlayer.src");
 
 // MERGE_LIST([['_playertwp', '_lbl_8C0340E8']]);
-INLINE_ASM(_func_8C034088, 0x78, "asm/nonmatching/./move/_func_8C034088.src");
+INLINE_ASM(_GetAngToPlayer, 0x78, "asm/nonmatching/./move/_GetAngToPlayer.src");
 
 INLINE_ASM(_func_8C034100, 0x28, "asm/nonmatching/./move/_func_8C034100.src");
 
@@ -85,4 +85,6 @@ INLINE_ASM(_func_8C034F40, 0x504, "asm/nonmatching/./move/_func_8C034F40.src");
 
 // MERGE_LIST([["h'8C24F1CC", '_lbl_8C035480']]);
 INLINE_ASM(_MOV_DetectCollision, 0x5c, "asm/nonmatching/./move/_MOV_DetectCollision.src");
+
+INLINE_ASM(_rodata, "asm/nonmatching/./move/rodata.src");
 
