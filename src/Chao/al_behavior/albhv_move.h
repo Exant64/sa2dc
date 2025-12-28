@@ -3,5 +3,6 @@
 
 int ALBHV_Koke(task* tp);
 int ALBHV_Move(task* tp);
+int ALBHV_Climb(task* tp);
 
 #endif

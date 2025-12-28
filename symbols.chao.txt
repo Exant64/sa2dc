@@ -785,3 +785,4 @@ ALBHV_SwimCrawl = 0xC538E1A;
 ALBHV_SwimBataashi = 0xC538DA0;
 ALBHV_SwimSeoyogi = 0xC538E94;
 ALBHV_SwimPuha = 0xC538F38;
+CreateObjectWaterripple = 0x0C541900;

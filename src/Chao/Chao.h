@@ -53,6 +53,31 @@ float AL_Dist2FromAim(task* tp);
 #define CHAO_FLAG_UNK_18 BIT_18
 
 enum {
+    eMinimalType_Pen = 0x0,
+    eMinimalType_Goma = 0x1,
+    eMinimalType_Rako = 0x2,
+    eMinimalType_Usa = 0x3,
+    eMinimalType_Chit = 0x4,
+    eMinimalType_Ino = 0x5,
+    eMinimalType_Kuma = 0x6,
+    eMinimalType_Tora = 0x7,
+    eMinimalType_Gori = 0x8,
+    eMinimalType_Kuja = 0x9,
+    eMinimalType_Oum = 0xA,
+    eMinimalType_Kon = 0xB,
+    eMinimalType_Ska = 0xC,
+    eMinimalType_Shep = 0xD,
+    eMinimalType_Ara = 0xE,
+    eMinimalType_Han = 0xF,
+    eMinimalType_Bone = 0x10,
+    eMinimalType_Batman = 0x11,
+    eMinimalType_Dra = 0x12,
+    eMinimalType_Uni = 0x13,
+    eMinimalType_Phen = 0x14,
+    eMinimalType__end = 0x15,
+};
+
+enum {
     AL_FORM_NORMAL = 0x0,
     AL_FORM_EGG_FOOT = 0x1,
     AL_FORM_OMOCHAO = 0x2,
