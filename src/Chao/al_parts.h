@@ -45,4 +45,16 @@ enum {
     AL_PART_END = 0x28,
 };
 
+enum {
+    PARTS_KIND_ARM = 0x0,
+    PARTS_KIND_EAR = 0x1,
+    PARTS_KIND_FOREHEAD = 0x2,
+    PARTS_KIND_HORN = 0x3,
+    PARTS_KIND_REG = 0x4,
+    PARTS_KIND_TAIL = 0x5,
+    PARTS_KIND_WING = 0x6,
+    PARTS_KIND_TONGUE = 0x7,
+    NB_PARTS_KIND = 0x8,
+};
+
 #endif

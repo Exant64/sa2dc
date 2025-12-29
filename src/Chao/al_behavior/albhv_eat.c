@@ -2,15 +2,15 @@
 
 INLINE_ASM(_AL_CheckFruit, 0x5a, "asm/nonmatching/Chao/al_behavior/albhv_eat/_AL_CheckFruit.src");
 
-// MERGE_LIST([['_AL_GetBehavior', '_lbl_0C52D240'], ['_ALBHV_Eat', '_lbl_0C52D244'], ['_ALBHV_Sleep', '_lbl_0C52D248'], ['_lbl_0C52D17A', '_lbl_0C52D24C'], ['_CCL_IsHitKind2', '_lbl_0C52D250'], ['_ALW_IsHeld', '_lbl_0C52D254'], ['_MOV_SetAimPos', '_lbl_0C52D258'], ['_AL_SetBehavior', '_lbl_0C52D25C']]);
-INLINE_ASM(_func_0C52D17A, 0x106, "asm/nonmatching/Chao/al_behavior/albhv_eat/_func_0C52D17A.src");
+// MERGE_LIST([['_AL_GetBehavior', '_lbl_0C52D240'], ['_ALBHV_Eat', '_lbl_0C52D244'], ['_ALBHV_Sleep', '_lbl_0C52D248'], ['_ALBHV_TurnToFruit', '_lbl_0C52D24C'], ['_CCL_IsHitKind2', '_lbl_0C52D250'], ['_ALW_IsHeld', '_lbl_0C52D254'], ['_MOV_SetAimPos', '_lbl_0C52D258'], ['_AL_SetBehavior', '_lbl_0C52D25C']]);
+INLINE_ASM(_ALBHV_TurnToFruit, 0x106, "asm/nonmatching/Chao/al_behavior/albhv_eat/_ALBHV_TurnToFruit.src");
 
 INLINE_ASM(_ALBHV_Eat, 0x97e, "asm/nonmatching/Chao/al_behavior/albhv_eat/_ALBHV_Eat.src");
 
-INLINE_ASM(_func_0C52DBFE, 0xc0, "asm/nonmatching/Chao/al_behavior/albhv_eat/_func_0C52DBFE.src");
+INLINE_ASM(_ALBHV_PickUpLockOn, 0xc0, "asm/nonmatching/Chao/al_behavior/albhv_eat/_ALBHV_PickUpLockOn.src");
 
 // MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C52DD20'], ['_sub_8C05B020', '_lbl_0C52DD24'], ['_AL_IsMotionEnd', '_lbl_0C52DD28'], ['_ALW_GetLockOnTask', '_lbl_0C52DD2C'], ['_ALW_IsSheAttentionOtherOne', '_lbl_0C52DD30'], ['_AL_GrabObjectBothHands', '_lbl_0C52DD34'], ['_AL_MoveHoldingObject', '_lbl_0C52DD38']]);
-INLINE_ASM(_func_0C52DCBE, 0xac, "asm/nonmatching/Chao/al_behavior/albhv_eat/_func_0C52DCBE.src");
+INLINE_ASM(_ALBHV_GoToEat, 0xac, "asm/nonmatching/Chao/al_behavior/albhv_eat/_ALBHV_GoToEat.src");
 
 INLINE_ASM(_func_0C52DD6A, 0xfa, "asm/nonmatching/Chao/al_behavior/albhv_eat/_func_0C52DD6A.src");
 
