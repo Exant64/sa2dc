@@ -131,7 +131,7 @@ Bool AL_CheckNade(task* tp) {
     task* hit;
     if (func == ALBHV_Nade || func == ALBHV_Tron || func == ALBHV_Cry || func == ALBHV_Tameiki ||
         func == ALBHV_MesoMeso) {
-        return 0;
+        return FALSE;
     }
 
     if ((GET_CHAOWK(tp)->flag & 1) && AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_PATTING_HAND)) {
