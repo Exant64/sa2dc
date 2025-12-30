@@ -70,5 +70,6 @@ float MOV_Dist2FromPlayer(task* tp, int player_num);
 float MOV_DistFromAim(task* tp);
 float MOV_Dist2FromAim(task* tp);
 int MOV_TurnToAim2(task* tp, int rot_spd);
+int MOV_CalcPlayerAngle(task*, int index);
 
 #endif

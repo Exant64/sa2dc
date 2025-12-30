@@ -369,7 +369,7 @@ task* AL_CreateHoldingChao() {
 void AL_SetHoldingChaoInfo(task *pChaoTask) {
     if(pChaoTask) {
         pHoldingChaoSaveInfo = GET_CHAOWK(pChaoTask)->pInfo;
-        if(DiffAngle(GetAngToPlayer(pChaoTask, 0), GET_CHAOWK(pChaoTask)->ang.y) < 0x4000) {
+        if(DiffAngle(MOV_CalcPlayerAngle(pChaoTask, 0), GET_CHAOWK(pChaoTask)->ang.y) < 0x4000) {
             HoldingFront = 1;
         }
         else {
