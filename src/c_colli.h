@@ -89,6 +89,8 @@ typedef struct c_colli_hit_info {
 } c_colli_hit_info;
 
 task* CCL_IsHitKind2(task* tp, int kind);
+
+task* CCL_IsHitPlayerWithNum(task* tp, int info_num);
 c_colli_hit_info* CCL_IsHitPlayerWithNum2(taskwk* twp, int info_num);
 CCL_INFO* CCL_GetInfo(task* tp, int info_num);
 

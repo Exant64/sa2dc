@@ -9,6 +9,7 @@ CCL_Entry = 0x8C018B20;
 CCL_GetInfo = 0x8C020784;
 CCL_Init = 0x8C0188A0;
 CCL_IsHitKind2 = 0x8C01F6A8;
+CCL_IsHitPlayerWithNum = 0x8C01F7A2;
 CCL_IsHitPlayerWithNum2 = 0x8C01F7BC;
 CCL_IsPushed = 0x8C01F318;
 CCL_IsHit = 0x8C01F33C;
