@@ -832,3 +832,4 @@ ALBHV_BornDamage = 0xC52BDC0;
 ALBHV_Damage = 0xC52BF88;
 ALBHV_Thrown = 0xC52C2B6;
 ALBHV_Bikkuri = 0xC52C59C;
+ALO_GetFruitKind = 0x0C5250A8;

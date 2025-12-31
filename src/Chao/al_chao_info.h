@@ -3,6 +3,16 @@
 
 #include <task.h>
 
+enum
+{
+    TASTE_LS_DT,
+    TASTE_LS_DC,
+    TASTE_LT_DS,
+    TASTE_LT_DC,
+    TASTE_LC_DS,
+    TASTE_LC_DT,
+};
+
 typedef enum eAL_HONBU_BASE {
     HONBU_NORMAL = 0x0,
     HONBU_FIRE_OBAKE = 0x1,
@@ -32,7 +42,7 @@ typedef struct AL_EMOTION {
     char Mood[8];
     Uint16 State[11];
     char Personality[13];
-    char Taste;
+    Uint8 Taste;
     char Tv;
     char Music;
     char IllState[6];

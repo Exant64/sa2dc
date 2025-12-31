@@ -2,6 +2,7 @@
 #define _AL_MOTION_H_
 
 void AL_SetMotionSpd(task* tp, float Spd);
+float AL_GetMotionFrame(task*);
 
 // thanks to shaddatic for removing the 3 sadx anims and providing comments
 enum {

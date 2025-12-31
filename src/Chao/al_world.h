@@ -65,12 +65,13 @@ extern const Uint32 nbMaxEntry[];
 
 task* ALW_GetTask(Uint16 category, Uint16 num);
 al_entry_work* ALW_IsCommunication(task* tp);
+al_entry_work* ALW_IsCommunicationEx(task* tp, Uint16 category);
 int ALW_TurnToLockOn(task* pMyTask, int RotSpd);
 float ALW_CalcDistFromLockOn(task* tp);
 Bool ALW_Entry(Uint16 category, task* tp, Uint16 kind);
 task* ALW_GetTaskCount(Uint16 category, Uint16 count);
 int ALW_CountEntry(Uint16 category);
-
+task* ALW_GetLockOnTask(task* tp);
 Sint16 ALW_RecieveCommand(task* tp);
 int sub_C51E3B2(task* tp);
 
