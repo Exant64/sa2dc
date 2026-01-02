@@ -3,6 +3,27 @@
 
 #include <task.h>
 
+enum {
+    INT_TIMER_PLAYER,
+    INT_TIMER_CHAO,
+    INT_TIMER_GREET,
+    INT_TIMER_SING,
+    INT_TIMER_MUSIC,
+    INT_TIMER_DANCE,
+    INT_TIMER_ART,
+    INT_TIMER_TOY,
+    INT_TIMER_LTOY,
+    INT_TIMER_MINIMAL,
+    INT_TIMER_TV,
+    INT_TIMER_RADICASE,
+    INT_TIMER_BOX,
+    INT_TIMER_BALL,
+    INT_TIMER_GOO,
+    INT_TIMER_AKUBI,
+    NB_INT_TIMER
+};
+
+
 typedef enum eINTENTION {
     INTENTION_NONE = 0x0,
     INTENTION_THINK = 0x1,
@@ -24,6 +45,8 @@ typedef enum eINTENTION {
     INTENTION_JOY = 0x11,
     NB_INTENTION = 0x12,
 } eINTENTION;
+
+Uint32 AL_GetIntervalTimer(task* tp, Uint16 TimerKind);
 
 void AL_SetIntention(task* tp, Uint16 intention);
 void AL_ScoreRandomise(float*);

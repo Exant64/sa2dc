@@ -840,3 +840,7 @@ ALBHV_Jyouro = 0xC535572;
 JyouroItemInfo = 0xC62ACCC;
 object_alo_johro_pos_jyohro = 0xC630B50;
 AL_ForwardSpd = 0xC511E86;
+ALBHV_Greet = 0x0C534280;
+ALBHV_CalcMeetPlayer = 0x0C53431A;
+ALBHV_SuriSuri = 0x0C534640;
+ALBHV_SuriSuriPlayer = 0x0C5346E4;

@@ -22,6 +22,9 @@ typedef enum eAL_STOY {
 
 Sint8 AL_KW_GetPlayerLike(task* tp);
 Uint8 AL_KW_GetPlayerFear(task* pChaoTask);
+Uint16 AL_KW_GetPlayerDistance(task* pChaoTask);
+Uint16 AL_KW_GetPlayerMeet(task* pChaoTask);
+
 void AL_KW_MeetPlayer(task* pChaoTask);
 void AL_KW_AddPlayerLike(task* pChaoTask, int add);
 
