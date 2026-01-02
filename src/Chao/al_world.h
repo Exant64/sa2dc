@@ -75,4 +75,6 @@ task* ALW_GetLockOnTask(task* tp);
 Sint16 ALW_RecieveCommand(task* tp);
 int sub_C51E3B2(task* tp);
 
+al_entry_work* ALW_IsAttention(task* tp);
+
 #endif

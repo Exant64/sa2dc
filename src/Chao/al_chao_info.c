@@ -13,7 +13,7 @@ int DiffAngle(int a, int b);
 int ALBHV_Sleep(task *tp);
 
 task* CreateChaoEgg(AL_GENE* pGene, CHAO_PARAM* pParam, NJS_POINT3* pos, int, chao_info* pInfo);
-task* lbl_0C508B76(AL_GENE* pGene, NJS_POINT3* pos, int, chao_info* pInfo);
+task* CreateEgg(AL_GENE* pGene, NJS_POINT3* pos, int, chao_info* pInfo);
 task* lbl_0C5029F0(chao_info* pInfo, NJS_POINT3* pos, int ang);
 
 static chao_info* AL_GetHoldingChaoInfo();
@@ -172,7 +172,7 @@ int AL_GetAllChaoCount() {
     return count;
 }
 
-void* AL_GetNewChaoSaveInfo() {
+chao_info* AL_GetNewChaoSaveInfo() {
     int maxChao; 
     int i;
     
@@ -303,7 +303,7 @@ task* lbl_0C5029F0(chao_info* pInfo, NJS_POINT3* pos, int ang) {
                 pChao = CreateChaoEgg(pGene, pParam, pos, 0, pInfo);
             }
             else {
-                pChao = lbl_0C508B76(pGene, pos, 0, pInfo);
+                pChao = CreateEgg(pGene, pos, 0, pInfo);
             }
             break;
         default:

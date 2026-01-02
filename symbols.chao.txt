@@ -468,6 +468,7 @@ CreateChaoEgg = 0x0C5088DA;
 CreateChaoElement = 0x0C53F5AE;
 CreateChaoOnlyParam = 0x0C53F590;
 CreateEggSucceed = 0x0C52F780;
+CreateEgg = 0xC508B76;
 CreateMayu = 0x0C52FC7A;
 DecideNextType = 0x0C52F87E;
 EyeColorTexIdList = 0x0C55DA70;
