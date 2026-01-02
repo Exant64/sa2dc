@@ -25,19 +25,21 @@ INLINE_ASM(_func_0C524CFA, 0x7a, "asm/nonmatching/Chao/alo_fruit/_func_0C524CFA.
 // MERGE_LIST([['_MOV_PreservePreviousPosition', '_lbl_0C524DE0'], ['_CCL_Entry', '_lbl_0C524DE4']]);
 INLINE_ASM(_func_0C524D74, 0x1bc, "asm/nonmatching/Chao/alo_fruit/_func_0C524D74.src");
 
-// MERGE_LIST([['_AL_OBJECT_TEXLIST', '_lbl_0C524FA0'], ['_njPushMatrix', '_lbl_0C524FA4'], ['_njTranslate', '_lbl_0C524FA8'], ["h'00008000", '_lbl_0C524FAC'], ["h'3ECCCCCD", '_lbl_0C524FB0'], ["h'3F0CCCCD", '_lbl_0C524FB4'], ['_njRotateY', '_lbl_0C524FB8'], ['_njPushMatrixEx', '_lbl_0C524FBC'], ['_njScale', '_lbl_0C524FC0'], ['_AL_IsHitKindWithNum', '_lbl_0C524FC4'], ['_OnControl3D', '_lbl_0C524FC8'], ['_njRotateX', '_lbl_0C524FCC'], ['_lbl_0C60884C', '_lbl_0C524FD0'], ['_njCnkEasyDrawObject', '_lbl_0C524FD4'], ['_OffControl3D', '_lbl_0C524FD8'], ['_njPopMatrixEx', '_lbl_0C524FDC'], ['_lbl_0C56B090', '_lbl_0C524FE0'], ["h'BFECCCCD", '_lbl_0C524FE4'], ["h'3F333333", '_lbl_0C524FE8'], ['_model_kage_marukage_marukage', '_lbl_0C524FEC'], ['_njCnkModDrawModel', '_lbl_0C524FF0'], ['_njPopMatrix', '_lbl_0C524FF4']]);
+// MERGE_LIST([['_AL_OBJECT_TEXLIST', '_lbl_0C524FA0'], ['_njPushMatrix', '_lbl_0C524FA4'], ['_njTranslate', '_lbl_0C524FA8'], ["h'00008000", '_lbl_0C524FAC'], ["h'3ECCCCCD", '_lbl_0C524FB0'], ["h'3F0CCCCD", '_lbl_0C524FB4'], ['_njRotateY', '_lbl_0C524FB8'], ['_njPushMatrixEx', '_lbl_0C524FBC'], ['_njScale', '_lbl_0C524FC0'], ['_AL_IsHitKindWithNum', '_lbl_0C524FC4'], ['_OnControl3D', '_lbl_0C524FC8'], ['_njRotateX', '_lbl_0C524FCC'], ['_FruitObjectList', '_lbl_0C524FD0'], ['_njCnkEasyDrawObject', '_lbl_0C524FD4'], ['_OffControl3D', '_lbl_0C524FD8'], ['_njPopMatrixEx', '_lbl_0C524FDC'], ['_lbl_0C56B090', '_lbl_0C524FE0'], ["h'BFECCCCD", '_lbl_0C524FE4'], ["h'3F333333", '_lbl_0C524FE8'], ['_model_kage_marukage_marukage', '_lbl_0C524FEC'], ['_njCnkModDrawModel', '_lbl_0C524FF0'], ['_njPopMatrix', '_lbl_0C524FF4']]);
 INLINE_ASM(_func_0C524F30, 0x6, "asm/nonmatching/Chao/alo_fruit/_func_0C524F30.src");
 
 // MERGE_LIST([['_ALW_CancelEntry', '_lbl_0C524FF8']]);
 INLINE_ASM(_func_0C524F36, 0xea, "asm/nonmatching/Chao/alo_fruit/_func_0C524F36.src");
 
-INLINE_ASM(_func_0C525020, 0x88, "asm/nonmatching/Chao/alo_fruit/_func_0C525020.src");
+INLINE_ASM(_ALO_FruitCreate, 0x88, "asm/nonmatching/Chao/alo_fruit/_ALO_FruitCreate.src");
 
 // MERGE_LIST([['_lbl_0C566EA4', '_lbl_0C5250C0'], ["h'3F333333", '_lbl_0C5250E0'], ['_lbl_0C524F36', '_lbl_0C5250C4'], ['_CreateElementalTask', '_lbl_0C5250C8'], ['_MOV_Init', '_lbl_0C5250CC'], ["h'BD4CCCCD", '_lbl_0C5250D0'], ['_MOV_SetGravity', '_lbl_0C5250D4'], ["h'40400000", '_lbl_0C5250D8'], ["h'3F266666", '_lbl_0C5250DC']]);
-INLINE_ASM(_func_0C5250A8, 0x6, "asm/nonmatching/Chao/alo_fruit/_func_0C5250A8.src");
+INLINE_ASM(_ALO_GetFruitKind, 0x6, "asm/nonmatching/Chao/alo_fruit/_ALO_GetFruitKind.src");
 
 INLINE_ASM(_func_0C5250AE, 0x36, "asm/nonmatching/Chao/alo_fruit/_func_0C5250AE.src");
 
 INLINE_ASM(_func_0C5250E4, 0x40, "asm/nonmatching/Chao/alo_fruit/_func_0C5250E4.src");
 
 // MERGE_LIST([['_CCL_Disable', '_lbl_0C5251E0']]);
+INLINE_ASM(_rodata, "asm/nonmatching/Chao/alo_fruit/rodata.src");
+

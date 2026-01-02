@@ -39,7 +39,7 @@ INLINE_ASM(_func_0C511E52, 0x4, "asm/nonmatching/Chao/al_misc/_func_0C511E52.src
 INLINE_ASM(_AL_ForwardAcc, 0x30, "asm/nonmatching/Chao/al_misc/_AL_ForwardAcc.src");
 
 // MERGE_LIST([['_njCos', '_lbl_0C511F68'], ['_njSin', '_lbl_0C511F64']]);
-INLINE_ASM(_func_0C511E86, 0x46, "asm/nonmatching/Chao/al_misc/_func_0C511E86.src");
+INLINE_ASM(_AL_ForwardSpd, 0x46, "asm/nonmatching/Chao/al_misc/_AL_ForwardSpd.src");
 
 // MERGE_LIST([['_njCos', '_lbl_0C511F68'], ['_njSin', '_lbl_0C511F64']]);
 INLINE_ASM(_AL_Brake, 0x2a, "asm/nonmatching/Chao/al_misc/_AL_Brake.src");
