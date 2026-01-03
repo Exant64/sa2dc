@@ -44,7 +44,7 @@ segments:
       - [0xB3A0, asm, al_garden_info] # done
       - [0xBB20, asm, al_gene] # done
       - [0xCBC0, asm, al_hold] # done
-      - [0xCF60, asm, al_icon]
+      - [0xCF60, asm, al_icon] # done
       - [0xE6E0, asm, al_intention] # done
       - [0xEF80, asm, code_0C50EF80]
       - [0xF540, asm, al_knowledge] # done
@@ -83,8 +83,8 @@ segments:
       - [0x298E0, asm, al_behavior/albhv_anger] # done
       - [0x2A180, asm, al_behavior/albhv_capture]
       - [0x2AE40, asm, al_behavior/albhv_common] # done
-      - [0x2B4C0, asm, al_behavior/albhv_dakko]
-      - [0x2BDC0, asm, al_behavior/albhv_damage]
+      - [0x2B4C0, asm, al_behavior/albhv_dakko] # done
+      - [0x2BDC0, asm, al_behavior/albhv_damage] # done
       - [0x2C6A0, asm, al_behavior/albhv_dance]
       - [0x2D120, asm, al_behavior/albhv_eat]
       - [0x2DD80, asm, al_behavior/albhv_fear]

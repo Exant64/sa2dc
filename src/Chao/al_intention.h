@@ -47,6 +47,7 @@ typedef enum eINTENTION {
 } eINTENTION;
 
 Uint32 AL_GetIntervalTimer(task* tp, Uint16 TimerKind);
+Uint32 AL_SetIntervalTimer(task* tp, Uint16 TimerKind, Uint32 timer);
 
 void AL_SetIntention(task* tp, Uint16 intention);
 void AL_ScoreRandomise(float*);
