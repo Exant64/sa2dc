@@ -160,7 +160,9 @@ segments:
       - [0x68F58, data, al_stage] # data_1
       - [0x6B408, data, al_garden_info]
       - [0x6B580, data, al_gene]
-      - [0x6B5B8, data, al_icon] # data_2
+      - [0x6B5B8, data, al_icon]
+      - [0x6BA0C, data, al_intention] 
+      - [0x6BA10, data, al_message] # landmark + material + msg + minimal
       - [0x13B5D4, data, al_toy/alo_tv]
       - [0x13B604, data, Chao]
       - [0x13B6F4, data, OBJECT]

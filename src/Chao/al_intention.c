@@ -327,7 +327,9 @@ int sub_C50EE3E() {
     return 1;
 }
 
-extern Uint8 FuncListNum, FuncNum;
+static Uint8 FuncListNum = 0;
+static Uint8 FuncNum = 0;
+
 extern BHV_FUNC ALBHV_IllnessFunc[], ALBHV_MusicFunc[], ALBHV_MinimalFunc[], ALBHV_SToyFunc[];
 void AL_DecideBehavior(task* tp, eINTENTION intention) {
     switch (intention) {
