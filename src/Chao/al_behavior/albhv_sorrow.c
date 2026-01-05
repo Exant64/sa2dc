@@ -9,7 +9,7 @@ void AL_CalcIntentionScore_Sorrow(task* tp, float* pMaxScore) {
     // this is the one "score" var in sa2b debug build that doesn't end up somehow
     // in the struct/array debug variable section thing
     float score = 0.f;
-    
+
     Uint32 trigger = GET_GLOBAL()->IntentionSorrowTrigger;
     int emotion = AL_EmotionGetValue(tp, EM_MD_SORROW);
 
@@ -59,16 +59,16 @@ int ALBHV_Tameiki(task* tp) {
                 case 1:
                 case 2:
                 case 3:
-                    AL_SetMotionLinkStep(tp, 505, 35);
+                    AL_SetMotionLinkStep(tp, ALM_TAMEIKI_SIT, 35);
                     break;
                 case 0:
                 default:
-                    AL_SetMotionLinkStep(tp, 502, 30);
+                    AL_SetMotionLinkStep(tp, ALM_TAMEIKI_STAND, 30);
                     break;
             }
 
-            AL_FaceChangeEye(tp, 3);
-            AL_FaceChangeMouth(tp, 4);
+            AL_FaceChangeEye(tp, AL_EYE_NUM_TOHOHO);
+            AL_FaceChangeMouth(tp, AL_MOUTH_NUM_MUSU);
 
             bhv->Timer = RAND_RANGE(180, 300);
             bhv->Mode++;
@@ -95,16 +95,16 @@ int ALBHV_MesoMeso(task* tp) {
                 case 3: {
                     float randval = njRandom();
                     if(randval < 0.3f) {
-                        AL_SetMotionLinkStep(tp, 549, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_SIT_START, 35);
                     }
                     else if(randval < 0.6f) {
-                        AL_SetMotionLinkStep(tp, 551, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_SIT_MEKOSURI, 35);
                     }
                     else if(randval < 0.8f) {
-                        AL_SetMotionLinkStep(tp, 552, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_SIT_MEKOSURI_HIKKU, 35);
                     }
                     else {
-                        AL_SetMotionLinkStep(tp, 553, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_SIT_HIKKU_TATE, 35);
                     }
                 } break;
                     
@@ -112,35 +112,35 @@ int ALBHV_MesoMeso(task* tp) {
                 default: {
                     float randval = njRandom();
                     if(randval < 0.3f) {
-                        AL_SetMotionLinkStep(tp, 544, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_STAND_START, 35);
                     }
                     else if(randval < 0.6f) {
-                        AL_SetMotionLinkStep(tp, 546, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_STAND_MEKOSURI, 35);
                     }
                     else if(randval < 0.8f) {
-                        AL_SetMotionLinkStep(tp, 547, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_STAND_MEKOSURI_HIKKU, 35);
                     }
                     else {
-                        AL_SetMotionLinkStep(tp, 548, 35);
+                        AL_SetMotionLinkStep(tp, ALM_MESO_STAND_HIKKU_TATE, 35);
                     }
                 } break;
             }
 
             if(njRandom() < 0.5f) {
-                AL_FaceChangeEye(tp, 3);
+                AL_FaceChangeEye(tp, AL_EYE_NUM_TOHOHO);
             }
             else {
-                AL_FaceChangeEye(tp, 1);
+                AL_FaceChangeEye(tp, AL_EYE_NUM_KYA);
             }
 
             {
                 float randval = njRandom();
                 
                 if(randval < 0.5f) {
-                    AL_FaceChangeMouth(tp, 4);
+                    AL_FaceChangeMouth(tp, AL_MOUTH_NUM_MUSU);
                 }
                 else {
-                    AL_FaceChangeMouth(tp, 6);
+                    AL_FaceChangeMouth(tp, AL_MOUTH_NUM_UEEN);
                 }
             }
 
@@ -175,13 +175,13 @@ int ALBHV_Cry(task* tp) {
                 case 3: {
                     float randval = njRandom();
                     if(randval < 0.4f) {
-                        AL_SetMotionLinkStep(tp, 528, 35);
+                        AL_SetMotionLinkStep(tp, ALM_CRY_SIT_START, 35);
                     }
                     else if(randval < 0.8f) {
-                        AL_SetMotionLinkStep(tp, 531, 35);
+                        AL_SetMotionLinkStep(tp, ALM_CRY_SIT_SHIKUSHIKU, 35);
                     }
                     else {
-                        AL_SetMotionLinkStep(tp, 533, 35);
+                        AL_SetMotionLinkStep(tp, ALM_CRY_SIT_JITABATA, 35);
                     }
                 } break;
                     
@@ -189,29 +189,29 @@ int ALBHV_Cry(task* tp) {
                 default: {
                     float randval = njRandom();
                     if(randval < 0.5f) {
-                        AL_SetMotionLinkStep(tp, 523, 35);
+                        AL_SetMotionLinkStep(tp, ALM_CRY_STAND_START, 35);
                     }
                     else {
-                        AL_SetMotionLinkStep(tp, 525, 35);
+                        AL_SetMotionLinkStep(tp, ALM_CRY_STAND_HIKKU2SHIKU, 35);
                     }
                 } break;
             }
 
             if(njRandom() < 0.5f) {
-                AL_FaceChangeEye(tp, 3);
+                AL_FaceChangeEye(tp, AL_EYE_NUM_TOHOHO);
             }
             else {
-                AL_FaceChangeEye(tp, 1);
+                AL_FaceChangeEye(tp, AL_EYE_NUM_KYA);
             }
 
             {
                 float randval = njRandom();
                 
                 if(randval < 0.4f) {
-                    AL_FaceChangeMouth(tp, 4);
+                    AL_FaceChangeMouth(tp, AL_MOUTH_NUM_MUSU);
                 }
                 else {
-                    AL_FaceChangeMouth(tp, 6);
+                    AL_FaceChangeMouth(tp, AL_MOUTH_NUM_UEEN);
                 }
             }
 
