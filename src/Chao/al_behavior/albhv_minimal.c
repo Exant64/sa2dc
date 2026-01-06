@@ -1,55 +1,525 @@
-#include <task.h>
+#include <Chao/Chao.h>
 
-INLINE_ASM(_func_0C530160, 0x6c, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530160.src");
+#include <Chao/alo_growtree.h>
+#include <Chao/al_field.h>
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C5302A0'], ['_AL_IsMotionEnd', '_lbl_0C5302AC'], ['_rand', '_lbl_0C5302A4'], ["h'38BFFFFC", '_lbl_0C5302A8']]);
-INLINE_ASM(_func_0C5301CC, 0x7a, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5301CC.src");
+int ALBHV_GoToLockOn(task*);
+int ALBHV_TurnToLockOn(task*);
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C5302A0'], ['_rand', '_lbl_0C5302A4'], ["h'38BFFFFC", '_lbl_0C5302A8'], ['_AL_IsMotionStop', '_lbl_0C5302B0']]);
-INLINE_ASM(_func_0C530246, 0x84, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530246.src");
+extern BHV_FUNC ALBHV_MinimalFunc[eMinimalType__end];
 
-INLINE_ASM(_func_0C5302CA, 0x120, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5302CA.src");
+int ALBHV_Kaoarau(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
-// MERGE_LIST([["h'3B720000", '_lbl_0C530420'], ['_AL_SetMotionLink', '_lbl_0C530424'], ['_rand', '_lbl_0C530428'], ["h'3B4A0000", '_lbl_0C53042C'], ["h'3ECCCCCD", '_lbl_0C530430'], ["h'38000000", '_lbl_0C530434'], ['_sub_8C05B020', '_lbl_0C530438'], ['_AL_IsMotionStop', '_lbl_0C53043C']]);
-INLINE_ASM(_func_0C5303EA, 0xa4, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5303EA.src");
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_KAOARAU);
+            
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(2, 3.999999);
+        case 1:
+            if (AL_IsMotionEnd(tp)) {
+                if(--bhv->Timer <= 0) {
+                    return BHV_RET_FINISH;
+                }
+            }
+            break;
+    }
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C530560'], ['_rand', '_lbl_0C530564'], ["h'3B720000", '_lbl_0C530568'], ["h'3D4CCCCD", '_lbl_0C53056C'], ['_lbl_0C511E86', '_lbl_0C530570']]);
-INLINE_ASM(_func_0C53048E, 0x10c, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C53048E.src");
+    return BHV_RET_CONTINUE;
+}
 
-// MERGE_LIST([["h'3FC00000", '_lbl_0C5306A0'], ['_AL_SetMotionSpd', '_lbl_0C5306A4']]);
-INLINE_ASM(_func_0C53059A, 0x86, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C53059A.src");
+int ALBHV_UnusedMinimal(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
-// MERGE_LIST([['_rand', '_lbl_0C5306A8'], ["h'38000000", '_lbl_0C5306AC'], ["h'3F000000", '_lbl_0C5306B0'], ['_AL_SetMotionLink', '_lbl_0C5306B4'], ["h'3C168000", '_lbl_0C5306B8']]);
-INLINE_ASM(_func_0C530620, 0xa0, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530620.src");
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+            
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(4, 5.999999);
+        case 1:
+            if (AL_IsMotionStop(tp)) {
+                if(--bhv->Timer <= 0) {
+                    return BHV_RET_FINISH;
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+            break;
+    }
 
-INLINE_ASM(_func_0C5306C0, 0x108, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5306C0.src");
+    return BHV_RET_CONTINUE;
+}
 
-// MERGE_LIST([["h'3B720000", '_lbl_0C530860'], ["h'3DCCCCCD", '_lbl_0C530880'], ['_AL_SetMotionLink', '_lbl_0C530864'], ['_lbl_0C5406C0', '_lbl_0C530884'], ['_rand', '_lbl_0C530868'], ["h'40A00000", '_lbl_0C530888'], ['_sub_8C05B020', '_lbl_0C53086C'], ['_AL_ChildFieldCreateT', '_lbl_0C53088C'], ["h'40400000", '_lbl_0C530870'], ['_njSin', '_lbl_0C530874'], ["h'3E4CCCCD", '_lbl_0C530878'], ['_njCos', '_lbl_0C53087C']]);
-INLINE_ASM(_func_0C5307C8, 0xe6, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5307C8.src");
+int ALBHV_Bakuten(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
-INLINE_ASM(_func_0C5308AE, 0x6e, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5308AE.src");
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_BAKUTEN);
+            
+            bhv->Mode++;
+        case 1:
+            if (AL_IsMotionStop(tp)) {
+                return BHV_RET_FINISH;
+            }
+            break;
+    }
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C5309C0'], ['_AL_IsMotionEnd', '_lbl_0C5309CC'], ['_rand', '_lbl_0C5309C4'], ["h'38FFFFFC", '_lbl_0C5309C8']]);
-INLINE_ASM(_func_0C53091C, 0x6e, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C53091C.src");
+    return BHV_RET_CONTINUE;
+}
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C5309C0'], ['_AL_IsMotionEnd', '_lbl_0C5309CC'], ['_rand', '_lbl_0C5309C4'], ["h'38FFFFFC", '_lbl_0C5309C8']]);
-INLINE_ASM(_func_0C53098A, 0x56, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C53098A.src");
+int ALBHV_Draming(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
-INLINE_ASM(_func_0C5309E0, 0x8e, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C5309E0.src");
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_DRAMING);
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C530B20'], ['_rand', '_lbl_0C530B24'], ["h'38FFFFFC", '_lbl_0C530B28'], ['_AL_IsMotionEnd', '_lbl_0C530B2C'], ["h'3DCCCCCD", '_lbl_0C530B30'], ['_lbl_0C511E86', '_lbl_0C530B34']]);
-INLINE_ASM(_func_0C530A6E, 0xf2, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530A6E.src");
+            bhv->Timer = RAND_RANGE(120, 220);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                if(njRandom() < 0.4f) {
+                    return BHV_RET_FINISH;
+                }
 
-INLINE_ASM(_func_0C530B60, 0x74, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530B60.src");
+                if(njRandom() < 0.4f) {
+                    AL_SetMotionLink(tp, ALM_DRAMING_WOO);
+                    sub_8C05B020(24711, 0, 0, 110, &tp->twp->pos);
+                    
+                    bhv->Mode++;
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_DRAMING);
+                    bhv->Timer = RAND_RANGE(160, 280);
+                }
+            }
+            break;
+        
+        case 2:
+            if (AL_IsMotionStop(tp)) {
+                AL_SetMotionLink(tp, ALM_DRAMING);
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C530C80'], ['_rand', '_lbl_0C530C84'], ["h'3AF40000", '_lbl_0C530C88'], ['_AL_IsMotionEnd', '_lbl_0C530C8C'], ["h'3E19999A", '_lbl_0C530C90'], ['_lbl_0C511E86', '_lbl_0C530C94']]);
-INLINE_ASM(_func_0C530BD4, 0x80, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530BD4.src");
+                bhv->Timer = RAND_RANGE(160, 280);
+                bhv->Mode--;
+            }
+            break;
+    }
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C530C80'], ['_sub_8C05B020', '_lbl_0C530C9C'], ['_rand', '_lbl_0C530C84'], ["h'3BC90000", '_lbl_0C530C98']]);
-INLINE_ASM(_func_0C530C54, 0x94, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530C54.src");
+    return BHV_RET_CONTINUE;
+}
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C530D80'], ['_rand', '_lbl_0C530D84'], ["h'3BC90000", '_lbl_0C530D88']]);
-INLINE_ASM(_func_0C530CE8, 0xd8, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_func_0C530CE8.src");
+int ALBHV_Dosukoi(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
-INLINE_ASM(_AL_DecideBehaviorMinimal, 0x160, "asm/nonmatching/Chao/al_behavior/albhv_minimal/_AL_DecideBehaviorMinimal.src");
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_SUMO_DOSUKOI);
 
+            bhv->Timer = RAND_RANGE(120, 240);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+            
+            AL_ForwardSpd(tp, 0.05f);
+            
+            break;
+    }
+    
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_InoDash(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_ON_YOUR_MARK);
+
+            bhv->Mode++;
+        case 1:
+            if (AL_IsMotionEnd(tp)) {
+                AL_SetMotionLink(tp, ALM_READY);
+                bhv->Mode++;
+            }
+            break;
+
+        case 2:
+            if (AL_IsMotionEnd(tp)) {
+                AL_SetMotionLink(tp, ALM_GO);
+                bhv->Mode++;
+            }
+            break;
+
+        case 3:
+            if (AL_IsMotionEnd(tp)) {
+                AL_SetMotionLink(tp, ALM_DASH);
+
+                bhv->Timer = RAND_RANGE(120, 180);
+                bhv->Mode++;
+            }
+
+            AL_ForwardSpd(tp, 0.3f);
+            break;
+
+        case 4:
+            AL_ForwardSpd(tp, 0.3f);
+            
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+            break;
+    }
+
+    AL_SetMotionSpd(tp, 1.5f);
+    
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Otakai(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            if(njRandom() < 0.5f) {
+                AL_SetMotionLink(tp, ALM_OTAKAI_L);
+            }
+            else {
+                AL_SetMotionLink(tp, ALM_OTAKAI_R);
+            }
+
+            bhv->Timer = RAND_RANGE(600, 900);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+            break;
+    }
+    
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_ShiriDance(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_HIP_DANCE);
+
+            bhv->Timer = RAND_RANGE(300, 500);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+            break;
+    }
+    
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Onara(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    taskwk* twk = tp->twp;
+
+    switch (bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_OSYABURI);
+
+            bhv->Timer = RAND_RANGE(120, 240);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                NJS_POINT3 pos;
+                
+                sub_8C05B020(4115, 0, 0, 0, &tp->twp->pos);
+
+                bhv->Timer = RAND_RANGE(120, 240);
+
+                pos.x = twk->pos.x - 3 * njSin(twk->ang.y);
+                pos.y = twk->pos.y + 0.2f;
+                pos.z = twk->pos.z - 3 * njCos(twk->ang.y);
+
+                lbl_0C5406C0(&pos, 2.f, 0.1f, 2.f);
+                AL_ChildFieldCreateT(tp, CI_KIND_AL_ONARA, &pos, 5, 60);
+
+                bhv->Mode++;
+            }
+            break;
+        
+        case 2:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Fire(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    AL_SHAPE* pShape = &GET_CHAOWK(tp)->Shape;
+
+    switch (bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_FIRE);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer++ > 20) {
+                NJS_VECTOR velo;
+
+                velo.x = pShape->MouthVec.x * 0.5f;
+                velo.y = pShape->MouthVec.y * 0.5f;
+                velo.z = pShape->MouthVec.z * 0.5f;
+
+                lbl_0C5451E0(&pShape->MouthPos, &velo, 0.25f);
+            }
+
+            if(AL_IsMotionStop(tp)) {
+                return BHV_RET_FINISH;
+            }
+            
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_PyonPyon(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_PYONPYON);
+
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(4, 6.999999);
+        case 1:
+            if(AL_IsMotionEnd(tp)) {
+                if(--bhv->Timer <= 0) {
+                    return BHV_RET_FINISH;
+                }
+            }
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Fukkin2(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_FUKKIN);
+
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(4, 6.999999);
+        case 1:
+            if(AL_IsMotionEnd(tp)) {
+                if(--bhv->Timer <= 0) {
+                    return BHV_RET_FINISH;
+                }
+            }
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Fukkin(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    
+    AL_SetBehavior(tp, ALBHV_PostureChangeSit);
+    AL_SetNextBehavior(tp, ALBHV_Fukkin2);
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Denguri(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_DENGURI);
+
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(4, 6.999999);
+        case 1:
+            if(AL_IsMotionEnd(tp)) {
+                bhv->Mode++;
+            }
+            break;
+        case 2:
+            if(AL_IsMotionEnd(tp)) {
+                if(--bhv->Timer <= 0) {
+                    return BHV_RET_FINISH;
+                }
+            }
+            
+            AL_ForwardSpd(tp, 0.1);
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_GoroGoro(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+    MOVE_WORK* move = (MOVE_WORK*)tp->Data2;
+    taskwk* twk = tp->twp;
+    
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_GOROGORO);
+
+            bhv->Timer = RAND_RANGE(500, 800);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+
+            twk->pos.x += njSin(twk->ang.y - NJM_DEG_ANG(90)) * 0.05f;
+            twk->pos.z += njCos(twk->ang.y - NJM_DEG_ANG(90)) * 0.05f;
+            
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_HaraSuberi(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_HAIHAI_SORU_UP);
+
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(120, 180);
+        case 1:
+            if(AL_IsMotionEnd(tp)) {
+                if(--bhv->Timer <= 0) {
+                    return BHV_RET_FINISH;
+                }
+            }
+
+            AL_ForwardSpd(tp, 0.15f);
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Shippo(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_TAIL);
+
+            bhv->Mode++;
+            bhv->Timer = RAND_RANGE(400, 600);
+
+            sub_8C05B020(24708, 0, 0, 110, &tp->twp->pos);
+        case 1:
+            if(--bhv->Timer <= 0) {
+                return BHV_RET_FINISH;
+            }
+
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_UnknownMinimal1(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_SetMotionLink(tp, ALM_TOGU);
+
+            bhv->Timer = RAND_RANGE(300, 500);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_UnknownMinimal2(task* tp) {
+    al_perception_link* pTree = AL_GetFoundTree(tp);
+    float chance;
+    
+    if(!pTree) {
+        return BHV_RET_FINISH;
+    }
+
+    chance = 0.3f;
+    
+    if(njRandom() > chance && pTree->dist < 40 && pTree->pEntry) {
+        task* pTreeTask = pTree->pEntry->tp;
+
+        if(pTreeTask) {
+            TREE_WORK* pTreeWork = pTreeTask->twp;
+            int state = pTreeWork->state;
+            
+            switch(state) {
+                case TREE_ST_ADULT:
+                case TREE_ST_LOCAL:
+                    ALW_LockOn(tp, pTree->pEntry->tp);
+                    AL_SetBehavior(tp, ALBHV_GoToLockOn);
+                    AL_SetNextBehavior(tp, ALBHV_TurnToLockOn);
+                    AL_SetNextBehavior(tp, ALBHV_UnknownMinimal1);
+                    
+                    return BHV_RET_CONTINUE;
+            }
+        }
+    }
+
+    return BHV_RET_FINISH;
+}
+
+Bool AL_DecideBehaviorMinimal(task* tp) {
+    float score = 0; // not necessarily score but no idea what else it would've been
+    taskwk* twk = tp->twp;
+    
+    int i;
+
+    int BhvList[32];
+    int count;
+
+    count = 0;
+
+    for(i = 0; i < eMinimalType__end; i++) {
+        if(AL_PartsIsMinimalFlagOn(tp, i)) {
+            if(ALBHV_MinimalFunc[i]) {
+                BhvList[count] = i;
+                count++;
+            }
+        }
+    }
+
+    if(count > 0) {
+        int num = BhvList[(Uint32)((count - 0.0001f) * njRandom())];
+        AL_SetBehavior(tp, ALBHV_MinimalFunc[num]);
+        
+        return TRUE;
+    }
+
+    return FALSE;
+}
