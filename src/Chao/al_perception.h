@@ -39,6 +39,7 @@ typedef struct AL_PERCEPTION {
 
 task* AL_GetFoundPlayerTask(task* tp);
 task* AL_GetFoundFruitTask(task* tp);
+task* AL_GetFoundToyTask(task* tp);
 
 al_perception_link* AL_GetFoundTree(task *tp);
 
