@@ -17,3 +17,5 @@ tools/elf2bin
 !shc/include/.gitkeep
 !shc/tmp/.gitkeep
 !build/.gitkeep
+
+.venv
