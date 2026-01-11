@@ -900,3 +900,5 @@ object_alo_hanabi_h_hanabi_h = 0xC62E318;
 object_alo_minicar_minicar = 0x0C631AD0;
 object_alo_doll_doll = 0xC62C2D0;
 object_alo_hopping_hopping = 0xC62F58C;
+CrayonBoxInfo = 0x0C625A3C;
+CrayonInfo = 0x0C625A5C;

@@ -3,6 +3,34 @@
 
 #include <task.h>
 
+typedef enum eAL_PLAYER_BTL {
+    BTL_AL_PL_SONIC = 0,
+    BTL_AL_PL_SHADOW = 1,
+    BTL_AL_PL_TAILS = 2,
+    BTL_AL_PL_EGGMAN = 3,
+    BTL_AL_PL_KNUCKLES = 4,
+    BTL_AL_PL_ROUGE = 5,
+    NB_BTL_AL_PLAYER,
+} eAL_PLAYER_BTL;
+
+typedef enum eAL_ART {
+    AL_ART_1 = 0,
+    AL_ART_2 = 1,
+    AL_ART_3 = 2,
+    AL_ART_4 = 3,
+    AL_ART_5 = 4,
+    NB_AL_ART
+} eAL_ART;
+
+typedef enum eAL_DANCE {
+    AL_DANCE_FURIRFURI = 0,
+    AL_DANCE_KURUKURU = 1,
+    AL_DANCE_BOX = 2,
+    AL_DANCE_GOGO = 3,
+    AL_DANCE_RADIO = 4,
+    NB_AL_DANCE
+} eAL_DANCE;
+
 typedef enum eAL_STOY {
     AL_STOY_GARAGARA = 0,
     AL_STOY_CAR = 1,
