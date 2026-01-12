@@ -452,7 +452,7 @@ void ALO_GrowTreeExecutor(task* tp) {
         
                     if (swingDist < 0.1f) {
                         if(pTree->SwingFlag) {
-                            sub_8C05B2D4(0x1008, tp, 1, -15, 60, &twk->pos);
+                            sub_8C05B2D4(0x1008, (Uint32)tp, 1, -15, 60, &twk->pos);
                             
                             pTree->SwingFlag = FALSE;
                             pTree->SwingCountFlag = TRUE;

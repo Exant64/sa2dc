@@ -151,7 +151,7 @@ void SwimControlStop(task* tp) {
         AL_EmotionAdd(tp, EM_ST_TIRE, -GET_GLOBAL()->ParamSubTireSwimStop);
     }
 
-    sub_8C05B2D4(4129, tp, 1, 0, 120, &work->pos);
+    sub_8C05B2D4(4129, (Uint32)tp, 1, 0, 120, &work->pos);
 }
 
 void SwimControl(task* tp) {
@@ -221,7 +221,7 @@ void SwimControl(task* tp) {
         AL_EmotionAdd(tp, EM_ST_TIRE, GET_GLOBAL()->ParamAddTireSwim);
     }
 
-    sub_8C05B2D4(0x101F, tp, 1, -25, 90, &work->pos);
+    sub_8C05B2D4(0x101F, (Uint32)tp, 1, -25, 90, &work->pos);
 }
 
 int ALBHV_SwimObore(task* tp) {

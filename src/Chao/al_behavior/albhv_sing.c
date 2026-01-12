@@ -1,43 +1,588 @@
-#include <task.h>
+#include <Chao/Chao.h>
 
-INLINE_ASM(_VoiceTaskExecutor, 0x46, "asm/nonmatching/Chao/al_behavior/albhv_sing/_VoiceTaskExecutor.src");
+#include <Chao/al_misc.h>
+#include <Chao/al_field.h>
+#include <playsound.h>
 
-// MERGE_LIST([['_FreeTask', '_lbl_0C535A60'], ['_sub_8C05B2D4', '_lbl_0C535A64']]);
-INLINE_ASM(_VoiceTaskCreate, 0x4c, "asm/nonmatching/Chao/al_behavior/albhv_sing/_VoiceTaskCreate.src");
+extern BHV_FUNC ALBHV_SingFunc[8];
 
-// MERGE_LIST([['_CreateElementalTask', '_lbl_0C535A70'], ['_lbl_0C5672F0', '_lbl_0C535A68'], ['_VoiceTaskExecutor', '_lbl_0C535A6C']]);
-INLINE_ASM(_ALBHV_Sing1, 0x158, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_Sing1.src");
+extern int KinderSingVoiceNumber[5];
+extern int NormalSingVoiceNumber[3];
 
-// MERGE_LIST([['_AL_FaceSetMouth', '_lbl_0C535C20'], ['_AL_IsHitKindWithNum', '_lbl_0C535C24']]);
-INLINE_ASM(_ALBHV_Sing2, 0x11c, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_Sing2.src");
+void VoiceTaskExecutor(task* tp) {
+    taskwk* twk = tp->twp;
 
-// MERGE_LIST([['_AL_FaceSetMouth', '_lbl_0C535C20'], ["h'387EB852", '_lbl_0C535C40'], ['_AL_IsHitKindWithNum', '_lbl_0C535C24'], ['_KinderSingVoiceNumber', '_lbl_0C535C44'], ['_AL_SetMotionLink', '_lbl_0C535C28'], ['_sub_8C05B2D4', '_lbl_0C535C48'], ['_AL_FaceSetEye', '_lbl_0C535C2C'], ['__modls', '_lbl_0C535C4C'], ["h'38000000", '_lbl_0C535C30'], ["h'3F000000", '_lbl_0C535C34'], ['_rand', '_lbl_0C535C38'], ['_AL_IsMotionStop', '_lbl_0C535C3C']]);
-INLINE_ASM(_ALBHV_Sing3, 0x166, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_Sing3.src");
+    if(!twk->wtimer--) {
+        FreeTask(tp);
+        return;
+    }
+    
+    sub_8C05B2D4(twk->id, (Uint32)tp, 1, 110, 60, &tp->twp->pos);
+}
 
-// MERGE_LIST([['_AL_FaceSetEye', '_lbl_0C535DE0'], ['__modls', '_lbl_0C535E00'], ["h'38000000", '_lbl_0C535DE4'], ['_AL_FaceSetMouth', '_lbl_0C535E04'], ["h'3F000000", '_lbl_0C535DE8'], ['_AL_IsHitKindWithNum', '_lbl_0C535E08'], ['_rand', '_lbl_0C535DEC'], ['_AL_IsMotionStop', '_lbl_0C535DF0'], ["h'38BF5C29", '_lbl_0C535DF4'], ['_KinderSingVoiceNumber', '_lbl_0C535DF8'], ['_sub_8C05B2D4', '_lbl_0C535DFC']]);
-INLINE_ASM(_ALBHV_Sing4, 0x174, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_Sing4.src");
+void VoiceTaskCreate(task* pChaoTask, int id, Sint16 a3, Sint16 timer) {
+    task* pVoice = CreateElementalTask(2, 3, VoiceTaskExecutor, "VoiceTask");
 
-// MERGE_LIST([["h'38FF5C29", '_lbl_0C535FC0'], ['_KinderSingVoiceNumber', '_lbl_0C535FC4'], ['_sub_8C05B2D4', '_lbl_0C535FC8'], ['__modls', '_lbl_0C535FCC'], ['_AL_FaceSetMouth', '_lbl_0C535FD0'], ['_AL_IsHitKindWithNum', '_lbl_0C535FD4']]);
-INLINE_ASM(_ALBHV_Sing5, 0x2da, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_Sing5.src");
+    pVoice->twp->pos = pChaoTask->twp->pos;
+    pVoice->twp->ang.y = a3;
+    pVoice->twp->id = id;
+    pVoice->twp->wtimer = timer;
+}
 
-INLINE_ASM(_ALBHV_SingNormal, 0x11c, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_SingNormal.src");
+int ALBHV_Sing1(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
-// MERGE_LIST([['_AL_SetMotionLink', '_lbl_0C536300'], ['_sub_8C05B2D4', '_lbl_0C536320'], ['_AL_FaceSetEye', '_lbl_0C536304'], ['__modls', '_lbl_0C536324'], ["h'38000000", '_lbl_0C536308'], ['_AL_FaceSetMouth', '_lbl_0C536328'], ["h'3F000000", '_lbl_0C53630C'], ['_AL_IsHitKindWithNum', '_lbl_0C53632C'], ['_rand', '_lbl_0C536310'], ['_AL_IsMotionStop', '_lbl_0C536314'], ["h'38FF5C29", '_lbl_0C536318'], ['_NormalSingVoiceNumber', '_lbl_0C53631C']]);
-INLINE_ASM(_ALBHV_SingOnchi, 0x15c, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_SingOnchi.src");
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
 
-// MERGE_LIST([['_AL_FaceSetEye', '_lbl_0C536480'], ['_AL_IsHitKindWithNum', '_lbl_0C5364A0'], ["h'38000000", '_lbl_0C536484'], ["h'3F000000", '_lbl_0C536488'], ['_AL_IsMotionStop', '_lbl_0C53648C'], ['_rand', '_lbl_0C536490'], ['_sub_8C05B020', '_lbl_0C536494'], ['__modls', '_lbl_0C536498'], ['_AL_FaceSetMouth', '_lbl_0C53649C']]);
-INLINE_ASM(_ALBHV_ListenSing, 0x150, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_ListenSing.src");
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
 
-// MERGE_LIST([['_AL_FaceSetEye', '_lbl_0C536600'], ['_AL_FaceSetMouth', '_lbl_0C536604'], ["h'3C168000", '_lbl_0C536608'], ['_AL_IsHitKindWithNum', '_lbl_0C53660C'], ["h'3B720000", '_lbl_0C536610']]);
-INLINE_ASM(_ALBHV_Urusai, 0x162, "asm/nonmatching/Chao/al_behavior/albhv_sing/_ALBHV_Urusai.src");
+            if(bhv->Timer++ > 240) {
+                bhv->Timer = 0;
 
-// MERGE_LIST([['_AL_FaceSetEye', '_lbl_0C536780'], ['_AL_FaceSetMouth', '_lbl_0C536784'], ["h'3C168000", '_lbl_0C536788'], ['_AL_EmotionAdd', '_lbl_0C53678C']]);
-INLINE_ASM(_AL_CalcIntentionScore_JoinSing, 0x11c, "asm/nonmatching/Chao/al_behavior/albhv_sing/_AL_CalcIntentionScore_JoinSing.src");
+                sub_8C05B2D4(KinderSingVoiceNumber[0], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+            }
 
-INLINE_ASM(_AL_CalcIntentionScore_JoinOnchi, 0x7a, "asm/nonmatching/Chao/al_behavior/albhv_sing/_AL_CalcIntentionScore_JoinOnchi.src");
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
 
-// MERGE_LIST([['_lbl_0C56B260', '_lbl_0C5369E0'], ['_AL_SetBehavior', '_lbl_0C536A00'], ['_AL_EmotionGetValue', '_lbl_0C5369E4'], ['_AL_IsHitKindWithNum', '_lbl_0C5369E8'], ['_rand', '_lbl_0C5369EC'], ["h'38000000", '_lbl_0C5369F0'], ["h'3F333333", '_lbl_0C5369F4'], ["h'3F7D70A4", '_lbl_0C5369F8'], ['_ALBHV_Urusai', '_lbl_0C5369FC']]);
-INLINE_ASM(_AL_DecideBehaviorSing, 0x266, "asm/nonmatching/Chao/al_behavior/albhv_sing/_AL_DecideBehaviorSing.src");
+    return !AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING);
+}
 
-INLINE_ASM(_rodata, "asm/nonmatching/Chao/al_behavior/albhv_sing/rodata.src");
+int ALBHV_Sing2(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
 
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 240) {
+                bhv->Timer = 0;
+                
+                sub_8C05B2D4(KinderSingVoiceNumber[(int)(njRandom() * 1.99f)], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
+
+    return !AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING);
+}
+
+int ALBHV_Sing3(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 240) {
+                bhv->Timer = 0;
+                
+                sub_8C05B2D4(KinderSingVoiceNumber[(int)(njRandom() * 2.99f)], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
+
+    return !AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING);
+}
+
+int ALBHV_Sing4(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 240) {
+                bhv->Timer = 0;
+                
+                sub_8C05B2D4(KinderSingVoiceNumber[(int)(njRandom() * 3.99f)], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
+
+    return !AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING);
+}
+
+int ALBHV_Sing5(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 240) {
+                bhv->Timer = 0;
+                
+                if(njRandom() < 0.7f) {
+                    sub_8C05B2D4(KinderSingVoiceNumber[(int)(njRandom() * 3.99f)], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+                }
+                else {
+                    sub_8C05B2D4(KinderSingVoiceNumber[4], (Uint32)tp, 1, 110, 440, &tp->twp->pos);
+
+                    bhv->Mode = 2;
+                }
+
+                if(!AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING))  {
+                    return BHV_RET_FINISH;
+                }
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+
+        case 2:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 450) {
+                bhv->Timer = 0;
+                
+                if(njRandom() < 0.3f) {
+                    sub_8C05B2D4(KinderSingVoiceNumber[4], (Uint32)tp, 1, 110, 440, &tp->twp->pos);
+                }
+                else {
+                    sub_8C05B2D4(KinderSingVoiceNumber[(int)(njRandom() * 3.99f)], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+
+                    bhv->Mode = 1;
+                }
+
+                if(!AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING))  {
+                    return BHV_RET_FINISH;
+                }
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
+
+    if(!AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING))  {
+        return BHV_RET_FINISH;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_SingNormal(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 180) {
+                bhv->Timer = 0;
+                
+                sub_8C05B2D4(NormalSingVoiceNumber[(int)(njRandom() * 3.99f)], (Uint32)tp, 1, 110, 230, &tp->twp->pos);
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
+
+    return !AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING);
+}
+
+int ALBHV_SingOnchi(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch(bhv->Mode) {
+        case 0:
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+
+            bhv->Mode++;
+            bhv->Timer = 0;
+            bhv->SubTimer = 0;
+        case 1:
+            if(AL_IsMotionStop(tp)) {
+                if(njRandom() < 0.5f) {
+                    AL_SetMotionLink(tp, ALM_UTAU_HIDARI);
+                }
+                else {
+                    AL_SetMotionLink(tp, ALM_UTAU_LEFT);
+                }
+            }
+
+            if(bhv->Timer++ > 220) {
+                bhv->Timer = 0;
+                
+                sub_8C05B020(24700, 0, 0, 110, &tp->twp->pos);
+            }
+
+            if(!(bhv->SubTimer++ % 30)) {
+                if(njRandom() < 0.5f) {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+                }
+                else {
+                    AL_FaceSetMouth(tp, AL_MOUTH_NUM_HOYO, -1);
+                }
+            }
+            break;
+    }
+
+    return !AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING_ONCHI);
+}
+
+int ALBHV_ListenSing(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch (bhv->Mode) {
+        case 0:
+            if(njRandom() < 0.5f) {
+                AL_SetMotionLink(tp, ALM_MUSIC_SIT);
+            }
+            else {
+                AL_SetMotionLink(tp, ALM_HIMA_SIT_GUDE);
+            }
+
+            AL_FaceSetEye(tp, AL_EYE_NUM_NIKO, -1);
+            AL_FaceSetMouth(tp, AL_MOUTH_NUM_NIKO, -1);
+
+            bhv->Timer = RAND_RANGE(300, 600);
+            bhv->Mode++;
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                bhv->Mode = 0;
+            }
+
+            if(!AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING)) {
+                AL_SetMotionLink(tp, ALM_HAKUSYU_SIT);
+
+                bhv->Timer = RAND_RANGE(180, 300);
+                bhv->Mode = 2;
+            }
+            break;
+
+        case 2:
+            if(bhv->Timer-- <= 0) {
+                return BHV_RET_FINISH;
+            }
+
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+int ALBHV_Urusai(task* tp) {
+    AL_BEHAVIOR* bhv = &GET_CHAOWK(tp)->Behavior;
+
+    switch (bhv->Mode) {
+        case 0: {
+            int posture = AL_GetMotionPosture(tp);
+            switch(posture) {
+                case 1:
+                case 2:
+                case 3:
+                    AL_SetMotionLinkStep(tp, ALM_ITAI_BURUBURU, 35);
+                    break;
+                default:
+                case 0:
+                    AL_SetMotionLink(tp, ALM_HIMA_SIT_GUDE);
+                    break;
+            }
+
+            if(njRandom() < 0.5f) {
+                AL_FaceSetEye(tp, AL_EYE_NUM_KYA, -1);
+            }
+            else {
+                AL_FaceSetEye(tp, AL_EYE_NUM_TOHOHO, -1);
+            }
+
+            if(njRandom() < 0.5f) {
+                AL_FaceSetMouth(tp, AL_MOUTH_NUM_KOIKE, -1);
+            }
+            else {
+                AL_FaceSetMouth(tp, AL_MOUTH_NUM_MUSU, -1);
+            }
+
+            bhv->Timer = RAND_RANGE(300, 600);
+            bhv->Mode++;
+        }
+        case 1:
+            if(bhv->Timer-- <= 0) {
+                if(njRandom() < 0.5f) {
+                    AL_EmotionAdd(tp, EM_MD_ANGER, 150);
+                }
+
+                return BHV_RET_FINISH;
+            }
+            break;
+    }
+
+    return BHV_RET_CONTINUE;
+}
+
+void AL_CalcIntentionScore_JoinSing(task* tp, float* pMaxScore) {
+    float score = 0.f;
+    Uint32 trigger = GET_GLOBAL()->IntentionHimaTrigger;
+    Uint32 emotion = AL_EmotionGetValue(tp, EM_ST_TEDIOUS);
+    task* pField = AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING);
+
+    if(*pMaxScore < 1 && pField) {
+        if(emotion > trigger) {
+            if(emotion < 7000) {
+                emotion += 3000;
+            }
+
+            score = AL_CalcScoreTypeA(emotion, trigger);
+            score *= GET_GLOBAL()->IntentionHimaMaxScore;
+
+            AL_ScoreRandomise(&score);
+        }
+
+        if(score > *pMaxScore) {
+            if(pField->ptp) {
+                MOV_SetAimPos(tp, &pField->ptp->twp->pos);
+            }
+
+            AL_SetBehavior(tp, ALBHV_TurnToAim);
+            AL_SetNextBehavior(tp, ALBHV_PostureChangeSit);
+            AL_SetNextBehavior(tp, ALBHV_ListenSing);
+            
+            *pMaxScore = 0.99f;
+        }
+    }
+}
+
+void AL_CalcIntentionScore_JoinOnchi(task* tp, float* pMaxScore) {
+    float score = 0.f;
+    Uint32 trigger = GET_GLOBAL()->IntentionHimaTrigger;
+    Uint32 emotion = AL_EmotionGetValue(tp, EM_ST_TEDIOUS);
+    task* pField = AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING_ONCHI);
+
+    if(*pMaxScore < 1 && pField) {
+        if(emotion > trigger) {
+            if(njRandom() < 0.7f) {
+                score = 0.99f;
+            }
+        }
+
+        if(score > *pMaxScore) {
+            AL_SetBehavior(tp, ALBHV_Urusai);
+            
+            *pMaxScore = score;
+        }
+    }
+}
+
+Bool AL_DecideBehaviorSing(task* tp) {
+    float score = 0;
+    taskwk* twk = tp->twp;
+
+    int kind = -1;
+
+    if(AL_IsHitKindWithNum(tp, AL_COLLI_BODY, CI_KIND_AL_SING)) {
+        return FALSE;
+    }
+    else {
+        int i;
+
+        for(i = 0; i < NB_AL_SONG; ++i) {
+            if(AL_KW_IsSongFlagOn(tp, i)) {
+                kind++;
+            }
+        }
+
+        if(kind >= 0) {
+            NJS_POINT3 center;
+            int ang = twk->ang.y;
+
+            center.x = twk->pos.x + 8 * njSin(ang);
+            center.y = twk->pos.y;
+            center.z = twk->pos.z + 8 * njCos(ang);
+
+            AL_SetBehavior(tp, ALBHV_SingFunc[kind]);
+
+            AL_ChildFieldCreateT(
+                tp,
+                CI_KIND_AL_SING,
+                &center,
+                20,
+                RAND_RANGE(1500, 3300)
+            );
+
+            return TRUE;
+        }
+        else if(AL_PartsIsMinimalFlagOn(tp, eMinimalType_Oum)) {
+            NJS_POINT3 center;
+            int ang = twk->ang.y;
+
+            center.x = twk->pos.x + 8 * njSin(ang);
+            center.y = twk->pos.y;
+            center.z = twk->pos.z + 8 * njCos(ang);
+
+            if(GET_CHAOPARAM(tp)->body.APos < -0.5f) {
+                AL_SetBehavior(tp, ALBHV_SingOnchi);
+
+                AL_ChildFieldCreateT(
+                    tp,
+                    CI_KIND_AL_SING_ONCHI,
+                    &center,
+                    20,
+                    RAND_RANGE(1800, 3600)
+                );
+            }
+            else {
+                AL_SetBehavior(tp, ALBHV_SingNormal);
+                
+                AL_ChildFieldCreateT(
+                    tp,
+                    CI_KIND_AL_SING,
+                    &center,
+                    20,
+                    RAND_RANGE(1200, 2400)
+                );
+            }
+
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}

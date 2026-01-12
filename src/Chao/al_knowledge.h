@@ -3,6 +3,15 @@
 
 #include <task.h>
 
+typedef enum eAL_SONG {
+    AL_SONG_1 = 0,
+    AL_SONG_2 = 1,
+    AL_SONG_3 = 2,
+    AL_SONG_4 = 3,
+    AL_SONG_5 = 4,
+    NB_AL_SONG
+} eAL_SONG;
+
 typedef enum eAL_PLAYER_BTL {
     BTL_AL_PL_SONIC = 0,
     BTL_AL_PL_SHADOW = 1,

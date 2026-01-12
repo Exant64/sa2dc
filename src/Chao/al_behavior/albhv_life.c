@@ -122,7 +122,6 @@ enum {
     MD_MAYU_BODY_SHRINK = 0x5,
 };
 
-void sub_8C05B2D4(int a1, task* tp, char a2, char a3, short a4, NJS_VECTOR* a5);
 void MayuExecutor(task* tp) {
     taskwk* wk = tp->twp;
 
@@ -153,7 +152,7 @@ void MayuExecutor(task* tp) {
                 wk->mode = MD_MAYU_BODY_WAIT;
                 wk->smode = 0;
             }
-            sub_8C05B2D4(0x101C, tp, 1, -5, 0x3C, &wk->pos);
+            sub_8C05B2D4(0x101C, (Uint32)tp, 1, -5, 0x3C, &wk->pos);
             break;
 
         case MD_MAYU_BODY_WAIT:
