@@ -903,3 +903,5 @@ object_alo_hopping_hopping = 0xC62F58C;
 CrayonBoxInfo = 0x0C625A3C;
 CrayonInfo = 0x0C625A5C;
 ALBHV_SingFunc = 0x0C62ACEC;
+object_alo_syabon_bottle_bottle = 0x0C632400;
+object_alo_syabon_stllow_stllow = 0x0C632628;

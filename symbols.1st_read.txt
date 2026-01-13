@@ -171,3 +171,4 @@ njProjectScreen = 0x8c119710;
 ListGroundForCollision = 0x8C02B5E0;
 numLandCollList = 0x8C24F1CC;
 CheckPadReadMode = 0x8C029070;
+njDrawSprite3D = 0x8C11B96C;
