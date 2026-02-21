@@ -46,7 +46,7 @@ MAKE = make
 CC := $(SHC_DIR)/bin/shc.exe
 AS := $(SHC_DIR)/bin/asmsh.exe
 LD := $(SHC_DIR)/bin/lnk.exe
-ELF2BIN := tools/elf2bin 
+ELF2BIN := tools/elf2bin
 WINPATH := $(BASH) tools/winpath.sh
 UNAME:=$(shell uname)
 

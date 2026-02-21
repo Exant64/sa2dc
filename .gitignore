@@ -10,6 +10,7 @@ build/*
 *.map
 *.nja
 tools/elf2bin
+tools/elf2bin.exe
 
 !asm/.gitkeep
 !rom/.gitkeep

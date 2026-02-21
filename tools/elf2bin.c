@@ -17,19 +17,18 @@
 // that + i didn't wanna use system() so im using remove()
 
 uint8_t args_filler;
-long unsigned int args_start_address;
-long unsigned int args_end_address;
+uint64_t args_start_address;
+uint64_t args_end_address;
 
 bool args_filler_enabled;
 bool args_start_address_enabled;
 bool args_end_address_enabled;
 
-uint32_t parseHex(const char* str) {
+uint64_t parseHex(const char* str) {
     char* pEnd;
     // im assuming its strtol, not sure what they could've used, the thing they used is inlined, but definitely looks
     // standard library-esc
-
-    uint32_t num = strtol(str, &pEnd, 16);
+    uint64_t num = strtoull(str, &pEnd, 16);
 
     if (*pEnd) {
         fprintf(stderr, "ERROR: invalid hexadecimal parameter\n");
@@ -58,9 +57,9 @@ int ReadInt32() {
 }
 
 typedef struct program_segment {
-    int p_offset;
-    int p_vaddr;
-    int p_filesz;
+    uint64_t p_offset;
+    uint64_t p_vaddr;
+    uint64_t p_filesz;
 } program_segment;
 
 int phnum;
@@ -384,7 +383,6 @@ int main(int argc, const char** argv) {
 
     // sort based on start address, or if start addresses are identical, sort based on size
     qsort(pSegments, phnum, sizeof(pSegments), CompareFunction);
-
     if ((get_module_end_address() < args_start_address && args_start_address_enabled == 1) ||
         (get_module_start_address() > args_end_address && args_end_address_enabled == 1)) {
         fprintf(stderr, "ERROR: invalid input address \n");
