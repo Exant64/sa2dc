@@ -48,11 +48,17 @@ AS := $(SHC_DIR)/bin/asmsh.exe
 LD := $(SHC_DIR)/bin/lnk.exe
 ELF2BIN := tools/elf2bin 
 WINPATH := $(BASH) tools/winpath.sh
-WIBO := tools/wibo
+UNAME:=$(shell uname)
 
+ifeq ($(UNAME), Linux)
+WIBO := tools/wibo
 # wibo doesn't convert env vars yet afaik, so we do it manually
 export SHC_LIB := $(shell $(WINPATH) $(abspath $(SHC_DIR)/bin))
 export SHC_TMP := $(shell $(WINPATH) $(abspath $(SHC_DIR)/temp))
+else
+export SHC_LIB := $(shell cygpath -w $(realpath $(SHC_DIR)/bin))
+export SHC_TMP := $(shell cygpath -w $(realpath $(SHC_DIR)/temp))
+endif
 
 #the source dir (original layout was like that too) and katana includes
 INCLUDEDIRS := src,Include,$(SHC_DIR)\\include
@@ -106,14 +112,21 @@ $(1ST_READ_ROM): $(1ST_READ_ELF)
 $(1ST_READ_ELF): $(O_FILES)
 	$(LD) $(LDFLAGS) -sub=1st_read_lnk.sub
 
-# wibo doesn't support envvar conversion so we use wine for shc
-# wine crashes asmsh, and asmsh doesn't use the envvars
-# so wibo works 
+ifeq ($(UNAME), Linux)
 build/src/%.obj: src/%.c
 	$(FIX_INLINE_C) $< build/$<
 	$(PATHHELP) $(WIBO) $(CC) build/$< $(CFLAGS) -objectfile=$(@:.obj=.src)
 	$(FIX_INLINE) $(@:.obj=.src)
 	$(PATHHELP) $(WIBO) $(AS) $(@:.obj=.src) $(ASFLAGS) -object=$@
-
 build/asm/%.obj: asm/%.src
 	$(PATHHELP) $(WIBO) $(AS) $< $(ASFLAGS) -object=$@
+else
+build/src/%.obj: src/%.c
+	$(FIX_INLINE_C) $< build/$<
+	$(PATHHELP) $(CC) build/$< $(CFLAGS) -objectfile=$(@:.obj=.src)
+	$(FIX_INLINE) $(@:.obj=.src)
+	$(AS) $(shell cygpath -w $(@:.obj=.src)) $(ASFLAGS) -object=$(shell cygpath -w $@)
+
+build/asm/%.obj: asm/%.src
+	$(AS) $(shell cygpath -w $<) $(ASFLAGS) -object=$(shell cygpath -w $@)
+endif

@@ -265,7 +265,7 @@ int main(int argc, const char** argv) {
         return 1;
     }
 
-    char** inputOutputPair = &argv[argi];
+    const char** inputOutputPair = &argv[argi];
     char* fileName = inputOutputPair[0];
     char* outFileName;
     int v8 = strlen(fileName) + 1;
